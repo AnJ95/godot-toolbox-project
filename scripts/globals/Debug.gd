@@ -3,7 +3,7 @@ extends Node
 ####################################################################
 # CONSTANTS
 enum LogCategory {
-	SCREEN_MANAGER, MAP, GAME, STATE, SIGNAL, PLAYER
+	SCREEN_MANAGER, MENU, MAP, GAME, STATE, SIGNAL, PLAYER
 }
 enum LogLevel {
 	INFO, WARN, ERROR

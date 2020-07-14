@@ -24,7 +24,7 @@ func ___enter_screen(screen):
 	get_tree().change_scene(C.SCREEN_SCENES[screen])
 	
 	# Debug log & Signal
-	D.l(D.LogCategory.SCREEN_MANAGER, ["Switched screen to", C.Screen.keys()[screen_history[0]], C.SCREEN_SCENES.values()[screen_history[0]]])
+	D.l(D.LogCategory.SCREEN_MANAGER, ["Switched screen to", C.Screen.keys()[screen], C.SCREEN_SCENES.values()[screen]])
 	Sgn.emit_signal("screen_entered", screen)
 	
 	return true
