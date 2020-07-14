@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://scenes/screens/ScreenSplash.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
 
 [node name="ScreenSplash" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -46,7 +47,9 @@ text = "Loading Game..."
 align = 1
 valign = 1
 
-[node name="Timer" type="Timer" parent="." index="1"]
+[node name="BaseBackground" parent="." index="1" instance=ExtResource( 4 )]
+
+[node name="Timer" type="Timer" parent="." index="2"]
 wait_time = 2.5
 one_shot = true
 autostart = true
