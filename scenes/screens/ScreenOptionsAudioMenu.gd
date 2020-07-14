@@ -20,10 +20,10 @@ func _on_button_pressed(button_name):
 func _on_slider_changed(slider_name, value):
 	match slider_name:
 		"volumeMaster":
-			pass
+			G.volume.Master = value
 		"volumeMusic":
-			pass
+			G.volume.Music = value
 		"volumeEffects":
-			pass
+			G.volume.Effects = value
 		_:
 			D.l(D.LogCategory.MENU, ["No handler specified for Slider [Name:", slider_name, "]"], D.LogLevel.ERROR)
