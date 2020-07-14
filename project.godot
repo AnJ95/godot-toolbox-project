@@ -16,15 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="ToolboxProject"
+run/main_scene="res://scenes/screens/ScreenSplash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 D="*res://scripts/globals/Debug.gd"
 G="*res://scripts/globals/Global.gd"
-ScnMngr="*res://scripts/globals/SceneManager.gd"
+ScrnMngr="*res://scripts/globals/ScreenManager.gd"
 Sgn="*res://scripts/globals/Signal.gd"
 S="*res://scripts/globals/State.gd"
+C="*res://scripts/globals/Config.gd"
 
 [rendering]
 

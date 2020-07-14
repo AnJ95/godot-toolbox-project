@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/screens/ScreenSplash.gd" type="Script" id=3]
+
+[node name="ScreenSplash" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="UI" type="CanvasLayer" parent="." index="0"]
+
+[node name="Control" type="Control" parent="UI" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/VBoxContainer" index="0"]
+margin_right = 924.0
+margin_bottom = 235.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UI/Control/VBoxContainer" index="1"]
+margin_top = 265.0
+margin_right = 924.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Loading Game..."
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="." index="1"]
+wait_time = 2.5
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
