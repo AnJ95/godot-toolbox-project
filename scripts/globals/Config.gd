@@ -30,14 +30,22 @@ var hide_log_level = {
 # SCREENS
 
 enum Screen {
-	SPLASH, MAIN_MENU, OPTIONS_MENU, GAME
+	SPLASH, MAIN_MENU, ABOUT,
+	OPTIONS_MENU, OPTIONS_VIDEO_MENU, OPTIONS_AUDIO_MENU, OPTIONS_CONTROLS_MENU,
+	GAME
 }
 
 const SCREEN_SCENES = {
-	Screen.SPLASH:			"res://scenes/screens/ScreenSplash.tscn",
-	Screen.MAIN_MENU:			"res://scenes/screens/ScreenMainMenu.tscn",
-	Screen.OPTIONS_MENU:		"res://scenes/screens/ScreenOptionsMenu.tscn",
-	Screen.GAME:				"res://scenes/screens/ScreenGame.tscn"
+	Screen.SPLASH:				"res://scenes/screens/ScreenSplash.tscn",
+	Screen.MAIN_MENU:				"res://scenes/screens/ScreenMainMenu.tscn",
+	Screen.ABOUT:					"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	
+	Screen.OPTIONS_MENU:			"res://scenes/screens/ScreenOptionsMenu.tscn",
+	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	Screen.OPTIONS_AUDIO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	
+	Screen.GAME:					"res://scenes/screens/ScreenGame.tscn"
 }
 
 const INITIAL_SCREEN = Screen.SPLASH

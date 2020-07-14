@@ -40,7 +40,6 @@ func ___exit_screen():
 
 #############################################################
 # INTERFACE
-
 func push_screen(screen):
 	# Exit previous if existent
 	___exit_screen()

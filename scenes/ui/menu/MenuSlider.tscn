@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/menu/MenuSlider.gd" type="Script" id=1]
+
+[node name="MenuSlider" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -887.0
+margin_bottom = -584.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 24
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 1.0
+margin_right = 97.0
+margin_bottom = 15.0
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 121.0
+margin_right = 137.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]

@@ -26,11 +26,11 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/MarginContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 442.0
+margin_bottom = 420.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/MarginContainer/HBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 442.0
+margin_bottom = 420.0
 size_flags_horizontal = 3
 custom_constants/separation = 50
 __meta__ = {
@@ -39,7 +39,7 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 196.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
@@ -48,7 +48,7 @@ stretch_mode = 6
 [node name="Menu" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 246.0
+margin_top = 235.0
 margin_right = 584.0
-margin_bottom = 442.0
+margin_bottom = 420.0
 size_flags_vertical = 3
