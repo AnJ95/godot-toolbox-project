@@ -39,7 +39,7 @@ enum Screen {
 const SCREEN_SCENES = {
 	Screen.SPLASH:				"res://scenes/screens/ScreenSplash.tscn",
 	Screen.MAIN_MENU:				"res://scenes/screens/ScreenMainMenu.tscn",
-	Screen.ABOUT:					"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	Screen.ABOUT:					"res://scenes/screens/ScreenAbout.tscn",
 	
 	Screen.OPTIONS_MENU:			"res://scenes/screens/ScreenOptionsMenu.tscn",
 	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
