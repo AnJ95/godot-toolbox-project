@@ -1,8 +1,23 @@
 tool
 extends Node
 
-var _objs = {}
+# PersistenceManager is stores a Dictionary for state objects that should
+# be stored and saved to the disc.
+# Each PersistentObject has a UID as a key and a Dictionary for its data
+# 
+# Use
+#	get_val(uid:String)
+#	set_val(uid:String, val)
+# to access the entire Dictionary
+# e.g.: get_val("settingsAudio").Master == 100
+#
+# Use
+#	get_val_from_ui_path(uid_path:String)
+#	set_val_from_ui_path(uid_path:String, val)
+# to access only subparts of the Dictionary given a dot-separated uid_path
+# e.g.: get_val_from_ui_path("settingsAudio.Master") == 100
 
+var _objs = {}
 
 #############################################################
 # GETTERS
