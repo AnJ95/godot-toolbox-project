@@ -15,9 +15,11 @@ func _ready():
 	
 	var settingsControls = PersistenceManager.PersistentObj.new("settingsControls", {
 		"Left" : 65,
-		"Right" : 66,
-		"Up" : 67,
-		"Down" : 68
+		"Right" : 68,
+		"Up" : 87,
+		"Down" : 83,
+		"Jump" : 32,
+		"Interact" : 16777221
 	})
 	settingsControls.connect("changed", self, "_on_settingsControls_update")
 	PersistenceManager.add_obj(settingsControls)
@@ -43,7 +45,8 @@ func _on_settingsControls_update(settingsControls):
 		# Erase any already bound events from this input_action
 		InputMap.action_erase_events(input_action)
 		
-		# Add new event to input_action
-		var key_event = InputEventKey.new()
-		key_event.set_scancode(scancode)
-		InputMap.action_add_event(input_action, key_event)
+		# Add new event to input_action if assigned scancode
+		if scancode != null:
+			var key_event = InputEventKey.new()
+			key_event.set_scancode(scancode)
+			InputMap.action_add_event(input_action, key_event)
