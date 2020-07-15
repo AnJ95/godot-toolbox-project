@@ -44,7 +44,7 @@ const SCREEN_SCENES = {
 	Screen.OPTIONS_MENU:			"res://scenes/screens/ScreenOptionsMenu.tscn",
 	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
 	Screen.OPTIONS_AUDIO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
-	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsControlsMenu.tscn",
 	
 	Screen.GAME:					"res://scenes/screens/ScreenGame.tscn"
 }

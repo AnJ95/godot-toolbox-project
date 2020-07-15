@@ -124,12 +124,15 @@ func add_obj(persistentObj):
 func has_obj(uid:String):
 	return uid in _objs
 
+func connect_to_persistent_obj(uid, cb_context, cb_method):
+	get_obj(uid).connect("changed", cb_context, cb_method)
 
 	
 #############################################################
-# SETTERS	
+# SUB-CLASS	
 class PersistentObj:
 	
+	signal changed(new_val)
 	var uid
 	var default
 	var val = null
@@ -165,6 +168,7 @@ class PersistentObj:
 		if file.open(_get_save_path(), File.WRITE) == OK:
 			var string = _to_string()
 			file.store_string(string)
+			D.l(D.LogCategory.PERSISTENCE, ["Wrote save [", "UID:", uid, ",", "Data:", string, "]" ])
 			return true
 		else:
 			D.e(D.LogCategory.PERSISTENCE, ["Error opening PersistentObj File for writing [", "UID:", uid, "]" ])
@@ -188,7 +192,7 @@ class PersistentObj:
 			if file.open(_get_save_path(), File.READ) == OK:
 				var string = file.get_as_text()
 				if _load_from_string(string):
-					D.l(D.LogCategory.PERSISTENCE, ["Loaded save [", "UID:", uid, "]" ])
+					D.l(D.LogCategory.PERSISTENCE, ["Loaded save [", "UID:", uid, ",", "Data:", val, "]" ])
 					return true
 			else:
 				D.e(D.LogCategory.PERSISTENCE, ["Error opening PersistentObj File [", "UID:", uid, "]" ])
@@ -229,6 +233,7 @@ class PersistentObj:
 	
 	# Gives a change to save if flag SAVE_ON_SET is set
 	func trigger_update():
+		emit_signal("changed", get_val())
 		# Save if flag set
 		if flags & SAVE_ON_SET:
 			_save()

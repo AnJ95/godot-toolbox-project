@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/screens/ScreenOptionsAudioMenu.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/menu/MenuSlider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=6]
 
 [node name="ScreenOptionsAudioMenu" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 4 )]
 
@@ -53,4 +53,37 @@ margin_top = 64.0
 margin_right = 584.0
 margin_bottom = 420.0
 size_flags_vertical = 3
-menu_items = [ [ "slider", "Master Volume", "volumeMaster", "settingsAudio.Master", "0", "100", "1" ], [ "slider", "Music Volume", "volumeMusic", "settingsAudio.Music", "0", "100", "1" ], [ "slider", "Effects Volume", "volumeEffects", "settingsAudio.Effects", "0", "100", "1" ], [ "button", "Back", "back" ] ]
+
+[node name="MenuSlider" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 584.0
+margin_bottom = 71.0
+caption = "Master Volume"
+persistence_uid_path = "settingsAudio.Master"
+
+[node name="MenuSlider2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 95.0
+margin_right = 584.0
+margin_bottom = 166.0
+caption = "Music Volume"
+persistence_uid_path = "settingsAudio.Music"
+
+[node name="MenuSlider3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 190.0
+margin_right = 584.0
+margin_bottom = 261.0
+caption = "Effects Volume"
+persistence_uid_path = "settingsAudio.Effects"
+
+[node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="3" instance=ExtResource( 6 )]
+margin_top = 285.0
+margin_right = 584.0
+margin_bottom = 356.0
+text = "Back"
+pushes_screen = false
+pops_screen = true

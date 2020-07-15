@@ -4,10 +4,9 @@
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://scenes/screens/ScreenMainMenu.gd" type="Script" id=5]
+[ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=6]
 
 [node name="ScreenMainMenu" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -52,3 +51,23 @@ margin_top = 235.0
 margin_right = 584.0
 margin_bottom = 420.0
 size_flags_vertical = 3
+
+[node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 6 )]
+margin_right = 584.0
+margin_bottom = 45.0
+text = "Start Game"
+
+[node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
+margin_top = 69.0
+margin_right = 584.0
+margin_bottom = 114.0
+text = "Settings"
+screen_to_switch_to = 3
+
+[node name="MenuButton3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 6 )]
+margin_top = 138.0
+margin_right = 584.0
+margin_bottom = 183.0
+text = "Quit Game"
+pushes_screen = false
+quits_game = true
