@@ -27,6 +27,7 @@ ScrnMngr="*res://scripts/globals/ScreenManager.gd"
 Sgn="*res://scripts/globals/Signal.gd"
 S="*res://scripts/globals/State.gd"
 C="*res://scripts/globals/Config.gd"
+PersistenceManager="*res://scripts/globals/PersistenceManager.gd"
 
 [rendering]
 
