@@ -1,9 +1,10 @@
+tool
 extends Node
 
 ####################################################################
 # CONSTANTS
 enum LogCategory {
-	SCREEN_MANAGER, MENU, MAP, GAME, STATE, SIGNAL, PLAYER
+	SCREEN_MANAGER, MENU, PERSISTENCE, MAP, GAME, STATE, SIGNAL, PLAYER
 }
 enum LogLevel {
 	INFO, WARN, ERROR
@@ -53,3 +54,9 @@ func l(log_categ, objs_to_print, log_level=LogLevel.INFO):
 		print(result_str)
 	else:
 		print(result_str)
+		
+func w(log_categ, objs_to_print):
+	l(log_categ, objs_to_print, LogLevel.WARN)
+
+func e(log_categ, objs_to_print):
+	l(log_categ, objs_to_print, LogLevel.ERROR)
