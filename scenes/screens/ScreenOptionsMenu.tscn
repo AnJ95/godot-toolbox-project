@@ -58,6 +58,7 @@ margin_right = 584.0
 margin_bottom = 52.0
 text = "Video Settings"
 screen_to_switch_to = 4
+grabs_focus = true
 
 [node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
 margin_top = 76.0

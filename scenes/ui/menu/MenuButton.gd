@@ -14,6 +14,14 @@ export(bool) var pops_screen = false
 # Determines wether to quit the game on click
 export(bool) var quits_game = false
 
+# Determines wether to put initial focus on this button
+export(bool) var grabs_focus = false
+
+
+func _ready():
+	if grabs_focus:
+		grab_focus()
+
 #############################################################
 # CALLBACKS
 func _on_MenuButton_pressed():
