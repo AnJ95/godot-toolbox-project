@@ -33,4 +33,17 @@ func _on_settingsAudio_update(settingsAudio):
 			AudioServer.set_bus_volume_db(idx, db)
 			
 func _on_settingsControls_update(settingsControls):
-	print(settingsControls)
+	for input_action in settingsControls.keys():
+		var scancode = settingsControls[input_action]
+		
+		# Add this keybind in case it doesn't exist
+		if !InputMap.has_action(input_action):
+			InputMap.add_action(input_action)
+			
+		# Erase any already bound events from this input_action
+		InputMap.action_erase_events(input_action)
+		
+		# Add new event to input_action
+		var key_event = InputEventKey.new()
+		key_event.set_scancode(scancode)
+		InputMap.action_add_event(input_action, key_event)
