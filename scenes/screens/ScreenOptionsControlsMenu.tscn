@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ui/menu/MenuControlButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=7]
 
 [node name="ScreenOptionsControlsMenu" instance=ExtResource( 1 )]
 
@@ -12,111 +14,98 @@
 
 [node name="MenuLayer" type="CanvasLayer" parent="." index="1"]
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuLayer" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="UIBox" parent="MenuLayer" index="0" instance=ExtResource( 6 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox" index="0"]
 margin_left = 220.0
-margin_top = 90.0
-margin_right = -220.0
-margin_bottom = -90.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/MarginContainer" index="0"]
-margin_right = 584.0
-margin_bottom = 420.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/MarginContainer/HBoxContainer" index="0"]
-margin_right = 584.0
-margin_bottom = 420.0
+margin_top = 80.0
+margin_right = 804.0
+margin_bottom = 520.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_right = 584.0
-margin_bottom = 14.0
-text = "CONTROLS"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Menu" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
+[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer" index="0" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
 margin_right = 584.0
-margin_bottom = 420.0
+margin_bottom = 31.0
+text = "CONTROLS"
+
+[node name="Menu" parent="MenuLayer/UIBox/VBoxContainer" index="1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 35.0
+margin_right = 584.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MenuControlButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 5 )]
+[node name="MenuControlButton" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="0" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 584.0
-margin_bottom = 30.0
+margin_bottom = 33.0
 caption = "Left"
 persistence_uid_path = "settingsControls.Left"
 input_action_name = "left"
 
-[node name="MenuControlButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 5 )]
+[node name="MenuControlButton2" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="1" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 54.0
+margin_top = 37.0
 margin_right = 584.0
-margin_bottom = 84.0
+margin_bottom = 70.0
 caption = "Right"
 persistence_uid_path = "settingsControls.Right"
 input_action_name = "right"
 
-[node name="MenuControlButton3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 5 )]
+[node name="MenuControlButton3" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="2" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 108.0
+margin_top = 74.0
 margin_right = 584.0
-margin_bottom = 138.0
+margin_bottom = 107.0
 caption = "Up"
 persistence_uid_path = "settingsControls.Up"
 input_action_name = "up"
 
-[node name="MenuControlButton4" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="3" instance=ExtResource( 5 )]
+[node name="MenuControlButton4" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="3" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 162.0
+margin_top = 111.0
 margin_right = 584.0
-margin_bottom = 192.0
+margin_bottom = 144.0
 caption = "Down"
 persistence_uid_path = "settingsControls.Down"
 input_action_name = "down"
 
-[node name="MenuControlButton5" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="4" instance=ExtResource( 5 )]
+[node name="MenuControlButton5" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="4" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 216.0
+margin_top = 148.0
 margin_right = 584.0
-margin_bottom = 246.0
+margin_bottom = 181.0
 caption = "Jump"
 persistence_uid_path = "settingsControls.Jump"
 input_action_name = "jump"
 
-[node name="MenuControlButton6" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="5" instance=ExtResource( 5 )]
+[node name="MenuControlButton6" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="5" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 270.0
+margin_top = 185.0
 margin_right = 584.0
-margin_bottom = 300.0
+margin_bottom = 218.0
 caption = "Interact"
 persistence_uid_path = "settingsControls.Interact"
 input_action_name = "interact"
 
-[node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="6" instance=ExtResource( 2 )]
-margin_top = 324.0
+[node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="6" instance=ExtResource( 2 )]
+margin_top = 222.0
 margin_right = 584.0
-margin_bottom = 354.0
+margin_bottom = 255.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

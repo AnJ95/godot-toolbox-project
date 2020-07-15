@@ -5,8 +5,6 @@
 [node name="Menu" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/vseparation = 24
-custom_constants/hseparation = 24
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

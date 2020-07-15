@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=6]
 
 [node name="ScreenMainMenu" instance=ExtResource( 1 )]
@@ -19,6 +20,7 @@ margin_left = 220.0
 margin_top = 90.0
 margin_right = -220.0
 margin_bottom = -90.0
+theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

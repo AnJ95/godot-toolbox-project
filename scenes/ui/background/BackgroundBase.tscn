@@ -6,7 +6,7 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.435294, 0.435294, 0.435294, 1 )
+color = Color( 0.52549, 0.662745, 0.686275, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

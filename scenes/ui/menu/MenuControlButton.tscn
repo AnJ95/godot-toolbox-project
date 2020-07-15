@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/ui/menu/MenuControlButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
 
 [node name="MenuControlButton" type="HBoxContainer" groups=[
 "MenuControlButton",
@@ -11,26 +12,28 @@ margin_right = 12.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 516.0
+margin_right = 512.0
 margin_bottom = 620.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Jump"
+size_flags_vertical = 1
+text = "None"
 valign = 1
 
 [node name="Button" type="Button" parent="."]
-margin_left = 520.0
+margin_left = 524.0
+margin_top = 293.0
 margin_right = 1036.0
-margin_bottom = 620.0
+margin_bottom = 326.0
 focus_mode = 0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 toggle_mode = true
 enabled_focus_mode = 0
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

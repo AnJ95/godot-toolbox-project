@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 
 [node name="ScreenOptionsMenu" instance=ExtResource( 1 )]
 
@@ -18,6 +20,7 @@ margin_left = 220.0
 margin_top = 90.0
 margin_right = -220.0
 margin_bottom = -90.0
+theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,56 +38,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+[node name="LabelBig" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="0" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 584.0
-margin_bottom = 14.0
+margin_bottom = 31.0
 text = "SETTINGS"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Menu" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
+margin_top = 81.0
 margin_right = 584.0
 margin_bottom = 420.0
 size_flags_vertical = 3
 
 [node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 4 )]
 margin_right = 584.0
-margin_bottom = 52.0
+margin_bottom = 58.0
 text = "Video Settings"
 screen_to_switch_to = 4
 grabs_focus = true
 
 [node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
-margin_top = 76.0
+margin_top = 70.0
 margin_right = 584.0
 margin_bottom = 128.0
 text = "Audio Settings"
 screen_to_switch_to = 5
 
 [node name="MenuButton5" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 4 )]
-margin_top = 152.0
+margin_top = 140.0
 margin_right = 584.0
-margin_bottom = 204.0
+margin_bottom = 198.0
 text = "Controls"
 screen_to_switch_to = 6
 
 [node name="MenuButton3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="3" instance=ExtResource( 4 )]
-margin_top = 228.0
+margin_top = 210.0
 margin_right = 584.0
-margin_bottom = 280.0
+margin_bottom = 268.0
 text = "About"
 screen_to_switch_to = 2
 
 [node name="MenuButton4" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="4" instance=ExtResource( 4 )]
-margin_top = 304.0
+margin_top = 280.0
 margin_right = 584.0
-margin_bottom = 356.0
+margin_bottom = 338.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
