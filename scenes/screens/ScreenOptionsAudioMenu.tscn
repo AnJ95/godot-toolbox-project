@@ -53,4 +53,4 @@ margin_top = 64.0
 margin_right = 584.0
 margin_bottom = 420.0
 size_flags_vertical = 3
-menu_items = [ [ "slider", "Master Volume", "volumeMaster", "100", "0", "100", "1" ], [ "slider", "Music Volume", "volumeMusic", "100", "0", "100", "1" ], [ "slider", "Effects Volume", "volumeEffects", "100", "0", "100", "1" ], [ "button", "Back", "back" ] ]
+menu_items = [ [ "slider", "Master Volume", "volumeMaster", "settingsAudio.Master", "0", "100", "1" ], [ "slider", "Music Volume", "volumeMusic", "settingsAudio.Music", "0", "100", "1" ], [ "slider", "Effects Volume", "volumeEffects", "settingsAudio.Effects", "0", "100", "1" ], [ "button", "Back", "back" ] ]
