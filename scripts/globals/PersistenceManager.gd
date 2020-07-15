@@ -27,20 +27,30 @@ func get_val(uid:String):
 # Gets a saved state of a PersistenceObject from a given uid path,
 # for example:	var master = get_val_from_ui_path("settingsAudio.Master")
 func get_val_from_ui_path(uid_path:String):
+	
 	var nodes = uid_path.split(".")
-	if nodes.size() > 0:
-		var val = get_val(nodes[0])
-		for i in range(1, nodes.size()):
-			var node = nodes[i]
-			if val.has(node):
-				val = val[node]
-			else:
-				D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid path, invalid Node in Path [", "UID-Path:", uid_path, ",", "Node:", node, "]" ])
-				break
-		return val
-	else:
+	
+	# Cancel if uid_path has length 0
+	if nodes.size() == 0:
 		D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid path [", "UID-Path:", uid_path, "]" ])
 		return null
+	
+	# Cancel if uid_paths first node doesnt exists
+	var val = get_val(nodes[0])
+	if val == null:
+		D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid path, invalid Node in Path [", "UID-Path:", uid_path, ",", "Node:", nodes[0], "]" ])
+		return null
+	
+	# Iterate through json
+	for i in range(1, nodes.size()):
+		var node = nodes[i]
+		if val.has(node):
+			val = val[node]
+		else:
+			D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid path, invalid Node in Path [", "UID-Path:", uid_path, ",", "Node:", node, "]" ])
+			return null
+	return val
+	
 
 #############################################################
 # SETTERS
@@ -177,6 +187,11 @@ class PersistentObj:
 	#	* Loads from a File if not existent
 	#	* Uses a default value otherwise
 	func get_val():
+		
+		# Prevent actual loading in EditorMode, and just use default
+		if Engine.is_editor_hint():
+			val = default
+		
 		# 1: Try if local reference exists
 		if val != null:
 			pass
