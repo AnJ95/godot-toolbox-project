@@ -17,7 +17,10 @@ export(String) var persistence_uid_path = "none"
 
 export(int) var value_min = 0
 export(int) var value_max = 100
-export(int) var value_step = 1
+export(int) var value_step = 5
+
+# Determines wether to put initial focus on this button
+export(bool) var grabs_focus = false
 
 #############################################################
 # LIFECYCLE
@@ -28,6 +31,9 @@ func _ready():
 	slider.max_value = int(value_max)
 	slider.step = int(value_step)
 	slider.value = PersistenceManager.get_val_from_ui_path(persistence_uid_path)
+	
+	if grabs_focus:
+		slider.grab_focus()
 
 #############################################################
 # CALLBACKS	

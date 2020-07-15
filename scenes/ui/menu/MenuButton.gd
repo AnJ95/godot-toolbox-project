@@ -17,7 +17,8 @@ export(bool) var quits_game = false
 # Determines wether to put initial focus on this button
 export(bool) var grabs_focus = false
 
-
+#############################################################
+# LIFECYCLE
 func _ready():
 	if grabs_focus:
 		grab_focus()

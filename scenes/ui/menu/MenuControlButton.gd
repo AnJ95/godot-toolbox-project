@@ -16,6 +16,9 @@ export(String) var caption = "None"
 export(String) var persistence_uid_path = "none"
 export(String) var input_action_name = "none"
 
+# Determines wether to put initial focus on this button
+export(bool) var grabs_focus = false
+
 #############################################################
 # STATE
 var scancode
@@ -29,7 +32,8 @@ func _ready():
 	label.text = caption
 	button.text = OS.get_scancode_string(scancode)
 	
-	return self
+	if grabs_focus:
+		button.grab_focus()
 
 #############################################################
 # AWAITING CONDITION

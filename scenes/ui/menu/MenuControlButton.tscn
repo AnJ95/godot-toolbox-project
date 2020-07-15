@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 margin_right = 12.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -28,12 +27,10 @@ valign = 1
 
 [node name="Button" type="Button" parent="."]
 margin_left = 524.0
-margin_top = 293.0
+margin_top = 292.0
 margin_right = 1036.0
-margin_bottom = 326.0
-focus_mode = 0
+margin_bottom = 327.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 toggle_mode = true
-enabled_focus_mode = 0
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
