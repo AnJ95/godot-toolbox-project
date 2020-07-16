@@ -21,6 +21,7 @@ func _ready():
 		"Jump" : 32,
 		"PrevDemo" : 81,
 		"NextDemo" : 69,
+		"Pause" : 80,
 		"Interact" : 16777221
 	})
 	settingsControls.connect("changed", self, "_on_settingsControls_update")

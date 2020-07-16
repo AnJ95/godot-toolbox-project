@@ -33,4 +33,4 @@ func _on_MenuButton_pressed():
 		ScrnMngr.push_screen(screen_to_switch_to)
 		
 	if quits_game:
-		get_tree().quit()
+		ScrnMngr.exit_game()

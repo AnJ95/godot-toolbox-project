@@ -60,3 +60,6 @@ func pop_screen():
 	screen_history.pop_front()
 	if ___enter_screen(screen_history[0]):
 		return true
+
+func exit_game():
+	get_tree().quit()

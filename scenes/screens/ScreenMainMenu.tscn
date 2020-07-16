@@ -56,21 +56,21 @@ size_flags_vertical = 3
 
 [node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 6 )]
 margin_right = 584.0
-margin_bottom = 45.0
+margin_bottom = 35.0
 text = "Start Game"
 grabs_focus = true
 
 [node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
-margin_top = 69.0
+margin_top = 51.0
 margin_right = 584.0
-margin_bottom = 114.0
+margin_bottom = 86.0
 text = "Settings"
 screen_to_switch_to = 3
 
 [node name="MenuButton3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 6 )]
-margin_top = 138.0
+margin_top = 102.0
 margin_right = 584.0
-margin_bottom = 183.0
+margin_bottom = 137.0
 text = "Quit Game"
 pushes_screen = false
 quits_game = true

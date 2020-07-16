@@ -49,11 +49,13 @@ func start_level(level):
 	# Start Level
 	Sgn.emit_signal("level_started", level)
 
-func _process_level(delta):
-	
+func _process_level(_delta):
 	# Switch Level with Q and E keys
 	var last_level_id = cur_level_id
-	if Input.is_action_just_pressed("PrevDemo"):		cur_level_id = max(cur_level_id-1, 0)
-	if Input.is_action_just_pressed("NextDemo"):		cur_level_id = min(cur_level_id+1, levels.size()-1)
+	if Input.is_action_just_pressed("PrevDemo"):		cur_level_id -= 1
+	if Input.is_action_just_pressed("NextDemo"):		cur_level_id += 1
+	cur_level_id = clamp(cur_level_id, 0, levels.size()-1)
+	
 	if last_level_id != cur_level_id:
-		start_level(levels[cur_level_id])	
+		start_level(levels[cur_level_id])
+
