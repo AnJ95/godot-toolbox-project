@@ -55,36 +55,36 @@ size_flags_vertical = 3
 
 [node name="MenuButton" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 4 )]
 margin_right = 584.0
-margin_bottom = 35.0
+margin_bottom = 47.0
 text = "Video Settings"
 screen_to_switch_to = 4
 grabs_focus = true
 
 [node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
-margin_top = 47.0
+margin_top = 63.0
 margin_right = 584.0
-margin_bottom = 82.0
+margin_bottom = 110.0
 text = "Audio Settings"
 screen_to_switch_to = 5
 
 [node name="MenuButton5" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 4 )]
-margin_top = 94.0
+margin_top = 126.0
 margin_right = 584.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 text = "Controls"
 screen_to_switch_to = 6
 
 [node name="MenuButton3" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="3" instance=ExtResource( 4 )]
-margin_top = 141.0
+margin_top = 189.0
 margin_right = 584.0
-margin_bottom = 176.0
+margin_bottom = 236.0
 text = "About"
 screen_to_switch_to = 2
 
 [node name="MenuButton4" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="4" instance=ExtResource( 4 )]
-margin_top = 188.0
+margin_top = 252.0
 margin_right = 584.0
-margin_bottom = 223.0
+margin_bottom = 299.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

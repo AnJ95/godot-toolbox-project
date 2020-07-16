@@ -36,9 +36,9 @@ margin_bottom = 31.0
 text = "PAUSE"
 
 [node name="ReturnButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
-margin_top = 43.0
+margin_top = 47.0
 margin_right = 434.0
-margin_bottom = 90.0
+margin_bottom = 94.0
 focus_mode = 0
 size_flags_horizontal = 3
 enabled_focus_mode = 0
@@ -48,9 +48,9 @@ __meta__ = {
 }
 
 [node name="MenuButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
-margin_top = 102.0
+margin_top = 110.0
 margin_right = 434.0
-margin_bottom = 149.0
+margin_bottom = 157.0
 focus_mode = 0
 size_flags_horizontal = 3
 enabled_focus_mode = 0
@@ -60,9 +60,9 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
-margin_top = 161.0
+margin_top = 173.0
 margin_right = 434.0
-margin_bottom = 208.0
+margin_bottom = 220.0
 focus_mode = 0
 size_flags_horizontal = 3
 enabled_focus_mode = 0
@@ -70,6 +70,16 @@ text = "Quit Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InvisibleWall" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="InvisibleWall" to="." method="_on_InvisibleWall_pressed"]

@@ -23,6 +23,10 @@ func _ready():
 	if grabs_focus:
 		grab_focus()
 
+func _process(delta):
+	if pops_screen and Input.is_action_just_pressed("ui_cancel"):
+		_on_MenuButton_pressed()
+		
 #############################################################
 # CALLBACKS
 func _on_MenuButton_pressed():

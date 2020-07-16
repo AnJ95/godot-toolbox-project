@@ -35,7 +35,7 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="MenuLayer/MarginContainer/VBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 373.0
+margin_bottom = 357.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -56,9 +56,9 @@ margin_bottom = 31.0
 text = "Created by"
 
 [node name="Label2" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="1"]
-margin_top = 43.0
+margin_top = 47.0
 margin_right = 467.0
-margin_bottom = 72.0
+margin_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau"
@@ -67,15 +67,15 @@ valign = 1
 [node name="LabelBig2" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="2" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 84.0
+margin_top = 90.0
 margin_right = 467.0
-margin_bottom = 115.0
+margin_bottom = 121.0
 text = "Sprites by"
 
 [node name="Label3" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="3"]
-margin_top = 127.0
+margin_top = 137.0
 margin_right = 467.0
-margin_bottom = 156.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau"
@@ -84,15 +84,15 @@ valign = 1
 [node name="LabelBig3" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="4" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 168.0
+margin_top = 180.0
 margin_right = 467.0
-margin_bottom = 199.0
+margin_bottom = 211.0
 text = "Art by"
 
 [node name="Label5" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="5"]
-margin_top = 211.0
+margin_top = 227.0
 margin_right = 467.0
-margin_bottom = 298.0
+margin_bottom = 314.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau
@@ -103,13 +103,13 @@ valign = 1
 [node name="Menu" parent="MenuLayer/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 385.0
+margin_top = 373.0
 margin_right = 584.0
 margin_bottom = 420.0
 
 [node name="MenuButton3" parent="MenuLayer/MarginContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 6 )]
 margin_right = 584.0
-margin_bottom = 35.0
+margin_bottom = 47.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
