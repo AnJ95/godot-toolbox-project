@@ -26,7 +26,8 @@ func _ready():
 	settingsControls.connect("changed", self, "_on_settingsControls_update")
 	PersistenceManager.add_obj(settingsControls)
 	
-	# Inititally configure controls
+	# Inititally configure audio and controls
+	settingsAudio.trigger_update()
 	settingsControls.trigger_update()
 
 

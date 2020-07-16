@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/entities/Entity.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 5.0
+height = 5.0
+
+[node name="Entity" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -7.5 )
+shape = SubResource( 20 )

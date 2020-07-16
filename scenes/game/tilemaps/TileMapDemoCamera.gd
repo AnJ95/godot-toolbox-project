@@ -18,13 +18,11 @@ func open_demo(demo):
 	var vp_size = get_viewport_rect().size / ctrans.get_scale()
 	var vp:Rect2 = Rect2(vp_pos, vp_size)
 	
-	print("#############")
-	print(demo.name)
-	print(rect)
-	print(vp)
+	D.l("Demos", ["Execution demo", demo.name])
 	
-	
-	zoom = rect.size / get_viewport_rect().size#vp_size
+	zoom = rect.size / get_viewport_rect().size
+	if zoom.x > zoom.y: zoom.y = zoom.x
+	if zoom.y > zoom.x: zoom.x = zoom.y
 	offset = rect.position + rect.size / 2
 	
 	
