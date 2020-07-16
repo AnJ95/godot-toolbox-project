@@ -2,7 +2,6 @@ extends Node2D
 
 #############################################################
 # NODES
-onready var background = $GameBackground
 onready var ui = $GameUI
 onready var pause = $GamePause
 
@@ -23,7 +22,7 @@ func _ready():
 	
 	Sgn.emit_signal("game_started")
 	
-	levels = get_tree().get_nodes_in_group("TileMapDemo")
+	levels = get_tree().get_nodes_in_group("Level")
 	start_level(levels[cur_level_id])
 
 func _process(delta):
@@ -41,8 +40,9 @@ func _on_game_ended():
 func _on_game_paused(pause_on):
 	D.l("Game", ["Game paused", pause_on])
 	
-func _on_level_started(root:Node):
-	D.l("Game", ["Level started [", "RootNode:", root.name, "]"])
+func _on_level_started(level:Node):
+	if !level.camera_on_player: $Demo/LevelCamera.current = true
+	D.l("Game", ["Level started [", "Level:", level.name, "]"])
 	
 #############################################################
 # LEVEL 

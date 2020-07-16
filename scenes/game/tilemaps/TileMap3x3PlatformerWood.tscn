@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_3x3.png" type="Texture" id=1]
-[ext_resource path="res://scenes/game/tilemaps/TileMapDemo.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -458,6 +458,16 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [node name="TileMap3x3PlatformerWood" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -106.0
+margin_top = -62.0
+margin_right = 488.0
+margin_bottom = 328.0
+color = Color( 0.304047, 0.446512, 0.632812, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = SubResource( 49 )

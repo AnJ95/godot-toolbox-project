@@ -58,7 +58,7 @@ text = "Created by"
 [node name="Label2" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="1"]
 margin_top = 47.0
 margin_right = 467.0
-margin_bottom = 74.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau"
@@ -67,15 +67,15 @@ valign = 1
 [node name="LabelBig2" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="2" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 90.0
+margin_top = 100.0
 margin_right = 467.0
-margin_bottom = 121.0
+margin_bottom = 131.0
 text = "Sprites by"
 
 [node name="Label3" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="3"]
-margin_top = 137.0
+margin_top = 147.0
 margin_right = 467.0
-margin_bottom = 164.0
+margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau"
@@ -84,20 +84,18 @@ valign = 1
 [node name="LabelBig3" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="4" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 180.0
+margin_top = 200.0
 margin_right = 467.0
-margin_bottom = 211.0
-text = "Art by"
+margin_bottom = 231.0
+text = "Character Art"
 
 [node name="Label5" type="Label" parent="MenuLayer/MarginContainer/VBoxContainer/Panel/VBoxContainer" index="5"]
-margin_top = 227.0
+margin_top = 247.0
 margin_right = 467.0
-margin_bottom = 314.0
+margin_bottom = 285.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Tommy Wiseau
-Tommy Wiseau
-Tommy Wiseau"
+text = "0x72"
 valign = 1
 
 [node name="Menu" parent="MenuLayer/MarginContainer/VBoxContainer" index="1" instance=ExtResource( 3 )]

@@ -1,6 +1,7 @@
 extends "Entity.gd"
 
 onready var sprite = $AnimatedSprite
+onready var camera = $LevelCamera
 
 export var die_on_level_leave = true
 
@@ -26,6 +27,8 @@ func _on_level_started(level:Node):
 	# initialize
 	global_position = level.get_player_start_pos()
 	is_dead = false
+	if level.camera_on_player: camera.current = true
+	
 	
 func _on_player_died():
 	is_dead = true
