@@ -22,7 +22,7 @@ anchor_bottom = 0.0
 margin_left = 220.0
 margin_top = 80.0
 margin_right = 804.0
-margin_bottom = 570.0
+margin_bottom = 520.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -33,83 +33,101 @@ margin_right = 584.0
 margin_bottom = 31.0
 text = "CONTROLS"
 
-[node name="MenuControlButton" parent="MenuLayer/UIBox/Menu" index="1" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/Menu" index="1"]
 margin_top = 47.0
 margin_right = 584.0
-margin_bottom = 82.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox/Menu/ScrollContainer" index="0"]
+margin_right = 552.0
+margin_bottom = 488.0
+size_flags_horizontal = 3
+
+[node name="MenuControlButton" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="0" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 552.0
+margin_bottom = 47.0
 caption = "Left"
 persistence_uid_path = "settingsControls.Left"
 grabs_focus = true
 
-[node name="MenuControlButton2" parent="MenuLayer/UIBox/Menu" index="2" instance=ExtResource( 5 )]
+[node name="MenuControlButton2" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="1" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 98.0
-margin_right = 584.0
-margin_bottom = 133.0
+margin_top = 63.0
+margin_right = 552.0
+margin_bottom = 110.0
 caption = "Right"
 persistence_uid_path = "settingsControls.Right"
+grabs_focus = false
 
-[node name="MenuControlButton3" parent="MenuLayer/UIBox/Menu" index="3" instance=ExtResource( 5 )]
+[node name="MenuControlButton3" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 149.0
-margin_right = 584.0
-margin_bottom = 184.0
+margin_top = 126.0
+margin_right = 552.0
+margin_bottom = 173.0
 caption = "Up"
 persistence_uid_path = "settingsControls.Up"
+grabs_focus = false
 
-[node name="MenuControlButton4" parent="MenuLayer/UIBox/Menu" index="4" instance=ExtResource( 5 )]
+[node name="MenuControlButton4" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="3" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 200.0
-margin_right = 584.0
-margin_bottom = 235.0
+margin_top = 189.0
+margin_right = 552.0
+margin_bottom = 236.0
 caption = "Down"
 persistence_uid_path = "settingsControls.Down"
+grabs_focus = false
 
-[node name="MenuControlButton7" parent="MenuLayer/UIBox/Menu" index="5" instance=ExtResource( 5 )]
+[node name="MenuControlButton7" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="4" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 251.0
-margin_right = 584.0
-margin_bottom = 286.0
+margin_top = 252.0
+margin_right = 552.0
+margin_bottom = 299.0
 caption = "Prev Demo"
 persistence_uid_path = "settingsControls.PrevDemo"
+grabs_focus = false
 
-[node name="MenuControlButton8" parent="MenuLayer/UIBox/Menu" index="6" instance=ExtResource( 5 )]
+[node name="MenuControlButton8" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 302.0
-margin_right = 584.0
-margin_bottom = 337.0
-caption = "Next Dem"
+margin_top = 315.0
+margin_right = 552.0
+margin_bottom = 362.0
+caption = "Next Demo"
 persistence_uid_path = "settingsControls.NextDemo"
+grabs_focus = false
 
-[node name="MenuControlButton5" parent="MenuLayer/UIBox/Menu" index="7" instance=ExtResource( 5 )]
+[node name="MenuControlButton5" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="6" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 353.0
-margin_right = 584.0
-margin_bottom = 388.0
+margin_top = 378.0
+margin_right = 552.0
+margin_bottom = 425.0
 caption = "Jump"
 persistence_uid_path = "settingsControls.Jump"
+grabs_focus = false
 
-[node name="MenuControlButton6" parent="MenuLayer/UIBox/Menu" index="8" instance=ExtResource( 5 )]
+[node name="MenuControlButton6" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="7" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 404.0
-margin_right = 584.0
-margin_bottom = 439.0
+margin_top = 441.0
+margin_right = 552.0
+margin_bottom = 488.0
 caption = "Interact"
 persistence_uid_path = "settingsControls.Interact"
+grabs_focus = false
 
-[node name="MenuButton" parent="MenuLayer/UIBox/Menu" index="9" instance=ExtResource( 2 )]
-margin_top = 455.0
+[node name="MenuButton" parent="MenuLayer/UIBox/Menu" index="2" instance=ExtResource( 2 )]
+margin_top = 393.0
 margin_right = 584.0
-margin_bottom = 490.0
+margin_bottom = 440.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

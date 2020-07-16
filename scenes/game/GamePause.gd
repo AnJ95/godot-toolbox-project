@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var pause_menu = $UIBox
+onready var pause_menu = $UIBox/Popup
 
 var is_paused = false
 

@@ -40,6 +40,8 @@ margin_right = 584.0
 margin_bottom = 79.0
 caption = "Master Volume"
 persistence_uid_path = "settingsAudio.Master"
+value_min = 0
+value_max = 100
 grabs_focus = true
 
 [node name="MenuSlider2" parent="MenuLayer/UIBox/Menu" index="2" instance=ExtResource( 5 )]
@@ -50,6 +52,9 @@ margin_right = 584.0
 margin_bottom = 127.0
 caption = "Music Volume"
 persistence_uid_path = "settingsAudio.Music"
+value_min = 0
+value_max = 100
+grabs_focus = false
 
 [node name="MenuSlider3" parent="MenuLayer/UIBox/Menu" index="3" instance=ExtResource( 5 )]
 anchor_right = 0.0
@@ -59,11 +64,14 @@ margin_right = 584.0
 margin_bottom = 175.0
 caption = "Effects Volume"
 persistence_uid_path = "settingsAudio.Effects"
+value_min = 0
+value_max = 100
+grabs_focus = false
 
 [node name="MenuButton" parent="MenuLayer/UIBox/Menu" index="4" instance=ExtResource( 6 )]
 margin_top = 191.0
 margin_right = 584.0
-margin_bottom = 226.0
+margin_bottom = 238.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
