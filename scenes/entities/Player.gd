@@ -2,21 +2,39 @@ extends "Entity.gd"
 
 onready var sprite = $AnimatedSprite
 
+export var die_on_level_leave = true
+
+var level
 var flip = false
-var jumping = false 
+var jumping = false
+var is_dead = false
 
 func _ready():
 	sprite.play()
 	
 	# Await Level start
 	Sgn.connect("level_started", self, "_on_level_started")
+	Sgn.connect("player_died", self, "_on_player_died")
+	
 
-func _on_level_started(root:Node):
+func _on_level_started(level:Node):
+	# reparent to new level
+	self.level = level
 	.get_parent().remove_child(self)
-	root.add_child(self)
-	global_position = root.get_player_start_pos()
+	level.add_child(self)
+	
+	# initialize
+	global_position = level.get_player_start_pos()
+	is_dead = false
+	
+func _on_player_died():
+	is_dead = true
+	Sgn.emit_signal("game_ended")
 	
 func _physics_process(delta):
+	if is_dead:
+		return
+		
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
 	# Slow down the player if they're not trying to move.
@@ -46,4 +64,8 @@ func _physics_process(delta):
 	if velocity.x < 0: flip = true
 	sprite.flip_h = flip
 	sprite.animation = "jump" if jumping else "walk"
+	
+	if die_on_level_leave:
+		if !level.get_map_rect().grow(50).has_point(global_position):
+			Sgn.emit_signal("player_died")
 	

@@ -36,6 +36,7 @@ func _on_game_started():
 	
 func _on_game_ended():
 	D.l("Game", ["Game ended"])
+	restart_level()
 	
 func _on_game_paused(pause_on):
 	D.l("Game", ["Game paused", pause_on])
@@ -46,8 +47,10 @@ func _on_level_started(root:Node):
 #############################################################
 # LEVEL 
 func start_level(level):
-	# Start Level
 	Sgn.emit_signal("level_started", level)
+
+func restart_level():
+	start_level(levels[cur_level_id])
 
 func _process_level(_delta):
 	# Switch Level with Q and E keys
