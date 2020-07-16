@@ -8,6 +8,14 @@ var jumping = false
 func _ready():
 	sprite.play()
 	
+	# Await Level start
+	Sgn.connect("level_started", self, "_on_level_started")
+
+func _on_level_started(root:Node):
+	.get_parent().remove_child(self)
+	root.add_child(self)
+	global_position = root.get_player_start_pos()
+	
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))

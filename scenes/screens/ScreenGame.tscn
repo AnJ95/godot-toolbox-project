@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/GameBackground.tscn" type="PackedScene" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://scenes/game/tilemaps/TileMap2x2PlatformerGrass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/game/tilemaps/TileMapDemoCamera.gd" type="Script" id=8]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/game/Game.gd" type="Script" id=10]
 
 [node name="ScreenGame" instance=ExtResource( 1 )]
+script = ExtResource( 10 )
 
 [node name="GameBackground" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -18,17 +20,19 @@
 
 [node name="GamePause" parent="." index="2" instance=ExtResource( 3 )]
 
-[node name="TileMap3x3PlatformerWood" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Demo" type="Node2D" parent="." index="3"]
 
-[node name="Player" parent="TileMap3x3PlatformerWood" index="2" instance=ExtResource( 9 )]
+[node name="TileMap3x3PlatformerWood" parent="Demo" index="0" instance=ExtResource( 5 )]
+
+[node name="Player" parent="Demo/TileMap3x3PlatformerWood" index="2" instance=ExtResource( 9 )]
 position = Vector2( 67.2012, 124.259 )
 
-[node name="TileMap2x2PlatformerGrass" parent="." index="4" instance=ExtResource( 7 )]
+[node name="TileMap2x2PlatformerGrass" parent="Demo" index="1" instance=ExtResource( 7 )]
 position = Vector2( 0, 316.573 )
 
-[node name="TileMap2x2PlatformerCave" parent="." index="5" instance=ExtResource( 6 )]
+[node name="TileMap2x2PlatformerCave" parent="Demo" index="2" instance=ExtResource( 6 )]
 position = Vector2( 0, 687.502 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="6"]
+[node name="TileMapDemoCamera" type="Camera2D" parent="Demo" index="3"]
 current = true
 script = ExtResource( 8 )

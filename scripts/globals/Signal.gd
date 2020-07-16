@@ -13,6 +13,8 @@ signal game_started
 signal game_paused(pause_on)
 signal game_ended
 
+signal level_started(root_node)
+
 # Player
 signal player_died
 
