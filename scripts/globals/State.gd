@@ -19,10 +19,15 @@ func _ready():
 		"Up" : 87,
 		"Down" : 83,
 		"Jump" : 32,
+		"PrevDemo" : 81,
+		"NextDemo" : 69,
 		"Interact" : 16777221
 	})
 	settingsControls.connect("changed", self, "_on_settingsControls_update")
 	PersistenceManager.add_obj(settingsControls)
+	
+	# Inititally configure controls
+	settingsControls.trigger_update()
 
 
 func _on_settingsAudio_update(settingsAudio):
@@ -35,6 +40,7 @@ func _on_settingsAudio_update(settingsAudio):
 			AudioServer.set_bus_volume_db(idx, db)
 			
 func _on_settingsControls_update(settingsControls):
+	D.l("Controls", ["Configured Controls to be", settingsControls])
 	for input_action in settingsControls.keys():
 		var scancode = settingsControls[input_action]
 		

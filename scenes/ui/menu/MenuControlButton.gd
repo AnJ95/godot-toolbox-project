@@ -14,7 +14,6 @@ onready var button = $Button
 # CUSTOMIZATION
 export(String) var caption = "None"
 export(String) var persistence_uid_path = "none"
-export(String) var input_action_name = "none"
 
 # Determines wether to put initial focus on this button
 export(bool) var grabs_focus = false

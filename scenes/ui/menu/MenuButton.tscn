@@ -6,8 +6,10 @@
 [node name="MenuButton" type="Button"]
 margin_right = 12.0
 margin_bottom = 20.0
+focus_mode = 0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
+enabled_focus_mode = 0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
