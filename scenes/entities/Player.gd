@@ -66,7 +66,14 @@ func _physics_process(delta):
 	if velocity.x > 0: flip = false
 	if velocity.x < 0: flip = true
 	sprite.flip_h = flip
-	sprite.animation = "jump" if jumping else "walk"
+	if jumping:
+		sprite.animation = "jump"
+	else:
+		if abs(velocity.x) > 0.1:
+			sprite.animation = "walk"
+		else:
+			sprite.animation = "idle"
+
 	
 	if die_on_level_leave:
 		if !level.get_map_rect().grow(50).has_point(global_position):
