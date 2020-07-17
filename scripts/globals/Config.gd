@@ -8,6 +8,7 @@ extends Node
 # Global switch for debug mode
 var is_debug = true
 
+var remove_all_saves = false
 
 ####################################################################
 # LOGGING

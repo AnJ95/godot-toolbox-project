@@ -19,6 +19,10 @@ extends Node
 
 var _objs = {}
 
+func _ready():
+	if C.remove_all_saves:
+		for obj in _objs.values():
+			obj._remove_save()
 #############################################################
 # GETTERS
 
@@ -159,6 +163,12 @@ class PersistentObj:
 	func _does_save_exist()->bool:
 		var dir:Directory = Directory.new()
 		return dir.file_exists(_get_save_path())
+	
+	func _remove_save():
+		if _does_save_exist():
+			var dir:Directory = Directory.new()
+			dir.remove(_get_save_path())
+			val = default
 	
 	func _to_string()->String:
 		return JSON.print(val)
