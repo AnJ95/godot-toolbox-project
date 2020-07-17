@@ -3,7 +3,11 @@ extends Node2D
 onready var ref_rect:ReferenceRect = $ReferenceRect
 onready var start_pos:Vector2 = $StartPoint.global_position
 
-export var camera_on_player:bool = false
+const LevelCamera = preload("res://scenes/game/level/LevelCamera.gd")
+const Player = preload("res://scenes/entities/Player.gd")
+
+export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.StaticZoomed
+export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
 
 func _ready():
 	add_to_group("Level")
@@ -15,3 +19,9 @@ func get_map_rect()->Rect2:
 
 func get_player_start_pos()->Vector2:
 	return start_pos
+	
+func camera_type():
+	return camera_type
+
+func get_control_scheme():
+	return control_scheme

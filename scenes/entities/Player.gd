@@ -3,6 +3,12 @@ extends "Entity.gd"
 onready var sprite = $AnimatedSprite
 onready var camera = $LevelCamera
 
+enum ControlScheme {
+	Platformer,
+	TopView
+}
+
+export var control_scheme = ControlScheme.Platformer
 export var die_on_level_leave = true
 
 var level
@@ -19,16 +25,19 @@ func _ready():
 	
 
 func _on_level_started(level:Node):
-	# reparent to new level
+	# Reparent to new level
 	self.level = level
 	.get_parent().remove_child(self)
 	level.add_child(self)
 	
-	# initialize
-	global_position = level.get_player_start_pos()
+	# Reset
 	is_dead = false
-	if level.camera_on_player: camera.current = true
 	
+	# Initialize using level
+	# start pos
+	global_position = level.get_player_start_pos()
+	# control scheme
+	control_scheme = level.get_control_scheme()
 	
 func _on_player_died():
 	is_dead = true

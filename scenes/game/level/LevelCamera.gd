@@ -1,20 +1,27 @@
 extends Camera2D
 
-export var zoom_to_level = true
-export var offset_to_level = true
+enum CameraType {
+	StaticZoomed,
+	FollowPlayerZoomed
+}
+export(CameraType) var camera_type = CameraType.FollowPlayerZoomed
 
 func _ready():
 	Sgn.connect("level_started", self, "_on_level_started")
 
 func _on_level_started(level):
-	var rect = level.get_map_rect()
-	# Adjust Camera
-	if zoom_to_level:
+	
+	# Check if this camera is required
+	current = level.camera_type == camera_type
+	
+	# Adjust Camera Settings
+	if camera_type == CameraType.StaticZoomed:
+		var rect = level.get_map_rect()
+		
 		zoom = rect.size / get_viewport_rect().size
 		if zoom.x > zoom.y: zoom.y = zoom.x
 		if zoom.y > zoom.x: zoom.x = zoom.y
-		
-	if offset_to_level:
+
 		offset = rect.position + rect.size / 2
-	else:
-		offset = Vector2()
+	
+

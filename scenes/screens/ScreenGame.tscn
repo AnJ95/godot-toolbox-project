@@ -39,3 +39,4 @@ position = Vector2( 407.357, 244.825 )
 visible = false
 current = true
 script = ExtResource( 8 )
+camera_type = 0

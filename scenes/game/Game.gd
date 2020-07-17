@@ -41,7 +41,6 @@ func _on_game_paused(pause_on):
 	D.l("Game", ["Game paused", pause_on])
 	
 func _on_level_started(level:Node):
-	if !level.camera_on_player: $Demo/LevelCamera.current = true
 	D.l("Game", ["Level started [", "Level:", level.name, "]"])
 	
 #############################################################

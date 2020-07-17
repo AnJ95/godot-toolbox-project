@@ -81,4 +81,3 @@ animation = "idle"
 
 [node name="LevelCamera" type="Camera2D" parent="." index="2"]
 script = ExtResource( 4 )
-offset_to_level = false
