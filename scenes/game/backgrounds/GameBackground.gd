@@ -5,8 +5,6 @@ func _ready():
 
 func _on_level_started(level:Node):
 	
-	print(get_parent() )
-	print(level)
 	if get_parent() == level:
 		show()
 	else:

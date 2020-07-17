@@ -1,0 +1,197 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0053.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0086.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0087.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0169.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0052.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0045.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0198.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0207.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0014.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0228.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0172.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0064.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0055.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0072.png" type="Texture" id=15]
+
+[sub_resource type="TileSet" id=1]
+0/name = "isometric_pixel_0053.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 50, 50 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "isometric_pixel_0086.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 50, 50 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "isometric_pixel_0087.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 50, 50 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "isometric_pixel_0169.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 50, 50 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "isometric_pixel_0052.png 4"
+4/texture = ExtResource( 6 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 50, 50 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "isometric_pixel_0045.png 5"
+5/texture = ExtResource( 7 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 50, 50 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "isometric_pixel_0014.png 6"
+6/texture = ExtResource( 10 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 50, 50 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "isometric_pixel_0228.png 7"
+7/texture = ExtResource( 11 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 50, 50 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+8/name = "isometric_pixel_0207.png 8"
+8/texture = ExtResource( 9 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 50, 50 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+8/z_index = 0
+9/name = "isometric_pixel_0198.png 9"
+9/texture = ExtResource( 8 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 50, 50 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shapes = [  ]
+9/z_index = 0
+10/name = "isometric_pixel_0172.png 10"
+10/texture = ExtResource( 12 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 50, 50 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [  ]
+10/z_index = 0
+11/name = "isometric_pixel_0064.png 11"
+11/texture = ExtResource( 13 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 50, 50 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shapes = [  ]
+11/z_index = 0
+12/name = "isometric_pixel_0055.png 12"
+12/texture = ExtResource( 14 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 50, 50 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shapes = [  ]
+12/z_index = 0
+13/name = "isometric_pixel_0072.png 13"
+13/texture = ExtResource( 15 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 50, 50 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shapes = [  ]
+13/z_index = 0
+
+[node name="TileMapIso" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -106.0
+margin_top = -62.0
+margin_right = 769.0
+margin_bottom = 484.0
+color = Color( 0.468325, 0.65, 0.3965, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Terrain" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 47, 13 )
+cell_half_offset = 0
+format = 1
+tile_data = PoolIntArray( 65544, 12, 0, 65545, 6, 0, 65546, 6, 0, 131075, 6, 0, 131076, 12, 0, 131077, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 196609, 12, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 6, 0, 327686, 6, 0, 327688, 12, 0, 327689, 6, 0, 327690, 12, 0, 393217, 6, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 6, 0, 393222, 6, 0, 393224, 13, 0, 393225, 6, 0, 458752, 6, 0, 458753, 2, 0, 458754, 11, 0, 458755, 11, 0, 458756, 2, 0, 458757, 6, 0, 458758, 6, 0, 458759, 13, 0, 458761, 13, 0, 524288, 12, 0, 524289, 2, 0, 524290, 11, 0, 524291, 11, 0, 524292, 2, 0, 524293, 6, 0, 524294, 6, 0, 524295, 13, 0, 524298, 13, 0, 589824, 6, 0, 589825, 11, 0, 589826, 11, 0, 589827, 11, 0, 589828, 2, 0, 589829, 6, 0, 589830, 12, 0, 589834, 6, 0, 655360, 6, 0, 655361, 2, 0, 655362, 11, 0, 655363, 11, 0, 655364, 2, 0, 655365, 2, 0, 655366, 6, 0, 655370, 6, 0, 655371, 6, 0, 720896, 6, 0, 720897, 11, 0, 720898, 11, 0, 720899, 11, 0, 720900, 2, 0, 720901, 6, 0, 720902, 6, 0, 720905, 6, 0, 720906, 2, 0, 720907, 6, 0, 786432, 12, 0, 786433, 2, 0, 786434, 11, 0, 786435, 11, 0, 786436, 11, 0, 786437, 2, 0, 786438, 6, 0, 786439, 6, 0, 786441, 6, 0, 786442, 2, 0, 786443, 2, 0, 786444, 6, 0, 851968, 6, 0, 851969, 2, 0, 851970, 11, 0, 851971, 11, 0, 851972, 2, 0, 851973, 2, 0, 851974, 6, 0, 851977, 6, 0, 851978, 11, 0, 851979, 2, 0, 917504, 6, 0, 917505, 6, 0, 917506, 2, 0, 917507, 11, 0, 917508, 11, 0, 917509, 2, 0, 917510, 6, 0, 917513, 6, 0, 917514, 11, 0, 917515, 11, 0, 917516, 12, 0, 983040, 6, 0, 983041, 6, 0, 983042, 2, 0, 983043, 2, 0, 983044, 2, 0, 983045, 6, 0, 983046, 6, 0, 983049, 2, 0, 983050, 11, 0, 983051, 6, 0, 1048577, 12, 0, 1048578, 6, 0, 1048579, 2, 0, 1048580, 2, 0, 1048581, 2, 0, 1048582, 6, 0, 1048585, 6, 0, 1048586, 11, 0, 1048587, 11, 0, 1048588, 6, 0, 1114113, 6, 0, 1114114, 6, 0, 1114115, 6, 0, 1114116, 2, 0, 1114117, 6, 0, 1114121, 6, 0, 1114122, 11, 0, 1114123, 6, 0, 1179650, 6, 0, 1179651, 6, 0, 1179652, 6, 0, 1179653, 6, 0, 1179654, 6, 0, 1179658, 6, 0, 1179659, 6, 0, 1179660, 6, 0, 1245186, 6, 0, 1245187, 6, 0, 1245188, 6, 0, 1245193, 6, 0, 1245194, 6, 0, 1245195, 12, 0, 1310723, 13, 0, 1310725, 13, 0, 1310730, 6, 0, 1310731, 6, 0, 1376258, 13, 0, 1376261, 13, 0, 1376265, 13, 0, 1441794, 13, 0, 1441798, 13, 0, 1441801, 13, 0, 1507328, 6, 0, 1507329, 6, 0, 1507334, 13, 0, 1507336, 13, 0, 1572864, 12, 0, 1572865, 6, 0, 1572866, 6, 0, 1572871, 13, 0, 1572872, 6, 0, 1638400, 6, 0, 1638401, 6, 0, 1638402, 6, 0, 1638407, 6, 0, 1638408, 6, 0, 1703937, 6, 0, 1703938, 6, 0, 1703943, 6, 0, 1703944, 6, 0, 1703945, 6, 0, 1769472, 6, 0, 1769473, 6, 0, 1769474, 6, 0, 1769478, 12, 0, 1769479, 6, 0, 1769480, 12, 0, 1835009, 12, 0, 1835015, 6, 0, 1835016, 6, 0 )
+
+[node name="Top" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 1 )
+cell_size = Vector2( 47, 13 )
+cell_half_offset = 0
+format = 1
+tile_data = PoolIntArray( 196608, 12, 0, 262145, 12, 0, 262147, 12, 0, 327681, 12, 0, 327682, 12, 0, 327683, 12, 0, 393218, 12, 0, 393220, 12, 0, 458756, 12, 0, 524293, 12, 0, 589828, 12, 0, 655364, 12, 0, 720899, 12, 0, 786435, 12, 0, 851971, 12, 0, 917508, 12, 0, 917509, 12, 0, 983044, 12, 0, 983045, 12, 0, 1048582, 12, 0 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 681.0
+margin_bottom = 441.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartPoint" type="Node2D" parent="."]
+position = Vector2( 67.0648, 120.18 )
