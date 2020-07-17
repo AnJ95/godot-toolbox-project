@@ -1,28 +1,48 @@
 extends "Entity.gd"
 
-onready var sprite = $AnimatedSprite
-onready var camera = $LevelCamera
+#############################################################
+# CONSTANTS
+const skins = [
+	preload("res://assets/sprites/entities/knight.png"),
+	preload("res://assets/sprites/entities/human.png"),
+	preload("res://assets/sprites/entities/wizard.png"),
+	preload("res://assets/sprites/entities/dino.png")	
+]
 
 enum ControlScheme {
 	Platformer,
 	TopDown
 }
 
+#############################################################
+# CUSTOMIZATION
 export var control_scheme = ControlScheme.Platformer
 export var die_on_level_leave = true
 
+#############################################################
+# NODES
+onready var sprite = $AnimatedSprite
+
+#############################################################
+# STATE
 var level
+
+var skin_id = 0
+
 var flip = false
 var jumping = false
 var is_dead = false
 
+#############################################################
+# LIFECYCLE
 func _ready():
 	sprite.play()
 	
 	# Await Level start
 	Sgn.connect("level_started", self, "_on_level_started")
 	Sgn.connect("player_died", self, "_on_player_died")
-	
+
+	set_skin_texture(skins[skin_id])
 
 func _on_level_started(level:Node):
 	# Reparent to new level
@@ -38,11 +58,14 @@ func _on_level_started(level:Node):
 	global_position = level.get_player_start_pos()
 	# control scheme
 	control_scheme = level.get_control_scheme()
+
 	
 func _on_player_died():
 	is_dead = true
 	Sgn.emit_signal("game_ended")
-	
+
+#############################################################
+# PROCESS	
 func _physics_process(delta):
 	if is_dead:
 		return
@@ -59,6 +82,9 @@ func _physics_process(delta):
 	# Floored / Jump
 	if control_scheme == ControlScheme.Platformer:
 		process_jump(delta)
+	
+	# Skin selection
+	process_skin(delta)
 	
 	# Sprite Animation
 	process_sprite(delta)
@@ -117,6 +143,7 @@ func process_jump(delta:float):
 			velocity.y = -JUMP_SPEED
 			jumping = true
 
+
 # Determines animation to play
 # Must be called last
 func process_sprite(delta:float):
@@ -130,3 +157,29 @@ func process_sprite(delta:float):
 			sprite.animation = "walk"
 		else:
 			sprite.animation = "idle"
+
+#############################################################
+# SKINS
+func process_skin(_delta:float):
+	var new_skin_id = skin_id
+	if Input.is_action_just_pressed("NextSkin"):		new_skin_id += 1
+	if Input.is_action_just_pressed("PrevSkin"):		new_skin_id -= 1
+	new_skin_id = clamp(new_skin_id, 0, skins.size() - 1)
+	if new_skin_id != skin_id:
+		skin_id = new_skin_id
+		set_skin_texture(skins[skin_id])
+		
+	
+func set_skin_texture(txt:Texture):
+	var frames = $AnimatedSprite.frames
+	for anim_name in frames.get_animation_names():
+		for f in range(frames.get_frame_count(anim_name)):
+			var prev_atlas = frames.get_frame(anim_name, f)
+			var atlas:AtlasTexture = AtlasTexture.new()
+
+			atlas.atlas = txt
+			atlas.margin = prev_atlas.margin
+			atlas.region = prev_atlas.region
+
+			frames.set_frame(anim_name, f, atlas)
+	

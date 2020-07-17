@@ -368,6 +368,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [node name="TileMap2x2PlatformerGrass" type="Node2D"]
 script = ExtResource( 2 )
+camera_type = 2
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = SubResource( 37 )

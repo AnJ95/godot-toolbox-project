@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex"
+path="res://.import/wizard.png-9ba24196c28825afeab95fe6f32e8bea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/human.png"
-dest_files=[ "res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex" ]
+source_file="res://assets/sprites/entities/wizard.png"
+dest_files=[ "res://.import/wizard.png-9ba24196c28825afeab95fe6f32e8bea.stex" ]
 
 [params]
 

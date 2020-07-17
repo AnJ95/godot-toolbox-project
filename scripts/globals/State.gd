@@ -19,8 +19,10 @@ func _ready():
 		"Up" : 87,
 		"Down" : 83,
 		"Jump" : 32,
-		"PrevDemo" : 81,
-		"NextDemo" : 69,
+		"PrevDemo" : 52,
+		"NextDemo" : 82,
+		"PrevSkin" : 53,
+		"NextSkin" : 84,
 		"Pause" : 80,
 		"Interact" : 16777221
 	})

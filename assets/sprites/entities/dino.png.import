@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex"
+path="res://.import/dino.png-143946fcb530b15461292a56a8825a72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/human.png"
-dest_files=[ "res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex" ]
+source_file="res://assets/sprites/entities/dino.png"
+dest_files=[ "res://.import/dino.png-143946fcb530b15461292a56a8825a72.stex" ]
 
 [params]
 

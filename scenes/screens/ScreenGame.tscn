@@ -36,7 +36,9 @@ position = Vector2( 263.722, -403.954 )
 position = Vector2( 407.357, 244.825 )
 
 [node name="LevelCamera" type="Camera2D" parent="Demo" index="5"]
-visible = false
-current = true
 script = ExtResource( 8 )
 camera_type = 0
+
+[node name="LevelCameraZoomed" type="Camera2D" parent="Demo" index="6"]
+script = ExtResource( 8 )
+camera_type = 1
