@@ -37,7 +37,30 @@ func _on_player_died():
 func _physics_process(delta):
 	if is_dead:
 		return
-		
+	
+	# Walking
+	process_walk(delta)
+	
+	# Vertical movement code. Apply gravity.
+	velocity.y += GRAVITY * delta
+
+	# Move based on the velocity and snap to the ground.
+	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+
+	# Floored / Jump
+	process_jump(delta)
+	
+	# Sprite Animation
+	process_sprite(delta)
+
+	
+	if die_on_level_leave:
+		if !level.get_map_rect().grow(50).has_point(global_position):
+			Sgn.emit_signal("player_died")
+
+# Calculates x-velocity for walking
+# Must be called before move_and_slide
+func process_walk(delta:float):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
 	# Slow down the player if they're not trying to move.
@@ -48,21 +71,21 @@ func _physics_process(delta):
 		velocity.x += walk * delta
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
-	
-	# Vertical movement code. Apply gravity.
-	velocity.y += GRAVITY * delta
 
-	# Move based on the velocity and snap to the ground.
-	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-
-	if is_on_floor() and jumping:
-		jumping = false
+# Handles floored state and triggers jump
+# Must be called after move_and_slide
+func process_jump(delta:float):
+	if is_on_floor():
+		if jumping:
+			jumping = false
 		
-	# Check for jumping. is_on_floor() must be called after movement code.
-	if is_on_floor() and Input.is_action_just_pressed("Jump"):
-		velocity.y = -JUMP_SPEED
-		jumping = true
-	
+		if Input.is_action_just_pressed("Jump"):
+			velocity.y = -JUMP_SPEED
+			jumping = true
+
+# Determines animation to play
+# Must be called last
+func process_sprite(delta:float):
 	if velocity.x > 0: flip = false
 	if velocity.x < 0: flip = true
 	sprite.flip_h = flip
@@ -73,9 +96,3 @@ func _physics_process(delta):
 			sprite.animation = "walk"
 		else:
 			sprite.animation = "idle"
-
-	
-	if die_on_level_leave:
-		if !level.get_map_rect().grow(50).has_point(global_position):
-			Sgn.emit_signal("player_died")
-	
