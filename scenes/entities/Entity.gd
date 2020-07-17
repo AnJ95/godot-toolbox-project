@@ -7,6 +7,13 @@ const JUMP_SPEED = 220
 
 var velocity = Vector2()
 
+enum Team {
+	Player,
+	Enemy
+}
+
+export var team = Team.Player
+
 
 
 

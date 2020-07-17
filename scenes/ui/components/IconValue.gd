@@ -2,8 +2,8 @@ tool
 extends HBoxContainer
 
 export var has_halfes = true
-export var value_now = 1.5
-export var value_max = 3
+export var value_now = 2.5
+export var value_max = 5
 
 export(Texture) var texture
 
@@ -30,7 +30,7 @@ func init_value():
 		#icon.expand = true
 		icon.stretch_mode = icon.STRETCH_KEEP_ASPECT_CENTERED
 		icon.size_flags_vertical = icon.SIZE_EXPAND_FILL
-		icon.size_flags_horizontal = icon.SIZE_EXPAND_FILL
+		icon.size_flags_horizontal = icon.SIZE_EXPAND
 		icon.anchor_right = 1
 		icon.anchor_bottom = 1
 

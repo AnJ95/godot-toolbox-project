@@ -1,8 +1,12 @@
 tool
 extends Node
 
+#############################################################
+# NON PERSISTANT STATE
+onready var score = StateInt.new(0)
 
-
+#############################################################
+# PERSISTANT STATE
 func _ready():
 	var settingsAudio = PersistenceManager.PersistentObj.new("settingsAudio", {
 		"Master" : 80,
@@ -33,7 +37,8 @@ func _ready():
 	settingsAudio.trigger_update()
 	settingsControls.trigger_update()
 
-
+#############################################################
+# HANDLERS FOR PERSISTENT STATE
 func _on_settingsAudio_update(settingsAudio):
 	for bus in settingsAudio.keys():
 		var idx = AudioServer.get_bus_index(bus)
@@ -60,3 +65,14 @@ func _on_settingsControls_update(settingsControls):
 			var key_event = InputEventKey.new()
 			key_event.set_scancode(scancode)
 			InputMap.action_add_event(input_action, key_event)
+
+#############################################################
+# NOTITFYING State Object
+class StateInt:
+	signal state_changed(new_state)
+	var state setget _set_state
+	func _set_state(v):
+		state = v
+		emit_signal("state_changed", state)
+	func _init(state):
+		self.state = state

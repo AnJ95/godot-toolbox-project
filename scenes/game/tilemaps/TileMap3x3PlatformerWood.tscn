@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_3x3.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
+[ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -484,3 +485,12 @@ __meta__ = {
 
 [node name="StartPoint" type="Node2D" parent="."]
 position = Vector2( 67.0648, 120.18 )
+
+[node name="PickupCoin" parent="." instance=ExtResource( 3 )]
+position = Vector2( 47.3294, 194.135 )
+
+[node name="PickupCoin2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 233.075, 223.8 )
+
+[node name="PickupCoin3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 304.27, 32.121 )

@@ -18,8 +18,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopLeft"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 50
@@ -28,9 +27,8 @@ __meta__ = {
 }
 
 [node name="IconIntValue" parent="TopLeft/HBoxContainer" instance=ExtResource( 1 )]
-margin_top = 6.0
 margin_right = 51.0
-margin_bottom = 33.0
+margin_bottom = 27.0
 
 [node name="AnimatedIcon" parent="TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 3 )]
 position = Vector2( 12, 0 )
@@ -40,7 +38,8 @@ scale = Vector2( 2, 2 )
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 101.0
-margin_right = 149.0
-margin_bottom = 40.0
+margin_right = 181.0
+margin_bottom = 27.0
+size_flags_horizontal = 1
 
 [editable path="TopLeft/HBoxContainer/IconIntValue"]
