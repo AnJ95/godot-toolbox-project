@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/isometric_pixel_0014.png-58a41e7b8660939822ecf4c0073b7952.stex"
+path="res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilesets/isometric/isometric_pixel_0014.png"
-dest_files=[ "res://.import/isometric_pixel_0014.png-58a41e7b8660939822ecf4c0073b7952.stex" ]
+source_file="res://assets/sprites/entities/human.png"
+dest_files=[ "res://.import/human.png-e92570be7e16916bc2f895f5a0f9bd77.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

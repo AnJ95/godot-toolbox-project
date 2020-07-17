@@ -8,6 +8,7 @@ const Player = preload("res://scenes/entities/Player.gd")
 
 export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.StaticZoomed
 export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
+export(Vector2) var gravity = Vector2(0, 500)
 
 func _ready():
 	add_to_group("Level")

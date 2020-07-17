@@ -5,7 +5,7 @@ onready var camera = $LevelCamera
 
 enum ControlScheme {
 	Platformer,
-	TopView
+	TopDown
 }
 
 export var control_scheme = ControlScheme.Platformer
@@ -51,13 +51,14 @@ func _physics_process(delta):
 	process_walk(delta)
 	
 	# Vertical movement code. Apply gravity.
-	velocity.y += GRAVITY * delta
+	velocity += level.gravity * delta
 
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 
 	# Floored / Jump
-	process_jump(delta)
+	if control_scheme == ControlScheme.Platformer:
+		process_jump(delta)
 	
 	# Sprite Animation
 	process_sprite(delta)
@@ -70,6 +71,14 @@ func _physics_process(delta):
 # Calculates x-velocity for walking
 # Must be called before move_and_slide
 func process_walk(delta:float):
+	match control_scheme:
+		ControlScheme.Platformer:
+			process_walk_platformer(delta)
+		ControlScheme.TopDown:
+			process_walk_topdown(delta)
+			
+
+func process_walk_platformer(delta:float):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
 	# Slow down the player if they're not trying to move.
@@ -80,6 +89,22 @@ func process_walk(delta:float):
 		velocity.x += walk * delta
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+	
+func process_walk_topdown(delta:float):
+	# Horizontal movement code. First, get the player's input.
+	var x = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
+	var y = WALK_FORCE * (Input.get_action_strength("Down") - Input.get_action_strength("Up"))
+	
+	
+	if abs(x) < WALK_FORCE * 0.2: 	velocity.x = 	move_toward(velocity.x, 0, STOP_FORCE * delta)
+	else:						velocity.x += x * delta
+	
+	if abs(y) < WALK_FORCE * 0.2:	velocity.y = move_toward(velocity.y, 0, STOP_FORCE * delta)
+	else:						velocity.y += y * delta
+		
+	# Clamp to the maximum movement speed.
+	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+	velocity.y = clamp(velocity.y, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
 # Handles floored state and triggers jump
 # Must be called after move_and_slide
