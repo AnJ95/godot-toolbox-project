@@ -22,6 +22,7 @@ export var die_on_level_leave = true
 #############################################################
 # NODES
 onready var sprite = $AnimatedSprite
+onready var light = $Light2D
 
 #############################################################
 # STATE
@@ -58,6 +59,8 @@ func _on_level_started(level:Node):
 	global_position = level.get_player_start_pos()
 	# control scheme
 	control_scheme = level.get_control_scheme()
+	# light source attached to player?
+	light.enabled = level.give_player_light()
 
 	
 func _on_player_died():
@@ -89,7 +92,6 @@ func _physics_process(delta):
 	# Sprite Animation
 	process_sprite(delta)
 
-	
 	if die_on_level_leave:
 		if !level.get_map_rect().grow(50).has_point(global_position):
 			Sgn.emit_signal("player_died")

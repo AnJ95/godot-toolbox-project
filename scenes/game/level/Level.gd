@@ -8,11 +8,16 @@ const Player = preload("res://scenes/entities/Player.gd")
 
 export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.StaticZoomed
 export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
+export(bool) var give_player_light = false
 export(Vector2) var gravity = Vector2(0, 500)
 
 func _ready():
 	add_to_group("Level")
-	
+	Sgn.connect("level_started", self, "_on_level_started")	
+
+func _on_level_started(level):
+	visible = self == level
+
 func get_map_rect()->Rect2:
 	var rect_pos = ref_rect.rect_global_position
 	var rect_size = ref_rect.rect_size
@@ -26,3 +31,6 @@ func camera_type():
 
 func get_control_scheme():
 	return control_scheme
+
+func give_player_light():
+	return give_player_light

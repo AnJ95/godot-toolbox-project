@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_2x2_platformer_cave.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
 [ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/light/FlickeringLight.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -161,6 +162,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [node name="TileMap2x2PlatformerCave" type="Node2D"]
 script = ExtResource( 2 )
+give_player_light = true
 
 [node name="TiileMapBack" type="TileMap" parent="."]
 tile_set = SubResource( 14 )
@@ -192,3 +194,15 @@ position = Vector2( 198.686, 95.544 )
 
 [node name="PickupCoin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 143.982, 112.615 )
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="FlickeringLight" parent="." instance=ExtResource( 4 )]
+position = Vector2( 103.905, 49.5969 )
+
+[node name="FlickeringLight2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 102.562, 131.322 )
+
+[node name="FlickeringLight3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 243.338, 93.9912 )
