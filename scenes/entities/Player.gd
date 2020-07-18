@@ -37,13 +37,12 @@ var jumping = false
 # LIFECYCLE
 func _ready():
 	sprite.play()
-	
-	# Await Level start
-	Sgn.connect("level_started", self, "_on_level_started")
 
 	set_skin_texture(skins[skin_id])
 
 func _on_level_started(level:Node):
+	._on_level_started(level)
+	
 	# Reparent to new level
 	self.level = level
 	.get_parent().remove_child(self)
@@ -182,5 +181,5 @@ func set_skin_texture(txt:Texture):
 # OVERRIDES
 func _on_die():
 	Sgn.emit_signal("player_died")
-	Sgn.emit_signal("game_ended")
+	
 	

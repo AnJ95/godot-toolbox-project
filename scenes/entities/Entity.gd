@@ -18,7 +18,9 @@ var velocity = Vector2()
 export var __health_now = 3
 export var __health_max = 3
 signal health_changed(health_now, health_max)
-		
+
+export var revive_on_level_start = true
+
 func deal_damage(dmg):
 	var can_get_dmg = sm_lifecycle.get_state().can_get_damage()
 	if can_get_dmg:
@@ -43,11 +45,18 @@ export var team = Team.Player
 func _ready():
 	# Await Level start
 	Sgn.connect("game_started", self, "_on_game_started")
+	Sgn.connect("level_started", self, "_on_level_started")
 
 func _on_game_started():
 	# Reset
 	__health_now = __health_max
 	sm_lifecycle.goto_state("Alive")
+		
+func _on_level_started(_level):
+	# Reset
+	if revive_on_level_start:
+		__health_now = __health_max
+		sm_lifecycle.goto_state("Alive")
 	
 #############################################################
 # OVERRIDES

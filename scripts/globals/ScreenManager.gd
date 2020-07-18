@@ -41,6 +41,10 @@ func ___exit_screen():
 
 #############################################################
 # INTERFACE
+func reload_screen():
+	___exit_screen()
+	___enter_screen(screen_history[0])
+	
 func push_screen(screen):
 	# Exit previous if existent
 	___exit_screen()

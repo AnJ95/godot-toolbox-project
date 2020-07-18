@@ -85,3 +85,4 @@ camera_type = 3
 [node name="Light2D" type="Light2D" parent="." index="4"]
 texture = ExtResource( 5 )
 energy = 0.75
+[connection signal="tween_all_completed" from="StateMachineLifecycle/Dead/Tween" to="StateMachineLifecycle/Dead" method="_on_Tween_tween_all_completed"]

@@ -19,6 +19,7 @@ func _ready():
 	Sgn.connect("game_ended", self, "_on_game_ended")
 	
 	Sgn.connect("level_started", self, "_on_level_started")
+	Sgn.connect("level_restarted", self, "_on_level_restarted")
 	
 	Sgn.emit_signal("game_started")
 	
@@ -42,6 +43,9 @@ func _on_game_paused(pause_on):
 	
 func _on_level_started(level:Node):
 	D.l("Game", ["Level started [", "Level:", level.name, "]"])
+
+func _on_level_restarted():
+	restart_level()
 	
 #############################################################
 # LEVEL 
