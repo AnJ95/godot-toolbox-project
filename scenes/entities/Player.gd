@@ -63,7 +63,7 @@ func _on_level_started(level:Node):
 #############################################################
 # PROCESS	
 func _physics_process(delta):
-	if is_dead:
+	if !sm_lifecycle.get_state().do_physics_process():
 		return
 	
 	# Walking
@@ -183,5 +183,4 @@ func set_skin_texture(txt:Texture):
 func _on_die():
 	Sgn.emit_signal("player_died")
 	Sgn.emit_signal("game_ended")
-	#queue_free()
 	

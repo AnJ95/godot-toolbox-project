@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
 #############################################################
+# NODES
+onready var sm_lifecycle = $StateMachineLifecycle
+
+#############################################################
 # WALKING CONSTANTS
 const WALK_FORCE = 500
 const WALK_MAX_SPEED = 120
@@ -11,14 +15,15 @@ var velocity = Vector2()
 
 #############################################################
 # HEALTH
-var is_dead = false
 export var __health_now = 3 
 export var __health_max = 3
 signal health_changed(health_now, health_max)
 		
 func deal_damage(dmg):
-	__health_now = clamp(__health_now - dmg, 0, __health_max)
-	emit_signal("health_changed", __health_now, __health_max)
+	var can_get_dmg = sm_lifecycle.get_state().can_get_damage()
+	if can_get_dmg:
+		__health_now = clamp(__health_now - dmg, 0, __health_max)
+		emit_signal("health_changed", __health_now, __health_max)
 	
 func add_health(health):
 	__health_now = clamp(__health_now + health, 0, __health_max)
@@ -42,7 +47,7 @@ func _ready():
 func _on_game_started():
 	# Reset
 	__health_now = __health_max
-	is_dead = false
+	sm_lifecycle.goto_state("Alive")
 	
 #############################################################
 # OVERRIDES
