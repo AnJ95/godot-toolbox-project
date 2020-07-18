@@ -14,9 +14,9 @@ func _process(delta):
 	var flicker_image = flickerNoise.get_data()
 	
 	flicker_image.lock()
-	var px = flicker_image.get_pixel(int(round(
-		flicker_image.get_width() * time_now / time_max
-	)), 0)
+	var x = flicker_image.get_width() * time_now / time_max
+	x = clamp(x, 0, flicker_image.get_width()-1)
+	var px = flicker_image.get_pixel(int(round(x)), 0)
 	flicker_image.unlock()
 	
-	energy = px.r
+	energy = px.r * 1.3

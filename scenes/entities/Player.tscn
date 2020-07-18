@@ -85,4 +85,4 @@ camera_type = 3
 
 [node name="Light2D" type="Light2D" parent="." index="4"]
 texture = ExtResource( 5 )
-energy = 0.6
+energy = 0.75
