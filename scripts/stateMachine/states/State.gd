@@ -13,3 +13,5 @@ func on_enter():
 func on_leave():
 	pass
 
+func process(delta:float):
+	pass

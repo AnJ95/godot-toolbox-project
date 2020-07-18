@@ -6,7 +6,6 @@ func _ready():
 		get_state().on_enter()
 			
 func goto_state(state:String):
-	print(state)
 	if get_state():
 		get_state().on_leave()
 		
@@ -18,3 +17,7 @@ func goto_state(state:String):
 	
 func get_state():
 	return get_children()[0] if get_child_count() > 0 else null
+
+func _process(delta):
+	if get_state():
+		get_state().process(delta)

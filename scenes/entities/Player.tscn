@@ -70,9 +70,10 @@ animations = [ {
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-position = Vector2( 0, -16 )
+position = Vector2( 0, -10 )
 frames = SubResource( 11 )
-animation = "jump"
+animation = "idle"
+offset = Vector2( 0, -6 )
 
 [node name="LevelCameraZoomed" type="Camera2D" parent="." index="2"]
 script = ExtResource( 4 )

@@ -15,7 +15,7 @@ var velocity = Vector2()
 
 #############################################################
 # HEALTH
-export var __health_now = 3 
+export var __health_now = 3
 export var __health_max = 3
 signal health_changed(health_now, health_max)
 		

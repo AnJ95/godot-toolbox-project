@@ -86,8 +86,8 @@ func _physics_process(delta):
 	process_sprite(delta)
 
 	if die_on_level_leave:
-		if !level.get_map_rect().grow(50).has_point(global_position):
-			Sgn.emit_signal("player_died")
+		if !level.get_map_rect().grow(80).has_point(global_position):
+			deal_damage(1000)
 
 # Calculates x-velocity for walking
 # Must be called before move_and_slide

@@ -21,3 +21,5 @@ func do_physics_process()->bool:
 func on_leave():
 	root.disconnect("health_changed", self, "_on_health_changed")
 
+func process(delta:float):
+	pass

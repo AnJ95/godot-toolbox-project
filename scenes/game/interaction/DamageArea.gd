@@ -4,6 +4,14 @@ const Entity = preload("res://scenes/entities/Entity.gd")
 export(Entity.Team) var team = Entity.Team.Player
 export(float) var damage = 0.5
 
+var bodies = []
 func _on_DamageArea_body_entered(body):
 	if body is Entity and body.team == team:
+		bodies.append(body)
+func _on_DamageArea_body_exited(body):
+	if body is Entity and body.team == team:
+		bodies.erase(body)
+
+func _process(delta):
+	for body in bodies:
 		body.deal_damage(damage)

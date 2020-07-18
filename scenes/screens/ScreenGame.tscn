@@ -23,17 +23,17 @@ script = ExtResource( 10 )
 [node name="Player" parent="Demo" index="0" instance=ExtResource( 9 )]
 position = Vector2( -509.368, -297.708 )
 
-[node name="TileMapIso" parent="Demo" index="1" instance=ExtResource( 2 )]
+[node name="TileMap2x2PlatformerCave" parent="Demo" index="1" instance=ExtResource( 6 )]
+position = Vector2( 407.357, 244.825 )
+
+[node name="TileMapIso" parent="Demo" index="2" instance=ExtResource( 2 )]
 position = Vector2( 1415.35, 320.345 )
 
-[node name="TileMap3x3PlatformerWood" parent="Demo" index="2" instance=ExtResource( 5 )]
+[node name="TileMap3x3PlatformerWood" parent="Demo" index="3" instance=ExtResource( 5 )]
 position = Vector2( 1294.84, -384.529 )
 
-[node name="TileMap2x2PlatformerGrass" parent="Demo" index="3" instance=ExtResource( 7 )]
+[node name="TileMap2x2PlatformerGrass" parent="Demo" index="4" instance=ExtResource( 7 )]
 position = Vector2( 263.722, -403.954 )
-
-[node name="TileMap2x2PlatformerCave" parent="Demo" index="4" instance=ExtResource( 6 )]
-position = Vector2( 407.357, 244.825 )
 
 [node name="LevelCamera" type="Camera2D" parent="Demo" index="5"]
 script = ExtResource( 8 )
