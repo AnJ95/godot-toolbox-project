@@ -40,16 +40,12 @@ func _ready():
 
 	set_skin_texture(skins[skin_id])
 
-func _on_level_started(level:Node):
-	._on_level_started(level)
+func _on_level_started(level:Node):	
 	
 	# Reparent to new level
 	self.level = level
 	.get_parent().remove_child(self)
 	level.add_child(self)
-	
-	# Trigger health changed for UI
-	emit_signal("health_changed", get_health_now(), get_health_max())
 	
 	# Initialize using level
 	# start pos
@@ -58,6 +54,10 @@ func _on_level_started(level:Node):
 	control_scheme = level.get_control_scheme()
 	# light source attached to player?
 	light.enabled = level.give_player_light()
+	
+	._on_level_started(level)
+	# Trigger health changed for UI
+	emit_signal("health_changed", get_health_now(), get_health_max())
 
 #############################################################
 # PROCESS	

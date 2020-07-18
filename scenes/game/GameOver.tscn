@@ -4,11 +4,13 @@
 [ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
 
-[node name="GamePause" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer"]
 pause_mode = 2
+layer = 30
 script = ExtResource( 1 )
 
 [node name="UIBox" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="Popup" type="PopupDialog" parent="UIBox"]
 visible = true
@@ -72,6 +74,7 @@ __meta__ = {
 }
 
 [node name="InvisibleWall" type="TextureButton" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3

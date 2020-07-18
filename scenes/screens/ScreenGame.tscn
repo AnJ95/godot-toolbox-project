@@ -15,17 +15,16 @@
 [node name="ScreenGame" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
 
-[node name="GameUI" parent="." index="0" instance=ExtResource( 4 )]
+[node name="GameOver" parent="." index="0" instance=ExtResource( 11 )]
 
-[node name="GameOver" parent="." index="1" instance=ExtResource( 11 )]
+[node name="GamePause" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="GamePause" parent="." index="2" instance=ExtResource( 3 )]
+[node name="GameUI" parent="." index="2" instance=ExtResource( 4 )]
 
 [node name="Demo" type="Node2D" parent="." index="3"]
 
 [node name="Player" parent="Demo" index="0" instance=ExtResource( 9 )]
-position = Vector2( -509.368, -297.708 )
-__health_max = 1
+position = Vector2( -328.16, -307.245 )
 
 [node name="TileMap2x2PlatformerGrass" parent="Demo" index="1" instance=ExtResource( 7 )]
 position = Vector2( 263.722, -403.954 )

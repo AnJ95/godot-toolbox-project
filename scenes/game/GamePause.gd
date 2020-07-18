@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+onready var ui_box = $UIBox
 onready var pause_menu = $UIBox/Popup
 onready var invisible_wall = $InvisibleWall
 
@@ -11,11 +12,26 @@ func _ready():
 
 func _on_game_paused(pause_on):
 	is_paused = pause_on
-	pause_menu.visible = pause_on
-	invisible_wall.visible = pause_on
+	if is_paused:
+		__show()
+	else:
+		__hide()
 	
 	get_tree().paused = pause_on
 
+func __show():
+	ui_box.mouse_filter = pause_menu.MOUSE_FILTER_STOP
+	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_STOP
+	ui_box.visible = true
+	pause_menu.visible = true
+	invisible_wall.visible = true
+func __hide():
+	ui_box.mouse_filter = pause_menu.MOUSE_FILTER_IGNORE
+	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_IGNORE
+	ui_box.visible = false
+	pause_menu.visible = false
+	invisible_wall.visible = false
+	
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		Sgn.emit_signal("game_paused", !is_paused)
@@ -25,6 +41,10 @@ func _process(delta):
 
 func _on_ReturnButton_pressed():
 	Sgn.emit_signal("game_paused", false)
+	
+func _on_RestartLevelButton_pressed():
+	__hide()
+	Sgn.emit_signal("level_restarted")
 
 func _on_MenuButton_pressed():
 	Sgn.emit_signal("game_paused", false)

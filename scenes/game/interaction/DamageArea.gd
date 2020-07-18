@@ -5,6 +5,14 @@ export(Entity.Team) var team = Entity.Team.Player
 export(float) var damage = 0.5
 
 var bodies = []
+
+func _ready():
+	# Await Level start
+	Sgn.connect("level_started", self, "_on_level_started")
+
+func _on_level_started(_level):
+	bodies = []
+	
 func _on_DamageArea_body_entered(body):
 	if body is Entity and body.team == team:
 		bodies.append(body)

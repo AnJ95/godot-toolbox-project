@@ -9,6 +9,7 @@ func on_enter():
 	root.modulate = modulate_gradient.interpolate(0)
 	
 func on_leave():
+	$Timer.stop()
 	root.modulate = modulate_gradient.interpolate(1)
 	
 func process(delta):

@@ -6,11 +6,13 @@
 
 [node name="GamePause" type="CanvasLayer"]
 pause_mode = 2
+layer = 20
 script = ExtResource( 1 )
 
 [node name="UIBox" parent="." instance=ExtResource( 2 )]
 
 [node name="Popup" type="PopupDialog" parent="UIBox"]
+visible = true
 margin_left = 220.0
 margin_top = 80.0
 margin_right = 804.0
@@ -46,10 +48,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="RestartLevelButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
 margin_top = 110.0
 margin_right = 434.0
 margin_bottom = 157.0
+focus_mode = 0
+size_flags_horizontal = 3
+enabled_focus_mode = 0
+text = "Restart Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
+margin_top = 173.0
+margin_right = 434.0
+margin_bottom = 220.0
 focus_mode = 0
 size_flags_horizontal = 3
 enabled_focus_mode = 0
@@ -59,9 +73,9 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="Button" parent="UIBox/Popup/VBoxContainer"]
-margin_top = 173.0
+margin_top = 236.0
 margin_right = 434.0
-margin_bottom = 220.0
+margin_bottom = 283.0
 focus_mode = 0
 size_flags_horizontal = 3
 enabled_focus_mode = 0
@@ -71,6 +85,7 @@ __meta__ = {
 }
 
 [node name="InvisibleWall" type="TextureButton" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -79,6 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="UIBox/Popup/VBoxContainer/RestartLevelButton" to="." method="_on_RestartLevelButton_pressed"]
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="UIBox/Popup/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="InvisibleWall" to="." method="_on_InvisibleWall_pressed"]
