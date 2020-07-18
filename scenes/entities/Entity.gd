@@ -14,9 +14,14 @@ const JUMP_SPEED = 220
 var velocity = Vector2()
 
 #############################################################
+# CUSTOMIZATION
+export(bool) var do_contact_damage:bool = false
+export(float) var contact_damage:float = 0.5
+
+#############################################################
 # HEALTH
-export var __health_now = 3
-export var __health_max = 3
+export(float) var __health_now = 3.0
+export(float) var __health_max = 3.0
 signal health_changed(health_now, health_max)
 
 export var revive_on_level_start = true
@@ -40,12 +45,17 @@ enum Team {
 	Player,
 	Enemy
 }
-export var team = Team.Player
+export(Team) var team = Team.Player
 
+#############################################################
+# LIFECYCLE
 func _ready():
 	# Await Level start
 	Sgn.connect("game_started", self, "_on_game_started")
 	Sgn.connect("level_started", self, "_on_level_started")
+	
+	$ContactArea.monitoring = do_contact_damage
+		
 
 func _on_game_started():
 	# Reset
@@ -57,10 +67,32 @@ func _on_level_started(_level):
 	if revive_on_level_start:
 		__health_now = __health_max
 		sm_lifecycle.goto_state("Alive")
+		
+func __is_entity():
+	return true
 	
+#############################################################
+# CONTACT DAMAGE
+var contacts = []
+func can_have_contact_with(body)->bool:
+	return do_contact_damage and body.has_method("__is_entity") and body.team != team
+
+func _on_ContactArea_body_entered(body:Node):
+	if can_have_contact_with(body):
+		contacts.append(body)
+		
+func _on_ContactArea_body_exited(body):
+	if can_have_contact_with(body):
+		contacts.erase(body)
+
+func _physics_process(delta):
+	if sm_lifecycle.get_state().do_physics_process():
+		for contact in contacts:
+			contact.deal_damage(contact_damage)
 #############################################################
 # OVERRIDES
 func _on_die():
 	queue_free()
+
 
 

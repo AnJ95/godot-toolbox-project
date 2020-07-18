@@ -64,6 +64,7 @@ func _on_level_started(level:Node):
 func _physics_process(delta):
 	if !sm_lifecycle.get_state().do_physics_process():
 		return
+	._physics_process(delta)
 	
 	# Walking
 	process_walk(delta)

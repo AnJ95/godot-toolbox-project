@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/tilemaps/TileMapIso.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=10]
 [ext_resource path="res://scenes/game/GameOver.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/entities/enemies/EnemyDemon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/entities/Entity.gd" type="Script" id=13]
 
 [node name="ScreenGame" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
@@ -24,16 +26,20 @@ script = ExtResource( 10 )
 [node name="Demo" type="Node2D" parent="." index="3"]
 
 [node name="Player" parent="Demo" index="0" instance=ExtResource( 9 )]
-position = Vector2( -328.16, -307.245 )
+position = Vector2( 546.354, -738.488 )
 
 [node name="TileMap2x2PlatformerGrass" parent="Demo" index="1" instance=ExtResource( 7 )]
-position = Vector2( 263.722, -403.954 )
+position = Vector2( -1435.93, -165.113 )
+
+[node name="Enemy" parent="Demo/TileMap2x2PlatformerGrass" index="10" instance=ExtResource( 12 )]
+position = Vector2( 108.648, 254.204 )
+script = ExtResource( 13 )
 
 [node name="TileMap2x2PlatformerCave" parent="Demo" index="2" instance=ExtResource( 6 )]
-position = Vector2( 407.357, 244.825 )
+position = Vector2( 227.422, 1006.09 )
 
 [node name="TileMapIso" parent="Demo" index="3" instance=ExtResource( 2 )]
-position = Vector2( 1415.35, 320.345 )
+position = Vector2( 1293.55, 62.8997 )
 
 [node name="TileMap3x3PlatformerWood" parent="Demo" index="4" instance=ExtResource( 5 )]
 position = Vector2( 1294.84, -384.529 )
@@ -43,5 +49,6 @@ script = ExtResource( 8 )
 camera_type = 0
 
 [node name="LevelCameraZoomed" type="Camera2D" parent="Demo" index="6"]
+position = Vector2( -1143.24, -1.99445 )
 script = ExtResource( 8 )
 camera_type = 1

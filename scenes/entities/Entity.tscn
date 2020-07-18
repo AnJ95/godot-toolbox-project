@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/stateMachine/states/StateDead.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Entity.gd" type="Script" id=2]
@@ -6,8 +6,12 @@
 [ext_resource path="res://scripts/stateMachine/states/Statelnvulnerable.gd" type="Script" id=4]
 [ext_resource path="res://scripts/stateMachine/StateMachine.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 5.0
+height = 5.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 6.0
 height = 5.0
 
 [sub_resource type="Gradient" id=2]
@@ -19,7 +23,13 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -7.5 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
+
+[node name="ContactArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
+position = Vector2( 0, -7.5 )
+shape = SubResource( 12 )
 
 [node name="StateMachineLifecycle" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -39,4 +49,6 @@ one_shot = true
 script = ExtResource( 1 )
 
 [node name="Tween" type="Tween" parent="StateMachineLifecycle/Dead"]
+[connection signal="body_entered" from="ContactArea" to="." method="_on_ContactArea_body_entered"]
+[connection signal="body_exited" from="ContactArea" to="." method="_on_ContactArea_body_exited"]
 [connection signal="timeout" from="StateMachineLifecycle/Invulnerable/Timer" to="StateMachineLifecycle/Invulnerable" method="_on_Timer_timeout"]
