@@ -32,7 +32,6 @@ var skin_id = 0
 
 var flip = false
 var jumping = false
-var is_dead = false
 
 #############################################################
 # LIFECYCLE
@@ -41,7 +40,6 @@ func _ready():
 	
 	# Await Level start
 	Sgn.connect("level_started", self, "_on_level_started")
-	Sgn.connect("player_died", self, "_on_player_died")
 
 	set_skin_texture(skins[skin_id])
 
@@ -51,8 +49,8 @@ func _on_level_started(level:Node):
 	.get_parent().remove_child(self)
 	level.add_child(self)
 	
-	# Reset
-	is_dead = false
+	# Trigger health changed for UI
+	emit_signal("health_changed", get_health_now(), get_health_max())
 	
 	# Initialize using level
 	# start pos
@@ -61,11 +59,6 @@ func _on_level_started(level:Node):
 	control_scheme = level.get_control_scheme()
 	# light source attached to player?
 	light.enabled = level.give_player_light()
-
-	
-func _on_player_died():
-	is_dead = true
-	Sgn.emit_signal("game_ended")
 
 #############################################################
 # PROCESS	
@@ -184,4 +177,11 @@ func set_skin_texture(txt:Texture):
 			atlas.region = prev_atlas.region
 
 			frames.set_frame(anim_name, f, atlas)
+
+#############################################################
+# OVERRIDES
+func _on_die():
+	Sgn.emit_signal("player_died")
+	Sgn.emit_signal("game_ended")
+	#queue_free()
 	

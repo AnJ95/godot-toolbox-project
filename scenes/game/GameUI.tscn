@@ -33,6 +33,7 @@ margin_bottom = 27.0
 [node name="AnimatedIcon" parent="TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 3 )]
 position = Vector2( 12, 0 )
 scale = Vector2( 2, 2 )
+frame = 0
 
 [node name="IconValue" parent="TopLeft/HBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0

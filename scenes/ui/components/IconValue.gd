@@ -14,11 +14,15 @@ func _ready():
 	region_width = texture.get_width() / 3
 	region_height = texture.get_height()
 	
-	init_value()
-	update_value()
+	init_value(value_now, value_max)
+	update_value(value_now, value_max)
 
-func init_value():
+func init_value(value_now, value_max):
+	self.value_now = value_now
+	self.value_max = value_max
+	
 	for icon in get_children():
+		icon.get_parent().remove_child(icon)
 		icon.queue_free()
 	
 	for i in range(value_max):
@@ -37,11 +41,18 @@ func init_value():
 		icon.texture = atlas
 		add_child(icon)
 
-func update_value():
+func update_value(value_now, value_max):
+	
+	# If max hearts differ: recreate Sprites
+	if self.value_max != value_max:
+		init_value(value_now, value_max)
+	self.value_now = value_now
+	self.value_max = value_max
+	
+	# Iterate all Sprites and set to atlas region 0,1,2
+	# for Full, Half, Empty
 	var value_left = value_now
-
 	for icon in get_children():
-		
 		var region_id = 2
 		if value_left >= 1:
 			value_left -= 1
@@ -49,6 +60,5 @@ func update_value():
 		elif has_halfes and value_left >= 0.5:
 			value_left -= 0.5
 			region_id = 1
-			
 		icon.texture.region.position.x = region_id * region_width
 		
