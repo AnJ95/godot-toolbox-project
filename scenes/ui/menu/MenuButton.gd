@@ -31,10 +31,10 @@ func _process(delta):
 # CALLBACKS
 func _on_MenuButton_pressed():
 	if pops_screen:
-		ScrnMngr.pop_screen()
+		ScreenMngr.pop_screen()
 		
 	if pushes_screen:
-		ScrnMngr.push_screen(screen_to_switch_to)
+		ScreenMngr.push_screen(screen_to_switch_to)
 		
 	if quits_game:
-		ScrnMngr.exit_game()
+		ScreenMngr.exit_game()

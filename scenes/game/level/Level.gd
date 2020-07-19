@@ -13,10 +13,20 @@ export(Vector2) var gravity = Vector2(0, 500)
 
 func _ready():
 	add_to_group("Level")
-	Sgn.connect("level_started", self, "_on_level_started")	
+	SignalMngr.connect("level_started", self, "_on_level_started")	
 
 func _on_level_started(level):
 	visible = self == level
+	
+	if self == level:
+		D.l("Level", ["Level started [", {
+			"name" : level.name,
+			"map_rect" : get_map_rect(),
+			"player_start_pos" : get_player_start_pos(),
+			"camera_type" : LevelCamera.CameraType.keys()[camera_type()],
+			"control_scheme" : Player.ControlScheme.keys()[get_control_scheme()], 
+		} , "]"])
+		
 
 func get_map_rect()->Rect2:
 	var rect_pos = ref_rect.rect_global_position

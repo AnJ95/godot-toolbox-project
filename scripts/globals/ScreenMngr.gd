@@ -26,7 +26,7 @@ func ___enter_screen(screen):
 	
 	# Debug log & Signal
 	D.l(D.LogCategory.SCREEN_MANAGER, ["Switched screen to", C.Screen.keys()[screen], C.SCREEN_SCENES.values()[screen]])
-	Sgn.emit_signal("screen_entered", screen)
+	SignalMngr.emit_signal("screen_entered", screen)
 	
 	return true
 	
@@ -35,7 +35,7 @@ func ___exit_screen():
 	if screen_history.size() >= 1:
 		# Debug log & Signal
 		D.l(D.LogCategory.SCREEN_MANAGER, ["Exited screen", C.Screen.keys()[screen_history[0]], C.SCREEN_SCENES.values()[screen_history[0]]])
-		Sgn.emit_signal("screen_left", screen_history[0])
+		SignalMngr.emit_signal("screen_left", screen_history[0])
 	
 	return true
 

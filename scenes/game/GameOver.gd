@@ -7,7 +7,7 @@ onready var invisible_wall = $InvisibleWall
 var is_game_over = false
 
 func _ready():
-	Sgn.connect("player_died", self, "_on_player_died")
+	SignalMngr.connect("player_died", self, "_on_player_died")
 	__hide()
 
 func _on_player_died():
@@ -31,16 +31,16 @@ func _process(delta):
 		_on_MenuButton_pressed()
 
 func _on_MenuButton_pressed():
-	ScrnMngr.pop_screen()
+	ScreenMngr.pop_screen()
 
 func _on_RestartLevelButton_pressed():
 	__hide()
-	Sgn.emit_signal("level_restarted")
+	SignalMngr.emit_signal("level_restarted")
 
 func _on_RestartGameButton_pressed():
 	__hide()
-	Sgn.emit_signal("game_ended")
-	ScrnMngr.reload_screen()
+	SignalMngr.emit_signal("game_ended")
+	ScreenMngr.reload_screen()
 
 func _on_InvisibleWall_pressed():
 	pass

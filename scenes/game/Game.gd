@@ -14,14 +14,14 @@ var cur_level_id = 0
 # LIFECYCLE
 func _ready():
 	# Connect Signals
-	Sgn.connect("game_started", self, "_on_game_started")
-	Sgn.connect("game_paused", self, "_on_game_paused")
-	Sgn.connect("game_ended", self, "_on_game_ended")
+	SignalMngr.connect("game_started", self, "_on_game_started")
+	SignalMngr.connect("game_paused", self, "_on_game_paused")
+	SignalMngr.connect("game_ended", self, "_on_game_ended")
 	
-	Sgn.connect("level_started", self, "_on_level_started")
-	Sgn.connect("level_restarted", self, "_on_level_restarted")
+	SignalMngr.connect("level_started", self, "_on_level_started")
+	SignalMngr.connect("level_restarted", self, "_on_level_restarted")
 	
-	Sgn.emit_signal("game_started")
+	SignalMngr.emit_signal("game_started")
 	
 	levels = get_tree().get_nodes_in_group("Level")
 	start_level(levels[cur_level_id])
@@ -42,7 +42,7 @@ func _on_game_paused(pause_on):
 	D.l("Game", ["Game paused", pause_on])
 	
 func _on_level_started(level:Node):
-	D.l("Game", ["Level started [", "Level:", level.name, "]"])
+	pass
 
 func _on_level_restarted():
 	restart_level()
@@ -50,7 +50,7 @@ func _on_level_restarted():
 #############################################################
 # LEVEL 
 func start_level(level):
-	Sgn.emit_signal("level_started", level)
+	SignalMngr.emit_signal("level_started", level)
 
 func restart_level():
 	start_level(levels[cur_level_id])

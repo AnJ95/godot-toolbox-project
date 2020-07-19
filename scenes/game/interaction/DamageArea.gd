@@ -8,7 +8,7 @@ var bodies = []
 
 func _ready():
 	# Await Level start
-	Sgn.connect("level_started", self, "_on_level_started")
+	SignalMngr.connect("level_started", self, "_on_level_started")
 
 func _on_level_started(_level):
 	bodies = []

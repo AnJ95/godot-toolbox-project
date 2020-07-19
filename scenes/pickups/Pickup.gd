@@ -16,4 +16,4 @@ func _on_Area2D_body_entered(entity:Node):
 func _on_picked_up(entity:Entity):
 	# Increment Player Score
 	# Access StateObject (triggers state_changed Signal)
-	S.score.state += 1
+	StateMngr.score.state += 1

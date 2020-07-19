@@ -51,8 +51,8 @@ export(Team) var team = Team.Player
 # LIFECYCLE
 func _ready():
 	# Await Level start
-	Sgn.connect("game_started", self, "_on_game_started")
-	Sgn.connect("level_started", self, "_on_level_started")
+	SignalMngr.connect("game_started", self, "_on_game_started")
+	SignalMngr.connect("level_started", self, "_on_level_started")
 	
 	$ContactArea.monitoring = do_contact_damage
 		

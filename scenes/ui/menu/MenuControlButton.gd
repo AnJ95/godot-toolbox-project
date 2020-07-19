@@ -26,7 +26,7 @@ var awaiting = false
 #############################################################
 # LIFECYCLE
 func _ready():
-	scancode = PersistenceManager.get_val_from_ui_path(persistence_uid_path)
+	scancode = PersistenceMngr.get_val_from_ui_path(persistence_uid_path)
 	
 	label.text = caption
 	button.text = get_display_caption()
@@ -55,7 +55,7 @@ func set_scan_code(new_scancode):
 	scancode = new_scancode
 	
 	# Update PersistentObj
-	PersistenceManager.set_val_from_ui_path(persistence_uid_path, scancode)
+	PersistenceMngr.set_val_from_ui_path(persistence_uid_path, scancode)
 	
 	# Unassign all other that have the same key
 	for control_button in get_all_menu_control_buttons():

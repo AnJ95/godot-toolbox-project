@@ -1,22 +1,22 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0053.png" type="Texture" id=1]
-[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0052.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0086.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0087.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0169.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0052.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0045.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0198.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0207.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0014.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0228.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0172.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0064.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0055.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0072.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0215.png" type="Texture" id=16]
-[ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0045.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0228.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0014.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0172.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0072.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0055.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0207.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0169.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0064.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0053.png" type="Texture" id=13]
+[ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0087.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0198.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0215.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 25, 50, 4, 38, 4, 13, 25, 1, 46, 13, 46, 38, 25, 50 )
@@ -29,7 +29,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "isometric_pixel_0053.png 0"
-0/texture = ExtResource( 1 )
+0/texture = ExtResource( 13 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 50, 50 )
@@ -55,7 +55,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 } ]
 1/z_index = 0
 2/name = "isometric_pixel_0087.png 2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 15 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 50, 50 )
@@ -65,7 +65,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "isometric_pixel_0169.png 3"
-3/texture = ExtResource( 5 )
+3/texture = ExtResource( 11 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 50, 50 )
@@ -75,7 +75,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "isometric_pixel_0052.png 4"
-4/texture = ExtResource( 6 )
+4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 50, 50 )
@@ -85,7 +85,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "isometric_pixel_0045.png 5"
-5/texture = ExtResource( 7 )
+5/texture = ExtResource( 4 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 50, 50 )
@@ -95,7 +95,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "isometric_pixel_0014.png 6"
-6/texture = ExtResource( 10 )
+6/texture = ExtResource( 6 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 50, 50 )
@@ -105,7 +105,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "isometric_pixel_0228.png 7"
-7/texture = ExtResource( 11 )
+7/texture = ExtResource( 5 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 50, 50 )
@@ -115,7 +115,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 7/shapes = [  ]
 7/z_index = 0
 8/name = "isometric_pixel_0207.png 8"
-8/texture = ExtResource( 9 )
+8/texture = ExtResource( 10 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 50, 50 )
@@ -125,7 +125,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 8/shapes = [  ]
 8/z_index = 0
 9/name = "isometric_pixel_0198.png 9"
-9/texture = ExtResource( 8 )
+9/texture = ExtResource( 16 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 50, 50 )
@@ -135,7 +135,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 9/shapes = [  ]
 9/z_index = 0
 10/name = "isometric_pixel_0172.png 10"
-10/texture = ExtResource( 12 )
+10/texture = ExtResource( 7 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 50, 50 )
@@ -145,7 +145,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 10/shapes = [  ]
 10/z_index = 0
 11/name = "isometric_pixel_0064.png 11"
-11/texture = ExtResource( 13 )
+11/texture = ExtResource( 12 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 0, 50, 50 )
@@ -161,7 +161,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 } ]
 11/z_index = 0
 12/name = "isometric_pixel_0055.png 12"
-12/texture = ExtResource( 14 )
+12/texture = ExtResource( 9 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 0, 50, 50 )
@@ -171,7 +171,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 12/shapes = [  ]
 12/z_index = 0
 13/name = "isometric_pixel_0072.png 13"
-13/texture = ExtResource( 15 )
+13/texture = ExtResource( 8 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 0, 50, 50 )
@@ -181,7 +181,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 13/shapes = [  ]
 13/z_index = 0
 14/name = "isometric_pixel_0215.png 14"
-14/texture = ExtResource( 16 )
+14/texture = ExtResource( 17 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 0, 50, 50 )
@@ -197,8 +197,8 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 } ]
 14/z_index = 0
 
-[node name="TileMapIso" type="Node2D"]
-script = ExtResource( 2 )
+[node name="TopDownIsometric" type="Node2D"]
+script = ExtResource( 1 )
 control_scheme = 1
 gravity = Vector2( 0, 0 )
 
@@ -253,14 +253,14 @@ __meta__ = {
 [node name="StartPoint" type="Node2D" parent="."]
 position = Vector2( 86, 92 )
 
-[node name="PickupCoin" parent="." instance=ExtResource( 17 )]
+[node name="PickupCoin" parent="." instance=ExtResource( 14 )]
 position = Vector2( 72, 347 )
 
-[node name="PickupCoin2" parent="." instance=ExtResource( 17 )]
+[node name="PickupCoin2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 422, 356 )
 
-[node name="PickupCoin3" parent="." instance=ExtResource( 17 )]
+[node name="PickupCoin3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 540, 157 )
 
-[node name="PickupCoin4" parent="." instance=ExtResource( 17 )]
+[node name="PickupCoin4" parent="." instance=ExtResource( 14 )]
 position = Vector2( 470, 53 )

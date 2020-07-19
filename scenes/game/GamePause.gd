@@ -8,7 +8,7 @@ var is_paused = false
 
 func _ready():
 	_on_game_paused(false)
-	Sgn.connect("game_paused", self, "_on_game_paused")
+	SignalMngr.connect("game_paused", self, "_on_game_paused")
 
 func _on_game_paused(pause_on):
 	is_paused = pause_on
@@ -34,27 +34,27 @@ func __hide():
 	
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
-		Sgn.emit_signal("game_paused", !is_paused)
+		SignalMngr.emit_signal("game_paused", !is_paused)
 		
 	if is_paused and Input.is_action_just_pressed("ui_cancel"):
 		_on_ReturnButton_pressed()
 
 func _on_ReturnButton_pressed():
-	Sgn.emit_signal("game_paused", false)
+	SignalMngr.emit_signal("game_paused", false)
 	
 func _on_RestartLevelButton_pressed():
 	__hide()
-	Sgn.emit_signal("level_restarted")
+	SignalMngr.emit_signal("level_restarted")
 
 func _on_MenuButton_pressed():
-	Sgn.emit_signal("game_paused", false)
+	SignalMngr.emit_signal("game_paused", false)
 	# TODO: Confirm PopUp
-	ScrnMngr.pop_screen()
+	ScreenMngr.pop_screen()
 
 func _on_QuitButton_pressed():
-	Sgn.emit_signal("game_paused", false)
+	SignalMngr.emit_signal("game_paused", false)
 	# TODO: Confirm PopUp
-	ScrnMngr.exit_game()
+	ScreenMngr.exit_game()
 
 func _on_InvisibleWall_pressed():
 	if is_paused:
