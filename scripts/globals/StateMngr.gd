@@ -8,34 +8,13 @@ onready var score = StateInt.new(0)
 #############################################################
 # PERSISTANT STATE
 func _ready():
-	var settingsAudio = PersistenceMngr.PersistentObj.new("settingsAudio", {
-		"Master" : 80,
-		"Music" : 100,
-		"Effects" : 100
-	})
-	settingsAudio.connect("changed", self, "_on_settingsAudio_update")
-	PersistenceMngr.add_obj(settingsAudio)
+	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", self, "_on_settingsAudio_update")
 	
-	
-	var settingsControls = PersistenceMngr.PersistentObj.new("settingsControls", {
-		"Left" : 65,
-		"Right" : 68,
-		"Up" : 87,
-		"Down" : 83,
-		"Jump" : 32,
-		"PrevDemo" : 52,
-		"NextDemo" : 82,
-		"PrevSkin" : 53,
-		"NextSkin" : 84,
-		"Pause" : 80,
-		"Interact" : 16777221
-	})
-	settingsControls.connect("changed", self, "_on_settingsControls_update")
-	PersistenceMngr.add_obj(settingsControls)
+	PersistenceMngr.add_state("settingsControls", C.DEFAULT_OPTIONS_KEYBINDINGS).connect("changed", self, "_on_settingsControls_update")
 	
 	# Inititally configure audio and controls
-	settingsAudio.trigger_update()
-	settingsControls.trigger_update()
+	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
+	_on_settingsControls_update(PersistenceMngr.get_state("settingsControls"))
 
 #############################################################
 # HANDLERS FOR PERSISTENT STATE

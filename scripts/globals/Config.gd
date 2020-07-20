@@ -11,6 +11,27 @@ var is_debug = true
 var remove_all_saves = false
 
 ####################################################################
+# OPTIONS
+const DEFAULT_OPTIONS_AUDIO = {
+	"Master" : 80,
+	"Music" : 100,
+	"Effects" : 100
+}
+const DEFAULT_OPTIONS_KEYBINDINGS = {
+	"Left" : 65,
+	"Right" : 68,
+	"Up" : 87,
+	"Down" : 83,
+	"Jump" : 32,
+	"PrevDemo" : 52,
+	"NextDemo" : 82,
+	"PrevSkin" : 53,
+	"NextSkin" : 84,
+	"Pause" : 80,
+	"Interact" : 16777221
+}
+	
+####################################################################
 # LOGGING
 
 # Global switch for debug logs
@@ -27,6 +48,7 @@ var hide_debug_log_categories = {
 var hide_log_level = {
 #	D.LogCategory.PLAYER : true,
 }
+
 
 ####################################################################
 # SCREENS

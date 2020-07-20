@@ -30,7 +30,7 @@ func _ready():
 	slider.min_value = int(value_min)
 	slider.max_value = int(value_max)
 	slider.step = int(value_step)
-	slider.value = PersistenceMngr.get_val_from_ui_path(persistence_uid_path)
+	slider.value = PersistenceMngr.get_state(persistence_uid_path)
 	
 	if grabs_focus:
 		slider.grab_focus()
@@ -38,5 +38,5 @@ func _ready():
 #############################################################
 # CALLBACKS	
 func _on_HSlider_value_changed(value):
-	PersistenceMngr.set_val_from_ui_path(persistence_uid_path, value)
+	PersistenceMngr.set_state(persistence_uid_path, value)
 	emit_signal("slider_changed", slider.value)
