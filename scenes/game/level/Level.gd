@@ -6,7 +6,10 @@ onready var start_pos:Vector2 = $StartPoint.global_position
 const LevelCamera = preload("res://scenes/game/level/LevelCamera.gd")
 const Player = preload("res://scenes/entities/Player.gd")
 
-export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.StaticZoomed
+export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.Static
+export(Vector2) var camera_zoom = Vector2(1,1)
+export(Vector2) var camera_position = Vector2(0,0)
+
 export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
 export(bool) var give_player_light = false
 export(Vector2) var gravity = Vector2(0, 500)

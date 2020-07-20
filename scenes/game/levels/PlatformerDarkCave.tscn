@@ -761,6 +761,6 @@ position = Vector2( 368.171, 67.5159 )
 position = Vector2( 59.3826, 51.8389 )
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
+color = Color( 0.305882, 0.305882, 0.305882, 1 )
 [connection signal="body_entered" from="DamageArea" to="DamageArea" method="_on_DamageArea_body_entered"]
 [connection signal="body_exited" from="DamageArea" to="DamageArea" method="_on_DamageArea_body_exited"]

@@ -199,6 +199,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 
 [node name="TopDownIsometric" type="Node2D"]
 script = ExtResource( 1 )
+camera_type = 2
 control_scheme = 1
 gravity = Vector2( 0, 0 )
 

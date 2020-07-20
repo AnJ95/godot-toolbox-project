@@ -1,12 +1,13 @@
 extends Camera2D
 
 enum CameraType {
-	Static,
-	StaticZoomed,
-	FollowPlayerZoomed
-	FollowPlayer
+	Static
+	StaticLevel
+	StaticLevelZoomCover,
+	StaticLevelZoomFill,
+	Player
 }
-export(CameraType) var camera_type = CameraType.FollowPlayerZoomed
+export(CameraType) var camera_type = CameraType.Player
 
 func _ready():
 	SignalMngr.connect("level_started", self, "_on_level_started")
@@ -19,16 +20,25 @@ func _on_level_started(level):
 	# Only do this with the right camera type
 	if level.camera_type == camera_type:
 		print("Activating Camera", CameraType.keys()[camera_type])
+		
+		if camera_type in [CameraType.Static]:
+			position = level.camera_position
+			zoom = level.camera_zoom
+		
+		if camera_type in [CameraType.Player]:
+			zoom = level.camera_zoom
+		
 		var rect:Rect2 = level.get_map_rect()
 		
-		# if zooming: calc zoom level
-		if camera_type in [CameraType.StaticZoomed, CameraType.FollowPlayerZoomed]:
+		if camera_type in [CameraType.StaticLevel]:
+			position = rect.position + rect.size / 2
+			zoom = level.camera_zoom
+			
+		if camera_type in [CameraType.StaticLevelZoomCover, CameraType.StaticLevelZoomFill]:
+			position = rect.position + rect.size / 2
 			zoom = rect.size / get_viewport_rect().size
-			if zoom.x > zoom.y: zoom.y = zoom.x
-			if zoom.y > zoom.x: zoom.x = zoom.y
-		
-		# if static camera: set position
-		if camera_type in [CameraType.StaticZoomed, CameraType.Static]:
-			offset = rect.position + rect.size / 2
-	
+			
+			if camera_type == CameraType.StaticLevelZoomCover:
+				if zoom.x > zoom.y: zoom.y = zoom.x
+				if zoom.y > zoom.x: zoom.x = zoom.y
 
