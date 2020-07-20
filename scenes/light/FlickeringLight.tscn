@@ -13,7 +13,7 @@ noise = SubResource( 1 )
 
 [node name="FlickeringLight" type="Light2D"]
 texture = ExtResource( 1 )
-texture_scale = 0.8
+texture_scale = 1.2
 color = Color( 0.996094, 0.652044, 0.381317, 1 )
 energy = 0.9
 script = ExtResource( 2 )

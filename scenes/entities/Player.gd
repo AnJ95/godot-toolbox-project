@@ -31,6 +31,7 @@ var level
 var skin_id = 0
 
 var flip = false
+var walking = false
 var jumping = false
 
 #############################################################
@@ -46,6 +47,11 @@ func _on_level_started(level:Node):
 	self.level = level
 	.get_parent().remove_child(self)
 	level.add_child(self)
+	
+	# Reset state
+	flip = false
+	walking = false
+	jumping = false
 	
 	# Initialize using level
 	# start pos
@@ -86,6 +92,7 @@ func _physics_process(delta):
 	process_sprite(delta)
 
 	if die_on_level_leave:
+		#if get_viewport_rect().grow(80).has_point(global_position):
 		if !level.get_map_rect().grow(80).has_point(global_position):
 			deal_damage(1000)
 
@@ -102,30 +109,35 @@ func process_walk(delta:float):
 func process_walk_platformer(delta:float):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
+	
 	# Slow down the player if they're not trying to move.
 	if abs(walk) < WALK_FORCE * 0.2:
 		# The velocity, slowed down a bit, and then reassigned.
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		walking = false
 	else:
 		velocity.x += walk * delta
+		walking = true
+		
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	
 func process_walk_topdown(delta:float):
-	# Horizontal movement code. First, get the player's input.
+	# omnidirectional movement code. First, get the player's input.
 	var x = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
 	var y = WALK_FORCE * (Input.get_action_strength("Down") - Input.get_action_strength("Up"))
+	var walk = Vector2(x, y)
 	
-	
-	if abs(x) < WALK_FORCE * 0.2: 	velocity.x = 	move_toward(velocity.x, 0, STOP_FORCE * delta)
-	else:						velocity.x += x * delta
-	
-	if abs(y) < WALK_FORCE * 0.2:	velocity.y = move_toward(velocity.y, 0, STOP_FORCE * delta)
-	else:						velocity.y += y * delta
-		
-	# Clamp to the maximum movement speed.
-	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
-	velocity.y = clamp(velocity.y, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+	if walk.length() < 0.2:
+		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		velocity.y = move_toward(velocity.y, 0, STOP_FORCE * delta)
+		walking = false
+	else:
+		velocity += walk * delta
+		walking = true
+
+	if velocity.length_squared() > WALK_MAX_SPEED*WALK_MAX_SPEED:
+		velocity = WALK_MAX_SPEED * velocity.normalized()
 
 # Handles floored state and triggers jump
 # Must be called after move_and_slide
@@ -148,7 +160,7 @@ func process_sprite(delta:float):
 	if jumping:
 		sprite.animation = "jump"
 	else:
-		if abs(velocity.x) > 0.1:
+		if walking:
 			sprite.animation = "walk"
 		else:
 			sprite.animation = "idle"

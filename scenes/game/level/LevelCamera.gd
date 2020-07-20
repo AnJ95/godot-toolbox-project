@@ -19,18 +19,17 @@ func _on_level_started(level):
 	
 	# Only do this with the right camera type
 	if level.camera_type == camera_type:
-		print("Activating Camera", CameraType.keys()[camera_type])
-		
-		if camera_type in [CameraType.Static]:
+
+		if camera_type == CameraType.Static:
 			position = level.camera_position
 			zoom = level.camera_zoom
 		
-		if camera_type in [CameraType.Player]:
+		if camera_type == CameraType.Player:
 			zoom = level.camera_zoom
 		
 		var rect:Rect2 = level.get_map_rect()
 		
-		if camera_type in [CameraType.StaticLevel]:
+		if camera_type == CameraType.StaticLevel:
 			position = rect.position + rect.size / 2
 			zoom = level.camera_zoom
 			
