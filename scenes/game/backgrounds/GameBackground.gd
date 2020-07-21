@@ -1,15 +1,6 @@
 extends ParallaxBackground
 
 func _ready():
-	SignalMngr.connect("level_started", self, "_on_level_started", [], CONNECT_DEFERRED)
-
-func _on_level_started(level:Node):
-	
-	if get_parent() == level:
-		show()
-	else:
-		hide()
-		
 	var i = 0
 	for l in get_children():
 		var layer:ParallaxLayer = l
@@ -28,10 +19,3 @@ func _on_level_started(level:Node):
 		sprite.scale = get_viewport().get_visible_rect().size / Vector2(sw, sh)
 		
 		i += 1
-
-func show():
-	for l in get_children():
-		l.get_children()[0].show()
-func hide():
-	for l in get_children():
-		l.get_children()[0].hide()

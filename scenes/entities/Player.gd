@@ -169,9 +169,8 @@ func process_sprite(delta:float):
 # SKINS
 func process_skin(_delta:float):
 	var new_skin_id = skin_id
-	if Input.is_action_just_pressed("NextSkin"):		new_skin_id += 1
-	if Input.is_action_just_pressed("PrevSkin"):		new_skin_id -= 1
-	new_skin_id = clamp(new_skin_id, 0, skins.size() - 1)
+	if Input.is_action_just_pressed("SwitchSkin"):
+		new_skin_id = (new_skin_id + 1) % skins.size()
 	if new_skin_id != skin_id:
 		skin_id = new_skin_id
 		set_skin_texture(skins[skin_id])

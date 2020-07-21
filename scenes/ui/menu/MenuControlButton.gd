@@ -26,7 +26,7 @@ var awaiting = false
 #############################################################
 # LIFECYCLE
 func _ready():
-	scancode = PersistenceMngr.get_state_from_ui_path(persistence_uid_path)
+	scancode = PersistenceMngr.get_state(persistence_uid_path)
 	
 	label.text = caption
 	button.text = get_display_caption()

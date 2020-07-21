@@ -23,10 +23,8 @@ const DEFAULT_OPTIONS_KEYBINDINGS = {
 	"Up" : 87,
 	"Down" : 83,
 	"Jump" : 32,
-	"PrevDemo" : 52,
-	"NextDemo" : 82,
-	"PrevSkin" : 53,
-	"NextSkin" : 84,
+	"SwitchDemo" : 49,
+	"SwitchSkin" : 50,
 	"Pause" : 80,
 	"Interact" : 16777221
 }

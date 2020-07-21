@@ -42,7 +42,7 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox/Menu/ScrollContainer" index="0"]
 margin_right = 552.0
-margin_bottom = 614.0
+margin_bottom = 488.0
 size_flags_horizontal = 3
 
 [node name="MenuControlButton" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="0" instance=ExtResource( 5 )]
@@ -81,57 +81,39 @@ margin_bottom = 236.0
 caption = "Down"
 persistence_uid_path = "settingsControls.Down"
 
-[node name="MenuControlButton7" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="4" instance=ExtResource( 5 )]
+[node name="MenuControlButton8" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="4" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 252.0
 margin_right = 552.0
 margin_bottom = 299.0
-caption = "Prev Demo"
-persistence_uid_path = "settingsControls.PrevDemo"
+caption = "Switch Demo"
+persistence_uid_path = "settingsControls.SwitchDemo"
 
-[node name="MenuControlButton8" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
+[node name="MenuControlButton9" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="5" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 315.0
 margin_right = 552.0
 margin_bottom = 362.0
-caption = "Next Demo"
-persistence_uid_path = "settingsControls.NextDemo"
+caption = "Switch Skin"
+persistence_uid_path = "settingsControls.SwitchSkin"
 
-[node name="MenuControlButton10" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="6" instance=ExtResource( 5 )]
+[node name="MenuControlButton5" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="6" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 378.0
 margin_right = 552.0
 margin_bottom = 425.0
-caption = "Prev Skin"
-persistence_uid_path = "settingsControls.PrevSkin"
+caption = "Jump"
+persistence_uid_path = "settingsControls.Jump"
 
-[node name="MenuControlButton9" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="7" instance=ExtResource( 5 )]
+[node name="MenuControlButton6" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="7" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 441.0
 margin_right = 552.0
 margin_bottom = 488.0
-caption = "Next Skin"
-persistence_uid_path = "settingsControls.NextSkin"
-
-[node name="MenuControlButton5" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="8" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 504.0
-margin_right = 552.0
-margin_bottom = 551.0
-caption = "Jump"
-persistence_uid_path = "settingsControls.Jump"
-
-[node name="MenuControlButton6" parent="MenuLayer/UIBox/Menu/ScrollContainer/VBoxContainer" index="9" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 567.0
-margin_right = 552.0
-margin_bottom = 614.0
 caption = "Interact"
 persistence_uid_path = "settingsControls.Interact"
 

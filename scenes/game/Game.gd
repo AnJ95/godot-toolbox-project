@@ -64,9 +64,13 @@ func start_level(next_level_id):
 	# instantiate and add new level
 	var next_level = levels[next_level_id].instance()
 	add_child(next_level)
-	current_level = next_level
 	
+	# trigger signal
 	SignalMngr.emit_signal("level_started", next_level)
+	
+	# save state
+	cur_level_id = next_level_id
+	current_level = next_level
 
 func restart_level():
 	start_level(cur_level_id)
@@ -74,10 +78,8 @@ func restart_level():
 func _process_level(_delta):
 	# Switch Level with Q and E keys
 	var last_level_id = cur_level_id
-	if Input.is_action_just_pressed("PrevDemo"):		cur_level_id -= 1
-	if Input.is_action_just_pressed("NextDemo"):		cur_level_id += 1
-	cur_level_id = clamp(cur_level_id, 0, levels.size()-1)
-	
+	if Input.is_action_just_pressed("SwitchDemo"):
+		cur_level_id = (1 + cur_level_id) % levels.size()
 	if last_level_id != cur_level_id:
 		start_level(cur_level_id)
 
