@@ -1,36 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/game/levels/TopDownDungeonMystery.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/level/LevelCamera.gd" type="Script" id=2]
-[ext_resource path="res://scenes/game/levels/TopDownIsometric.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/game/levels/PlatformerDarkCave.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/game/levels/PlatformerAutotile.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/game/levels/PlatformerParallax.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/entities/enemies/EnemyDemon.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 546.354, -738.488 )
-
-[node name="PlatformerAutotile" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1294.84, -384.529 )
-
-[node name="TopDownDungeonMystery" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1677.83, 871.989 )
-
-[node name="PlatformerParallax" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1435.93, -165.113 )
-
-[node name="Enemy" parent="PlatformerParallax" instance=ExtResource( 10 )]
-position = Vector2( 108.648, 254.204 )
-
-[node name="PlatformerDarkCave" parent="." instance=ExtResource( 6 )]
-position = Vector2( 227.422, 1006.09 )
-
-[node name="TopDownIsometric" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1293.55, 62.8997 )
 
 [node name="LevelCameraStatic" type="Camera2D" parent="."]
 script = ExtResource( 2 )
@@ -41,11 +18,9 @@ script = ExtResource( 2 )
 camera_type = 1
 
 [node name="LevelCameraStaticLevelZoomCover" type="Camera2D" parent="."]
-position = Vector2( -1143.24, -1.99445 )
 script = ExtResource( 2 )
 camera_type = 2
 
 [node name="LevelCameraStaticLevelZoomFill" type="Camera2D" parent="."]
-position = Vector2( -1143.24, -1.99445 )
 script = ExtResource( 2 )
 camera_type = 3

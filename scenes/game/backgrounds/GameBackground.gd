@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
 func _ready():
-	SignalMngr.connect("level_started", self, "_on_level_started")
+	SignalMngr.connect("level_started", self, "_on_level_started", [], CONNECT_DEFERRED)
 
 func _on_level_started(level:Node):
 	
@@ -16,7 +16,7 @@ func _on_level_started(level:Node):
 		var sprite:Sprite = layer.get_children()[0]
 		
 		layer.motion_scale.y = 0
-		layer.motion_scale.x = i * 0.1
+		layer.motion_scale.x = (i+1) * 0.12
 		
 		var sw = sprite.texture.get_width()
 		var sh = sprite.texture.get_height()
