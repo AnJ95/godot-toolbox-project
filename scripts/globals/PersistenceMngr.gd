@@ -23,7 +23,7 @@ const SAVE_ON_SET = 2
 var _objs = {}
 
 func _ready():
-	if C.remove_all_saves:
+	if C.REMOVE_ALL_SAVES:
 		for obj in _objs.values():
 			obj._remove_save()
 

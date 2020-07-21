@@ -18,6 +18,10 @@ func _ready():
 		SignalMngr.connect(signal_to_open_to, self, "_on_open_or_close")
 	else:
 		SignalMngr.connect(signal_to_open_to, self, "_on_open")
+	
+	SignalMngr.connect("level_started", self, "_on_level_started")
+
+func _on_level_started(_level):
 	__hide()
 	
 func _process(delta):

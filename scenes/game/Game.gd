@@ -55,10 +55,16 @@ func _on_level_started(level:Node):
 	
 func _on_level_lost():
 	D.l("Game", ["Level lost"])
+	
+	if C.DIRECT_RESPAWN_ON_LEVEL_LOST:
+		call_deferred("restart_level")
 
 func _on_level_won():
 	D.l("Game", ["Level won", cur_level_id])
 	PersistenceMngr.set_state("levelProgress." + str(cur_level_id), true)
+	
+	if C.DIRECT_NEXT_ON_LEVEL_WON:
+		call_deferred("next_level")
 
 	
 	

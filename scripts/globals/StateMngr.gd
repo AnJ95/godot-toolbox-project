@@ -12,7 +12,8 @@ func _ready():
 	# Create (possibly load) level progress
 	# Default value is false for each configured Level
 	var levelProgress_default = {}
-	for level_id in C.LEVELS.keys(): levelProgress_default[str(level_id)] = false
+	for level_id in C.LEVELS.keys():
+		levelProgress_default[str(level_id)] = C.UNLOCK_ALL_LEVELS
 	PersistenceMngr.add_state("levelProgress", levelProgress_default)
 	
 	# Create (possibly load) settings

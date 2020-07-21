@@ -6,23 +6,51 @@ extends Node
 # DEBUG
 
 # Global switch for debug mode
-var is_debug = true
+const IS_DEBUG = true
 
-var remove_all_saves = false
-
+# Deletes all save files on start
+const REMOVE_ALL_SAVES = false
 
 ####################################################################
-# LEVELS
+# MENU
+
+# show ScreenMainMenu after ScreenSplash or directly start ScreenGame
+const SHOW_MAIN_MENU = true
+
+# show ScreenLevelMenu on game start or directly start ScreenGame
+const SHOW_LEVEL_MENU = true
+
+# show the settings button in ScreenMainMenu
+const SHOW_SETTINGS = true
+
+# show video settings in ScreenOptionsMenu
+const SHOW_SETTINGS_VIDEO = false
+
+# show audio settings in ScreenOptionsMenu
+const SHOW_SETTINGS_AUDIO = true
+
+# show control settings in ScreenOptionsMenu
+const SHOW_SETTINGS_KEYBINDINGS = true
+
+####################################################################
+# GAME
+const DIRECT_RESPAWN_ON_LEVEL_LOST = true
+const DIRECT_NEXT_ON_LEVEL_WON = true
+const UNLOCK_ALL_LEVELS = IS_DEBUG
+
+
+
 const LEVELS = {
-	0:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
-	1:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
-	2:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
-	3:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
-	4:		preload("res://scenes/game/levels/TopDownIsometric.tscn")
+	0:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
+	1:		preload("res://scenes/game/levels/TopDownIsometric.tscn"),
+	2:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
+	3:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
+	4:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
 }
 
 ####################################################################
 # OPTIONS
+
 const DEFAULT_OPTIONS_AUDIO = {
 	"Master" : 80,
 	"Music" : 100,

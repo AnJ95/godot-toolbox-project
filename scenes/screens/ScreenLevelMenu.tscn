@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ui/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/screens/ScreenLevelMenu.gd" type="Script" id=4]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=7]
 
 [node name="ScreenLevelMenu" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -13,23 +14,31 @@ script = ExtResource( 4 )
 
 [node name="MenuLayer" type="CanvasLayer" parent="." index="1"]
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuLayer" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 220.0
-margin_top = 90.0
-margin_right = -220.0
-margin_bottom = -90.0
-theme = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UIBox" parent="MenuLayer" index="0" instance=ExtResource( 5 )]
 
-[node name="Menu" parent="MenuLayer/MarginContainer" index="0" instance=ExtResource( 3 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox" index="0"]
+margin_left = 220.0
+margin_top = 80.0
+margin_right = 804.0
+margin_bottom = 520.0
+
+[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer" index="0" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 584.0
-margin_bottom = 420.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 3
+margin_bottom = 31.0
+text = "LEVELS"
+
+[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
+margin_top = 47.0
+margin_right = 584.0
+margin_bottom = 47.0
+columns = 4
+
+[node name="BtnMenu" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 6 )]
+margin_top = 63.0
+margin_right = 584.0
+margin_bottom = 110.0
+text = "Back"
+pushes_screen = false
+pops_screen = true

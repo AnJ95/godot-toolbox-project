@@ -1,6 +1,12 @@
+tool
 extends Node2D
 
+onready var menu = $MenuLayer/UIBox/VBoxContainer/Menu
 func _ready():
+	
+	for child in menu.get_children():
+		child.queue_free()
+	
 	for level_id in C.LEVELS.keys():
 		# Create
 		var btn:Button = Button.new()
@@ -13,7 +19,7 @@ func _ready():
 		btn.size_flags_horizontal = btn.SIZE_EXPAND_FILL
 		
 		# Add
-		$MenuLayer/MarginContainer/Menu.add_child(btn)
+		menu.add_child(btn)
 
 func is_level_unlocked(level_id):
 	return (
