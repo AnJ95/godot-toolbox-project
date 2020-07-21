@@ -2,11 +2,12 @@ tool
 extends Node
 
 #############################################################
-# NON PERSISTANT STATE
+# NON PERSISTENT STATE
 onready var score = StateInt.new(0)
+var start_level_id = -1
 
 #############################################################
-# PERSISTANT STATE
+# PERSISTENT STATE
 func _ready():
 	# Create (possibly load) level progress
 	# Default value is false for each configured Level

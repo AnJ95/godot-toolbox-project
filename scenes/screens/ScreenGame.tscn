@@ -1,17 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/Game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/game/GamePause.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/GameDialogLevelWon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/GameUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/game/GameOver.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game/GameDialogLost.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game/GameDialogPause.tscn" type="PackedScene" id=6]
 
 [node name="ScreenGame" instance=ExtResource( 1 )]
 
-[node name="GameOver" parent="." index="0" instance=ExtResource( 11 )]
+[node name="GameUI" parent="." index="0" instance=ExtResource( 4 )]
 
-[node name="GamePause" parent="." index="1" instance=ExtResource( 3 )]
+[node name="GameDialogLevelWon" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="GameUI" parent="." index="2" instance=ExtResource( 4 )]
+[node name="GameDialogLost" parent="." index="2" instance=ExtResource( 5 )]
 
-[node name="Game" parent="." index="3" instance=ExtResource( 2 )]
+[node name="GameDialogPause" parent="." index="3" instance=ExtResource( 6 )]
+
+[node name="Game" parent="." index="4" instance=ExtResource( 2 )]

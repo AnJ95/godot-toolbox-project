@@ -23,4 +23,5 @@ func is_level_unlocked(level_id):
 	)
 
 func _on_button_pressed(level_id):
-	print(level_id)
+	StateMngr.start_level_id = level_id
+	ScreenMngr.push_screen(C.Screen.GAME)

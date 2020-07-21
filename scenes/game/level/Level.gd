@@ -1,11 +1,17 @@
 extends Node2D
 
+#############################################################
+# NODES
 onready var ref_rect:ReferenceRect = $ReferenceRect
 onready var start_pos:Vector2 = $StartPoint.global_position
 
+#############################################################
+# CONSTANTS
 const LevelCamera = preload("res://scenes/game/level/LevelCamera.gd")
 const Player = preload("res://scenes/entities/Player.gd")
 
+#############################################################
+# CUSTOMIZATION
 export(LevelCamera.CameraType) var camera_type = LevelCamera.CameraType.Static
 export(Vector2) var camera_zoom = Vector2(1,1)
 export(Vector2) var camera_position = Vector2(0,0)
@@ -14,16 +20,16 @@ export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platforme
 export(bool) var give_player_light = false
 export(Vector2) var gravity = Vector2(0, 500)
 
+#############################################################
+# STATE
+onready var num_coins = get_tree().get_nodes_in_group("PickupCoin").size()
+
 func _ready():
-	add_to_group("Level")
-	
-	D.l("Level", ["Level started [", {
-		"name" : name,
-		"camera_type" : LevelCamera.CameraType.keys()[camera_type()],
-		"control_scheme" : Player.ControlScheme.keys()[get_control_scheme()], 
-		"map_rect" : get_map_rect(),
-		"player_start_pos" : get_player_start_pos(),
-	} , "]"])
+	StateMngr.score.connect("state_changed", self, "_on_score_changed")
+
+func _on_score_changed(score):
+	if score >= num_coins:
+		SignalMngr.emit_signal("level_won")
 		
 
 func get_map_rect()->Rect2:

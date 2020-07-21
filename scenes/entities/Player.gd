@@ -192,6 +192,6 @@ func set_skin_texture(txt:Texture):
 #############################################################
 # OVERRIDES
 func _on_die():
-	SignalMngr.emit_signal("player_died")
+	SignalMngr.emit_signal("level_lost")
 	
 	
