@@ -58,6 +58,7 @@ size_flags_vertical = 3
 margin_right = 584.0
 margin_bottom = 47.0
 text = "Start Game"
+screen_to_switch_to = 7
 grabs_focus = true
 
 [node name="MenuButton2" parent="MenuLayer/MarginContainer/HBoxContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]

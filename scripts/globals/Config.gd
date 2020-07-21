@@ -10,6 +10,17 @@ var is_debug = true
 
 var remove_all_saves = false
 
+
+####################################################################
+# LEVELS
+const LEVELS = {
+	0:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
+	1:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
+	2:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
+	3:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
+	4:		preload("res://scenes/game/levels/TopDownIsometric.tscn")
+}
+
 ####################################################################
 # OPTIONS
 const DEFAULT_OPTIONS_AUDIO = {
@@ -54,7 +65,7 @@ var hide_log_level = {
 enum Screen {
 	SPLASH, MAIN_MENU, ABOUT,
 	OPTIONS_MENU, OPTIONS_VIDEO_MENU, OPTIONS_AUDIO_MENU, OPTIONS_CONTROLS_MENU,
-	GAME
+	LEVEL_MENU, GAME
 }
 
 const SCREEN_SCENES = {
@@ -67,7 +78,9 @@ const SCREEN_SCENES = {
 	Screen.OPTIONS_AUDIO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
 	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsControlsMenu.tscn",
 	
-	Screen.GAME:					"res://scenes/screens/ScreenGame.tscn"
+	Screen.GAME:					"res://scenes/screens/ScreenGame.tscn",
+	Screen.LEVEL_MENU:			"res://scenes/screens/ScreenLevelMenu.tscn"
+	
 }
 
 const INITIAL_SCREEN = Screen.SPLASH

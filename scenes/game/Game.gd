@@ -2,13 +2,7 @@ extends Node2D
 
 #############################################################
 # CONSTS
-const levels = {
-	0:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
-	1:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
-	2:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
-	3:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
-	4:		preload("res://scenes/game/levels/TopDownIsometric.tscn")
-}
+
 
 #############################################################
 # STATE
@@ -62,7 +56,7 @@ func start_level(next_level_id):
 		current_level = null
 	
 	# instantiate and add new level
-	var next_level = levels[next_level_id].instance()
+	var next_level = C.LEVELS[next_level_id].instance()
 	add_child(next_level)
 	
 	# trigger signal
@@ -79,7 +73,7 @@ func _process_level(_delta):
 	# Switch Level with Q and E keys
 	var last_level_id = cur_level_id
 	if Input.is_action_just_pressed("SwitchDemo"):
-		cur_level_id = (1 + cur_level_id) % levels.size()
+		cur_level_id = (1 + cur_level_id) % C.LEVELS.size()
 	if last_level_id != cur_level_id:
 		start_level(cur_level_id)
 

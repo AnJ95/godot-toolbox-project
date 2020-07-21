@@ -8,10 +8,15 @@ onready var score = StateInt.new(0)
 #############################################################
 # PERSISTANT STATE
 func _ready():
+	# Create (possibly load) level progress
+	# Default value is false for each configured Level
+	var levelProgress_default = {}
+	for level_id in C.LEVELS.keys(): levelProgress_default[str(level_id)] = false
+	PersistenceMngr.add_state("levelProgress", levelProgress_default)
+	
+	# Create (possibly load) settings
 	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", self, "_on_settingsAudio_update")
-	
 	PersistenceMngr.add_state("settingsControls", C.DEFAULT_OPTIONS_KEYBINDINGS).connect("changed", self, "_on_settingsControls_update")
-	
 	# Inititally configure audio and controls
 	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
 	_on_settingsControls_update(PersistenceMngr.get_state("settingsControls"))
