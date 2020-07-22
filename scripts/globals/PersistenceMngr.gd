@@ -77,7 +77,7 @@ func set_state(uid:String, val):
 	if nodes.size() == 0:
 		D.e(D.LogCategory.PERSISTENCE, ["set_state", "Could not parse uid [", "UID:", uid, "]" ])
 	elif nodes.size() == 1:
-		set_state(uid, val)
+		_objs[uid].set_state(val)
 	else:
 		# First node is entire json
 		if !nodes[0] in _objs:

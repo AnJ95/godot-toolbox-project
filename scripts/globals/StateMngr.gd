@@ -17,14 +17,22 @@ func _ready():
 	PersistenceMngr.add_state("levelProgress", levelProgress_default)
 	
 	# Create (possibly load) settings
+	PersistenceMngr.add_state("settingsVideo", C.DEFAULT_OPTIONS_VIDEO).connect("changed", self, "_on_settingsVideo_update")
 	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", self, "_on_settingsAudio_update")
 	PersistenceMngr.add_state("settingsControls", C.DEFAULT_OPTIONS_KEYBINDINGS).connect("changed", self, "_on_settingsControls_update")
-	# Inititally configure audio and controls
+	
+	# Inititally configure options
+	_on_settingsAudio_update(PersistenceMngr.get_state("settingsVideo"))
 	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
 	_on_settingsControls_update(PersistenceMngr.get_state("settingsControls"))
 
 #############################################################
 # HANDLERS FOR PERSISTENT STATE
+func _on_settingsVideo_update(settingsVideo):
+	OS.window_fullscreen = settingsVideo["Fullscreen"]
+	OS.vsync_enabled = settingsVideo["VSync"]
+		
+			
 func _on_settingsAudio_update(settingsAudio):
 	for bus in settingsAudio.keys():
 		var idx = AudioServer.get_bus_index(bus)

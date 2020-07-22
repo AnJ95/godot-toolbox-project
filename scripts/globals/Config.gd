@@ -9,7 +9,7 @@ extends Node
 const IS_DEBUG = true
 
 # Deletes all save files on start
-const REMOVE_ALL_SAVES = false
+const REMOVE_ALL_SAVES = true
 
 ####################################################################
 # MENU
@@ -24,7 +24,7 @@ const SHOW_LEVEL_MENU = true
 const SHOW_SETTINGS = true
 
 # show video settings in ScreenOptionsMenu
-const SHOW_SETTINGS_VIDEO = false
+const SHOW_SETTINGS_VIDEO = true
 
 # show audio settings in ScreenOptionsMenu
 const SHOW_SETTINGS_AUDIO = true
@@ -67,6 +67,11 @@ const DEFAULT_OPTIONS_KEYBINDINGS = {
 	"Pause" : 80,
 	"Interact" : 16777221
 }
+
+const DEFAULT_OPTIONS_VIDEO = {
+	"Fullscreen" : false,
+	"VSync" : true
+}
 	
 ####################################################################
 # LOGGING
@@ -102,7 +107,7 @@ const SCREEN_SCENES = {
 	Screen.ABOUT:					"res://scenes/screens/ScreenAbout.tscn",
 	
 	Screen.OPTIONS_MENU:			"res://scenes/screens/ScreenOptionsMenu.tscn",
-	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
+	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsVideoMenu.tscn",
 	Screen.OPTIONS_AUDIO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
 	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsControlsMenu.tscn",
 	

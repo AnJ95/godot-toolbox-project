@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/menu/MenuToggleSettingButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=7]
+
+[node name="ScreenOptionsVideoMenu" instance=ExtResource( 1 )]
+
+[node name="BaseBackground" parent="." index="0" instance=ExtResource( 4 )]
+
+[node name="MenuLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="UIBox" parent="MenuLayer" index="0" instance=ExtResource( 6 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox" index="0"]
+margin_left = 220.0
+margin_top = 80.0
+margin_right = 804.0
+margin_bottom = 520.0
+
+[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer" index="0" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 584.0
+margin_bottom = 31.0
+text = "VIDEO SETTINGS"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
+margin_top = 47.0
+margin_right = 584.0
+margin_bottom = 377.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0"]
+margin_right = 568.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+
+[node name="MenuToggleSettingButton" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="0" instance=ExtResource( 3 )]
+margin_right = 568.0
+margin_bottom = 47.0
+text = "Enter Fullscreen"
+
+[node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="1" instance=ExtResource( 3 )]
+margin_top = 63.0
+margin_right = 568.0
+margin_bottom = 110.0
+text = "Use VSync"
+setting = "VSync"
+
+[node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 393.0
+margin_right = 584.0
+margin_bottom = 440.0
+text = "Back"
+pushes_screen = false
+pops_screen = true

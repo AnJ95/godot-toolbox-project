@@ -47,7 +47,7 @@ margin_top = 265.0
 margin_right = 924.0
 margin_bottom = 500.0
 size_flags_vertical = 3
-text = "Loading Game..."
+text = "An unlabeled game"
 
 [node name="BaseBackground" parent="." index="1" instance=ExtResource( 4 )]
 
