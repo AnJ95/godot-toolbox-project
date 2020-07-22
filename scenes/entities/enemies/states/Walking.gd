@@ -1,0 +1,35 @@
+extends "res://scripts/stateMachine/states/State.gd"
+
+var direction = Vector2(1, 0) # must be normalized
+var sprite:AnimatedSprite
+
+
+func on_enter():
+	$Timer.start()
+	sprite = root.get_node("AnimatedSprite")
+	sprite.animation = "walk"
+
+func on_leave():
+	$Timer.stop()
+
+func process(delta:float):
+	
+	# Determine if there was a wall collision
+	for i in range(root.get_slide_count()):
+		var collision = root.get_slide_collision(i)
+		if abs(collision.normal.x) > 0.8:
+			direction.x = -direction.x
+
+	# calculate velocity
+	var walk = root.walk_force * direction 
+	var v = root.velocity
+	v += walk * delta
+	v.x = clamp(v.x, -root.walk_max_speed, root.walk_max_speed)
+	root.velocity = v
+	
+	# flip Sprite
+	if v.x > 0: sprite.flip_h = false
+	if v.x < 0: sprite.flip_h = true
+
+func _on_Timer_timeout():
+	sm.goto_state("Idle")

@@ -6,17 +6,17 @@ onready var sm_lifecycle = $StateMachineLifecycle
 
 #############################################################
 # WALKING CONSTANTS
-const WALK_FORCE = 500
-const WALK_MAX_SPEED = 120
-const STOP_FORCE = 1900
-const JUMP_SPEED = 220
-
-var velocity = Vector2()
+export var walk_force = 500
+export var walk_max_speed = 120
+export var stop_force = 1900
+export var jump_speed = 220
 
 #############################################################
 # CUSTOMIZATION
 export(bool) var do_contact_damage:bool = false
 export(float) var contact_damage:float = 0.5
+export var affected_by_gravity = true
+export var revive_on_level_start = true
 
 #############################################################
 # HEALTH
@@ -24,7 +24,11 @@ export(float) var __health_now = 3.0
 export(float) var __health_max = 3.0
 signal health_changed(health_now, health_max)
 
-export var revive_on_level_start = true
+#############################################################
+# STATE
+var level
+var flip = false
+var velocity = Vector2()
 
 func deal_damage(dmg):
 	var can_get_dmg = sm_lifecycle.get_state().can_get_damage()
@@ -62,14 +66,41 @@ func _on_game_started():
 	__health_now = __health_max
 	sm_lifecycle.goto_state("Alive")
 		
-func _on_level_started(_level):
+func _on_level_started(level):
+	self.level = level
+	
 	# Reset
 	if revive_on_level_start:
 		__health_now = __health_max
 		sm_lifecycle.goto_state("Alive")
 		
-func __is_entity():
-	return true
+#############################################################
+# PROCESS
+func _physics_process(delta):
+	# Cancel if dead by lifecycle
+	if !sm_lifecycle.get_state().do_physics_process():
+		return
+	
+	before_move_and_slide(delta)
+	
+	# Apply gravity.
+	if affected_by_gravity:
+		velocity += level.gravity * delta
+			
+	# Move based on the velocity and snap to the ground.
+	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+	after_move_and_slide(delta)
+	
+	# Deal damage if touching target
+	if do_contact_damage:
+		for contact in contacts:
+			contact.deal_damage(contact_damage)
+	
+func before_move_and_slide(delta):
+	pass
+	
+func after_move_and_slide(delta):
+	pass
 	
 #############################################################
 # CONTACT DAMAGE
@@ -85,10 +116,10 @@ func _on_ContactArea_body_exited(body):
 	if can_have_contact_with(body):
 		contacts.erase(body)
 
-func _physics_process(delta):
-	if sm_lifecycle.get_state().do_physics_process():
-		for contact in contacts:
-			contact.deal_damage(contact_damage)
+#############################################################
+# A LITTLE HACKY
+func __is_entity():
+	return true
 #############################################################
 # OVERRIDES
 func _on_die():

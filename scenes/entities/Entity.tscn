@@ -6,15 +6,15 @@
 [ext_resource path="res://scripts/stateMachine/states/Statelnvulnerable.gd" type="Script" id=4]
 [ext_resource path="res://scripts/stateMachine/StateMachine.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
 height = 5.0
 
-[sub_resource type="CapsuleShape2D" id=12]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 6.0
 height = 5.0
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.54902, 0.0627451, 0.0627451, 1, 1, 1, 1, 1, 0.160784, 0.160784, 0.160784, 1, 1, 1, 1, 1 )
 
@@ -23,13 +23,13 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -7.5 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="ContactArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
 position = Vector2( 0, -7.5 )
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="StateMachineLifecycle" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -39,7 +39,7 @@ script = ExtResource( 3 )
 
 [node name="Invulnerable" type="Node" parent="StateMachineLifecycle"]
 script = ExtResource( 4 )
-modulate_gradient = SubResource( 2 )
+modulate_gradient = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="StateMachineLifecycle/Invulnerable"]
 wait_time = 0.8

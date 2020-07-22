@@ -26,11 +26,8 @@ onready var light = $Light2D
 
 #############################################################
 # STATE
-var level
-
 var skin_id = 0
 
-var flip = false
 var walking = false
 var jumping = false
 
@@ -44,7 +41,6 @@ func _ready():
 func _on_level_started(level:Node):	
 	
 	# Reparent to new level
-	self.level = level
 	.get_parent().remove_child(self)
 	level.add_child(self)
 	
@@ -66,21 +62,12 @@ func _on_level_started(level:Node):
 	emit_signal("health_changed", get_health_now(), get_health_max())
 
 #############################################################
-# PROCESS	
-func _physics_process(delta):
-	if !sm_lifecycle.get_state().do_physics_process():
-		return
-	._physics_process(delta)
-	
+# PROCESS
+func before_move_and_slide(delta):
 	# Walking
 	process_walk(delta)
 	
-	# Vertical movement code. Apply gravity.
-	velocity += level.gravity * delta
-
-	# Move based on the velocity and snap to the ground.
-	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-
+func after_move_and_slide(delta):
 	# Floored / Jump
 	if control_scheme == ControlScheme.Platformer:
 		process_jump(delta)
@@ -91,10 +78,11 @@ func _physics_process(delta):
 	# Sprite Animation
 	process_sprite(delta)
 
+	# Leaving Level Box
 	if die_on_level_leave:
-		#if get_viewport_rect().grow(80).has_point(global_position):
 		if !level.get_map_rect().grow(80).has_point(global_position):
 			deal_damage(1000)
+
 
 # Calculates x-velocity for walking
 # Must be called before move_and_slide
@@ -108,36 +96,36 @@ func process_walk(delta:float):
 
 func process_walk_platformer(delta:float):
 	# Horizontal movement code. First, get the player's input.
-	var walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
+	var walk = walk_force * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
 	
 	# Slow down the player if they're not trying to move.
-	if abs(walk) < WALK_FORCE * 0.2:
+	if abs(walk) < walk_force * 0.2:
 		# The velocity, slowed down a bit, and then reassigned.
-		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		velocity.x = move_toward(velocity.x, 0, stop_force * delta)
 		walking = false
 	else:
 		velocity.x += walk * delta
 		walking = true
 		
 	# Clamp to the maximum horizontal movement speed.
-	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+	velocity.x = clamp(velocity.x, -walk_max_speed, walk_max_speed)
 	
 func process_walk_topdown(delta:float):
 	# omnidirectional movement code. First, get the player's input.
-	var x = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
-	var y = WALK_FORCE * (Input.get_action_strength("Down") - Input.get_action_strength("Up"))
+	var x = walk_force * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
+	var y = walk_force * (Input.get_action_strength("Down") - Input.get_action_strength("Up"))
 	var walk = Vector2(x, y)
 	
 	if walk.length() < 0.2:
-		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
-		velocity.y = move_toward(velocity.y, 0, STOP_FORCE * delta)
+		velocity.x = move_toward(velocity.x, 0, stop_force * delta)
+		velocity.y = move_toward(velocity.y, 0, stop_force * delta)
 		walking = false
 	else:
 		velocity += walk * delta
 		walking = true
 
-	if velocity.length_squared() > WALK_MAX_SPEED*WALK_MAX_SPEED:
-		velocity = WALK_MAX_SPEED * velocity.normalized()
+	if velocity.length_squared() > walk_max_speed*walk_max_speed:
+		velocity = walk_max_speed * velocity.normalized()
 
 # Handles floored state and triggers jump
 # Must be called after move_and_slide
@@ -147,7 +135,7 @@ func process_jump(delta:float):
 			jumping = false
 		
 		if Input.is_action_just_pressed("Jump"):
-			velocity.y = -JUMP_SPEED
+			velocity.y = -jump_speed
 			jumping = true
 
 
