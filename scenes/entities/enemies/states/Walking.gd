@@ -12,13 +12,25 @@ func on_enter():
 func on_leave():
 	$Timer.stop()
 
+func turn_around():
+	direction.x *= -1
+	root.velocity.x *= -1
+			
+var cliff_falloff_cooldown = 0
 func process(delta:float):
 	
 	# Determine if there was a wall collision
 	for i in range(root.get_slide_count()):
-		var collision = root.get_slide_collision(i)
-		if abs(collision.normal.x) > 0.8:
-			direction.x = -direction.x
+		if abs(root.get_slide_collision(i).normal.x) > 0.8:
+			turn_around()
+	
+	# Prevent from falling of edges
+	if cliff_falloff_cooldown <= 0:
+		if !root.raycast.is_colliding():
+			turn_around()
+			cliff_falloff_cooldown = 0.25
+	else:
+		cliff_falloff_cooldown -= delta
 
 	# calculate velocity
 	var walk = root.walk_force * direction 

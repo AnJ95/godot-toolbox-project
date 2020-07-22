@@ -3,6 +3,7 @@ extends KinematicBody2D
 #############################################################
 # NODES
 onready var sm_lifecycle = $StateMachineLifecycle
+onready var raycast:RayCast2D = $RayCast2D
 
 #############################################################
 # WALKING CONSTANTS

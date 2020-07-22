@@ -6,13 +6,13 @@
 [ext_resource path="res://scenes/entities/enemies/states/Walking.gd" type="Script" id=4]
 [ext_resource path="res://scenes/entities/enemies/states/Idle.gd" type="Script" id=5]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
@@ -40,7 +40,7 @@ region = Rect2( 112, 0, 16, 32 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.4
@@ -84,5 +84,8 @@ script = ExtResource( 4 )
 [node name="Timer" type="Timer" parent="StateMachine/Walking" index="0"]
 wait_time = 1.8
 one_shot = true
+
+[node name="RayCast2D" parent="." index="5"]
+cast_to = Vector2( 0, 50 )
 [connection signal="timeout" from="StateMachine/Idle/Timer" to="StateMachine/Idle" method="_on_Timer_timeout"]
 [connection signal="timeout" from="StateMachine/Walking/Timer" to="StateMachine/Walking" method="_on_Timer_timeout"]
