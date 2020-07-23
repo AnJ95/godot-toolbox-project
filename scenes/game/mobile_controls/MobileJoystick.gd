@@ -70,11 +70,15 @@ func _physics_process(delta):
 	process_control(up_action, up_allow, up_analog, -current_control.y, up_digital_threshold)
 	process_control(right_action, right_allow, right_analog, current_control.x, right_digital_threshold)
 	process_control(down_action, down_allow, down_analog, current_control.y, down_digital_threshold)
-			
+
+var currently_pressed = []
 func process_control(action, allow, analog, current, digital_threshold):
 	if allow and ((analog and current > 0) or (!analog and current > digital_threshold)):
 		Input.action_press(action, current if action else 1.0)
-	else:
+		if not action in currently_pressed:
+			currently_pressed.append(action)
+	elif action in currently_pressed:
+		currently_pressed.erase(action)
 		Input.action_release(action)
 
 

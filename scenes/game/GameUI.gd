@@ -13,7 +13,7 @@ func _ready():
 		players[0].connect("health_changed", health_ui, "update_value")
 
 func _on_ButtonRestart_pressed():
-	SignalMngr.emit_signal("level_restarted")
+	SignalMngr.emit_signal("restart_level")
 
 func _on_ButtonPause_pressed():
 	SignalMngr.emit_signal("game_paused", true)
