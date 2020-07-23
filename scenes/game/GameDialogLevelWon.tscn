@@ -6,26 +6,22 @@
 pauses_game_while_open = true
 signal_to_open_to = "level_won"
 
-[node name="LabelBig" parent="UIBox/Popup/VBoxContainer" index="0"]
-text = "Level complete!"
-
-[node name="BtnResume" parent="UIBox/Popup/VBoxContainer" index="1"]
+[node name="BtnResume" parent="Popup/VBoxContainer" index="1"]
 visible = false
 
-[node name="BtnRetry" parent="UIBox/Popup/VBoxContainer" index="2"]
+[node name="BtnRetry" parent="Popup/VBoxContainer" index="2"]
 visible = false
 margin_top = 47.0
 margin_bottom = 94.0
 
-[node name="BtnNext" parent="UIBox/Popup/VBoxContainer" index="3"]
+[node name="BtnNext" parent="Popup/VBoxContainer" index="3"]
 margin_top = 47.0
 margin_bottom = 94.0
 
-[node name="BtnMenu" parent="UIBox/Popup/VBoxContainer" index="4"]
+[node name="BtnMenu" parent="Popup/VBoxContainer" index="4"]
 margin_top = 110.0
 margin_bottom = 157.0
 
-[node name="BtnQuit" parent="UIBox/Popup/VBoxContainer" index="5"]
-visible = false
+[node name="BtnQuit" parent="Popup/VBoxContainer" index="5"]
 margin_top = 173.0
 margin_bottom = 220.0

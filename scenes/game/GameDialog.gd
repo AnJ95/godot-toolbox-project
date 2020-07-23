@@ -1,7 +1,6 @@
 extends CanvasLayer
 
-onready var ui_box = $UIBox
-onready var menu = $UIBox/Popup
+onready var menu = $Popup
 onready var invisible_wall = $InvisibleWall
 
 export var pauses_game_while_open = false
@@ -39,10 +38,11 @@ func _on_open_or_close(open):
 	
 func __show(show=true):
 	is_open = show
-	ui_box.mouse_filter = ui_box.MOUSE_FILTER_STOP if is_open else ui_box.MOUSE_FILTER_IGNORE
-	invisible_wall.mouse_filter = ui_box.mouse_filter
-	menu.visible = is_open
-	ui_box.visible = is_open
+	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_STOP if is_open else invisible_wall.MOUSE_FILTER_IGNORE
+	if is_open:
+		menu.popup_centered()
+	else:
+		menu.visible = false
 	invisible_wall.visible = is_open
 	
 	if pauses_game_while_open:

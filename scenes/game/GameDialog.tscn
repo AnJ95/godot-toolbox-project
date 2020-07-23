@@ -1,24 +1,26 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/game/GameDialog.gd" type="Script" id=1]
-[ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=4]
 
 [node name="GameDialog" type="CanvasLayer"]
 pause_mode = 2
 layer = 20
 script = ExtResource( 1 )
 
-[node name="UIBox" parent="." instance=ExtResource( 2 )]
-
-[node name="Popup" type="PopupDialog" parent="UIBox"]
+[node name="Popup" type="PopupDialog" parent="."]
 visible = true
 margin_left = 220.0
 margin_top = 80.0
 margin_right = 804.0
 margin_bottom = 520.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIBox/Popup"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 75.0
@@ -29,41 +31,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBig" parent="UIBox/Popup/VBoxContainer" instance=ExtResource( 3 )]
+[node name="LabelBig" parent="Popup/VBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 434.0
 margin_bottom = 31.0
 text = "GameDialog"
 
-[node name="BtnResume" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="BtnResume" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 47.0
 margin_right = 434.0
 margin_bottom = 94.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Resume"
 
-[node name="BtnRetry" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="BtnRetry" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 110.0
 margin_right = 434.0
 margin_bottom = 157.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Restart Level"
 
-[node name="BtnNext" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="BtnNext" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 173.0
 margin_right = 434.0
 margin_bottom = 220.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Next Level"
 
-[node name="BtnMenu" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="BtnMenu" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 236.0
 margin_right = 434.0
 margin_bottom = 283.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Back to menu"
 
-[node name="BtnQuit" type="Button" parent="UIBox/Popup/VBoxContainer"]
+[node name="BtnQuit" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 299.0
 margin_right = 434.0
 margin_bottom = 346.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Quit game"
 
 [node name="InvisibleWall" type="TextureButton" parent="."]
@@ -75,9 +87,9 @@ size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="UIBox/Popup/VBoxContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
-[connection signal="pressed" from="UIBox/Popup/VBoxContainer/BtnRetry" to="." method="_on_BtnRetry_pressed"]
-[connection signal="pressed" from="UIBox/Popup/VBoxContainer/BtnNext" to="." method="_on_BtnNext_pressed"]
-[connection signal="pressed" from="UIBox/Popup/VBoxContainer/BtnMenu" to="." method="_on_BtnMenu_pressed"]
-[connection signal="pressed" from="UIBox/Popup/VBoxContainer/BtnQuit" to="." method="_on_BtnQuit_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnRetry" to="." method="_on_BtnRetry_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnNext" to="." method="_on_BtnNext_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnMenu" to="." method="_on_BtnMenu_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnQuit" to="." method="_on_BtnQuit_pressed"]
 [connection signal="pressed" from="InvisibleWall" to="." method="_on_InvisibleWall_pressed"]
