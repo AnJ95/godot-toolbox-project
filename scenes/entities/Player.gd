@@ -134,7 +134,7 @@ func process_jump(delta:float):
 		if jumping:
 			jumping = false
 		
-		if Input.is_action_just_pressed("Jump"):
+		if Input.is_action_pressed("Jump"):
 			velocity.y = -jump_speed
 			jumping = true
 
