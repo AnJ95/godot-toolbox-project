@@ -30,7 +30,6 @@ export var down_digital_threshold = 0.5
 #############################################################
 # STATE
 var current_control = Vector2.ZERO
-var is_dragging = false
 
 #############################################################
 # NODES
@@ -42,29 +41,25 @@ onready var knob = $Knob
 
 #############################################################
 # HANDLERS
-func _on_MobileJoystick_button_down():
-	is_dragging = true
+func _on_touch():
+	pass
 
-func _on_MobileJoystick_button_up():
+func _on_untouch():
 	set_current_control(Vector2.ZERO)
-	is_dragging = false
 
-func _on_MobileJoystick_gui_input(event):
-	if is_dragging and event is InputEventMouseMotion:
-		var e:InputEventMouseMotion = event
-		
-		# mouse pos relative to top left corner
-		var pos:Vector2 = e.position
-		# mouse pos relative to center
-		pos.x -= _cache_half_size
-		pos.y -= _cache_half_size
-		# normalized Vector2([-1,1], [-1,1])
-		pos = pos / _cache_half_size
-		# normalized and length <= 1
-		var pos_len = pos.length()
-		if pos_len > 1: pos = pos / pos_len
-		
-		set_current_control(pos)
+func _on_touch_move(global_pos:Vector2):
+	# mouse pos relative to top left corner
+	var pos = global_pos - rect_global_position
+	# mouse pos relative to center
+	pos.x -= _cache_half_size
+	pos.y -= _cache_half_size
+	# normalized Vector2([-1,1], [-1,1])
+	pos = pos / _cache_half_size
+	# normalized and length <= 1
+	var pos_len = pos.length()
+	if pos_len > 1: pos = pos / pos_len
+	
+	set_current_control(pos)
 		
 func set_current_control(control):
 	current_control = control
@@ -78,7 +73,9 @@ func _physics_process(delta):
 			
 func process_control(action, allow, analog, current, digital_threshold):
 	if allow and ((analog and current > 0) or (!analog and current > digital_threshold)):
-			Input.action_press(action, current if action else 1.0)
+		Input.action_press(action, current if action else 1.0)
 	else:
 		Input.action_release(action)
 
+
+		

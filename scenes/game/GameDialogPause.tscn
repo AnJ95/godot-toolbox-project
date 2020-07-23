@@ -12,18 +12,15 @@ can_be_exited_by_clicking_elsewhere = true
 [node name="LabelBig" parent="UIBox/Popup/VBoxContainer" index="0"]
 text = "Game Paused"
 
-[node name="BtnRetry" parent="UIBox/Popup/VBoxContainer" index="2"]
-visible = false
-
 [node name="BtnNext" parent="UIBox/Popup/VBoxContainer" index="3"]
 visible = false
 margin_top = 110.0
 margin_bottom = 157.0
 
 [node name="BtnMenu" parent="UIBox/Popup/VBoxContainer" index="4"]
-margin_top = 110.0
-margin_bottom = 157.0
-
-[node name="BtnQuit" parent="UIBox/Popup/VBoxContainer" index="5"]
 margin_top = 173.0
 margin_bottom = 220.0
+
+[node name="BtnQuit" parent="UIBox/Popup/VBoxContainer" index="5"]
+margin_top = 236.0
+margin_bottom = 283.0

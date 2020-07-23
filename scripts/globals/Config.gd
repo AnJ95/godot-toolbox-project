@@ -9,7 +9,7 @@ extends Node
 const IS_DEBUG = true
 
 # Deletes all save files on start
-const REMOVE_ALL_SAVES = true
+const REMOVE_ALL_SAVES = false
 
 ####################################################################
 # MENU
@@ -34,17 +34,17 @@ const SHOW_SETTINGS_KEYBINDINGS = true
 
 ####################################################################
 # GAME
-const DIRECT_RESPAWN_ON_LEVEL_LOST = true
-const DIRECT_NEXT_ON_LEVEL_WON = true
+const DIRECT_RESPAWN_ON_LEVEL_LOST = false
+const DIRECT_NEXT_ON_LEVEL_WON = false
 const UNLOCK_ALL_LEVELS = IS_DEBUG
 
 
 
 const LEVELS = {
-	0:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
+	0:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
 	1:		preload("res://scenes/game/levels/TopDownIsometric.tscn"),
 	2:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
-	3:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
+	3:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
 	4:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
 }
 

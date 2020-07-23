@@ -28,6 +28,7 @@ func _set_anchor_corner(v):
 #############################################################
 # STATE
 onready var _cache_half_size = size_outer / 2
+var is_dragging = false
 
 #############################################################
 # LIFECYLE
@@ -46,3 +47,27 @@ func relayout():
 
 func _ready():
 	relayout()
+	
+func is_global_pos_in_control(pos:Vector2):
+	return get_global_rect().has_point(pos)
+	
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed and is_global_pos_in_control(event.position):
+			is_dragging = event.index
+			_on_touch()
+		elif !event.pressed and is_dragging == event.index:
+			is_dragging = -1
+			_on_untouch()
+	if event is InputEventScreenDrag:
+		if is_dragging == event.index:
+			_on_touch_move(event.position)
+
+func _on_touch():
+	pass
+
+func _on_untouch():
+	pass
+
+func _on_touch_move(global_pos:Vector2):
+	pass
