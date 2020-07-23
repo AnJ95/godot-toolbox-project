@@ -11,6 +11,7 @@ const IS_DEBUG = true
 # Deletes all save files on start
 const REMOVE_ALL_SAVES = false
 
+
 ####################################################################
 # MENU
 
@@ -38,7 +39,7 @@ const DIRECT_RESPAWN_ON_LEVEL_LOST = false
 const DIRECT_NEXT_ON_LEVEL_WON = false
 const UNLOCK_ALL_LEVELS = IS_DEBUG
 
-
+const USE_MOBILE_CONTROLS = true
 
 const LEVELS = {
 	0:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
