@@ -6,11 +6,13 @@ extends Node
 # DEBUG
 
 # Global switch for debug mode
-const IS_DEBUG = true
+const IS_DEBUG = false
 
 # Deletes all save files on start
 const REMOVE_ALL_SAVES = false
 
+# Global switch for mobile features
+const IS_MOBILE = false
 
 ####################################################################
 # MENU
@@ -25,13 +27,13 @@ const SHOW_LEVEL_MENU = true
 const SHOW_SETTINGS = true
 
 # show video settings in ScreenOptionsMenu
-const SHOW_SETTINGS_VIDEO = true
+const SHOW_SETTINGS_VIDEO = !IS_MOBILE
 
 # show audio settings in ScreenOptionsMenu
 const SHOW_SETTINGS_AUDIO = true
 
 # show control settings in ScreenOptionsMenu
-const SHOW_SETTINGS_KEYBINDINGS = true
+const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
 
 ####################################################################
 # GAME
