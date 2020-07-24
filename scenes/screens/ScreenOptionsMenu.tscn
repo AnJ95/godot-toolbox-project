@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/screens/ScreenOptionsVideoMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/screens/ScreenOptionsMenu.gd" type="Script" id=7]
+[ext_resource path="res://scenes/screens/ScreenOptionsAudioMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/screens/ScreenAbout.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/screens/ScreenOptionsControlsMenu.tscn" type="PackedScene" id=10]
 
 [node name="ScreenOptionsMenu" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
@@ -43,7 +47,7 @@ margin_bottom = 380.0
 margin_right = 584.0
 margin_bottom = 47.0
 text = "Video Settings"
-screen_to_switch_to = 4
+screen_to_switch_to = ExtResource( 3 )
 grabs_focus = true
 
 [node name="BtnAudio" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
@@ -51,21 +55,21 @@ margin_top = 63.0
 margin_right = 584.0
 margin_bottom = 110.0
 text = "Audio Settings"
-screen_to_switch_to = 5
+screen_to_switch_to = ExtResource( 8 )
 
 [node name="BtnControls" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="2" instance=ExtResource( 4 )]
 margin_top = 126.0
 margin_right = 584.0
 margin_bottom = 173.0
 text = "Controls"
-screen_to_switch_to = 6
+screen_to_switch_to = ExtResource( 10 )
 
 [node name="BtnAbout" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="3" instance=ExtResource( 4 )]
 margin_top = 189.0
 margin_right = 584.0
 margin_bottom = 236.0
 text = "About"
-screen_to_switch_to = 2
+screen_to_switch_to = ExtResource( 9 )
 
 [node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="4" instance=ExtResource( 4 )]
 margin_top = 252.0

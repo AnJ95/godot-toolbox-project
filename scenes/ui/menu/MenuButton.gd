@@ -6,7 +6,7 @@ extends Button
 # Determines wether to switch the screen on click
 export(bool) var pushes_screen = true
 # Screen to switch to if pushes_screen==true
-export(C.Screen) var screen_to_switch_to = C.Screen.GAME
+export(PackedScene) var screen_to_switch_to
 
 # Determines wether to go to last screen on click
 export(bool) var pops_screen = false

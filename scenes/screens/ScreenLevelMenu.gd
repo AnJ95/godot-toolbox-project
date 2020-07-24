@@ -1,5 +1,5 @@
 tool
-extends Node2D
+extends "res://scenes/screens/Screen.gd"
 
 onready var menu = $MenuLayer/UIBox/VBoxContainer/Menu
 func _ready():
@@ -30,4 +30,4 @@ func is_level_unlocked(level_id):
 
 func _on_button_pressed(level_id):
 	StateMngr.start_level_id = level_id
-	ScreenMngr.push_screen(C.Screen.GAME)
+	ScreenMngr.push_screen(C.SCREEN_GAME)

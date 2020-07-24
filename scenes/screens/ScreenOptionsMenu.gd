@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scenes/screens/Screen.gd"
 
 
 onready var btn_video = $MenuLayer/UIBox/VBoxContainer/Menu/BtnVideo

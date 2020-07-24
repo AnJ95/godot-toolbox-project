@@ -98,25 +98,15 @@ var hide_log_level = {
 ####################################################################
 # SCREENS
 
-enum Screen {
-	SPLASH, MAIN_MENU, ABOUT,
-	OPTIONS_MENU, OPTIONS_VIDEO_MENU, OPTIONS_AUDIO_MENU, OPTIONS_CONTROLS_MENU,
-	LEVEL_MENU, GAME
-}
+const SCREEN_SPLASH = preload("res://scenes/screens/ScreenSplash.tscn")
+const SCREEN_MAIN_MENU = preload("res://scenes/screens/ScreenMainMenu.tscn")
+const SCREEN_ABOUT = preload("res://scenes/screens/ScreenAbout.tscn")
 
-const SCREEN_SCENES = {
-	Screen.SPLASH:				"res://scenes/screens/ScreenSplash.tscn",
-	Screen.MAIN_MENU:				"res://scenes/screens/ScreenMainMenu.tscn",
-	Screen.ABOUT:					"res://scenes/screens/ScreenAbout.tscn",
-	
-	Screen.OPTIONS_MENU:			"res://scenes/screens/ScreenOptionsMenu.tscn",
-	Screen.OPTIONS_VIDEO_MENU:		"res://scenes/screens/ScreenOptionsVideoMenu.tscn",
-	Screen.OPTIONS_AUDIO_MENU:		"res://scenes/screens/ScreenOptionsAudioMenu.tscn",
-	Screen.OPTIONS_CONTROLS_MENU:	"res://scenes/screens/ScreenOptionsControlsMenu.tscn",
-	
-	Screen.GAME:					"res://scenes/screens/ScreenGame.tscn",
-	Screen.LEVEL_MENU:			"res://scenes/screens/ScreenLevelMenu.tscn"
-	
-}
+const SCREEN_OPTIONS_MENU = preload("res://scenes/screens/ScreenOptionsMenu.tscn")
+const SCREEN_OPTIONS_VIDEO_MENU = preload("res://scenes/screens/ScreenOptionsVideoMenu.tscn")
+const SCREEN_OPTIONS_AUDIO_MENU = preload("res://scenes/screens/ScreenOptionsAudioMenu.tscn")
+const SCREEN_OPTIONS_CONTROLS_MENU = preload("res://scenes/screens/ScreenOptionsControlsMenu.tscn")
 
-const INITIAL_SCREEN = Screen.SPLASH
+const SCREEN_GAME = preload("res://scenes/screens/ScreenGame.tscn")
+const SCREEN_LEVEL_MENU = preload("res://scenes/screens/ScreenLevelMenu.tscn")
+
