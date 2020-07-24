@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/game/GameDialog.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/game_dialog/GameDialog.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=4]
 
 [node name="GameDialog" type="CanvasLayer"]
 pause_mode = 2
@@ -11,11 +11,15 @@ script = ExtResource( 1 )
 
 [node name="Popup" type="PopupDialog" parent="."]
 visible = true
-margin_left = 220.0
-margin_top = 80.0
-margin_right = 804.0
-margin_bottom = 520.0
-theme = ExtResource( 4 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -292.0
+margin_top = -220.0
+margin_right = 292.0
+margin_bottom = 220.0
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,18 +66,26 @@ focus_mode = 0
 enabled_focus_mode = 0
 text = "Next Level"
 
-[node name="BtnMenu" type="Button" parent="Popup/VBoxContainer"]
+[node name="BtnSettings" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 236.0
 margin_right = 434.0
 margin_bottom = 283.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = "Back to menu"
+text = "Settings"
 
-[node name="BtnQuit" type="Button" parent="Popup/VBoxContainer"]
+[node name="BtnMenu" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 299.0
 margin_right = 434.0
 margin_bottom = 346.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Back to menu"
+
+[node name="BtnQuit" type="Button" parent="Popup/VBoxContainer"]
+margin_top = 362.0
+margin_right = 434.0
+margin_bottom = 409.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Quit game"
@@ -90,6 +102,7 @@ __meta__ = {
 [connection signal="pressed" from="Popup/VBoxContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnRetry" to="." method="_on_BtnRetry_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnNext" to="." method="_on_BtnNext_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/BtnSettings" to="." method="_on_BtnSettings_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnMenu" to="." method="_on_BtnMenu_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnQuit" to="." method="_on_BtnQuit_pressed"]
 [connection signal="pressed" from="InvisibleWall" to="." method="_on_InvisibleWall_pressed"]

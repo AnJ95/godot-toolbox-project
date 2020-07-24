@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var menu = $Popup
 onready var invisible_wall = $InvisibleWall
 
+export var toggled_by_pause_action = false
 export var pauses_game_while_open = false
 export var signal_to_open_to = "level_lost"
 export var can_open_and_close = false
@@ -23,12 +24,11 @@ func _ready():
 func _on_level_started(_level):
 	__hide()
 	
-func _process(delta):
-	if pauses_game_while_open and Input.is_action_just_pressed("Pause"):
-		SignalMngr.emit_signal("game_paused", !is_open)
-		
+func _process(delta):	
 	if can_be_exited_by_pressing_escape and is_open and Input.is_action_just_pressed("ui_cancel"):
 		_on_BtnResume_pressed()
+	if toggled_by_pause_action and Input.is_action_just_pressed("Pause"):
+		__show(!is_open)
 
 func _on_open():
 	__show()
@@ -40,9 +40,9 @@ func __show(show=true):
 	is_open = show
 	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_STOP if is_open else invisible_wall.MOUSE_FILTER_IGNORE
 	if is_open:
-		menu.popup_centered()
+		menu.show()
 	else:
-		menu.visible = false
+		menu.hide()
 	invisible_wall.visible = is_open
 	
 	if pauses_game_while_open:
@@ -77,3 +77,6 @@ func _on_BtnQuit_pressed():
 	_on_BtnResume_pressed()
 	ScreenMngr.exit_game()
 
+func _on_BtnSettings_pressed():
+	_on_BtnResume_pressed()
+	ScreenMngr.push_screen(C.SCREEN_OPTIONS_MENU)

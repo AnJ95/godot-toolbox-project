@@ -1,10 +1,13 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/game/GameDialog.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/game_dialog/GameDialog.tscn" type="PackedScene" id=1]
 
 [node name="GameDialogLevelWon" instance=ExtResource( 1 )]
 pauses_game_while_open = true
 signal_to_open_to = "level_won"
+
+[node name="LabelBig" parent="Popup/VBoxContainer" index="0"]
+text = "Level complete!"
 
 [node name="BtnResume" parent="Popup/VBoxContainer" index="1"]
 visible = false
@@ -18,10 +21,15 @@ margin_bottom = 94.0
 margin_top = 47.0
 margin_bottom = 94.0
 
-[node name="BtnMenu" parent="Popup/VBoxContainer" index="4"]
+[node name="BtnSettings" parent="Popup/VBoxContainer" index="4"]
+visible = false
 margin_top = 110.0
 margin_bottom = 157.0
 
-[node name="BtnQuit" parent="Popup/VBoxContainer" index="5"]
+[node name="BtnMenu" parent="Popup/VBoxContainer" index="5"]
+margin_top = 110.0
+margin_bottom = 157.0
+
+[node name="BtnQuit" parent="Popup/VBoxContainer" index="6"]
 margin_top = 173.0
 margin_bottom = 220.0

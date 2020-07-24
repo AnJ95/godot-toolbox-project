@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/game/game_dialog/GameDialog.tscn" type="PackedScene" id=1]
+
+[node name="GameDialogPause" instance=ExtResource( 1 )]
+toggled_by_pause_action = true
+pauses_game_while_open = true
+signal_to_open_to = "game_paused"
+can_open_and_close = true
+can_be_exited_by_pressing_escape = true
+can_be_exited_by_clicking_elsewhere = true
+
+[node name="LabelBig" parent="Popup/VBoxContainer" index="0"]
+text = "Game paused"
+
+[node name="BtnNext" parent="Popup/VBoxContainer" index="3"]
+visible = false
+
+[node name="BtnSettings" parent="Popup/VBoxContainer" index="4"]
+margin_top = 173.0
+margin_bottom = 220.0
+
+[node name="BtnMenu" parent="Popup/VBoxContainer" index="5"]
+margin_top = 236.0
+margin_bottom = 283.0
+
+[node name="BtnQuit" parent="Popup/VBoxContainer" index="6"]
+margin_top = 299.0
+margin_bottom = 346.0
