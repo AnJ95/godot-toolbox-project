@@ -1,8 +1,9 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_3x3.png" type="Texture" id=2]
 [ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/level/Level.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -457,11 +458,11 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 0/z_index = 0
 
-[node name="PlatformerAutotile" type="Node2D"]
+[node name="PlatformerAutotile" instance=ExtResource( 4 )]
 script = ExtResource( 1 )
 camera_type = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
 margin_left = -106.0
 margin_top = -62.0
 margin_right = 488.0
@@ -471,42 +472,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Terrain" type="TileMap" parent="."]
+[node name="Terrain" type="TileMap" parent="." index="1"]
 tile_set = SubResource( 49 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 2, 10, 0, 2, 11, 0, 2, 12, 0, 3, 13, 0, 2, 14, 0, 2, 15, 0, 2, 16, 0, 2, 17, 0, 2, 18, 0, 2, 19, 0, 2, 20, 0, 2, 21, 0, 2, 22, 0, 2, 23, 0, 2, 24, 0, 1, 65536, 0, 65538, 65548, 0, 65538, 65560, 0, 65538, 131072, 0, 65538, 131084, 0, 65538, 131096, 0, 65538, 196608, 0, 65538, 196610, 0, 196614, 196618, 0, 196614, 196620, 0, 65536, 196621, 0, 2, 196622, 0, 2, 196623, 0, 2, 196624, 0, 2, 196625, 0, 5, 196628, 0, 65542, 196629, 0, 5, 196632, 0, 65538, 262144, 0, 65538, 262168, 0, 65538, 327680, 0, 65539, 327681, 0, 2, 327682, 0, 2, 327683, 0, 5, 327689, 0, 65542, 327690, 0, 2, 327691, 0, 2, 327692, 0, 3, 327693, 0, 2, 327694, 0, 2, 327695, 0, 2, 327696, 0, 3, 327697, 0, 2, 327698, 0, 2, 327699, 0, 2, 327700, 0, 2, 327701, 0, 2, 327702, 0, 2, 327703, 0, 2, 327704, 0, 65540, 393216, 0, 65538, 393228, 0, 6, 393232, 0, 65538, 393240, 0, 65538, 458752, 0, 65538, 458758, 0, 196614, 458768, 0, 6, 458776, 0, 65538, 524288, 0, 65538, 524291, 0, 65542, 524292, 0, 5, 524296, 0, 65542, 524297, 0, 5, 524307, 0, 65541, 524312, 0, 65538, 589824, 0, 65538, 589836, 0, 65541, 589843, 0, 65538, 589848, 0, 65538, 655360, 0, 65539, 655361, 0, 2, 655362, 0, 2, 655363, 0, 2, 655364, 0, 2, 655365, 0, 2, 655366, 0, 2, 655367, 0, 2, 655368, 0, 262148, 655369, 0, 262149, 655370, 0, 2, 655371, 0, 2, 655372, 0, 131079, 655373, 0, 2, 655374, 0, 2, 655375, 0, 2, 655376, 0, 2, 655377, 0, 2, 655378, 0, 2, 655379, 0, 4, 655380, 0, 2, 655381, 0, 5, 655384, 0, 65538, 720896, 0, 65538, 720904, 0, 131076, 720905, 0, 131077, 720908, 0, 65538, 720920, 0, 65538, 786432, 0, 65538, 786440, 0, 131076, 786441, 0, 131077, 786444, 0, 6, 786455, 0, 7, 786456, 0, 262147, 851968, 0, 65538, 851972, 0, 7, 851973, 0, 8, 851976, 0, 65543, 851977, 0, 65544, 851990, 0, 7, 851991, 0, 196609, 851992, 0, 131077, 917504, 0, 65538, 917508, 0, 131076, 917509, 0, 131077, 917525, 0, 7, 917526, 0, 196609, 917527, 0, 131078, 917528, 0, 131077, 983040, 0, 65536, 983041, 0, 2, 983042, 0, 2, 983043, 0, 2, 983044, 0, 327684, 983045, 0, 327685, 983046, 0, 2, 983047, 0, 2, 983048, 0, 2, 983049, 0, 2, 983050, 0, 2, 983051, 0, 2, 983052, 0, 2, 983053, 0, 2, 983054, 0, 2, 983055, 0, 2, 983056, 0, 2, 983057, 0, 2, 983058, 0, 2, 983059, 0, 2, 983060, 0, 2, 983061, 0, 327684, 983062, 0, 196613, 983063, 0, 196613, 983064, 0, 65544 )
 
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
+[node name="ReferenceRect" type="ReferenceRect" parent="." index="2"]
 margin_right = 400.0
 margin_bottom = 256.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartPoint" type="Node2D" parent="."]
+[node name="StartPoint" type="Node2D" parent="." index="3"]
 position = Vector2( 39.1644, 230.42 )
 
-[node name="PickupCoin" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 175.943, 199.579 )
 
-[node name="PickupCoin2" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin2" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 372.577, 176.846 )
 
-[node name="PickupCoin4" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin4" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 309.971, 112.879 )
 
-[node name="PickupCoin5" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin5" parent="." index="7" instance=ExtResource( 3 )]
 position = Vector2( 143.249, 114.24 )
 
-[node name="PickupCoin6" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin6" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 62.9507, 116.282 )
 
-[node name="PickupCoin7" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin7" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 39.1333, 33.261 )
 
-[node name="PickupCoin8" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin8" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 166.386, 33.9415 )
 
-[node name="PickupCoin3" parent="." instance=ExtResource( 3 )]
+[node name="PickupCoin3" parent="." index="11" instance=ExtResource( 3 )]
 position = Vector2( 230.096, 33.482 )
