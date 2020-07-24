@@ -99,6 +99,9 @@ size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Music"
 [connection signal="pressed" from="Popup/VBoxContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnRetry" to="." method="_on_BtnRetry_pressed"]
 [connection signal="pressed" from="Popup/VBoxContainer/BtnNext" to="." method="_on_BtnNext_pressed"]

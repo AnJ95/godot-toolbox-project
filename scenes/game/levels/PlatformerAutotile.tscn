@@ -1,6 +1,5 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_3x3.png" type="Texture" id=2]
 [ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/level/Level.tscn" type="PackedScene" id=4]
@@ -459,7 +458,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/z_index = 0
 
 [node name="PlatformerAutotile" instance=ExtResource( 4 )]
-script = ExtResource( 1 )
 camera_type = 3
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]

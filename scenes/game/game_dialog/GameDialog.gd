@@ -1,7 +1,14 @@
 extends CanvasLayer
 
+#############################################################
+# NODES
 onready var menu = $Popup
 onready var invisible_wall = $InvisibleWall
+onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
+
+#############################################################
+# CUSTOMIZATION
+export(Resource) var soundtrack_or_null = preload("res://assets/sound/music/27 Coffee Break.ogg")
 
 export var toggled_by_pause_action = false
 export var pauses_game_while_open = false
@@ -11,8 +18,13 @@ export var can_open_and_close = false
 export var can_be_exited_by_pressing_escape = false
 export var can_be_exited_by_clicking_elsewhere = false
 
+#############################################################
+# STATE
 var is_open = false
+var level
 
+#############################################################
+# LIFECYCLE
 func _ready():
 	if can_open_and_close:
 		SignalMngr.connect(signal_to_open_to, self, "_on_open_or_close")
@@ -20,16 +32,21 @@ func _ready():
 		SignalMngr.connect(signal_to_open_to, self, "_on_open")
 	
 	SignalMngr.connect("level_started", self, "_on_level_started")
-
-func _on_level_started(_level):
-	__hide()
 	
-func _process(delta):	
+	if soundtrack_or_null:
+		audioStreamPlayer.stream = soundtrack_or_null
+	
+func _process(delta):
 	if can_be_exited_by_pressing_escape and is_open and Input.is_action_just_pressed("ui_cancel"):
 		_on_BtnResume_pressed()
 	if toggled_by_pause_action and Input.is_action_just_pressed("Pause"):
 		__show(!is_open)
 
+#############################################################
+# OPENING & CLOSING
+func _on_level_started(level):
+	self.level = level
+	
 func _on_open():
 	__show()
 		
@@ -39,10 +56,16 @@ func _on_open_or_close(open):
 func __show(show=true):
 	is_open = show
 	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_STOP if is_open else invisible_wall.MOUSE_FILTER_IGNORE
-	if is_open:
-		menu.show()
+	if is_open:	menu.show()
+	else:		menu.hide()
+	
+	if soundtrack_or_null:
+		level.pause_soundtrack(is_open)
+		if is_open:	audioStreamPlayer.play(0)
+		else:		audioStreamPlayer.stop()
 	else:
-		menu.hide()
+		level.quiet_soundtrack(is_open)
+	
 	invisible_wall.visible = is_open
 	
 	if pauses_game_while_open:
@@ -50,6 +73,9 @@ func __show(show=true):
 
 func __hide():
 	__show(false)
+
+#############################################################
+# BUTTON HANDLERS
 
 func _on_InvisibleWall_pressed():
 	if can_be_exited_by_clicking_elsewhere:

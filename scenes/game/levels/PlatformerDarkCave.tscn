@@ -1,6 +1,5 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
-[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/interaction/DamageArea.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_2x2_platformer_cave.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/tilesets/tileset_dungeon.png" type="Texture" id=4]
@@ -692,7 +691,6 @@ points = PoolVector2Array( 16, 8, 0, 8, 0, 0, 16, 0 )
 13/z_index = 0
 
 [node name="PlatformerDarkCave" instance=ExtResource( 7 )]
-script = ExtResource( 1 )
 camera_type = 2
 give_player_light = true
 

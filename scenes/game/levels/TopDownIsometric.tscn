@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0052.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0086.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0045.png" type="Texture" id=4]
@@ -199,7 +198,6 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 14/z_index = 0
 
 [node name="TopDownIsometric" instance=ExtResource( 18 )]
-script = ExtResource( 1 )
 camera_type = 2
 control_scheme = 1
 gravity = Vector2( 0, 0 )

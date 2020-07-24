@@ -1,7 +1,6 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/game/level/Level.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/backgrounds/BackgroundMountainDusk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_2x2_platformer_grass.png" type="Texture" id=4]
 [ext_resource path="res://scenes/entities/enemies/EnemyDemon.tscn" type="PackedScene" id=5]
@@ -370,7 +369,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 2/z_index = 0
 
 [node name="PlatformerParallax" instance=ExtResource( 6 )]
-script = ExtResource( 2 )
 camera_type = 4
 camera_zoom = Vector2( 0.5, 0.5 )
 
