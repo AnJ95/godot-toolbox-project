@@ -16,8 +16,11 @@ func _ready():
 		if child is Screen:
 			screen_history = [child]
 			break
+			
 	if screen_history.size() != 1:
 		D.e(D.LogCategory.SCREEN_MANAGER, ["Initial scene is not a is not inherited from Screen.tscn!"])
+		return
+	screen_history[0].transition_open_immediately()
 	
 	
 #############################################################
@@ -32,8 +35,6 @@ func ___enter_screen(screen):
 	D.l(D.LogCategory.SCREEN_MANAGER, ["Switched screen to", screen.name])
 	SignalMngr.emit_signal("screen_entered", screen)
 	
-	return true
-	
 
 func ___exit_screen():
 	# remove scene
@@ -42,8 +43,6 @@ func ___exit_screen():
 	# Debug log & Signal
 	D.l(D.LogCategory.SCREEN_MANAGER, ["Exited screen", screen_history[0].name])
 	SignalMngr.emit_signal("screen_left", screen_history[0])
-	
-	return true
 
 #############################################################
 # INTERFACE
@@ -55,31 +54,57 @@ func push_screen(screen_scene):
 	
 	var screen_inst = screen_scene.instance()
 	
+	# show transition if (new screen wants to on enter) or (prev screen wants to on leave)
+	var show_transition = screen_inst.show_transition_on_enter or (screen_history.size() >= 1 and screen_history[0].show_transition_on_leave)
+	
 	if !screen_inst is Screen:
 		D.e(D.LogCategory.SCREEN_MANAGER, ["Tried pushing Screen, but it is not a PackedScene, inherited from Screen.tscn"])
-		return false
-		
-	#yield(cur_screen.get_node("Transition"), "on_closed")
+		return
+	
+	if show_transition and screen_history.size() >= 1:
+		screen_history[0].transition_close()
+		yield(screen_history[0], "on_transition_closed")
+	
 	# Exit previous if existent
 	___exit_screen()
-	# Try changing scene
-	if ___enter_screen(screen_inst):
-		screen_history.push_front(screen_inst)
-		return true
-	return false
+	
+	# Change scene
+	___enter_screen(screen_inst)
+	screen_history.push_front(screen_inst)
+	
+	if show_transition:
+		screen_history[0].transition_open()
+		yield(screen_history[0], "on_transition_opened")
+	else:
+		screen_history[0].transition_open_immediately()
+		
+	
 
 func pop_screen():
-	if screen_history.size() <= 1:
+	if screen_history.size() < 2:
 		D.e(D.LogCategory.SCREEN_MANAGER, ["Tried popping Screen, but the screen_history buffer would have been empty"])
-		return false
+		return
 	
+	var show_transition = screen_history[1].show_transition_on_enter or screen_history[0].show_transition_on_leave
+	
+	if show_transition:
+		screen_history[0].transition_close()
+		yield(screen_history[0], "on_transition_closed")
+		
 	___exit_screen()
+
 	
 	var last_screen = screen_history.pop_front()
 	last_screen.queue_free()
 	
-	if ___enter_screen(screen_history[0]):
-		return true
+	___enter_screen(screen_history[0])
+		
+	if show_transition:
+		screen_history[0].transition_open()
+		yield(screen_history[0], "on_transition_opened")
+	else:
+		screen_history[0].transition_open_immediately()
+		
 
 func exit_game():
 	get_tree().quit()

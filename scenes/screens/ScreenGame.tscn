@@ -10,6 +10,8 @@
 [ext_resource path="res://scenes/game/GameMobileUI.gd" type="Script" id=8]
 
 [node name="ScreenGame" instance=ExtResource( 1 )]
+show_transition_on_enter = true
+show_transition_on_leave = true
 
 [node name="GameUI" parent="." index="0" instance=ExtResource( 4 )]
 

@@ -9,7 +9,6 @@
 
 [node name="ScreenLevelMenu" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
-show_transition_on_entering_this_screen = false
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 2 )]
 
