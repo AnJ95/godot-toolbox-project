@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/03 Before the Dawn.ogg-6bf31b37ae30b9ecc24ab0b7ee509a78.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/03 Before the Dawn.ogg"
+dest_files=[ "res://.import/03 Before the Dawn.ogg-6bf31b37ae30b9ecc24ab0b7ee509a78.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

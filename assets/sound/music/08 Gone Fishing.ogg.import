@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/08 Gone Fishing.ogg-56a3129ab756a056ef34185b5a377b6a.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/08 Gone Fishing.ogg"
+dest_files=[ "res://.import/08 Gone Fishing.ogg-56a3129ab756a056ef34185b5a377b6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/27 Coffee Break.ogg-aa16a38bd5834757fad29dc492286726.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/27 Coffee Break.ogg"
+dest_files=[ "res://.import/27 Coffee Break.ogg-aa16a38bd5834757fad29dc492286726.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

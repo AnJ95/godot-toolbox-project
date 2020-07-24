@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/25 Scar Tissue.ogg-25ed64c32f7ffe8d7a9c6ce61cba905b.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/25 Scar Tissue.ogg"
+dest_files=[ "res://.import/25 Scar Tissue.ogg-25ed64c32f7ffe8d7a9c6ce61cba905b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

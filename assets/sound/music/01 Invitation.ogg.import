@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/01 Invitation.ogg-87999a5a7ec9da5e1a6f44683f08bdbf.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/01 Invitation.ogg"
+dest_files=[ "res://.import/01 Invitation.ogg-87999a5a7ec9da5e1a6f44683f08bdbf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/07 Shelf Space.ogg-5ec49c24cc34049c63e57a5a34b0bb2d.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/07 Shelf Space.ogg"
+dest_files=[ "res://.import/07 Shelf Space.ogg-5ec49c24cc34049c63e57a5a34b0bb2d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

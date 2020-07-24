@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/28 Towering Blues.ogg-b6bd6b079e522717696c9c2858f0032e.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/28 Towering Blues.ogg"
+dest_files=[ "res://.import/28 Towering Blues.ogg-b6bd6b079e522717696c9c2858f0032e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

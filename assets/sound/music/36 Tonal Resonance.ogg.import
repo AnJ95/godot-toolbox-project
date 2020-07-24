@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/36 Tonal Resonance.ogg-e2bcbba42d2d80e5a3d9e091f81b0992.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/36 Tonal Resonance.ogg"
+dest_files=[ "res://.import/36 Tonal Resonance.ogg-e2bcbba42d2d80e5a3d9e091f81b0992.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

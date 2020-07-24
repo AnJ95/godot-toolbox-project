@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/32 Bounty Hunter.ogg-96971faccc1a37f17daef4a70fd53773.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/32 Bounty Hunter.ogg"
+dest_files=[ "res://.import/32 Bounty Hunter.ogg-96971faccc1a37f17daef4a70fd53773.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

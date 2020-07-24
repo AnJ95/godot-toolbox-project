@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/23 Solace.ogg-d79da37e26db6e77a7e1e84b64769895.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/23 Solace.ogg"
+dest_files=[ "res://.import/23 Solace.ogg-d79da37e26db6e77a7e1e84b64769895.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

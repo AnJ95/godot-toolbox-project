@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/24 Stray Cat.ogg-fe40fb3906b76d70749f0fc72f4380ac.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/24 Stray Cat.ogg"
+dest_files=[ "res://.import/24 Stray Cat.ogg-fe40fb3906b76d70749f0fc72f4380ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

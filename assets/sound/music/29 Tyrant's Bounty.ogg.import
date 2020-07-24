@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/29 Tyrant's Bounty.ogg-3a2d0a08d862ccbba63a82382261fcc5.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/29 Tyrant's Bounty.ogg"
+dest_files=[ "res://.import/29 Tyrant's Bounty.ogg-3a2d0a08d862ccbba63a82382261fcc5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

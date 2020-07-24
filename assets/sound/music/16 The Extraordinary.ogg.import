@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/16 The Extraordinary.ogg-33454660d1509978986f00e2a65ffc12.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/16 The Extraordinary.ogg"
+dest_files=[ "res://.import/16 The Extraordinary.ogg-33454660d1509978986f00e2a65ffc12.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

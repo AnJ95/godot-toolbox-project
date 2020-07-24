@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02 Downfall.ogg-4da4178f01cb15a125631a34a0bc8905.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/02 Downfall.ogg"
+dest_files=[ "res://.import/02 Downfall.ogg-4da4178f01cb15a125631a34a0bc8905.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

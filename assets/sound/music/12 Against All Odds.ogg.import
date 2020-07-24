@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/12 Against All Odds.ogg-2c4d1b70af6c00cab3cb10dfdb66ea7f.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/12 Against All Odds.ogg"
+dest_files=[ "res://.import/12 Against All Odds.ogg-2c4d1b70af6c00cab3cb10dfdb66ea7f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

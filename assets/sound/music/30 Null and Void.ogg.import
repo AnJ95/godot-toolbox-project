@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/30 Null and Void.ogg-433a3ccdfc541a1a275089a9b069c529.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/30 Null and Void.ogg"
+dest_files=[ "res://.import/30 Null and Void.ogg-433a3ccdfc541a1a275089a9b069c529.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

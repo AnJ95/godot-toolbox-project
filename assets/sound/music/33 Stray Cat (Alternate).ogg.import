@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/33 Stray Cat (Alternate).ogg-a46d18a6d5d33bc2366e9bec7d8e4605.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/33 Stray Cat (Alternate).ogg"
+dest_files=[ "res://.import/33 Stray Cat (Alternate).ogg-a46d18a6d5d33bc2366e9bec7d8e4605.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

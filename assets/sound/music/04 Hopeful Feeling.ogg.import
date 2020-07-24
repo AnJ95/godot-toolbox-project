@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/04 Hopeful Feeling.ogg-e4ca6edf4e6b65592144c9006bc3c730.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/04 Hopeful Feeling.ogg"
+dest_files=[ "res://.import/04 Hopeful Feeling.ogg-e4ca6edf4e6b65592144c9006bc3c730.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

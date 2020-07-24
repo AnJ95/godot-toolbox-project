@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/31 Flashback.ogg-246f4366455d995f5b6e77782ac25915.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/31 Flashback.ogg"
+dest_files=[ "res://.import/31 Flashback.ogg-246f4366455d995f5b6e77782ac25915.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
