@@ -34,6 +34,7 @@ var velocity = Vector2()
 func deal_damage(dmg):
 	var can_get_dmg = sm_lifecycle.get_state().can_get_damage()
 	if can_get_dmg:
+		_on_damaged()
 		__health_now = clamp(__health_now - dmg, 0, __health_max)
 		emit_signal("health_changed", __health_now, __health_max)
 	
@@ -126,5 +127,7 @@ func __is_entity():
 func _on_die():
 	queue_free()
 
+func _on_damaged():
+	pass
 
 

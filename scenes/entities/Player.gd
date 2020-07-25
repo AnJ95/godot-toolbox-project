@@ -14,15 +14,23 @@ enum ControlScheme {
 	TopDown
 }
 
+const STREAM_WALK_DISTANCE = 42
+
 #############################################################
 # CUSTOMIZATION
 export var control_scheme = ControlScheme.Platformer
 export var die_on_level_leave = true
 
+export(Array, Resource) var walk_sound_effects = []
+
 #############################################################
 # NODES
 onready var sprite = $AnimatedSprite
 onready var light = $Light2D
+
+onready var stream_jump:AudioStreamPlayer2D = $StreamJump
+onready var stream_walk:AudioStreamPlayer2D = $StreamWalk
+onready var stream_damage:AudioStreamPlayer2D = $StreamDamage
 
 #############################################################
 # STATE
@@ -30,6 +38,8 @@ var skin_id = 0
 
 var walking = false
 var jumping = false
+
+var stream_walk_distance = 0.0
 
 #############################################################
 # LIFECYCLE
@@ -110,6 +120,11 @@ func process_walk_platformer(delta:float):
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -walk_max_speed, walk_max_speed)
 	
+	# Walking sound effect
+	if is_on_floor():
+		stream_walk_distance += abs(velocity.x) * delta
+		process_stream_walk()
+	
 func process_walk_topdown(delta:float):
 	# omnidirectional movement code. First, get the player's input.
 	var x = walk_force * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
@@ -124,8 +139,14 @@ func process_walk_topdown(delta:float):
 		velocity += walk * delta
 		walking = true
 
-	if velocity.length_squared() > walk_max_speed*walk_max_speed:
+	var vel_len = velocity.length()
+	
+	if vel_len > walk_max_speed:
 		velocity = walk_max_speed * velocity.normalized()
+		
+	# Walking sound effect
+	stream_walk_distance += vel_len * delta
+	process_stream_walk()
 
 # Handles floored state and triggers jump
 # Must be called after move_and_slide
@@ -135,6 +156,7 @@ func process_jump(delta:float):
 			jumping = false
 		
 		if Input.is_action_pressed("Jump"):
+			stream_jump.play()
 			velocity.y = -jump_speed
 			jumping = true
 
@@ -178,7 +200,21 @@ func set_skin_texture(txt:Texture):
 			frames.set_frame(anim_name, f, atlas)
 
 #############################################################
+# SOUNDS
+func process_stream_walk():
+	if stream_walk_distance >= STREAM_WALK_DISTANCE:
+		stream_walk_distance -= STREAM_WALK_DISTANCE
+		
+		if walk_sound_effects.size() > 0:
+			stream_walk.stream = walk_sound_effects[randi() % walk_sound_effects.size()]
+		stream_walk.play()
+
+#############################################################
 # OVERRIDES
+	
+func _on_damaged():
+	stream_damage.play(0)
+	
 func _on_die():
 	SignalMngr.emit_signal("level_lost")
 	

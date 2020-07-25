@@ -35,7 +35,7 @@ const SHOW_SETTINGS_AUDIO = true
 # show control settings in ScreenOptionsMenu
 const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
 
-const TITLE_SONG = preload("res://assets/sound/music/01 Invitation.ogg")
+const TITLE_SONG = preload("res://assets/sound/music/28 Towering Blues.ogg")
 
 ####################################################################
 # GAME

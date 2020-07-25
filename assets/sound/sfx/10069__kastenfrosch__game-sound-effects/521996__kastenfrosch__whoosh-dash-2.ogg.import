@@ -11,5 +11,5 @@ dest_files=[ "res://.import/521996__kastenfrosch__whoosh-dash-2.ogg-530233e5725b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
+[ext_resource path="res://assets/sound/music/36 Tonal Resonance.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0052.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0086.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/tilesets/isometric/isometric_pixel_0045.png" type="Texture" id=4]
@@ -201,6 +202,7 @@ points = PoolVector2Array( 46, 13, 25, 26, 4, 13, 25, 1 )
 camera_type = 2
 control_scheme = 1
 gravity = Vector2( 0, 0 )
+soundtrack = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 margin_left = -106.0
