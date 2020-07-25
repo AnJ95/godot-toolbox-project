@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270429__littlerobotsoundfactory__footstep-water-03.wav-7e4cbcdd3c1dbe4a1e1d3d9a942cc954.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270429__littlerobotsoundfactory__footstep-water-03.wav"
+dest_files=[ "res://.import/270429__littlerobotsoundfactory__footstep-water-03.wav-7e4cbcdd3c1dbe4a1e1d3d9a942cc954.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

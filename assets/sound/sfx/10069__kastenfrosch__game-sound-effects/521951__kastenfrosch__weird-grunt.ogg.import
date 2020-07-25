@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521951__kastenfrosch__weird-grunt.ogg-336b8561ed403235849f281adc86f515.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521951__kastenfrosch__weird-grunt.ogg"
+dest_files=[ "res://.import/521951__kastenfrosch__weird-grunt.ogg-336b8561ed403235849f281adc86f515.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

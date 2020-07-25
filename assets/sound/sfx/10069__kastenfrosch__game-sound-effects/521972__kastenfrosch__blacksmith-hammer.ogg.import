@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521972__kastenfrosch__blacksmith-hammer.ogg-4c2fdb70177141e492e170721e935235.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521972__kastenfrosch__blacksmith-hammer.ogg"
+dest_files=[ "res://.import/521972__kastenfrosch__blacksmith-hammer.ogg-4c2fdb70177141e492e170721e935235.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

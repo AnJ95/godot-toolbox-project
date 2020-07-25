@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270417__littlerobotsoundfactory__footstep-dirt-06.wav-635574ab44e8e58f25999e11d48583fd.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270417__littlerobotsoundfactory__footstep-dirt-06.wav"
+dest_files=[ "res://.import/270417__littlerobotsoundfactory__footstep-dirt-06.wav-635574ab44e8e58f25999e11d48583fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270392__littlerobotsoundfactory__inventory-open-01.wav-5bb35c2ab20285374b635d584400fa45.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270392__littlerobotsoundfactory__inventory-open-01.wav"
+dest_files=[ "res://.import/270392__littlerobotsoundfactory__inventory-open-01.wav-5bb35c2ab20285374b635d584400fa45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

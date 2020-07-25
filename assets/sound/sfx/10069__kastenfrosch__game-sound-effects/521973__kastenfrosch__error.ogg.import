@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521973__kastenfrosch__error.ogg-8431894c16e5c5c702e74587956115c5.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521973__kastenfrosch__error.ogg"
+dest_files=[ "res://.import/521973__kastenfrosch__error.ogg-8431894c16e5c5c702e74587956115c5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

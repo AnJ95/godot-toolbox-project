@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521962__kastenfrosch__funny-cheering-shout-3.ogg-0f72ed7b0fbd0039c5f45d1c74351ee8.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521962__kastenfrosch__funny-cheering-shout-3.ogg"
+dest_files=[ "res://.import/521962__kastenfrosch__funny-cheering-shout-3.ogg-0f72ed7b0fbd0039c5f45d1c74351ee8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

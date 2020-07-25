@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521949__kastenfrosch__success-jingle.ogg-05ed341a64cce8664d7f24052d552757.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521949__kastenfrosch__success-jingle.ogg"
+dest_files=[ "res://.import/521949__kastenfrosch__success-jingle.ogg-05ed341a64cce8664d7f24052d552757.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

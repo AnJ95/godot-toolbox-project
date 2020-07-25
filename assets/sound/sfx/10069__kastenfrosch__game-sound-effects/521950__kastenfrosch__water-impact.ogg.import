@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521950__kastenfrosch__water-impact.ogg-a8d1c2eceeb2a522ee0ac5787bcf3230.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521950__kastenfrosch__water-impact.ogg"
+dest_files=[ "res://.import/521950__kastenfrosch__water-impact.ogg-a8d1c2eceeb2a522ee0ac5787bcf3230.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

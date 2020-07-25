@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270410__littlerobotsoundfactory__pickup-gold-04.wav-282e9f5b4a3a8b3e780de65f5de2515f.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270410__littlerobotsoundfactory__pickup-gold-04.wav"
+dest_files=[ "res://.import/270410__littlerobotsoundfactory__pickup-gold-04.wav-282e9f5b4a3a8b3e780de65f5de2515f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

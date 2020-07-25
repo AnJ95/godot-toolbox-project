@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270387__littlerobotsoundfactory__ambience-cave-00.wav-36c42d755ddb9c4c95678d7223c3b8cb.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270387__littlerobotsoundfactory__ambience-cave-00.wav"
+dest_files=[ "res://.import/270387__littlerobotsoundfactory__ambience-cave-00.wav-36c42d755ddb9c4c95678d7223c3b8cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

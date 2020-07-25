@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270385__littlerobotsoundfactory__dragon-growl-01.wav-0f1be1ffb9d90ea920b9219aa2f4fa4b.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270385__littlerobotsoundfactory__dragon-growl-01.wav"
+dest_files=[ "res://.import/270385__littlerobotsoundfactory__dragon-growl-01.wav-0f1be1ffb9d90ea920b9219aa2f4fa4b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521966__kastenfrosch__ready-to-start-jingle.ogg-8beed1949d8745b841b1b2bc7697b77e.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521966__kastenfrosch__ready-to-start-jingle.ogg"
+dest_files=[ "res://.import/521966__kastenfrosch__ready-to-start-jingle.ogg-8beed1949d8745b841b1b2bc7697b77e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521948__kastenfrosch__wet-swab.ogg-ee4d26b1facd93afbcddfd086da19c5f.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521948__kastenfrosch__wet-swab.ogg"
+dest_files=[ "res://.import/521948__kastenfrosch__wet-swab.ogg-ee4d26b1facd93afbcddfd086da19c5f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

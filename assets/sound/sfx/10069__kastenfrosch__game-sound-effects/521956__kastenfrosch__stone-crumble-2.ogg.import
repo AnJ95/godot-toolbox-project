@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521956__kastenfrosch__stone-crumble-2.ogg-c340cb99c9782e31332a6348e720703a.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521956__kastenfrosch__stone-crumble-2.ogg"
+dest_files=[ "res://.import/521956__kastenfrosch__stone-crumble-2.ogg-c340cb99c9782e31332a6348e720703a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

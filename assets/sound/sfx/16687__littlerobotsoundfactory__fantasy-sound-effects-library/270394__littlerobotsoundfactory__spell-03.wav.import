@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270394__littlerobotsoundfactory__spell-03.wav-768a7c61f639a3320db5506b7878aa73.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270394__littlerobotsoundfactory__spell-03.wav"
+dest_files=[ "res://.import/270394__littlerobotsoundfactory__spell-03.wav-768a7c61f639a3320db5506b7878aa73.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

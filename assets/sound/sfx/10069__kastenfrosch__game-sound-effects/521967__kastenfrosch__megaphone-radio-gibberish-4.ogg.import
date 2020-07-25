@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/521967__kastenfrosch__megaphone-radio-gibberish-4.ogg-053bf6da7d91b5df52a78d6311d5c4f0.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/521967__kastenfrosch__megaphone-radio-gibberish-4.ogg"
+dest_files=[ "res://.import/521967__kastenfrosch__megaphone-radio-gibberish-4.ogg-053bf6da7d91b5df52a78d6311d5c4f0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

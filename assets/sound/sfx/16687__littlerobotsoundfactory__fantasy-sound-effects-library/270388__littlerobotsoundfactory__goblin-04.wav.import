@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/270388__littlerobotsoundfactory__goblin-04.wav-8933a2db066220c3e65fd9393d22bcbb.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270388__littlerobotsoundfactory__goblin-04.wav"
+dest_files=[ "res://.import/270388__littlerobotsoundfactory__goblin-04.wav-8933a2db066220c3e65fd9393d22bcbb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
