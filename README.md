@@ -240,7 +240,7 @@ Players, Enemies, Icons
 [0x72](https://0x72.itch.io/dungeontileset-ii)
 
 Isometric topdown tileset  
-[devilsworkshop](https://devilsworkshop.itch.io/big-pixel-isometric-block-pack-free-2d-sprites)
+[ToxSickProductions](https://opengameart.org/users/toxsickproductionscom)
 
 Music
 [Monolith OST](https://arcofdream.itch.io/monolith-ost)

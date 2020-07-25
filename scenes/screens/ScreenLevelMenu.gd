@@ -12,7 +12,7 @@ func _ready():
 		var btn:Button = Button.new()
 		
 		# Init
-		btn.text = str(level_id)
+		btn.text = str(level_id + 1)
 		btn.connect("pressed", self, "_on_button_pressed", [level_id])
 		btn.focus_mode = Button.FOCUS_NONE
 		btn.disabled = !is_level_unlocked(level_id)

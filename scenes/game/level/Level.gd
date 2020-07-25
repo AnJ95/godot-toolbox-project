@@ -21,6 +21,7 @@ export(Vector2) var camera_position = Vector2(0,0)
 # Player
 export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
 export(bool) var give_player_light = false
+export(String) var player_root_node = null
 
 # Global
 export(Vector2) var gravity = Vector2(0, 500)
@@ -72,3 +73,9 @@ func get_control_scheme():
 
 func give_player_light():
 	return give_player_light
+
+func get_player_root_node():
+	if player_root_node == null:
+		return self
+	else:
+		return get_node(player_root_node)
