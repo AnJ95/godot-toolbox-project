@@ -16,7 +16,7 @@ on_pickup_sounds = [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtRe
 
 [node name="AnimatedIcon" parent="." index="0" instance=ExtResource( 2 )]
 scale = Vector2( 2, 2 )
-frame = 3
+frame = 0
 
 [node name="AudioStreamPlayer2D" parent="." index="2"]
 volume_db = 10.0

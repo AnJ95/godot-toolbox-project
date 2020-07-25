@@ -8,8 +8,6 @@
 ]]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 12.0
-margin_bottom = 20.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
@@ -18,21 +16,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 512.0
-margin_bottom = 620.0
+margin_right = 504.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "None"
 valign = 1
 
 [node name="Button" type="Button" parent="."]
-margin_left = 524.0
-margin_top = 292.0
-margin_right = 1036.0
-margin_bottom = 327.0
+margin_left = 520.0
+margin_top = 276.0
+margin_right = 1024.0
+margin_bottom = 323.0
 focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 toggle_mode = true
 enabled_focus_mode = 0
+text = "Unassigned"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
