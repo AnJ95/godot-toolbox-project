@@ -12,6 +12,7 @@
 [node name="ScreenGame" instance=ExtResource( 1 )]
 show_transition_on_enter = true
 show_transition_on_leave = true
+play_title_song = false
 
 [node name="GameUI" parent="." index="0" instance=ExtResource( 4 )]
 

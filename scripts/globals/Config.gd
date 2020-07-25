@@ -12,7 +12,7 @@ const IS_DEBUG = false
 const REMOVE_ALL_SAVES = false
 
 # Global switch for mobile features
-const IS_MOBILE = false
+const IS_MOBILE = true
 
 ####################################################################
 # MENU
@@ -35,13 +35,15 @@ const SHOW_SETTINGS_AUDIO = true
 # show control settings in ScreenOptionsMenu
 const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
 
+const TITLE_SONG = preload("res://assets/sound/music/01 Invitation.ogg")
+
 ####################################################################
 # GAME
 const DIRECT_RESPAWN_ON_LEVEL_LOST = false
 const DIRECT_NEXT_ON_LEVEL_WON = false
 const UNLOCK_ALL_LEVELS = IS_DEBUG
 
-const USE_MOBILE_CONTROLS = true
+const USE_MOBILE_CONTROLS = IS_MOBILE
 
 const LEVELS = {
 	0:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),

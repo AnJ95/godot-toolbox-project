@@ -27,6 +27,7 @@ ScreenMngr="*res://scripts/globals/ScreenMngr.gd"
 StateMngr="*res://scripts/globals/StateMngr.gd"
 SignalMngr="*res://scripts/globals/SignalMngr.gd"
 PersistenceMngr="*res://scripts/globals/PersistenceMngr.gd"
+SoundMngr="*res://scripts/globals/SoundMngr.gd"
 
 [display]
 

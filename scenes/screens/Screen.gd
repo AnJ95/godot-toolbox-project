@@ -3,8 +3,9 @@ extends Node2D
 signal on_transition_closed()
 signal on_transition_opened()
 
-export var show_transition_on_enter = false
-export var show_transition_on_leave = false
+export(bool) var show_transition_on_enter = false
+export(bool) var show_transition_on_leave = false
+export(bool) var play_title_song = true
 
 onready var transition = $Transition
  

@@ -241,3 +241,10 @@ Players, Enemies, Icons
 
 Isometric topdown tileset  
 [devilsworkshop](https://devilsworkshop.itch.io/big-pixel-isometric-block-pack-free-2d-sprites)
+
+Music
+[Monolith OST](https://arcofdream.itch.io/monolith-ost)
+
+Soundeffects
+[Kastenfrosch](https://freesound.org/people/Kastenfrosch/packs/10069/)
+[LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/packs/16687/)
