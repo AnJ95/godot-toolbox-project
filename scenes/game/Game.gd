@@ -102,7 +102,7 @@ func next_level():
 func _process_level(_delta):
 	# Switch Level with key "1"
 	var last_level_id = cur_level_id
-	if Input.is_action_just_pressed("SwitchDemo"):
+	if Input.is_action_just_pressed("game_switch_demo"):
 		cur_level_id = (1 + cur_level_id) % C.LEVELS.size()
 	if last_level_id != cur_level_id:
 		start_level(cur_level_id)

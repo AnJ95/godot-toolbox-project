@@ -7,22 +7,22 @@ extends "res://scenes/game/mobile_controls/MobileControl.gd"
 
 
 export var left_allow = true
-export var left_action = "Left"
+export var left_action = "left"
 export var left_analog = true
 export var left_digital_threshold = 0.5
 
 export var up_allow = true
-export var up_action = "Up"
+export var up_action = "up"
 export var up_analog = true
 export var up_digital_threshold = 0.5
 
 export var right_allow = true
-export var right_action = "Right"
+export var right_action = "right"
 export var right_analog = true
 export var right_digital_threshold = 0.5
 
 export var down_allow = true
-export var down_action = "Down"
+export var down_action = "down"
 export var down_analog = true
 export var down_digital_threshold = 0.5
 

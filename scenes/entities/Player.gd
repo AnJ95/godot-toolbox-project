@@ -106,7 +106,7 @@ func process_walk(delta:float):
 
 func process_walk_platformer(delta:float):
 	# Horizontal movement code. First, get the player's input.
-	var walk = walk_force * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
+	var walk = walk_force * (Input.get_action_strength("game_right") - Input.get_action_strength("game_left"))
 	
 	# Slow down the player if they're not trying to move.
 	if abs(walk) < walk_force * 0.2:
@@ -127,8 +127,8 @@ func process_walk_platformer(delta:float):
 	
 func process_walk_topdown(delta:float):
 	# omnidirectional movement code. First, get the player's input.
-	var x = walk_force * (Input.get_action_strength("Right") - Input.get_action_strength("Left"))
-	var y = walk_force * (Input.get_action_strength("Down") - Input.get_action_strength("Up"))
+	var x = walk_force * (Input.get_action_strength("game_right") - Input.get_action_strength("game_left"))
+	var y = walk_force * (Input.get_action_strength("game_down") - Input.get_action_strength("game_up"))
 	var walk = Vector2(x, y)
 	
 	if walk.length() < 0.2:
@@ -155,7 +155,7 @@ func process_jump(delta:float):
 		if jumping:
 			jumping = false
 		
-		if Input.is_action_pressed("Jump"):
+		if Input.is_action_pressed("game_jump"):
 			stream_jump.play()
 			velocity.y = -jump_speed
 			jumping = true
@@ -179,7 +179,7 @@ func process_sprite(delta:float):
 # SKINS
 func process_skin(_delta:float):
 	var new_skin_id = skin_id
-	if Input.is_action_just_pressed("SwitchSkin"):
+	if Input.is_action_just_pressed("game_switch_skin"):
 		new_skin_id = (new_skin_id + 1) % skins.size()
 	if new_skin_id != skin_id:
 		skin_id = new_skin_id

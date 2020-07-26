@@ -12,7 +12,7 @@ const IS_DEBUG = false
 const REMOVE_ALL_SAVES = false
 
 # Global switch for mobile features
-const IS_MOBILE = false
+const IS_MOBILE = true
 
 ####################################################################
 # MENU
@@ -60,17 +60,6 @@ const DEFAULT_OPTIONS_AUDIO = {
 	"Master" : 80,
 	"Music" : 100,
 	"Effects" : 100
-}
-const DEFAULT_OPTIONS_KEYBINDINGS = {
-	"Left" : 65,
-	"Right" : 68,
-	"Up" : 87,
-	"Down" : 83,
-	"Jump" : 32,
-	"SwitchDemo" : 49,
-	"SwitchSkin" : 50,
-	"Pause" : 80,
-	"Interact" : 16777221
 }
 
 const DEFAULT_OPTIONS_VIDEO = {

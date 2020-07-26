@@ -19,12 +19,12 @@ func _ready():
 	# Create (possibly load) settings
 	PersistenceMngr.add_state("settingsVideo", C.DEFAULT_OPTIONS_VIDEO).connect("changed", self, "_on_settingsVideo_update")
 	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", self, "_on_settingsAudio_update")
-	PersistenceMngr.add_state("settingsControls", C.DEFAULT_OPTIONS_KEYBINDINGS).connect("changed", self, "_on_settingsControls_update")
+	PersistenceMngr.add_state("settingsControls", ControlMngr.get_default_from_project_keybindings()).connect("changed", ControlMngr, "set_input_map_from_settings")
+	
 	
 	# Inititally configure options
 	_on_settingsAudio_update(PersistenceMngr.get_state("settingsVideo"))
 	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
-	_on_settingsControls_update(PersistenceMngr.get_state("settingsControls"))
 
 #############################################################
 # HANDLERS FOR PERSISTENT STATE
@@ -41,24 +41,6 @@ func _on_settingsAudio_update(settingsAudio):
 			# 0 => -80, 100 => 0
 			var db = -80 * (1 - (vol / 100.0))
 			AudioServer.set_bus_volume_db(idx, db)
-			
-func _on_settingsControls_update(settingsControls):
-	D.l("Controls", ["Configured Controls to be", settingsControls])
-	for input_action in settingsControls.keys():
-		var scancode = settingsControls[input_action]
-		
-		# Add this keybind in case it doesn't exist
-		if !InputMap.has_action(input_action):
-			InputMap.add_action(input_action)
-			
-		# Erase any already bound events from this input_action
-		InputMap.action_erase_events(input_action)
-		
-		# Add new event to input_action if assigned scancode
-		if scancode != null:
-			var key_event = InputEventKey.new()
-			key_event.set_scancode(scancode)
-			InputMap.action_add_event(input_action, key_event)
 
 #############################################################
 # NOTITFYING State Object

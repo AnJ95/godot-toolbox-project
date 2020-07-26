@@ -3,7 +3,7 @@ extends "res://scenes/game/mobile_controls/MobileControl.gd"
 
 #############################################################
 # CUSTOMIZATION
-export var action = "Jump"
+export var action = "game_jump"
 
 #############################################################
 # HANDLERS
