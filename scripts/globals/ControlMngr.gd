@@ -50,7 +50,7 @@ func __event_instance_to_event_info(event:InputEvent):
 			result.scancode = event.scancode
 		JOYPAD_MOTION:
 			result.axis = event.axis
-			result.axis_value = event.axis_value
+			result.axis_value = 1 if event.axis_value > 0 else -1
 		MOUSE_BUTTON:
 			result.button_index = event.button_index
 	
@@ -79,7 +79,7 @@ func __event_info_to_instance(event_info):
 				inst.scancode = event_info.scancode
 			JOYPAD_MOTION:
 				inst.axis = event_info.axis
-				inst.axis_value = event_info.axis_value
+				inst.axis_value = 1 if event_info.axis_value > 0 else -1
 			MOUSE_BUTTON:
 				inst.button_index = event_info.button_index
 			
@@ -112,6 +112,8 @@ func set_input_map_from_settings(settingsControls):
 		InputMap.action_erase_events(action_name)
 		
 		for event_info in settingsControls[action_name]:
+			if event_info == null:
+				continue
 			var input_event = __event_info_to_instance(event_info)
 			InputMap.action_add_event(action_name, input_event)
 		

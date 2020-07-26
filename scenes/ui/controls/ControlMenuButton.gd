@@ -60,9 +60,10 @@ func set_event(event_info):
 	PersistenceMngr.set_state(persistence_uid_path, event_info)
 	
 	# Unassign all other that have the same key
-	for control_button in get_all_menu_control_buttons():
-		if control_button != self and control_button.event_info.hash() == event_info.hash():
-			control_button.set_event(null)
+	if event_info != null:
+		for control_button in get_all_menu_control_buttons():
+			if control_button != self and control_button.event_info != null and control_button.event_info.hash() == event_info.hash():
+				control_button.set_event(null)
 	
 	# Update button text
 	button.text = get_display_caption()
