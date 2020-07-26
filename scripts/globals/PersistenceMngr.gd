@@ -56,16 +56,31 @@ func get_state(uid:String):
 		return null
 
 	# Iterate through json
-	var val = _objs[nodes[0]].get_state()
+	var tree = _objs[nodes[0]].get_state()
 	for i in range(1, nodes.size()):
-		var node = nodes[i]
-		if val.has(node):
-			val = val[node]
-		else:
-			D.e(D.LogCategory.PERSISTENCE, ["get_state", "Could not parse uid, invalid Node in Path [", "UID:", uid, ",", "Node:", node, "]" ])
+		tree = __try_descend(uid, tree, nodes[i])
+		if tree == null:
 			return null
-	return val
+	return tree
 
+func __try_descend(uid, tree, node):
+	if tree is Array:
+		if !node.is_valid_integer():
+			D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid, non-integer node on array [", "UID:", uid, ",", "Node:", node, "]" ])
+			return null
+			
+		var inode = int(node)
+		if tree.size() > inode:
+			return tree[inode]
+		else:
+			D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid, out of bounds array access [", "UID:", uid, ",", "Node:", node, "]" ])
+			return null
+	elif tree is Dictionary:
+		if tree.has(node):
+			return tree[node]
+		else:
+			D.e(D.LogCategory.PERSISTENCE, ["Could not parse uid, invalid Node in Path [", "UID:", uid, ",", "Node:", node, "]" ])
+			return null
 
 #############################################################
 # SETTER
@@ -84,23 +99,21 @@ func set_state(uid:String, val):
 			D.e(D.LogCategory.PERSISTENCE, ["set_state", "Could not parse uid, invalid Node in Path [", "UID:", uid, ",", "Node:", nodes[0], "]" ])
 			return false
 		var cur_obj = _objs[nodes[0]]
-		var cur_val = cur_obj.get_state()
+		var tree = cur_obj.get_state()
 
 		# Then iterate from [1, size()-2] to find last branch
 		for i in range(1, max(1, nodes.size()-1)):
-			var node = nodes[i]
-			if cur_val.has(node):
-				cur_val = cur_val[node]
-			else:
-				D.e(D.LogCategory.PERSISTENCE, ["set_state", "Could not parse uid, invalid Node in Path [", "UID:", uid, ",", "Node:", node, "]" ])
-				return false
+			tree = __try_descend(uid, tree, nodes[i])
+			if tree == null: return false
 
 		# Perform set operation
 		var last_node = nodes[nodes.size()-1]
-		if cur_val.has(last_node):
-			cur_val[last_node] = val
+		if tree is Dictionary and tree.has(last_node):
+			tree[last_node] = val
+		elif tree is Array and last_node.is_valid_integer() and tree.size() > int(last_node):
+			tree[int(last_node)] = val
 		else:
-			D.e(D.LogCategory.PERSISTENCE, ["set_state", "Could not parse uid , invalid Node in Path [", "UID:", uid, ",", "Node:", last_node, "]" ])
+			D.e(D.LogCategory.PERSISTENCE, ["set_state", "Could not parse uid, invalid Node in Path [", "UID:", uid, ",", "Node:", last_node, "]" ])
 			return false
 
 		# If no error: trigger_update

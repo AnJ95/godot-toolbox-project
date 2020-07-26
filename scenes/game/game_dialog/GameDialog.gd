@@ -39,7 +39,7 @@ func _ready():
 func _process(delta):
 	if can_be_exited_by_pressing_escape and is_open and Input.is_action_just_pressed("ui_cancel"):
 		_on_BtnResume_pressed()
-	if toggled_by_pause_action and Input.is_action_just_pressed("Pause"):
+	if toggled_by_pause_action and Input.is_action_just_pressed("game_pause"):
 		__show(!is_open)
 
 #############################################################

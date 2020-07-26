@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/controls/ControlMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/ui/menu/MenuControlButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=7]
 
@@ -35,89 +35,10 @@ margin_bottom = 377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0"]
-margin_right = 552.0
-margin_bottom = 488.0
-size_flags_horizontal = 3
-
-[node name="MenuControlButton" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="0" instance=ExtResource( 5 )]
+[node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 552.0
-margin_bottom = 47.0
-caption = "Left"
-persistence_uid_path = "settingsControls.Left"
-grabs_focus = true
-
-[node name="MenuControlButton2" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="1" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 63.0
-margin_right = 552.0
-margin_bottom = 110.0
-caption = "Right"
-persistence_uid_path = "settingsControls.Right"
-grabs_focus = false
-
-[node name="MenuControlButton3" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="2" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 126.0
-margin_right = 552.0
-margin_bottom = 173.0
-caption = "Up"
-persistence_uid_path = "settingsControls.Up"
-grabs_focus = false
-
-[node name="MenuControlButton4" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="3" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 189.0
-margin_right = 552.0
-margin_bottom = 236.0
-caption = "Down"
-persistence_uid_path = "settingsControls.Down"
-grabs_focus = false
-
-[node name="MenuControlButton8" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="4" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 252.0
-margin_right = 552.0
-margin_bottom = 299.0
-caption = "Switch Demo"
-persistence_uid_path = "settingsControls.SwitchDemo"
-grabs_focus = false
-
-[node name="MenuControlButton9" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="5" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 315.0
-margin_right = 552.0
-margin_bottom = 362.0
-caption = "Switch Skin"
-persistence_uid_path = "settingsControls.SwitchSkin"
-grabs_focus = false
-
-[node name="MenuControlButton5" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="6" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 378.0
-margin_right = 552.0
-margin_bottom = 425.0
-caption = "Jump"
-persistence_uid_path = "settingsControls.Jump"
-grabs_focus = false
-
-[node name="MenuControlButton6" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="7" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 441.0
-margin_right = 552.0
-margin_bottom = 488.0
-caption = "Interact"
-persistence_uid_path = "settingsControls.Interact"
-grabs_focus = false
+margin_right = 568.0
+margin_bottom = 326.0
 
 [node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 2 )]
 margin_top = 393.0

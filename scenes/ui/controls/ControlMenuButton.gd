@@ -1,4 +1,3 @@
-tool
 extends HBoxContainer
 
 #############################################################
@@ -7,32 +6,35 @@ signal control_changed(scan_code)
 
 #############################################################
 # NODES
-onready var label = $Label
 onready var button = $Button
 
 #############################################################
 # CUSTOMIZATION
-export(String) var caption = "None"
-export(String) var persistence_uid_path = "none"
 
 # Determines wether to put initial focus on this button
 export(bool) var grabs_focus = false
 
 #############################################################
 # STATE
-var scancode
+var persistence_uid_path
 var awaiting = false
+
+var action_name
+var event_i
+var event_info
 
 #############################################################
 # LIFECYCLE
+func init(action_name, event_i):
+	self.action_name = action_name
+	self.event_i = event_i
+	
 func _ready():
-	scancode = PersistenceMngr.get_state(persistence_uid_path)
-	
-	label.text = caption
+	persistence_uid_path = "settingsControls." + action_name + "." + str(event_i)
+	event_info = PersistenceMngr.get_state(persistence_uid_path)
 	button.text = get_display_caption()
-	
-	if grabs_focus:
-		button.grab_focus()
+	#if grabs_focus:
+	#	button.grab_focus()
 
 #############################################################
 # AWAITING CONDITION
@@ -50,24 +52,29 @@ func end_awaiting():
 
 #############################################################
 # GETTERS & SETTERS
-func set_scan_code(new_scancode):
-	# Set locally
-	scancode = new_scancode
+func set_event(event_info):
+	
+	self.event_info = event_info
 	
 	# Update PersistentObj
-	PersistenceMngr.set_state(persistence_uid_path, scancode)
+	PersistenceMngr.set_state(persistence_uid_path, event_info)
 	
 	# Unassign all other that have the same key
 	for control_button in get_all_menu_control_buttons():
-		if control_button != self and control_button.scancode == scancode:
-			control_button.set_scan_code(null)
+		if control_button != self and control_button.event_info.hash() == event_info.hash():
+			control_button.set_event(null)
 	
 	# Update button text
 	button.text = get_display_caption()
 	
 func get_display_caption():
-	if scancode:
-		return OS.get_scancode_string(scancode)
+	if event_info != null:
+		var input_event:InputEvent = ControlMngr.__event_info_to_instance(event_info)
+		var caption = ControlMngr.get_pretty_string(event_info)
+		if caption != "":
+			return caption
+		else:
+			return "Unassigned"
 	else:
 		return "Unassigned"
 
@@ -84,8 +91,8 @@ func _on_Button_pressed():
 		end_awaiting()
 
 func _input(event):
-	if awaiting and event is InputEventKey:
-		var event_key:InputEventKey = event
-		if event_key.pressed:
-			set_scan_code(event_key.scancode)
+	if awaiting:
+		var event_info = ControlMngr.__event_instance_to_event_info(event)
+		if event_info:
+			set_event(event_info)
 			end_awaiting()
