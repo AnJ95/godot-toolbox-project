@@ -18,6 +18,9 @@ export var pretty_action_names = {
 }
 
 func _ready():
+	add_actions()
+
+func add_actions():
 	var settingsControls = PersistenceMngr.get_state("settingsControls")
 	
 	var regex = RegEx.new()
@@ -30,3 +33,16 @@ func _ready():
 		var menu_action_inst = ControlMenuAction.instance()
 		menu_action_inst.init(action_name)
 		add_child(menu_action_inst)
+
+func reset_to_default():
+
+	PersistenceMngr.set_state("settingsControls", StateMngr.default_options_controls)
+	print(StateMngr.default_options_controls)
+	
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+	
+	add_actions()
+	
+	

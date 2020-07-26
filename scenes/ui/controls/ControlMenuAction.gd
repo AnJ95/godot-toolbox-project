@@ -33,11 +33,16 @@ func _on_ButtonAdd_pressed():
 	add_button()
 	
 func _on_ButtonRemove_pressed(btn):
+	var i = btn.event_i
+	
+	# remove entry in persistent storage
 	var settings = PersistenceMngr.get_state("settingsControls")[action_name]
-	settings.remove(btn.event_i)
+	settings.remove(i)
 	PersistenceMngr.set_state("settingsControls." + str(action_name), settings)
 	
-	btn_root.remove_child(btn_root.get_children()[btn.event_i])
+	# remove button
+	btn_root.remove_child(btn_root.get_child(i))
 	
-	for i in range(btn_root.get_child_count()):
-		btn_root.get_children()[btn.event_i].event_i = btn.event_i
+	# reassign index to other buttons
+	for o in range(btn_root.get_child_count()):
+		btn_root.get_child(o).event_i = o

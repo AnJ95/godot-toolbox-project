@@ -101,7 +101,6 @@ func get_pretty_string(event_info)->String:
 	return ""
 	
 func set_input_map_from_settings(settingsControls):
-	D.l("Controls", ["Configured Controls to be", settingsControls])
 	for action_name in settingsControls.keys():
 		
 		# Add this keybind in case it doesn't exist

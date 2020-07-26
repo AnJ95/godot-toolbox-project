@@ -15,15 +15,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_right = 504.0
-margin_bottom = 47.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "None"
-valign = 1
-
 [node name="Button" type="Button" parent="."]
 margin_right = 961.0
 margin_bottom = 47.0
@@ -43,4 +34,3 @@ focus_mode = 0
 enabled_focus_mode = 0
 text = "x"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="ButtonRemove" to="." method="_on_ButtonRemove_pressed"]

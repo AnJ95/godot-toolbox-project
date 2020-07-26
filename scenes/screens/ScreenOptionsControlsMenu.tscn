@@ -40,10 +40,25 @@ anchor_right = 0.0
 margin_right = 568.0
 margin_bottom = 326.0
 
-[node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 2 )]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/UIBox/VBoxContainer" index="2"]
 margin_top = 393.0
 margin_right = 584.0
 margin_bottom = 440.0
+
+[node name="ResetButton" type="Button" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 284.0
+margin_bottom = 47.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+enabled_focus_mode = 0
+text = "Reset to Default"
+
+[node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_left = 300.0
+margin_right = 584.0
+margin_bottom = 47.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
+[connection signal="pressed" from="MenuLayer/UIBox/VBoxContainer/HBoxContainer/ResetButton" to="MenuLayer/UIBox/VBoxContainer/ScrollContainer/ControlMenu" method="reset_to_default"]
