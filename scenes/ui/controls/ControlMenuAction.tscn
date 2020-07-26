@@ -1,18 +1,43 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/controls/ControlMenuAction.gd" type="Script" id=2]
 
 [node name="ControlMenuAction" type="VBoxContainer"]
 anchor_right = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 14.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 961.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Jump"
 align = 1
+valign = 1
+
+[node name="ButtonAdd" type="Button" parent="HBoxContainer"]
+margin_left = 977.0
+margin_right = 1024.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 47, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "+"
+
+[node name="ControlMenuButtons" type="VBoxContainer" parent="."]
+margin_top = 63.0
+margin_right = 1024.0
+margin_bottom = 63.0
+[connection signal="pressed" from="HBoxContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]

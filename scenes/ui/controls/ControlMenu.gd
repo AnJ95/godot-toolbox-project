@@ -5,6 +5,18 @@ const ControlMenuAction = preload("res://scenes/ui/controls/ControlMenuAction.ts
 
 export(String) var filter_actions:String = "^game_"
 
+export var pretty_action_names = {
+	"game_left" : "Left",
+	"game_right" : "Right",
+	"game_up" : "Up",
+	"game_down" : "Down",
+	"game_jump" : "Jump",
+	"game_interact" : "Interact",
+	"game_switch_demo" : "Switch Demo",
+	"game_switch_skin" : "Switch Skin",
+	"game_pause" : "Pause"
+}
+
 func _ready():
 	var settingsControls = PersistenceMngr.get_state("settingsControls")
 	

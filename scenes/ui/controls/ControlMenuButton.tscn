@@ -25,7 +25,7 @@ text = "None"
 valign = 1
 
 [node name="Button" type="Button" parent="."]
-margin_right = 1024.0
+margin_right = 961.0
 margin_bottom = 47.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -33,4 +33,14 @@ size_flags_vertical = 4
 toggle_mode = true
 enabled_focus_mode = 0
 text = "Unassigned"
+
+[node name="ButtonRemove" type="Button" parent="."]
+margin_left = 977.0
+margin_right = 1024.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 47, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "x"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ButtonRemove" to="." method="_on_ButtonRemove_pressed"]

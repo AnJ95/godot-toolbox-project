@@ -97,3 +97,4 @@ func _input(event):
 		if event_info:
 			set_event(event_info)
 			end_awaiting()
+			return true
