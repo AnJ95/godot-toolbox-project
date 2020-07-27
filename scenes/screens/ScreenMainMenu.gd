@@ -1,7 +1,7 @@
 extends "res://scenes/screens/Screen.gd"
 
-onready var btn_start = $MenuLayer/UIBox/VBoxContainer/Menu/BtnStart
-onready var btn_settings = $MenuLayer/UIBox/VBoxContainer/Menu/BtnSettings
+onready var btn_start = $MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu/BtnStart
+onready var btn_settings = $MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu/BtnSettings
 
 func _ready():
 	if C.SHOW_LEVEL_MENU:

@@ -3,8 +3,8 @@ extends Control
 
 const ControlMenuButton = preload("res://scenes/ui/controls/ControlMenuButton.tscn")
 
-onready var label = $HBoxContainer/Label
-onready var btn_root = $ControlMenuButtons
+onready var label = $VBoxContainer/HBoxContainer/Label
+onready var btn_root = $VBoxContainer/ControlMenuButtons
 
 var action_name
 

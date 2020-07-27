@@ -23,13 +23,12 @@ margin_bottom = 520.0
 
 [node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer" index="0" instance=ExtResource( 7 )]
 anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 584.0
-margin_bottom = 31.0
+margin_bottom = 41.0
 text = "CONTROLS"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
-margin_top = 47.0
+margin_top = 57.0
 margin_right = 584.0
 margin_bottom = 375.0
 size_flags_horizontal = 3
@@ -39,7 +38,7 @@ follow_focus = true
 [node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 margin_right = 518.0
-margin_bottom = 2466.0
+margin_bottom = 2898.0
 pretty_action_names = {
 "game_down": "Down",
 "game_interact": "Interact",

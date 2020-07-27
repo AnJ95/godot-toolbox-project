@@ -31,34 +31,40 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="MenuLayer/UIBox/VBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 211.0
+margin_bottom = 163.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
 stretch_mode = 6
 
-[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
-margin_top = 261.0
+[node name="PanelContainer" type="PanelContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
+margin_top = 213.0
 margin_right = 584.0
 margin_bottom = 440.0
 
-[node name="BtnStart" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="0" instance=ExtResource( 6 )]
-margin_right = 584.0
+[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer" index="0"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 560.0
+margin_bottom = 203.0
+
+[node name="BtnStart" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu" index="0" instance=ExtResource( 6 )]
+margin_right = 536.0
 margin_bottom = 49.0
 text = "Start Game"
 screen_to_switch_to = ExtResource( 8 )
 grabs_focus = true
 
-[node name="BtnSettings" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
+[node name="BtnSettings" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu" index="1" instance=ExtResource( 6 )]
 margin_top = 65.0
-margin_right = 584.0
+margin_right = 536.0
 margin_bottom = 114.0
 text = "Settings"
 screen_to_switch_to = ExtResource( 3 )
 
-[node name="BtnQuit" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="2" instance=ExtResource( 6 )]
+[node name="BtnQuit" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu" index="2" instance=ExtResource( 6 )]
 margin_top = 130.0
-margin_right = 584.0
+margin_right = 536.0
 margin_bottom = 179.0
 text = "Quit Game"
 pushes_screen = false

@@ -15,49 +15,50 @@
 
 [node name="UIBox" parent="MenuLayer" index="0" instance=ExtResource( 6 )]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox" index="0"]
+[node name="PanelContainer" type="PanelContainer" parent="MenuLayer/UIBox" index="0"]
 margin_left = 220.0
-margin_top = 80.0
+margin_top = 158.0
 margin_right = 804.0
-margin_bottom = 520.0
+margin_bottom = 442.0
+size_flags_vertical = 4
 
-[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer" index="0" instance=ExtResource( 7 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox/PanelContainer" index="0"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 560.0
+margin_bottom = 260.0
+size_flags_vertical = 4
+
+[node name="LabelBig" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="0" instance=ExtResource( 7 )]
 anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 584.0
-margin_bottom = 31.0
+margin_right = 536.0
+margin_bottom = 41.0
 text = "VIDEO SETTINGS"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
-margin_top = 47.0
-margin_right = 584.0
-margin_bottom = 375.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0"]
-margin_right = 568.0
-margin_bottom = 114.0
+[node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="1"]
+margin_top = 57.0
+margin_right = 536.0
+margin_bottom = 171.0
 size_flags_horizontal = 3
 
-[node name="MenuToggleSettingButton" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="0" instance=ExtResource( 3 )]
-margin_right = 568.0
+[node name="MenuToggleSettingButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="0" instance=ExtResource( 3 )]
+margin_right = 536.0
 margin_bottom = 49.0
 text = "Enter Fullscreen"
 grabs_focus = true
 
-[node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="1" instance=ExtResource( 3 )]
+[node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 3 )]
 margin_top = 65.0
-margin_right = 568.0
+margin_right = 536.0
 margin_bottom = 114.0
 pressed = true
 text = "Use VSync"
 setting = "VSync"
 
-[node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 2 )]
-margin_top = 391.0
-margin_right = 584.0
-margin_bottom = 440.0
+[node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_top = 187.0
+margin_right = 536.0
+margin_bottom = 236.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

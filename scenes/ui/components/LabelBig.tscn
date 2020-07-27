@@ -5,13 +5,11 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
+extra_spacing_bottom = 10
 font_data = ExtResource( 2 )
 
 [node name="LabelBig" type="Label"]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 40.0
-margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource( 1 )
