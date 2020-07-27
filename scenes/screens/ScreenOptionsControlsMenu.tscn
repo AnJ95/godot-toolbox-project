@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ui/controls/ControlMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/menu/controls/ControlMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=7]

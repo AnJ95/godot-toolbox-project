@@ -1,7 +1,7 @@
 tool
 extends "res://scenes/screens/Screen.gd"
 
-onready var menu = $MenuLayer/UIBox/VBoxContainer/Menu
+onready var menu = $MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu
 func _ready():
 	
 	for child in menu.get_children():

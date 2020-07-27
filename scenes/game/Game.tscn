@@ -2,7 +2,8 @@
 
 [ext_resource path="res://scenes/game/level/LevelCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
-[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game/entities/Player.tscn" type="PackedScene" id=7]
+
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )

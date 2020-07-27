@@ -2,8 +2,9 @@
 
 [ext_resource path="res://assets/sound/music/04 Hopeful Feeling.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_3x3.png" type="Texture" id=2]
-[ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/pickups/PickupCoin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/level/Level.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )

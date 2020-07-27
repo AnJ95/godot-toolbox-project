@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/game/dialog/GameDialog.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270403__littlerobotsoundfactory__jingle-lose-00.wav" type="AudioStream" id=2]
+
+[node name="GameDialogLost" instance=ExtResource( 1 )]
+soundtrack_or_null = ExtResource( 2 )
+
+[node name="LabelBig" parent="Popup/VBoxContainer" index="0"]
+text = "Level lost!"
+
+[node name="BtnResume" parent="Popup/VBoxContainer" index="1"]
+visible = false
+
+[node name="BtnRetry" parent="Popup/VBoxContainer" index="2"]
+margin_top = 47.0
+margin_bottom = 94.0
+
+[node name="BtnNext" parent="Popup/VBoxContainer" index="3"]
+visible = false
+margin_top = 110.0
+margin_bottom = 157.0
+
+[node name="BtnSettings" parent="Popup/VBoxContainer" index="4"]
+visible = false
+margin_top = 110.0
+margin_bottom = 157.0
+
+[node name="BtnMenu" parent="Popup/VBoxContainer" index="5"]
+margin_top = 110.0
+margin_bottom = 157.0
+
+[node name="BtnQuit" parent="Popup/VBoxContainer" index="6"]
+margin_top = 173.0
+margin_bottom = 220.0

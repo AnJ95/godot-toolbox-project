@@ -9,7 +9,7 @@ onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
 #############################################################
 # CONSTANTS
 const LevelCamera = preload("res://scenes/game/level/LevelCamera.gd")
-const Player = preload("res://scenes/entities/Player.gd")
+const Player = preload("res://scenes/game/entities/Player.gd")
 
 #############################################################
 # CUSTOMIZATION

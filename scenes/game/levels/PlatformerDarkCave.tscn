@@ -4,9 +4,11 @@
 [ext_resource path="res://scenes/game/interaction/DamageArea.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_2x2_platformer_cave.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/tilesets/tileset_dungeon.png" type="Texture" id=4]
-[ext_resource path="res://scenes/light/FlickeringLight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/pickups/PickupCoin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game/light/FlickeringLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game/pickups/PickupCoin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/level/Level.tscn" type="PackedScene" id=7]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )

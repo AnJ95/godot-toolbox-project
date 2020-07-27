@@ -1,6 +1,6 @@
 extends Area2D
 
-const Entity = preload("res://scenes/entities/Entity.gd")
+const Entity = preload("res://scenes/game/entities/Entity.gd")
 export(Entity.Team) var team = Entity.Team.Player
 export(float) var damage = 0.5
 

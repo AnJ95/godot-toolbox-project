@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/ui/components/IconIntValue.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/components/AnimatedIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/game/GameUI.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/ui/UI_Buttons.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ui/components/IconValue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 229, 49, 46, 46 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 275, 95, 46, 46 )
+
+[node name="GameUI" type="CanvasLayer"]
+layer = 10
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TopLeft" type="Control" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+mouse_filter = 2
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TopLeft"]
+anchor_right = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconIntValue" parent="MarginContainer/TopLeft/HBoxContainer" instance=ExtResource( 1 )]
+margin_top = 2.0
+margin_right = 54.0
+margin_bottom = 29.0
+
+[node name="IconHolder" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue" index="0"]
+margin_right = 20.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="AnimatedIcon" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
+position = Vector2( 8, 0 )
+scale = Vector2( 3, 3 )
+frame = 2
+
+[node name="Label" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue" index="1"]
+margin_left = 26.0
+margin_right = 54.0
+
+[node name="IconValue" parent="MarginContainer/TopLeft/HBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 264.0
+margin_bottom = 32.0
+size_flags_horizontal = 1
+
+[node name="TopRight" type="Control" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TopRight"]
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonRestart" type="TextureButton" parent="MarginContainer/TopRight/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 46.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 1 )
+
+[node name="ButtonPause" type="TextureButton" parent="MarginContainer/TopRight/HBoxContainer"]
+margin_left = 62.0
+margin_right = 108.0
+margin_bottom = 46.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 2 )
+[connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
+[connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonPause" to="." method="_on_ButtonPause_pressed"]
+
+[editable path="MarginContainer/TopLeft/HBoxContainer/IconIntValue"]

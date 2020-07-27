@@ -2,12 +2,16 @@
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/Game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/game/game_dialog/GameDialogLevelWon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/game/GameUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/game/game_dialog/GameDialogLost.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/game/game_dialog/GameDialogPause.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/game/GameMobileUI.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/game/GameMobileUI.gd" type="Script" id=8]
+[ext_resource path="res://scenes/ui/game/dialog/GameDialogLevelWon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/game/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/game/dialog/GameDialogLost.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/game/dialog/GameDialogPause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/game/GameMobileUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ui/game/GameMobileUI.gd" type="Script" id=8]
+
+
+
+
 
 [node name="ScreenGame" instance=ExtResource( 1 )]
 show_transition_on_enter = true

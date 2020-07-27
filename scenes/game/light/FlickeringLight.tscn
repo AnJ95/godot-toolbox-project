@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/masks/light100.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/light/FlickeringLight.gd" type="Script" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1024
+height = 1
+seamless = true
+noise = SubResource( 1 )
+
+[node name="FlickeringLight" type="Light2D"]
+texture = ExtResource( 1 )
+texture_scale = 1.2
+color = Color( 0.996094, 0.652044, 0.381317, 1 )
+energy = 0.9
+script = ExtResource( 2 )
+flickerNoise = SubResource( 2 )

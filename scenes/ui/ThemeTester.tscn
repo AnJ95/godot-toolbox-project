@@ -133,15 +133,14 @@ __meta__ = {
 
 [node name="LabelBig" parent="VBoxContainer4" instance=ExtResource( 3 )]
 anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 328.0
-margin_bottom = 31.0
+margin_bottom = 41.0
 text = "LabelBig"
 
 [node name="Label" type="Label" parent="VBoxContainer4"]
-margin_top = 47.0
+margin_top = 57.0
 margin_right = 328.0
-margin_bottom = 74.0
+margin_bottom = 84.0
 text = "Label"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="."]
@@ -162,7 +161,7 @@ margin_bottom = 27.0
 
 [node name="AnimatedIcon" parent="VBoxContainer5/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
-frame = 2
+frame = 0
 
 [node name="IconValue" parent="VBoxContainer5" instance=ExtResource( 5 )]
 anchor_right = 0.0
@@ -171,8 +170,5 @@ margin_top = 43.0
 margin_right = 328.0
 margin_bottom = 75.0
 size_flags_vertical = 1
-has_halfes = true
-value_now = 2.5
-value_max = 5
 
 [editable path="VBoxContainer5/IconIntValue"]
