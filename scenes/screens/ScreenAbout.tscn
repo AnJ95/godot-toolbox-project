@@ -96,3 +96,4 @@ margin_bottom = 440.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
+grabs_focus = true

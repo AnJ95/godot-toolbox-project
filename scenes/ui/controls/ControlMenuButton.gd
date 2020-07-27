@@ -79,6 +79,9 @@ func get_display_caption():
 	else:
 		return "Unassigned"
 
+func grab_focus():
+	button.grab_focus()
+
 func get_all_menu_control_buttons():
 	return get_tree().get_nodes_in_group("MenuControlButton")
 	 

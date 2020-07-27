@@ -19,7 +19,7 @@ export(bool) var grabs_focus = false
 
 #############################################################
 # LIFECYCLE
-func _ready():
+func _enter_tree():
 	if grabs_focus:
 		grab_focus()
 

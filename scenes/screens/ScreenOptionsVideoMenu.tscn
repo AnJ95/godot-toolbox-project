@@ -44,6 +44,7 @@ size_flags_horizontal = 3
 margin_right = 568.0
 margin_bottom = 47.0
 text = "Enter Fullscreen"
+grabs_focus = true
 
 [node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="1" instance=ExtResource( 3 )]
 margin_top = 63.0

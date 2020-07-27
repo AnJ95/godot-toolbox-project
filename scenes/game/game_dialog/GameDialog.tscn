@@ -46,48 +46,36 @@ text = "GameDialog"
 margin_top = 47.0
 margin_right = 434.0
 margin_bottom = 94.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Resume"
 
 [node name="BtnRetry" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 110.0
 margin_right = 434.0
 margin_bottom = 157.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Restart Level"
 
 [node name="BtnNext" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 173.0
 margin_right = 434.0
 margin_bottom = 220.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Next Level"
 
 [node name="BtnSettings" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 236.0
 margin_right = 434.0
 margin_bottom = 283.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Settings"
 
 [node name="BtnMenu" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 299.0
 margin_right = 434.0
 margin_bottom = 346.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Back to menu"
 
 [node name="BtnQuit" type="Button" parent="Popup/VBoxContainer"]
 margin_top = 362.0
 margin_right = 434.0
 margin_bottom = 409.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Quit game"
 
 [node name="InvisibleWall" type="TextureButton" parent="."]

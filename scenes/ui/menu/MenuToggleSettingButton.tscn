@@ -6,11 +6,9 @@
 [node name="MenuToggleSettingButton" type="Button" groups=[
 "MenuControlButton",
 ]]
-focus_mode = 0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 toggle_mode = true
-enabled_focus_mode = 0
 text = "Fullscreen"
 script = ExtResource( 1 )
 __meta__ = {

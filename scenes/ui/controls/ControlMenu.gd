@@ -33,6 +33,10 @@ func add_actions():
 		var menu_action_inst = ControlMenuAction.instance()
 		menu_action_inst.init(action_name)
 		add_child(menu_action_inst)
+	
+	var all_control_btns = get_tree().get_nodes_in_group("MenuControlButton")
+	if all_control_btns.size() > 0:
+		all_control_btns[0].grab_focus()
 
 func reset_to_default():
 

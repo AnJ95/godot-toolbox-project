@@ -32,8 +32,6 @@ margin_left = 977.0
 margin_right = 1024.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 47, 0 )
-focus_mode = 0
-enabled_focus_mode = 0
 text = "+"
 
 [node name="ControlMenuButtons" type="VBoxContainer" parent="."]

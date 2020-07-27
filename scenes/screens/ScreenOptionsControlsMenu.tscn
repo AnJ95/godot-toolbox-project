@@ -34,11 +34,23 @@ margin_right = 584.0
 margin_bottom = 377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+follow_focus = true
 
 [node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 margin_right = 568.0
 margin_bottom = 326.0
+pretty_action_names = {
+"game_down": "Down",
+"game_interact": "Interact",
+"game_jump": "Jump",
+"game_left": "Left",
+"game_pause": "Pause",
+"game_right": "Right",
+"game_switch_demo": "Switch Demo",
+"game_switch_skin": "Switch Skin",
+"game_up": "Up"
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/UIBox/VBoxContainer" index="2"]
 margin_top = 393.0
@@ -48,10 +60,8 @@ margin_bottom = 440.0
 [node name="ResetButton" type="Button" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="0"]
 margin_right = 284.0
 margin_bottom = 47.0
-focus_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-enabled_focus_mode = 0
 text = "Reset to Default"
 
 [node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 2 )]

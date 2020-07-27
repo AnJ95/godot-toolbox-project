@@ -24,7 +24,7 @@ func _ready():
 	
 	
 	# Inititally configure options
-	_on_settingsAudio_update(PersistenceMngr.get_state("settingsVideo"))
+	_on_settingsVideo_update(PersistenceMngr.get_state("settingsVideo"))
 	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
 
 #############################################################

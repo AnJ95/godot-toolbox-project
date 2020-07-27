@@ -70,6 +70,12 @@ func __show(show=true):
 	
 	if pauses_game_while_open:
 		get_tree().paused = is_open
+		
+	if show:
+		for btn in $Popup/VBoxContainer.get_children():
+			if btn is Button and btn.visible:
+				btn.grab_focus()
+				break
 
 func __hide():
 	__show(false)
