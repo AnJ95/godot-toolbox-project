@@ -15,7 +15,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-persistence_uid_path = true
 value_step = 1
 
 [node name="Label" type="Label" parent="."]
@@ -32,4 +31,3 @@ margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 50.0
-[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]

@@ -1,3 +1,4 @@
+tool
 extends Node
 
 var title_song_player:AudioStreamPlayer

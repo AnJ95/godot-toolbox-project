@@ -1,3 +1,4 @@
+tool
 extends Node
 
 const JOYPAD_BUTTON = "JoypadButton"
@@ -29,6 +30,10 @@ func _ready():
 	
 func get_default_from_project_keybindings():
 	var default = {}
+	
+	# Loads even when tool
+	InputMap.load_from_globals()
+	
 	for action_name in InputMap.get_actions():
 		default[action_name] = []
 		for event in InputMap.get_action_list(action_name):

@@ -24,12 +24,3 @@ pretty_action_names = {
 "game_switch_skin": "Switch Skin",
 "game_up": "Up"
 }
-
-[node name="Label" type="Label" parent="."]
-margin_right = 1024.0
-margin_bottom = 87.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Filled dynamically. If the User previously configured the controls, they will be loaded, otherwise the default is taken from the ProjectSettings InputMap.
-Change the export \"filter_action\" to show only some of the actions."
-autowrap = true

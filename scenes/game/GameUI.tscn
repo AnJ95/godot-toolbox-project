@@ -62,7 +62,7 @@ rect_min_size = Vector2( 20, 0 )
 [node name="AnimatedIcon" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 3 )]
 position = Vector2( 8, 0 )
 scale = Vector2( 3, 3 )
-frame = 2
+frame = 0
 
 [node name="Label" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue" index="1"]
 margin_left = 26.0

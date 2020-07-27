@@ -13,7 +13,7 @@ onready var slider:HSlider = $HSlider
 #############################################################
 # CUSTOMIZATION
 export(String) var caption = "None"
-export(String) var persistence_uid_path = "none"
+export(String) var persistence_uid_path
 
 export(int) var value_min = 0
 export(int) var value_max = 100
@@ -30,7 +30,13 @@ func _ready():
 	slider.min_value = int(value_min)
 	slider.max_value = int(value_max)
 	slider.step = int(value_step)
-	slider.value = PersistenceMngr.get_state(persistence_uid_path)
+	
+	if persistence_uid_path:
+		# Load saved or default value
+		slider.value = PersistenceMngr.get_state(persistence_uid_path)
+		
+		# After setting value!
+		slider.connect("value_changed", self, "_on_HSlider_value_changed")
 	
 	if grabs_focus:
 		slider.grab_focus()

@@ -1,3 +1,4 @@
+tool
 extends Node2D
 
 signal on_transition_closed()

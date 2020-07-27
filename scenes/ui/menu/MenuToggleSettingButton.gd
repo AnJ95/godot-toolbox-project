@@ -1,3 +1,4 @@
+tool
 extends Button
 
 export(bool) var grabs_focus = false

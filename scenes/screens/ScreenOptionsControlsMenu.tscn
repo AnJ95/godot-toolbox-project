@@ -38,8 +38,8 @@ follow_focus = true
 
 [node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
-margin_right = 568.0
-margin_bottom = 324.0
+margin_right = 518.0
+margin_bottom = 2466.0
 pretty_action_names = {
 "game_down": "Down",
 "game_interact": "Interact",

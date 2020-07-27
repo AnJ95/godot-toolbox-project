@@ -1,3 +1,4 @@
+tool
 extends Control
 
 const ControlMenuButton = preload("res://scenes/ui/controls/ControlMenuButton.tscn")
