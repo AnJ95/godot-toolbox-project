@@ -17,6 +17,18 @@ export var pretty_action_names = {
 	"game_pause" : "Pause"
 }
 
+export var preferred_order = [
+	"game_left",
+	"game_right",
+	"game_up",
+	"game_down",
+	"game_jump",
+	"game_interact",
+	"game_pause",
+	"game_switch_demo",
+	"game_switch_skin"
+]
+
 func _ready():
 	add_actions()
 
@@ -28,14 +40,27 @@ func add_actions():
 		child.queue_free()
 	
 	# get settings
-	var settingsControls = PersistenceMngr.get_state("settingsControls")
+	var settingsControls:Dictionary = PersistenceMngr.get_state("settingsControls")
 	
 	# ready regex to filter actions
 	var regex = RegEx.new()
 	regex.compile(filter_actions)
 	
+	# Try to use preferred_order for the list of action names ...
+	var action_names = preferred_order.duplicate()
+	
+	# ... but remove what doesn't actually exist ...
+	for action_name in action_names:
+		if !settingsControls.has(action_name):
+			action_names.erase(action_name)
+	
+	# ... and append what's missing
+	for action_name in settingsControls:
+		if action_names.find(action_name) == -1:
+			action_names.append(action_name)
+	
 	# add one ControlMenuAction per InputMap action
-	for action_name in settingsControls.keys():
+	for action_name in action_names:
 		
 		# skip filtered actions
 		if !regex.search(action_name):
