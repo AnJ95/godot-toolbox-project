@@ -31,30 +31,30 @@ text = "VIDEO SETTINGS"
 [node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
 margin_top = 47.0
 margin_right = 584.0
-margin_bottom = 377.0
+margin_bottom = 375.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0"]
 margin_right = 568.0
-margin_bottom = 110.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 
 [node name="MenuToggleSettingButton" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="0" instance=ExtResource( 3 )]
 margin_right = 568.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 text = "Enter Fullscreen"
 grabs_focus = true
 
 [node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer/Menu" index="1" instance=ExtResource( 3 )]
-margin_top = 63.0
+margin_top = 65.0
 margin_right = 568.0
-margin_bottom = 110.0
+margin_bottom = 114.0
 text = "Use VSync"
 setting = "VSync"
 
 [node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 2 )]
-margin_top = 393.0
+margin_top = 391.0
 margin_right = 584.0
 margin_bottom = 440.0
 text = "Back"

@@ -41,40 +41,40 @@ text = "SETTINGS"
 [node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
 margin_top = 81.0
 margin_right = 584.0
-margin_bottom = 380.0
+margin_bottom = 390.0
 
 [node name="BtnVideo" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="0" instance=ExtResource( 4 )]
 margin_right = 584.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 text = "Video Settings"
 screen_to_switch_to = ExtResource( 3 )
 grabs_focus = true
 
 [node name="BtnAudio" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
-margin_top = 63.0
+margin_top = 65.0
 margin_right = 584.0
-margin_bottom = 110.0
+margin_bottom = 114.0
 text = "Audio Settings"
 screen_to_switch_to = ExtResource( 8 )
 
 [node name="BtnControls" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="2" instance=ExtResource( 4 )]
-margin_top = 126.0
+margin_top = 130.0
 margin_right = 584.0
-margin_bottom = 173.0
+margin_bottom = 179.0
 text = "Controls"
 screen_to_switch_to = ExtResource( 10 )
 
 [node name="BtnAbout" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="3" instance=ExtResource( 4 )]
-margin_top = 189.0
+margin_top = 195.0
 margin_right = 584.0
-margin_bottom = 236.0
+margin_bottom = 244.0
 text = "About"
 screen_to_switch_to = ExtResource( 9 )
 
 [node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="4" instance=ExtResource( 4 )]
-margin_top = 252.0
+margin_top = 260.0
 margin_right = 584.0
-margin_bottom = 299.0
+margin_bottom = 309.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

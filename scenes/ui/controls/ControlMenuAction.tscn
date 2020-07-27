@@ -15,12 +15,12 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 margin_right = 961.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Jump"
@@ -30,12 +30,12 @@ valign = 1
 [node name="ButtonAdd" type="Button" parent="HBoxContainer"]
 margin_left = 977.0
 margin_right = 1024.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 rect_min_size = Vector2( 47, 0 )
 text = "+"
 
 [node name="ControlMenuButtons" type="VBoxContainer" parent="."]
-margin_top = 63.0
+margin_top = 65.0
 margin_right = 1024.0
-margin_bottom = 63.0
+margin_bottom = 65.0
 [connection signal="pressed" from="HBoxContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]

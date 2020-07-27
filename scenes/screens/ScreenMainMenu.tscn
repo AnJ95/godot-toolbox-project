@@ -31,35 +31,35 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="MenuLayer/UIBox/VBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 217.0
+margin_bottom = 211.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 4 )
 stretch_mode = 6
 
 [node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
-margin_top = 267.0
+margin_top = 261.0
 margin_right = 584.0
 margin_bottom = 440.0
 
 [node name="BtnStart" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="0" instance=ExtResource( 6 )]
 margin_right = 584.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 text = "Start Game"
 screen_to_switch_to = ExtResource( 8 )
 grabs_focus = true
 
 [node name="BtnSettings" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
-margin_top = 63.0
+margin_top = 65.0
 margin_right = 584.0
-margin_bottom = 110.0
+margin_bottom = 114.0
 text = "Settings"
 screen_to_switch_to = ExtResource( 3 )
 
 [node name="BtnQuit" parent="MenuLayer/UIBox/VBoxContainer/Menu" index="2" instance=ExtResource( 6 )]
-margin_top = 126.0
+margin_top = 130.0
 margin_right = 584.0
-margin_bottom = 173.0
+margin_bottom = 179.0
 text = "Quit Game"
 pushes_screen = false
 quits_game = true

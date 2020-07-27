@@ -31,7 +31,7 @@ text = "CONTROLS"
 [node name="ScrollContainer" type="ScrollContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
 margin_top = 47.0
 margin_right = 584.0
-margin_bottom = 377.0
+margin_bottom = 375.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 follow_focus = true
@@ -39,7 +39,7 @@ follow_focus = true
 [node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 margin_right = 568.0
-margin_bottom = 326.0
+margin_bottom = 324.0
 pretty_action_names = {
 "game_down": "Down",
 "game_interact": "Interact",
@@ -53,13 +53,13 @@ pretty_action_names = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/UIBox/VBoxContainer" index="2"]
-margin_top = 393.0
+margin_top = 391.0
 margin_right = 584.0
 margin_bottom = 440.0
 
 [node name="ResetButton" type="Button" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="0"]
 margin_right = 284.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Reset to Default"
@@ -67,7 +67,7 @@ text = "Reset to Default"
 [node name="MenuButton" parent="MenuLayer/UIBox/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 2 )]
 margin_left = 300.0
 margin_right = 584.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

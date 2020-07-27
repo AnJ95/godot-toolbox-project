@@ -1,0 +1,178 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/ui/components/AnimatedIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/components/IconIntValue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/components/IconValue.tscn" type="PackedScene" id=5]
+
+[node name="GridContainer" type="GridContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 328.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_right = 328.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_left = 348.0
+margin_right = 676.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer3"]
+margin_right = 328.0
+margin_bottom = 50.0
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer3"]
+margin_top = 66.0
+margin_right = 328.0
+margin_bottom = 116.0
+value = 50.0
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer3"]
+margin_top = 132.0
+margin_right = 328.0
+margin_bottom = 182.0
+value = 100.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 696.0
+margin_right = 1024.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+margin_right = 328.0
+margin_bottom = 49.0
+text = "Normal"
+
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+margin_top = 65.0
+margin_right = 328.0
+margin_bottom = 114.0
+toggle_mode = true
+pressed = true
+text = "Pressed"
+
+[node name="Button3" type="Button" parent="VBoxContainer2"]
+margin_top = 130.0
+margin_right = 328.0
+margin_bottom = 179.0
+disabled = true
+text = "Normal"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="."]
+margin_top = 310.0
+margin_right = 328.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer6"]
+margin_right = 328.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer6/ScrollContainer"]
+margin_right = 262.0
+margin_bottom = 807.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer6/ScrollContainer/VBoxContainer"]
+margin_right = 262.0
+margin_bottom = 807.0
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+autowrap = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+margin_left = 348.0
+margin_top = 310.0
+margin_right = 676.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBig" parent="VBoxContainer4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 328.0
+margin_bottom = 31.0
+text = "LabelBig"
+
+[node name="Label" type="Label" parent="VBoxContainer4"]
+margin_top = 47.0
+margin_right = 328.0
+margin_bottom = 74.0
+text = "Label"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+margin_left = 696.0
+margin_top = 310.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconIntValue" parent="VBoxContainer5" instance=ExtResource( 4 )]
+margin_right = 328.0
+margin_bottom = 27.0
+
+[node name="AnimatedIcon" parent="VBoxContainer5/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
+scale = Vector2( 3, 3 )
+frame = 2
+
+[node name="IconValue" parent="VBoxContainer5" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 43.0
+margin_right = 328.0
+margin_bottom = 75.0
+size_flags_vertical = 1
+has_halfes = true
+value_now = 2.5
+value_max = 5
+
+[editable path="VBoxContainer5/IconIntValue"]

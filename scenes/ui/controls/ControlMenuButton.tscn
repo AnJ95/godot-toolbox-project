@@ -17,7 +17,7 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 margin_right = 961.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 toggle_mode = true
@@ -26,7 +26,7 @@ text = "Unassigned"
 [node name="ButtonRemove" type="Button" parent="."]
 margin_left = 977.0
 margin_right = 1024.0
-margin_bottom = 47.0
+margin_bottom = 49.0
 rect_min_size = Vector2( 47, 0 )
 text = "x"
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -26,7 +26,7 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="MenuLayer/UIBox/VBoxContainer" index="0"]
 margin_right = 584.0
-margin_bottom = 377.0
+margin_bottom = 375.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -83,14 +83,14 @@ text = "Sounds by"
 [node name="Label5" type="Label" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="5"]
 margin_top = 257.0
 margin_right = 467.0
-margin_bottom = 301.0
+margin_bottom = 300.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tommy Wiseau"
 valign = 1
 
 [node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer" index="1" instance=ExtResource( 6 )]
-margin_top = 393.0
+margin_top = 391.0
 margin_right = 584.0
 margin_bottom = 440.0
 text = "Back"

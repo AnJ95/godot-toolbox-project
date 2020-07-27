@@ -21,15 +21,27 @@ func _ready():
 	add_actions()
 
 func add_actions():
+	
+	# Clear prev children
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+	
+	# get settings
 	var settingsControls = PersistenceMngr.get_state("settingsControls")
 	
+	# ready regex to filter actions
 	var regex = RegEx.new()
 	regex.compile(filter_actions)
 	
+	# add one ControlMenuAction per InputMap action
 	for action_name in settingsControls.keys():
+		
+		# skip filtered actions
 		if !regex.search(action_name):
 			continue
 		
+		# create and add instance
 		var menu_action_inst = ControlMenuAction.instance()
 		menu_action_inst.init(action_name)
 		add_child(menu_action_inst)
@@ -39,13 +51,7 @@ func add_actions():
 		all_control_btns[0].grab_focus()
 
 func reset_to_default():
-
 	PersistenceMngr.set_state("settingsControls", StateMngr.default_options_controls)
-	print(StateMngr.default_options_controls)
-	
-	for child in get_children():
-		remove_child(child)
-		child.queue_free()
 	
 	add_actions()
 	

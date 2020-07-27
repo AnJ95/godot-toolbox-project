@@ -32,13 +32,13 @@ text = "LEVELS"
 [node name="Menu" type="GridContainer" parent="MenuLayer/UIBox/VBoxContainer" index="1"]
 margin_top = 47.0
 margin_right = 584.0
-margin_bottom = 157.0
+margin_bottom = 161.0
 columns = 4
 
 [node name="BtnMenu" parent="MenuLayer/UIBox/VBoxContainer" index="2" instance=ExtResource( 6 )]
-margin_top = 173.0
+margin_top = 177.0
 margin_right = 584.0
-margin_bottom = 220.0
+margin_bottom = 226.0
 text = "Back"
 pushes_screen = false
 pops_screen = true

@@ -7,7 +7,7 @@ func _ready():
 	for child in menu.get_children():
 		child.queue_free()
 	
-	var latest_btn_unlocked = null
+	
 	for level_id in C.LEVELS.keys():
 		# Create
 		var btn:Button = Button.new()
@@ -15,18 +15,26 @@ func _ready():
 		# Init
 		btn.text = str(level_id + 1)
 		btn.connect("pressed", self, "_on_button_pressed", [level_id])
-		var unlocked = is_level_unlocked(level_id)
-		btn.disabled = !unlocked
+		btn.disabled = !is_level_unlocked(level_id)
 		btn.size_flags_horizontal = btn.SIZE_EXPAND_FILL
-		
-		if unlocked:
-			latest_btn_unlocked = btn
 		
 		# Add
 		menu.add_child(btn)
+		
+	grab_focus_on_last_clickable_btn()
 	
-	if latest_btn_unlocked:
-		latest_btn_unlocked.grab_focus()
+func _enter_tree():
+	call_deferred("grab_focus_on_last_clickable_btn")
+
+func grab_focus_on_last_clickable_btn():
+	if !menu:
+		return
+	var last_clickable_btn = null
+	for btn in menu.get_children():
+		if btn is Button and !btn.disabled:
+			last_clickable_btn = btn
+	if last_clickable_btn:
+		last_clickable_btn.grab_focus()
 
 func is_level_unlocked(level_id):
 	return (

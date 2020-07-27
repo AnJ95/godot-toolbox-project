@@ -19,16 +19,17 @@ persistence_uid_path = true
 value_step = 1
 
 [node name="Label" type="Label" parent="."]
-margin_top = 2.0
+margin_top = 11.0
 margin_right = 160.0
-margin_bottom = 29.0
+margin_bottom = 38.0
 rect_min_size = Vector2( 160, 0 )
 text = "None"
 
 [node name="HSlider" type="HSlider" parent="."]
 margin_left = 184.0
-margin_right = 192.0
-margin_bottom = 32.0
+margin_right = 234.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
+value = 50.0
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
