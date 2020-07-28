@@ -1,23 +1,27 @@
-# godot-toolbox-project
+# Godot Toolbox Project
+
 ![Godot Toolbox Project](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo256.png "Godot Toolbox Project")
 
+Project template for the [Godot Game Engine](https://godotengine.org/) taking care of things so you can focus on the game.
 
-Project template for the [Godot Game Engine](https://godotengine.org/) featuring a main menu, audio and keybinding settings, a pause screen and some demo 2D games.
-Contains easy-to-use components for UI, state management, persistent storage, and the game itself.
+Features a main menu, extensive settings, in-game UI, a custom and easy-to-change theme and some demo levels.
+
+Additionally there are some re-usable components for UI, state management, persistent storage, and the game itself.
+
+Both controller (Control menu) and mobile (Touch button and joystick) support are taken care of.
 
 
 ## Contents
-* Menu, UI and Theme
+* Setup
+* UI
+	* Theme
 	* Menu
 	* GameUI
-	* Components
+	* MobileUI
 * Settings
-	* Key Bindings
+	* Controls
+	* Video
 	* Audio
-* Game Modules
-	* Levels
-	* Signals
-	* Entities
 * Demo Levels
 * Global Managers
 	* D for Debug
@@ -27,106 +31,89 @@ Contains easy-to-use components for UI, state management, persistent storage, an
 	* SignalMngr
 	* StateMngr
 
-## Menu, UI and Theme
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Setup
+
+Just download or fork the whole thing and editor delete what you want.
+
+See *[scripts/globals/Config.gd]* for some basic options.
+
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") UI
+
+### Theme
+
+The Menu, the GameUI and all sub-components use a single theme resource.
+It is globally used and can be found in *[assets/theme.tres]*.
+Changing the looks is easy, just modify this [theming atlas](https://github.com/AnJ95/godot-toolbox-project/blob/master/assets/theme.png).
 
 ### Menu
 
-The game comes with a basic menu that lets you navigate through:
-* MainMenu
-* OptionsMenu
-* OptionsAudioMenu
-* OptionsControlsMenu
-
+The game comes with a main menu that lets you navigate through options, an about screen, a level selection and the game.
 These are all implemented as Screens *[scenes/screens/]*.
+The menu can be navigated using a controller.
 
 ### GameUI
 
-Additionally, there are also in-game ui components *[scenes/game/]* like:
+Additionally, there are in-game ui components *[scenes/game/]* like:
 
 * PauseMenu
 * GameOver
 * A GameUI equipped with a healthbar and a score indicator
 
-### Theme
+![GameOver dialog](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game3.png "GameOver dialog")
 
-The Menu, the GameUI and all sub-components use a single theme resource.
-It is globally used and can be found in *[assets/theme.tres]*
+### MobileUI
 
-### Components
+A joystick and one button currently enable for platformer controls on mobile.
+However, you could go for an extra button or joypad if you needed them.
 
-Check *[scenes/ui/components]* for re-useable components.
-All menu-relevant components can be found in *[scenes/ui/menu]*
+![Mobile controls](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game4.png "Mobile controls")
 
-## Settings
+They trigger the same InputEvents a key stroke would fire and their respective InputMap action can be configured via export variables.
 
-TODO
+![Mobile joystick configuration](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_mobilecontrols.png "Mobile joystick configuration")
 
-### Key Bindings
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Settings
 
-TODO
+![Settings screen](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_settings.png "Settings screen")
+
+Video, audio and controls settings can all be adjusted and are saved using the PersistenceMngr.
+
+### Controls
+
+![Controls screen](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_controls.png "Controls screen")
+
+The controls default is taken from the project settings ```InputMap```.
+Changes by the user do affect said ```InputMap``` and can therefore be polled using ```Input.is_action_pressed()```.
 
 ### Audio
 
-TODO
+Three Sliders give the option for main, music and soundeffects volume. Make sure to set the corresponding ```bus``` in any ```AudioStreamPlayers``` you create.
 
-## Game Modules
+### Video
 
-The best way to explore the game modules is to play the levels.
-There are several top-level concepts and some base scenes suited for inheriting.
+Currently only Fullscreen and VSync options, but can be extended easily.
 
-### Levels
-The world is broken up into levels, aka sub scenes located in *[scenes/game/levels/]*. In this demo each level showcases a different map and mechanic and they can be changed by the press of a button
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Demo Levels
 
-### Signals
-Some global signals coordinate game and level events.
-They can be found in *[scripts/globals/Config.gd]*
+A game setup can be found in *[scenes/game]*, but you can delete everything in that folder, just make sure to add you game into *[scenes/screens/ScreenGame.tscn]*.
 
-```gdscript
-signal game_started()
-signal game_paused(pause_on)
-signal game_ended()
-signal level_started(root_node)
-signal level_restarted()
-```
+The world is broken up into levels, aka sub scenes located in *[scenes/game/levels/]*. In this demo each level showcases a different map and mechanic and they can be changed by the pressing 1 (or by collecting all coins ;) ).
 
-They can be used to initialize levels, respawn enemies, disable interactions, ...
-
-```gdscript
-# connect to global Signal
-func _ready():
-	SignalMngr.connect("level_started", self, "_on_level_started")
-
-# On level started
-func _on_level_started(_level):
-	respawn()
-```
-### Entities
-The entity is a scene and script hierarchy to refactor common behavior from Enemies and the Player.
-
-Entities are associated with:
-* **health** Has max_health, a signal ```health_changed(health_now, health_max)``` and an overwritable ```_on_die()```.
-* **team** Can be compared to another entities team for interactions, e.g. damage.
-* **contact** an ```Area2D``` additionally to the physics collision, to trigger game-events between Entities. Query ```Entity.contacts``` to get a list of currently active contacts
-
-The Player is additionally equipped with:
-* a ```Camera2D```
-* funcs for walking ```process_walk(delta)```, ```process_walk_topdown(delta)```, ```process_walk_platformer(delta)```
-* funcs for jumping ```process_jump```
-* funcs for controlling the AnimatedSprite
-* two ```LevelCameras```
-
-In this demo, the Player provides **2 control schemes**, **2 different cameras** and **4 skins**.
-
-## Demo Levels
+![TopDown with a 3x3 autotile tileset](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game2.png "TopDown with a 3x3 autotile tileset")
 
 A total of 5 levels with different settings can be found, some with specials. Some of the most notable:
 * Platformers
 	* darkness and light *[scenes/game/levels/PlatformerDarkCave]*
 	* a parallax background *[scenes/game/levels/PlatformerParallax]*
 	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[scenes/game/levels/PlatformerAutotile]*
-* Platformers
+* TopDown
 	* an isometric TileMap *[scenes/game/levels/TopDownIsometric]*
 	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[scenes/game/levels/TopDownMysteryDungeon]*
+
+![Platformer with parallax and enemy](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game1.png "Platformer with parallax and enemy")
+
+The Player and the Enemy are both inheriting from the abstract Entity class, which refactors common behavior like basic physics, health, damage, collision and more.
+In this demo, the Player provides 2 control schemes, and 4 skins.
 
 ## Global Managers
 For global access, these Managers are put into the projects autoload.
@@ -142,18 +129,19 @@ Use the short-hand fcts ```D.w``` and ```D.e``` for warnings and errors.
 D.l("Player", ["grounded", position])
 
 # equivalent
-D.l(D.LogCategory.GAME, ["Savefile could not be found", state])
-D.w(D.LogCategory.GAME, ["Savefile could not be found", state], LogLevel.WARN)
+D.l(D.LogCategory.GAME, ["Savefile could not be found", state], LogLevel.WARN)
+D.w(D.LogCategory.GAME, ["Savefile could not be found", state])
 ```
 The Config file allows filtering the debug output by topic and LogLevel
 
 ### C for Config
 
-Contains global settings that can be accessed
+Contains global settings for hiding menus, the title song, default settings, screens, levels and more.
+
+Since the config is global, it can be accessed:
 ```gdscript
 health = 100 if C.is_debug else 3
 ```
-Of special interest is the enum ```C.Screen``` and their respective scenes ```C.SCREEN_SCENES```
 
 ### PersistenceMngr
 
@@ -188,7 +176,6 @@ The ```PersistenceMngr``` acts a global interface to query state objects using a
 The getter functions as a singleton, ensuring that previously saved states are loaded from the disk.
 
 ```gdscript
-# Get the current master volume setting
 print(PersistenceMngr.get_state("settingsAudio"))
 # outputs {"Master":80, ...}
 print(PersistenceMngr.get_state("settingsAudio").Master)
@@ -203,12 +190,16 @@ There is a respective ```set_val("settingsAudio", {"Master":80,...})``` to overw
 
 Basically a scene manager to globally allow switching scenes in a push and pop manner.
 
-The screens are indexed using the enum ```C.Screen``` and the respective preloaded screens ```C.SCREEN_SCENES``` are configured in the Config file *[scripts/globals/Config.gd]*
+All screens must inherit *[scenes/screen/Screen.tscn]*.
+
 ```gdscript
 # Open settings screen
-ScreenMngr.push_screen(C.Screen.OptionsMenu)
+ScreenMngr.push_screen(C.SCREEN_OPTIONS_MENU)
 
-# Pop back to previous screen (will be re-instantiated!)
+# Go to custom screen
+ScreenMngr.push_screen(load("res://scenes/screens/my_custom_screen.tscn"))
+
+# Pop back to previous screen (without re-instantiating it!)
 ScreenMngr.pop_screen()
 ```
 
@@ -229,10 +220,12 @@ signal level_started(root_node)
 signal level_restarted()
 ```
 
+Is already used for a lot of components, esp. to notify game elements.
+
 ### StateMngr
+Creates the state objects for the ```PersistenceMngr``` and holds some global variables.
 
-
-## Assets
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Assets
 All assets used have been declared royalty free and useable for commercial use. Check out their original art to use and find more like these:
 
 Seamless parallax layer sprites  
@@ -244,9 +237,12 @@ Players, Enemies, Icons
 Isometric topdown tileset  
 [ToxSickProductions](https://opengameart.org/users/toxsickproductionscom)
 
-Music
+Music  
 [Monolith OST](https://arcofdream.itch.io/monolith-ost)
 
-Soundeffects
-[Kastenfrosch](https://freesound.org/people/Kastenfrosch/packs/10069/)
+Soundeffects  
+[Kastenfrosch](https://freesound.org/people/Kastenfrosch/packs/10069/)  
 [LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/packs/16687/)
+
+Theme, Logo, the dungeon tileset  
+Me

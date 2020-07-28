@@ -12,7 +12,7 @@ const IS_DEBUG = false
 const REMOVE_ALL_SAVES = false
 
 # Global switch for mobile features
-const IS_MOBILE = true
+const IS_MOBILE = false
 
 ####################################################################
 # MENU
