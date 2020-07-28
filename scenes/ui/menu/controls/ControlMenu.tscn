@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+filter_actions = "^ui_"
 pretty_action_names = {
 "game_down": "Down",
 "game_interact": "Interact",

@@ -42,10 +42,6 @@ func add_actions():
 	# get settings
 	var settingsControls:Dictionary = PersistenceMngr.get_state("settingsControls")
 	
-	# ready regex to filter actions
-	var regex = RegEx.new()
-	regex.compile(filter_actions)
-	
 	# Try to use preferred_order for the list of action names ...
 	var action_names = preferred_order.duplicate()
 	
@@ -59,11 +55,15 @@ func add_actions():
 		if action_names.find(action_name) == -1:
 			action_names.append(action_name)
 	
+	# ready regex to filter actions
+	var regex = RegEx.new()
+	regex.compile(filter_actions)
+	
 	# add one ControlMenuAction per InputMap action
 	for action_name in action_names:
 		
 		# skip filtered actions
-		if !regex.search(action_name):
+		if regex.search(action_name):
 			continue
 		
 		# create and add instance
