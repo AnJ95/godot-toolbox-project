@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes/ui/components/AnimatedIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/ui/components/IconIntValue.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/ui/components/IconValue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/game/IconIntValue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/game/IconValue.tscn" type="PackedScene" id=5]
+
 
 [node name="GridContainer" type="GridContainer"]
 anchor_right = 1.0
