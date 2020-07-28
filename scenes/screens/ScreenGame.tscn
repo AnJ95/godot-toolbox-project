@@ -9,10 +9,6 @@
 [ext_resource path="res://scenes/ui/game/GameMobileUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/ui/game/GameMobileUI.gd" type="Script" id=8]
 
-
-
-
-
 [node name="ScreenGame" instance=ExtResource( 1 )]
 show_transition_on_enter = true
 show_transition_on_leave = true
