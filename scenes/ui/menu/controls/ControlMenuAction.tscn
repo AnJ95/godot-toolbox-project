@@ -49,4 +49,4 @@ text = "+"
 margin_top = 65.0
 margin_right = 976.0
 margin_bottom = 65.0
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonAdd" to="VBoxContainer" method="_on_ButtonAdd_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]
