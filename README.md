@@ -1,4 +1,6 @@
 # godot-toolbox-project
+![Godot Toolbox Project](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo256.png "Godot Toolbox Project")
+
 
 Project template for the [Godot Game Engine](https://godotengine.org/) featuring a main menu, audio and keybinding settings, a pause screen and some demo 2D games.
 Contains easy-to-use components for UI, state management, persistent storage, and the game itself.
