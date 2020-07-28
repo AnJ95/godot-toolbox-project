@@ -30,12 +30,17 @@ Both controller (Control menu) and mobile (Touch button and joystick) support ar
 	* ScreenMngr
 	* SignalMngr
 	* StateMngr
+* Assets
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Setup
 
-Just download or fork the whole thing and editor delete what you want.
+Just download or fork the whole thing and edit or delete what you want.
 
 See *[scripts/globals/Config.gd]* for some basic options.
+
+The project is under MIT license, so you can download, modify and publish your version however you want.
+But make sure to credit the artist of the used assets (see last section), though it is not needed.
+Mention of me and this project would be appreciated, but not required as well.
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") UI
 
