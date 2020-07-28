@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/screens/Screen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/logo/logo256.png" type="Texture" id=2]
 [ext_resource path="res://scenes/screens/ScreenSplash.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/ui/components/UIBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 
 [node name="ScreenSplash" instance=ExtResource( 1 )]
@@ -12,42 +12,30 @@ script = ExtResource( 3 )
 
 [node name="UI" type="CanvasLayer" parent="." index="0"]
 
-[node name="Control" type="Control" parent="UI" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 5 )
+[node name="UIBox" parent="UI" index="0" instance=ExtResource( 5 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UIBox" index="0"]
+margin_left = 220.0
+margin_top = 80.0
+margin_right = 804.0
+margin_bottom = 520.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control" index="0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = -50.0
-margin_bottom = -50.0
-custom_constants/separation = 30
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="UI/Control/VBoxContainer" index="0"]
-margin_right = 924.0
-margin_bottom = 235.0
-size_flags_horizontal = 3
+[node name="TextureRect" type="TextureRect" parent="UI/UIBox/VBoxContainer" index="0"]
+margin_right = 584.0
+margin_bottom = 383.0
 size_flags_vertical = 3
 texture = ExtResource( 2 )
-stretch_mode = 6
+stretch_mode = 4
 
-[node name="LabelBig" parent="UI/Control/VBoxContainer" index="1" instance=ExtResource( 6 )]
+[node name="LabelBig" parent="UI/UIBox/VBoxContainer" index="1" instance=ExtResource( 6 )]
 anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 265.0
-margin_right = 924.0
-margin_bottom = 500.0
-size_flags_vertical = 3
-text = "An unlabeled game"
+margin_top = 399.0
+margin_right = 584.0
+margin_bottom = 440.0
+text = "Godot Toolbox Project"
 
 [node name="BaseBackground" parent="." index="1" instance=ExtResource( 4 )]
 
