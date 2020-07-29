@@ -11,6 +11,10 @@
 [node name="GridContainer" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
 theme = ExtResource( 1 )
 custom_constants/vseparation = 20
 custom_constants/hseparation = 20
@@ -21,7 +25,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -30,7 +34,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer"]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -38,11 +42,11 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel"]
 margin_left = 24.0
 margin_top = 24.0
-margin_right = 304.0
+margin_right = 290.0
 margin_bottom = 220.0
 
 [node name="Button" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
-margin_right = 280.0
+margin_right = 266.0
 margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -53,7 +57,7 @@ __meta__ = {
 
 [node name="Button2" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
 margin_top = 65.0
-margin_right = 280.0
+margin_right = 266.0
 margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -63,7 +67,7 @@ text = "Pressed"
 
 [node name="Button3" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
 margin_top = 130.0
-margin_right = 280.0
+margin_right = 266.0
 margin_bottom = 179.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -71,8 +75,8 @@ disabled = true
 text = "Normal"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-margin_left = 348.0
-margin_right = 676.0
+margin_left = 334.0
+margin_right = 648.0
 margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -81,30 +85,30 @@ __meta__ = {
 }
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer3"]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 50.0
 
 [node name="HSlider2" type="HSlider" parent="VBoxContainer3"]
 margin_top = 66.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 116.0
 value = 50.0
 
 [node name="HSlider3" type="HSlider" parent="VBoxContainer3"]
 margin_top = 132.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 182.0
 value = 100.0
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer3"]
 margin_top = 198.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 244.0
 value = 36.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 696.0
-margin_right = 1024.0
+margin_left = 668.0
+margin_right = 982.0
 margin_bottom = 244.0
 size_flags_vertical = 3
 
@@ -129,8 +133,8 @@ value = 100.0
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="."]
 margin_top = 264.0
-margin_right = 328.0
-margin_bottom = 395.0
+margin_right = 314.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -138,28 +142,28 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer6"]
-margin_right = 328.0
-margin_bottom = 131.0
+margin_right = 314.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer6/ScrollContainer"]
-margin_right = 262.0
-margin_bottom = 807.0
+margin_right = 248.0
+margin_bottom = 867.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label2" type="Label" parent="VBoxContainer6/ScrollContainer/VBoxContainer"]
-margin_right = 262.0
-margin_bottom = 807.0
+margin_right = 248.0
+margin_bottom = 867.0
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 autowrap = true
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
-margin_left = 348.0
+margin_left = 334.0
 margin_top = 264.0
-margin_right = 676.0
-margin_bottom = 395.0
+margin_right = 648.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -168,21 +172,21 @@ __meta__ = {
 
 [node name="LabelBig" parent="VBoxContainer4" instance=ExtResource( 3 )]
 anchor_right = 0.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 41.0
 text = "LabelBig"
 
 [node name="Label" type="Label" parent="VBoxContainer4"]
 margin_top = 57.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 84.0
 text = "Label"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="."]
-margin_left = 696.0
+margin_left = 668.0
 margin_top = 264.0
-margin_right = 1024.0
-margin_bottom = 395.0
+margin_right = 982.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -190,25 +194,25 @@ __meta__ = {
 }
 
 [node name="IconIntValue" parent="VBoxContainer5" instance=ExtResource( 4 )]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 27.0
 
 [node name="AnimatedIcon" parent="VBoxContainer5/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
-frame = 2
+frame = 0
 
 [node name="IconValue" parent="VBoxContainer5" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 43.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 75.0
 size_flags_vertical = 1
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="."]
-margin_top = 415.0
-margin_right = 328.0
-margin_bottom = 600.0
+margin_top = 368.0
+margin_right = 314.0
+margin_bottom = 553.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
@@ -217,14 +221,14 @@ __meta__ = {
 }
 
 [node name="Container" type="Container" parent="VBoxContainer7"]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer7"]
 visible = true
 margin_top = 50.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -234,10 +238,10 @@ dialog_text = "Do you really want to exit the game?"
 dialog_autowrap = true
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="."]
-margin_left = 348.0
-margin_top = 415.0
-margin_right = 676.0
-margin_bottom = 600.0
+margin_left = 334.0
+margin_top = 368.0
+margin_right = 648.0
+margin_bottom = 553.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -245,22 +249,54 @@ __meta__ = {
 }
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer8"]
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 52.0
+text = "CheckBox not pressed"
 
 [node name="CheckBox2" type="CheckBox" parent="VBoxContainer8"]
 margin_top = 68.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 120.0
 pressed = true
+text = "CheckBox pressed"
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer8"]
 margin_top = 136.0
-margin_right = 328.0
+margin_right = 314.0
 margin_bottom = 185.0
 text = "High"
-items = [ "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
+items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
 selected = 0
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="."]
+margin_left = 668.0
+margin_top = 368.0
+margin_right = 982.0
+margin_bottom = 553.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer9"]
+margin_right = 314.0
+margin_bottom = 46.0
+text = "User input LineEdit"
+
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer9"]
+margin_top = 62.0
+margin_right = 314.0
+margin_bottom = 108.0
+text = "User input LineEdit disabled"
+editable = false
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer9"]
+margin_top = 124.0
+margin_right = 314.0
+margin_bottom = 185.0
+size_flags_vertical = 3
+text = "User input TextEdit"
 
 [node name="BaseBackground" parent="." instance=ExtResource( 7 )]
 
