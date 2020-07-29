@@ -1,45 +1,81 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/components/LabelBig.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ui/game/IconIntValue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ui/game/IconValue.tscn" type="PackedScene" id=5]
-
+[ext_resource path="res://scenes/ui/ThemeTester.gd" type="Script" id=6]
+[ext_resource path="res://scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=7]
 
 [node name="GridContainer" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
 custom_constants/vseparation = 20
 custom_constants/hseparation = 20
 columns = 3
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 328.0
-margin_bottom = 290.0
+margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer"]
 margin_right = 328.0
-margin_bottom = 290.0
+margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 220.0
+
+[node name="Button" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_top = 65.0
+margin_right = 280.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+toggle_mode = true
+pressed = true
+text = "Pressed"
+
+[node name="Button3" type="Button" parent="VBoxContainer/Panel/VBoxContainer"]
+margin_top = 130.0
+margin_right = 280.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Normal"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 margin_left = 348.0
 margin_right = 676.0
-margin_bottom = 290.0
+margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,51 +96,50 @@ margin_right = 328.0
 margin_bottom = 182.0
 value = 100.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer3"]
+margin_top = 198.0
+margin_right = 328.0
+margin_bottom = 244.0
+value = 36.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 696.0
 margin_right = 1024.0
-margin_bottom = 290.0
-size_flags_horizontal = 3
+margin_bottom = 244.0
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Button" type="Button" parent="VBoxContainer2"]
-margin_right = 328.0
-margin_bottom = 49.0
-text = "Normal"
+[node name="VSlider" type="VSlider" parent="HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 244.0
+size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="VBoxContainer2"]
-margin_top = 65.0
-margin_right = 328.0
-margin_bottom = 114.0
-toggle_mode = true
-pressed = true
-text = "Pressed"
+[node name="VSlider2" type="VSlider" parent="HBoxContainer"]
+margin_left = 66.0
+margin_right = 116.0
+margin_bottom = 244.0
+size_flags_vertical = 3
+value = 50.0
 
-[node name="Button3" type="Button" parent="VBoxContainer2"]
-margin_top = 130.0
-margin_right = 328.0
-margin_bottom = 179.0
-disabled = true
-text = "Normal"
+[node name="VSlider3" type="VSlider" parent="HBoxContainer"]
+margin_left = 132.0
+margin_right = 182.0
+margin_bottom = 244.0
+size_flags_vertical = 3
+value = 100.0
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="."]
-margin_top = 310.0
+margin_top = 264.0
 margin_right = 328.0
-margin_bottom = 600.0
+margin_bottom = 396.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer6"]
 margin_right = 328.0
-margin_bottom = 290.0
+margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -122,12 +157,11 @@ autowrap = true
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
 margin_left = 348.0
-margin_top = 310.0
+margin_top = 264.0
 margin_right = 676.0
-margin_bottom = 600.0
+margin_bottom = 396.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,12 +180,11 @@ text = "Label"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="."]
 margin_left = 696.0
-margin_top = 310.0
+margin_top = 264.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 396.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,7 +195,7 @@ margin_bottom = 27.0
 
 [node name="AnimatedIcon" parent="VBoxContainer5/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
-frame = 0
+frame = 3
 
 [node name="IconValue" parent="VBoxContainer5" instance=ExtResource( 5 )]
 anchor_right = 0.0
@@ -171,5 +204,63 @@ margin_top = 43.0
 margin_right = 328.0
 margin_bottom = 75.0
 size_flags_vertical = 1
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="."]
+margin_top = 416.0
+margin_right = 328.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="VBoxContainer7"]
+margin_right = 328.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer7"]
+visible = true
+margin_top = 50.0
+margin_right = 328.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+window_title = "Please Confirm"
+resizable = true
+dialog_text = "Do you really want to exit the game?"
+dialog_autowrap = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="."]
+margin_left = 348.0
+margin_top = 416.0
+margin_right = 676.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer8"]
+margin_right = 328.0
+margin_bottom = 49.0
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer8"]
+margin_top = 65.0
+margin_right = 328.0
+margin_bottom = 119.0
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer8"]
+margin_top = 135.0
+margin_right = 328.0
+margin_bottom = 184.0
+text = "High"
+items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
+selected = 0
+
+[node name="BaseBackground" parent="." instance=ExtResource( 7 )]
 
 [editable path="VBoxContainer5/IconIntValue"]
