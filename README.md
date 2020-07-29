@@ -48,7 +48,10 @@ Mention of me and this project would be appreciated, but not required as well.
 
 The Menu, the GameUI and all sub-components use a single theme resource.
 It is globally used and can be found in *[assets/theme.tres]*.
-Changing the looks is easy, just modify this [theming atlas](https://github.com/AnJ95/godot-toolbox-project/blob/master/assets/theme.png).
+
+![A Theme test scene](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_theme.png "A Theme test scene")
+
+Changing the looks is easy, just modify this [theming atlas](https://github.com/AnJ95/godot-toolbox-project/blob/master/assets/theme.png). It contains all graphics used in the theme.
 
 ### Menu
 
