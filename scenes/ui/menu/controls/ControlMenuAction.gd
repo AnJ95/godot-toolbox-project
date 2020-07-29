@@ -27,11 +27,12 @@ func add_button():
 	btn_inst.init(action_name, btn_root.get_child_count())
 	btn_inst.get_node("ButtonRemove").connect("pressed", self, "_on_ButtonRemove_pressed", [btn_inst])
 	btn_root.add_child(btn_inst)
+	return btn_inst
 
 func _on_ButtonAdd_pressed():
 	var settings = PersistenceMngr.get_state("settingsControls")[action_name]
 	settings.append(null)
-	add_button()
+	add_button().start_awaiting()
 	
 func _on_ButtonRemove_pressed(btn):
 	var i = btn.event_i
