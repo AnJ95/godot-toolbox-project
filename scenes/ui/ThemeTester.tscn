@@ -130,7 +130,7 @@ value = 100.0
 [node name="VBoxContainer6" type="VBoxContainer" parent="."]
 margin_top = 264.0
 margin_right = 328.0
-margin_bottom = 396.0
+margin_bottom = 395.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -139,7 +139,7 @@ __meta__ = {
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer6"]
 margin_right = 328.0
-margin_bottom = 132.0
+margin_bottom = 131.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -159,7 +159,7 @@ autowrap = true
 margin_left = 348.0
 margin_top = 264.0
 margin_right = 676.0
-margin_bottom = 396.0
+margin_bottom = 395.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -182,7 +182,7 @@ text = "Label"
 margin_left = 696.0
 margin_top = 264.0
 margin_right = 1024.0
-margin_bottom = 396.0
+margin_bottom = 395.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -195,7 +195,7 @@ margin_bottom = 27.0
 
 [node name="AnimatedIcon" parent="VBoxContainer5/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
-frame = 3
+frame = 2
 
 [node name="IconValue" parent="VBoxContainer5" instance=ExtResource( 5 )]
 anchor_right = 0.0
@@ -206,7 +206,7 @@ margin_bottom = 75.0
 size_flags_vertical = 1
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="."]
-margin_top = 416.0
+margin_top = 415.0
 margin_right = 328.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -225,7 +225,7 @@ rect_min_size = Vector2( 0, 50 )
 visible = true
 margin_top = 50.0
 margin_right = 328.0
-margin_bottom = 184.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 window_title = "Please Confirm"
@@ -235,7 +235,7 @@ dialog_autowrap = true
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="."]
 margin_left = 348.0
-margin_top = 416.0
+margin_top = 415.0
 margin_right = 676.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -246,19 +246,20 @@ __meta__ = {
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer8"]
 margin_right = 328.0
-margin_bottom = 49.0
+margin_bottom = 52.0
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer8"]
-margin_top = 65.0
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer8"]
+margin_top = 68.0
 margin_right = 328.0
-margin_bottom = 119.0
+margin_bottom = 120.0
+pressed = true
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer8"]
-margin_top = 135.0
+margin_top = 136.0
 margin_right = 328.0
-margin_bottom = 184.0
+margin_bottom = 185.0
 text = "High"
-items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
+items = [ "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "Medium", null, false, 1, null, "High", null, false, 0, null, "Low", null, false, 2, null, "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
 selected = 0
 
 [node name="BaseBackground" parent="." instance=ExtResource( 7 )]
