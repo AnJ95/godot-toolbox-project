@@ -92,14 +92,29 @@ func __event_info_to_instance(event_info):
 	if inst:
 		match event_info.type:
 			JOYPAD_BUTTON:
-				inst.button_index = event_info.button_index
+				if !event_info.button_index is int and !event_info.button_index is float and !event_info.button_index.is_valid_integer():
+					D.e("ControlMngr", ["Error parsing button_index of control bindings settings", event_info])
+					return null
+				inst.button_index = int(event_info.button_index)
 			KEY:
-				inst.scancode = event_info.scancode
+				if !event_info.scancode is int and !event_info.scancode is float and !event_info.button_index.is_valid_integer():
+					D.e("ControlMngr", ["Error parsing scancode of control bindings settings", event_info])
+					return null
+				inst.scancode = int(event_info.scancode)
 			JOYPAD_MOTION:
-				inst.axis = event_info.axis
-				inst.axis_value = 1 if event_info.axis_value > 0 else -1
+				if !event_info.axis is int and !event_info.axis is float and !event_info.axis.is_valid_integer():
+					D.e("ControlMngr", ["Error parsing axis of control bindings settings", event_info])
+					return null
+				if !event_info.axis_value is int and !event_info.axis_value is float and !event_info.axis_value.is_valid_float():
+					D.e("ControlMngr", ["Error parsing axis_value of control bindings settings", event_info])
+					return null
+				inst.axis = int(event_info.axis)
+				inst.axis_value = 1 if float(event_info.axis_value) > 0 else -1
 			MOUSE_BUTTON:
-				inst.button_index = event_info.button_index
+				if !event_info.button_index is int and !event_info.button_index is float and !event_info.axis_value.is_valid_float():
+					D.e("ControlMngr", ["Error parsing button_index of control bindings settings", event_info])
+					return null
+				inst.button_index = int(event_info.button_index)
 			
 	return inst
 	
@@ -115,7 +130,7 @@ func get_pretty_string(event_info)->String:
 			pretty = pretty.replace("Y", "Down" if event_info.axis_value > 0 else "Up")
 			return pretty
 		MOUSE_BUTTON:
-			return MOUSE_BUTTON_STRINGS[event_info.button_index]
+			return MOUSE_BUTTON_STRINGS[int(event_info.button_index)] if MOUSE_BUTTON_STRINGS.has(int(event_info.button_index)) else ""
 	return ""
 	
 func set_input_map_from_settings(settingsControls):
