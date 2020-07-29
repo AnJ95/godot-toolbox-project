@@ -40,7 +40,7 @@ func get_default_from_project_keybindings():
 			var event_info = __event_instance_to_event_info(event)
 			default[action_name].append(event_info)
 	return default
-	
+
 func __event_instance_to_event_info(event:InputEvent):
 	var result = {}
 	result.type = __event_instance_to_type_string(event)
@@ -60,6 +60,19 @@ func __event_instance_to_event_info(event:InputEvent):
 			result.button_index = event.button_index
 	
 	return result
+	
+func __event_infos_equal(a, b)->bool:
+	# both null
+	if a == null and b == null: return true 
+	# only one null
+	if a == null or b == null: return false
+	# check size
+	if a.size() != b.size(): return false
+	# check if b has everything a has
+	for i in a.keys():
+		if !b.has(i) or a[i] != b[i]:
+			return false
+	return true
 
 func __event_instance_to_type_string(event:InputEvent):
 	for event_type in EVENT_TYPE_MAP.keys():

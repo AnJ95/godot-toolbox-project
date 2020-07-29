@@ -63,7 +63,7 @@ func set_event(event_info):
 	# Unassign all other that have the same key
 	if event_info != null:
 		for control_button in get_all_menu_control_buttons():
-			if control_button != self and control_button.event_info != null and control_button.event_info.hash() == event_info.hash():
+			if control_button != self and ControlMngr.__event_infos_equal(event_info, control_button.event_info):
 				control_button.set_event(null)
 	
 	# Update button text
@@ -75,10 +75,7 @@ func get_display_caption():
 		var caption = ControlMngr.get_pretty_string(event_info)
 		if caption != "":
 			return caption
-		else:
-			return "Unassigned"
-	else:
-		return "Unassigned"
+	return "<Unassigned>"
 
 func grab_focus():
 	button.grab_focus()
