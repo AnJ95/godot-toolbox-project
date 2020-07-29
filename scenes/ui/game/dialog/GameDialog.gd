@@ -2,7 +2,8 @@ extends CanvasLayer
 
 #############################################################
 # NODES
-onready var menu = $Popup
+onready var root = $CenterContainer
+onready var root_btns = $CenterContainer/Popup/VBoxContainer
 onready var invisible_wall = $InvisibleWall
 onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
 
@@ -56,8 +57,7 @@ func _on_open_or_close(open):
 func __show(show=true):
 	is_open = show
 	invisible_wall.mouse_filter = invisible_wall.MOUSE_FILTER_STOP if is_open else invisible_wall.MOUSE_FILTER_IGNORE
-	if is_open:	menu.show()
-	else:		menu.hide()
+	root.visible = is_open
 	
 	if soundtrack_or_null:
 		level.pause_soundtrack(is_open)
@@ -72,7 +72,7 @@ func __show(show=true):
 		get_tree().paused = is_open
 		
 	if show:
-		for btn in $Popup/VBoxContainer.get_children():
+		for btn in root_btns.get_children():
 			if btn is Button and btn.visible:
 				btn.grab_focus()
 				break

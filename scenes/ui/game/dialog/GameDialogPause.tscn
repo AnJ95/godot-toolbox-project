@@ -10,20 +10,23 @@ can_open_and_close = true
 can_be_exited_by_pressing_escape = true
 can_be_exited_by_clicking_elsewhere = true
 
-[node name="LabelBig" parent="Popup/VBoxContainer" index="0"]
-text = "Game paused"
+[node name="VBoxContainer" parent="CenterContainer/Popup" index="0"]
+margin_bottom = 390.0
 
-[node name="BtnNext" parent="Popup/VBoxContainer" index="3"]
+[node name="LabelBig" parent="CenterContainer/Popup/VBoxContainer" index="0"]
+text = "Pause"
+
+[node name="BtnNext" parent="CenterContainer/Popup/VBoxContainer" index="3"]
 visible = false
 
-[node name="BtnSettings" parent="Popup/VBoxContainer" index="4"]
-margin_top = 173.0
-margin_bottom = 220.0
+[node name="BtnSettings" parent="CenterContainer/Popup/VBoxContainer" index="4"]
+margin_top = 187.0
+margin_bottom = 236.0
 
-[node name="BtnMenu" parent="Popup/VBoxContainer" index="5"]
-margin_top = 236.0
-margin_bottom = 283.0
+[node name="BtnMenu" parent="CenterContainer/Popup/VBoxContainer" index="5"]
+margin_top = 252.0
+margin_bottom = 301.0
 
-[node name="BtnQuit" parent="Popup/VBoxContainer" index="6"]
-margin_top = 299.0
-margin_bottom = 346.0
+[node name="BtnQuit" parent="CenterContainer/Popup/VBoxContainer" index="6"]
+margin_top = 317.0
+margin_bottom = 366.0
