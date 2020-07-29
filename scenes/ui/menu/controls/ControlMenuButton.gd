@@ -99,6 +99,7 @@ func _input(event):
 	if awaiting:
 		var event_info = ControlMngr.__event_instance_to_event_info(event)
 		if event_info:
+			accept_event()
 			set_event(event_info)
 			end_awaiting()
 			return true
