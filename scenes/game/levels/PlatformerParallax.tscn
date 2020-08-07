@@ -4,7 +4,8 @@
 [ext_resource path="res://scenes/game/backgrounds/BackgroundMountainDusk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/tilesets/tileset_autotile_2x2_platformer_grass.png" type="Texture" id=4]
 [ext_resource path="res://scenes/game/entities/enemies/EnemyDemon.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/game/level/Level.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/toolbox_project/scenes/level/Level.tscn" type="PackedScene" id=6]
+
 
 
 

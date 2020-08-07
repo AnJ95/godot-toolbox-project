@@ -48,7 +48,7 @@ func _on_level_started(level:Node):
 	D.l("Game", ["Level started [", {
 		"name" : level.name,
 		"camera_type" : level.LevelCamera.CameraType.keys()[level.camera_type()],
-		"control_scheme" : level.Player.ControlScheme.keys()[level.get_control_scheme()], 
+		"control_scheme" : level.get_control_scheme(), 
 		"map_rect" : level.get_map_rect(),
 		"player_start_pos" : level.get_player_start_pos(),
 	} , "]"])

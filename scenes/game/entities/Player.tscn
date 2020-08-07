@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/game/entities/Entity.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/game/level/LevelCamera.gd" type="Script" id=2]
+[ext_resource path="res://addons/toolbox_project/scenes/level/LevelCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/entities/Player.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/entities/knight.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/masks/light100.png" type="Texture" id=5]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270415__littlerobotsoundfactory__footstep-dirt-00.wav" type="AudioStream" id=15]
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270421__littlerobotsoundfactory__footstep-dirt-08.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270419__littlerobotsoundfactory__footstep-dirt-04.wav" type="AudioStream" id=17]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )

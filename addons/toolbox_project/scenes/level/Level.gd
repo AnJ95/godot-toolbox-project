@@ -8,8 +8,7 @@ onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
 
 #############################################################
 # CONSTANTS
-const LevelCamera = preload("res://scenes/game/level/LevelCamera.gd")
-const Player = preload("res://scenes/game/entities/Player.gd")
+const LevelCamera = preload("LevelCamera.gd")
 
 #############################################################
 # CUSTOMIZATION
@@ -19,7 +18,7 @@ export(Vector2) var camera_zoom = Vector2(1,1)
 export(Vector2) var camera_position = Vector2(0,0)
 
 # Player
-export(Player.ControlScheme) var control_scheme = Player.ControlScheme.Platformer
+export(int) var control_scheme = 0
 export(bool) var give_player_light = false
 export(String) var player_root_node = null
 

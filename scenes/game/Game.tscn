@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/game/level/LevelCamera.gd" type="Script" id=2]
+[ext_resource path="res://addons/toolbox_project/scenes/level/LevelCamera.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/Game.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/entities/Player.tscn" type="PackedScene" id=7]
+
 
 
 [node name="Game" type="Node2D"]
