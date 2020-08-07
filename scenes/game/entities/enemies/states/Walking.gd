@@ -1,4 +1,4 @@
-extends "res://scripts/stateMachine/states/State.gd"
+extends "../../stateMachine/states/State.gd"
 
 var direction = Vector2(1, 0) # must be normalized
 var sprite:AnimatedSprite

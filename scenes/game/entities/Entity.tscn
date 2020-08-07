@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scripts/stateMachine/StateMachine.gd" type="Script" id=1]
-[ext_resource path="res://scripts/stateMachine/states/StateDead.gd" type="Script" id=2]
-[ext_resource path="res://scripts/stateMachine/states/Statelnvulnerable.gd" type="Script" id=3]
+[ext_resource path="res://scenes/game/entities/stateMachine/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/entities/stateMachine/states/StateDead.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game/entities/stateMachine/states/Statelnvulnerable.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/entities/Entity.gd" type="Script" id=4]
-[ext_resource path="res://scripts/stateMachine/states/StateAlive.gd" type="Script" id=5]
+[ext_resource path="res://scenes/game/entities/stateMachine/states/StateAlive.gd" type="Script" id=5]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://addons/toolbox_project/theme.tres" type="Theme" id=1]
+
 
 [node name="UIBox" type="MarginContainer"]
 anchor_right = 1.0

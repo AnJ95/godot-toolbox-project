@@ -1,4 +1,4 @@
-extends "res://scripts/stateMachine/states/State.gd"
+extends "../../stateMachine/states/State.gd"
 
 func on_enter():
 	$Timer.start()

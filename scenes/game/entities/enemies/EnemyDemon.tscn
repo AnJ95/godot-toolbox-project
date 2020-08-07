@@ -1,10 +1,11 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://scripts/stateMachine/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/entities/stateMachine/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/entities/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/entities/enemies/states/Walking.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/entities/enemies/states/Idle.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/entities/enemy_demon.png" type="Texture" id=5]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )

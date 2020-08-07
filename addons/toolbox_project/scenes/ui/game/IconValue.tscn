@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://addons/toolbox_project/theme.tres" type="Theme" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/IconValue.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/objects/health.png" type="Texture" id=3]
+
 
 
 [node name="IconValue" type="HBoxContainer"]
