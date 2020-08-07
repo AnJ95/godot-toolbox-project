@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Screen",
+"language": "GDScript",
+"path": "res://addons/toolbox_project/scenes/screens/Screen.gd"
+} ]
 _global_script_class_icons={
-
+"Screen": ""
 }
 
 [application]
 
 config/name="ToolboxProject"
-run/main_scene="res://scenes/screens/ScreenSplash.tscn"
+run/main_scene="res://addons/toolbox_project/scenes/screens/ScreenSplash.tscn"
 config/icon="res://assets/logo/logo64.png"
 config/macos_native_icon="res://assets/logo/logo1024.png"
 config/windows_native_icon="res://assets/logo/logo1024.png"

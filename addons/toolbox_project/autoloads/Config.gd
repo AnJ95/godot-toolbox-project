@@ -14,6 +14,11 @@ const REMOVE_ALL_SAVES = false
 # Global switch for mobile features
 const IS_MOBILE = false
 
+
+####################################################################
+# PATHS
+const BASE_PATH = "res://addons/toolbox_project/"
+
 ####################################################################
 # MENU
 
@@ -89,15 +94,15 @@ var hide_log_level = {
 ####################################################################
 # SCREENS
 
-const SCREEN_SPLASH = preload("res://scenes/screens/ScreenSplash.tscn")
-const SCREEN_MAIN_MENU = preload("res://scenes/screens/ScreenMainMenu.tscn")
-const SCREEN_ABOUT = preload("res://scenes/screens/ScreenAbout.tscn")
+onready var SCREEN_SPLASH = load(BASE_PATH + "scenes/screens/ScreenSplash.tscn")
+onready var SCREEN_MAIN_MENU = load(BASE_PATH + "scenes/screens/ScreenMainMenu.tscn")
+onready var SCREEN_ABOUT = load(BASE_PATH + "scenes/screens/ScreenAbout.tscn")
 
-const SCREEN_OPTIONS_MENU = preload("res://scenes/screens/ScreenOptionsMenu.tscn")
-const SCREEN_OPTIONS_VIDEO_MENU = preload("res://scenes/screens/ScreenOptionsVideoMenu.tscn")
-const SCREEN_OPTIONS_AUDIO_MENU = preload("res://scenes/screens/ScreenOptionsAudioMenu.tscn")
-const SCREEN_OPTIONS_CONTROLS_MENU = preload("res://scenes/screens/ScreenOptionsControlsMenu.tscn")
+onready var SCREEN_OPTIONS_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsMenu.tscn")
+onready var SCREEN_OPTIONS_VIDEO_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsVideoMenu.tscn")
+onready var SCREEN_OPTIONS_AUDIO_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsAudioMenu.tscn")
+onready var SCREEN_OPTIONS_CONTROLS_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsControlsMenu.tscn")
 
-const SCREEN_GAME = preload("res://scenes/screens/ScreenGame.tscn")
-const SCREEN_LEVEL_MENU = preload("res://scenes/screens/ScreenLevelMenu.tscn")
+onready var SCREEN_GAME = load("res://scenes/ScreenGame.tscn")
+onready var SCREEN_LEVEL_MENU = load(BASE_PATH + "scenes/screens/ScreenLevelMenu.tscn")
 

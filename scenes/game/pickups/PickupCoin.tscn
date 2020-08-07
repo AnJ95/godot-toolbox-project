@@ -6,8 +6,9 @@
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270407__littlerobotsoundfactory__pickup-gold-01.wav" type="AudioStream" id=4]
 [ext_resource path="res://scenes/game/particles/ParticlesStar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/game/pickups/Pickup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270405__littlerobotsoundfactory__pickup-gold-03.wav" type="AudioStream" id=8]
+
 
 
 [node name="PickupCoin" groups=[

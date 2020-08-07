@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/mobile_controls/MobileButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/mobile_controls/MobileJoystick.tscn" type="PackedScene" id=2]
+
+
+[node name="GameMobileUI" type="CanvasLayer"]
+layer = 10
+
+[node name="MobileJoystick" parent="." instance=ExtResource( 2 )]
+
+[node name="MobileButton" parent="." instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -140.0
+margin_top = -140.0
+margin_right = -20.0
+size_outer = 120
+anchor_corner = 3

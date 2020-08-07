@@ -1,10 +1,6 @@
 extends Node
 
 #############################################################
-# CONSTANTS
-onready var Screen = preload("res://scenes/screens/Screen.gd")
-
-#############################################################
 # STATE
 var screen_history = []
 
