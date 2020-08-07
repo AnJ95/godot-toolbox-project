@@ -8,9 +8,6 @@
 [ext_resource path="res://scenes/game/pickups/PickupCoin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/toolbox_project/scenes/level/Level.tscn" type="PackedScene" id=7]
 
-
-
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 

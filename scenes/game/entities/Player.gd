@@ -49,7 +49,6 @@ func _ready():
 	set_skin_texture(skins[skin_id])
 
 func _on_level_started(level:Node):	
-	
 	# Reparent to new level
 	.get_parent().remove_child(self)
 	level.get_player_root_node().add_child(self)

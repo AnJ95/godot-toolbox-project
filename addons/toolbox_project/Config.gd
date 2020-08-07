@@ -44,8 +44,8 @@ const TITLE_SONG = preload("res://assets/sound/music/28 Towering Blues.ogg")
 
 ####################################################################
 # GAME
-const DIRECT_RESPAWN_ON_LEVEL_LOST = false
-const DIRECT_NEXT_ON_LEVEL_WON = false
+const DIRECT_RESPAWN_ON_LEVEL_LOST = true
+const DIRECT_NEXT_ON_LEVEL_WON = true
 const UNLOCK_ALL_LEVELS = IS_DEBUG
 
 const USE_MOBILE_CONTROLS = IS_MOBILE

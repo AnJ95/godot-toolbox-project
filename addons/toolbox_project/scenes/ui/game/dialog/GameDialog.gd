@@ -47,6 +47,7 @@ func _process(delta):
 # OPENING & CLOSING
 func _on_level_started(level):
 	self.level = level
+	__hide()
 	
 func _on_open():
 	__show()

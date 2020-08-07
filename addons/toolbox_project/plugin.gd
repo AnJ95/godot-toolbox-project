@@ -4,7 +4,7 @@ extends EditorPlugin
 const AUTOLOADS_PATH = C.BASE_PATH + "autoloads/"
 
 const autoloads = {
-	"C":				AUTOLOADS_PATH + "Config.gd",
+	"C":				C.BASE_PATH + "Config.gd",
 	"D":				AUTOLOADS_PATH + "Debug.gd",
 	"ScreenMngr":		AUTOLOADS_PATH + "ScreenMngr.gd",
 	"StateMngr":		AUTOLOADS_PATH + "StateMngr.gd",
