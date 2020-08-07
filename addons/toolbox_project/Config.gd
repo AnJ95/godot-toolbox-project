@@ -26,7 +26,7 @@ const BASE_PATH = "res://addons/toolbox_project/"
 const SHOW_MAIN_MENU = true
 
 # show ScreenLevelMenu on game start or directly start ScreenGame
-const SHOW_LEVEL_MENU = true
+const SHOW_LEVEL_MENU = false
 
 # show the settings button in ScreenMainMenu
 const SHOW_SETTINGS = true
@@ -41,6 +41,10 @@ const SHOW_SETTINGS_AUDIO = true
 const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
 
 const TITLE_SONG = preload("res://assets/sound/music/28 Towering Blues.ogg")
+const DEFAULT_LEVEL_SONG = preload("res://assets/sound/music/03 Before the Dawn.ogg")
+const DIALOG_SONG = preload("res://assets/sound/music/27 Coffee Break.ogg")
+const UI_SELECT = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270401__littlerobotsoundfactory__menu-select-00.wav")
+const UI_BACK = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270393__littlerobotsoundfactory__inventory-open-00.wav")
 
 ####################################################################
 # GAME
@@ -51,11 +55,11 @@ const UNLOCK_ALL_LEVELS = IS_DEBUG
 const USE_MOBILE_CONTROLS = IS_MOBILE
 
 const LEVELS = {
-	0:		preload("res://scenes/game/levels/PlatformerParallax.tscn"),
-	1:		preload("res://scenes/game/levels/TopDownIsometric.tscn"),
-	2:		preload("res://scenes/game/levels/PlatformerAutotile.tscn"),
-	3:		preload("res://scenes/game/levels/PlatformerDarkCave.tscn"),
-	4:		preload("res://scenes/game/levels/TopDownDungeonMystery.tscn"),
+	0:		preload("res://game/levels/PlatformerParallax.tscn"),
+	1:		preload("res://game/levels/TopDownIsometric.tscn"),
+	2:		preload("res://game/levels/PlatformerAutotile.tscn"),
+	3:		preload("res://game/levels/PlatformerDarkCave.tscn"),
+	4:		preload("res://game/levels/TopDownDungeonMystery.tscn"),
 }
 
 ####################################################################
@@ -103,6 +107,6 @@ onready var SCREEN_OPTIONS_VIDEO_MENU = load(BASE_PATH + "scenes/screens/ScreenO
 onready var SCREEN_OPTIONS_AUDIO_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsAudioMenu.tscn")
 onready var SCREEN_OPTIONS_CONTROLS_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsControlsMenu.tscn")
 
-onready var SCREEN_GAME = load("res://scenes/ScreenGame.tscn")
+onready var SCREEN_GAME = load("res://ScreenGame.tscn")
 onready var SCREEN_LEVEL_MENU = load(BASE_PATH + "scenes/screens/ScreenLevelMenu.tscn")
 

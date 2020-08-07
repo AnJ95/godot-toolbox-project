@@ -24,8 +24,7 @@ func _on_screen_entered(screen):
 	else:
 		title_song_player.stop()
 
-const UI_SELECT = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270401__littlerobotsoundfactory__menu-select-00.wav")
-const UI_BACK = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270393__littlerobotsoundfactory__inventory-open-00.wav")
-func play_ui_sound(stream=UI_SELECT):
-	ui_sound_player.stream = stream
-	ui_sound_player.play()
+func play_ui_sound(stream=C.UI_SELECT):
+	if stream:
+		ui_sound_player.stream = stream
+		ui_sound_player.play()

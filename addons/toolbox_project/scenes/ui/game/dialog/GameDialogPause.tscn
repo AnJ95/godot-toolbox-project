@@ -2,7 +2,6 @@
 
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialog.tscn" type="PackedScene" id=1]
 
-
 [node name="GameDialogPause" instance=ExtResource( 1 )]
 toggled_by_pause_action = true
 pauses_game_while_open = true

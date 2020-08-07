@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/transition/Transition.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/px_black.png" type="Texture" id=2]
+[ext_resource path="res://addons/toolbox_project/assets/px_black.png" type="Texture" id=2]
+
 
 [node name="Transition" type="CanvasLayer"]
 layer = 128

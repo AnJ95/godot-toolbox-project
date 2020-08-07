@@ -31,11 +31,11 @@ func _process(delta):
 # CALLBACKS
 func _on_MenuButton_pressed():
 	if pops_screen:
-		SoundMngr.play_ui_sound(SoundMngr.UI_BACK)
+		SoundMngr.play_ui_sound(C.UI_BACK)
 		ScreenMngr.pop_screen()
 		
 	if pushes_screen:
-		SoundMngr.play_ui_sound(SoundMngr.UI_SELECT)
+		SoundMngr.play_ui_sound(C.UI_SELECT)
 		ScreenMngr.push_screen(screen_to_switch_to)
 		
 	if quits_game:

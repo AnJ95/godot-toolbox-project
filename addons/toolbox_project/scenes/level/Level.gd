@@ -26,7 +26,7 @@ export(String) var player_root_node = null
 export(Vector2) var gravity = Vector2(0, 500)
 
 # Sound
-export(Resource) var soundtrack = preload("res://assets/sound/music/03 Before the Dawn.ogg")
+export(Resource) var soundtrack = null
 
 #############################################################
 # STATE
@@ -34,7 +34,7 @@ onready var num_coins = get_tree().get_nodes_in_group("PickupCoin").size()
 
 func _ready():
 	StateMngr.score.connect("state_changed", self, "_on_score_changed")
-	audioStreamPlayer.stream = soundtrack
+	audioStreamPlayer.stream = soundtrack if soundtrack else C.DEFAULT_LEVEL_SONG
 	audioStreamPlayer.play()
 
 func _on_score_changed(score):

@@ -1,0 +1,93 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://game/entities/stateMachine/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://game/entities/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/entities/enemies/states/Walking.gd" type="Script" id=3]
+[ext_resource path="res://game/entities/enemies/states/Idle.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/entities/enemy_demon.png" type="Texture" id=5]
+
+
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 112, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.4
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 5.0
+height = 5.0
+
+[node name="EnemyDemon" instance=ExtResource( 2 )]
+walk_force = 800
+walk_max_speed = 85
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+position = Vector2( 0, -16 )
+frames = SubResource( 9 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 10 )
+
+[node name="StateMachine" type="Node" parent="." index="4"]
+script = ExtResource( 1 )
+
+[node name="Idle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Idle" index="0"]
+wait_time = 2.8
+one_shot = true
+
+[node name="Walking" type="Node" parent="StateMachine" index="1"]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Walking" index="0"]
+wait_time = 1.8
+one_shot = true
+
+[node name="RayCast2D" parent="." index="5"]
+cast_to = Vector2( 0, 50 )
+[connection signal="timeout" from="StateMachine/Idle/Timer" to="StateMachine/Idle" method="_on_Timer_timeout"]
+[connection signal="timeout" from="StateMachine/Walking/Timer" to="StateMachine/Walking" method="_on_Timer_timeout"]

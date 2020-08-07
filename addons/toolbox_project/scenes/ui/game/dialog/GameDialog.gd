@@ -9,7 +9,7 @@ onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
 
 #############################################################
 # CUSTOMIZATION
-export(Resource) var soundtrack_or_null = preload("res://assets/sound/music/27 Coffee Break.ogg")
+export(Resource) var soundtrack_or_null = C.DIALOG_SONG
 
 export var toggled_by_pause_action = false
 export var pauses_game_while_open = false
@@ -61,10 +61,11 @@ func __show(show=true):
 	root.visible = is_open
 	
 	if soundtrack_or_null:
-		level.pause_soundtrack(is_open)
+		if level:
+			level.pause_soundtrack(is_open)
 		if is_open:	audioStreamPlayer.play(0)
 		else:		audioStreamPlayer.stop()
-	else:
+	elif level:
 		level.quiet_soundtrack(is_open)
 	
 	invisible_wall.visible = is_open
@@ -89,7 +90,7 @@ func _on_InvisibleWall_pressed():
 		_on_BtnResume_pressed()
 
 func _on_BtnResume_pressed():
-	SoundMngr.play_ui_sound(SoundMngr.UI_SELECT)
+	SoundMngr.play_ui_sound(C.UI_SELECT)
 	if can_open_and_close:
 		SignalMngr.emit_signal(signal_to_open_to, false)
 	else:

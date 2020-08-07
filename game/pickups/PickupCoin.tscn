@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://game/pickups/PickupCoin.gd" type="Script" id=1]
+[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270406__littlerobotsoundfactory__pickup-gold-02.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270408__littlerobotsoundfactory__pickup-gold-00.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270407__littlerobotsoundfactory__pickup-gold-01.wav" type="AudioStream" id=4]
+[ext_resource path="res://game/particles/ParticlesStar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/pickups/Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270405__littlerobotsoundfactory__pickup-gold-03.wav" type="AudioStream" id=8]
+
+
+
+
+[node name="PickupCoin" groups=[
+"PickupCoin",
+] instance=ExtResource( 6 )]
+script = ExtResource( 1 )
+on_pickup_sounds = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 8 ) ]
+on_pickup_particles = ExtResource( 5 )
+
+[node name="AnimatedIcon" parent="." index="0" instance=ExtResource( 7 )]
+scale = Vector2( 2, 2 )
+frame = 3
+
+[node name="Area2D" parent="." index="1"]
+visible = false
+
+[node name="AudioStreamPlayer2D" parent="." index="2"]
+volume_db = 10.0

@@ -1,10 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialog.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270402__littlerobotsoundfactory__jingle-win-00.wav" type="AudioStream" id=2]
 
 [node name="GameDialogWon" instance=ExtResource( 1 )]
-soundtrack_or_null = ExtResource( 2 )
 pauses_game_while_open = true
 signal_to_open_to = "level_won"
 
