@@ -2,115 +2,135 @@ tool
 extends Node
 
 
+func _ready():
+	load_from_config("res://addons/toolbox_project/default_settings.cfg")
+	load_from_config("res://toolbox_project_settings.cfg")
+	
+
+func load_from_config(path):
+	var config = ConfigFile.new()
+	var err = config.load(path)
+	if err == OK:
+		D.e("Config", ["Loading config file at", path])
+		
+		for section in config.get_sections():
+			var keys = config.get_section_keys(section)
+
+			for key in keys:
+				# Load custom config value
+				var value = config.get_value(section, key)
+				
+				# if this is a path: load file
+				if value is String and value.begins_with("res://"):
+					value = try_load(value)
+					
+				#D.l("Config", ["Setting ", section, ":", key, "=", value])
+				
+				# if there is a member called like the section,
+				# build the Dictionary instead of setting the member
+				if get(section) is Dictionary:
+					if key.is_valid_integer(): key = int(key)
+					get(section)[key] = value
+				else:
+					set(key, value)
+	else:
+		D.e("Config", ["Could not load config file at", path, err])
+		
+func try_load(path):
+	if File.new().file_exists(path):
+		return load(path)
+	else:
+		D.e("Config", ["Could not load ", path])
+		return null
+
+
 ####################################################################
 # DEBUG
 
 # Global switch for debug mode
-const IS_DEBUG = false
+var IS_DEBUG 
 
 # Deletes all save files on start
-const REMOVE_ALL_SAVES = false
+var REMOVE_ALL_SAVES 
 
 # Global switch for mobile features
-const IS_MOBILE = false
+var IS_MOBILE 
 
-
-####################################################################
-# PATHS
-const BASE_PATH = "res://addons/toolbox_project/"
 
 ####################################################################
 # MENU
 
 # show ScreenMainMenu after ScreenSplash or directly start ScreenGame
-const SHOW_MAIN_MENU = true
+var SHOW_MAIN_MENU 
 
 # show ScreenLevelMenu on game start or directly start ScreenGame
-const SHOW_LEVEL_MENU = false
+var SHOW_LEVEL_MENU 
 
 # show the settings button in ScreenMainMenu
-const SHOW_SETTINGS = true
+var SHOW_SETTINGS 
 
 # show video settings in ScreenOptionsMenu
-const SHOW_SETTINGS_VIDEO = !IS_MOBILE
+var SHOW_SETTINGS_VIDEO 
 
 # show audio settings in ScreenOptionsMenu
-const SHOW_SETTINGS_AUDIO = true
+var SHOW_SETTINGS_AUDIO 
 
 # show control settings in ScreenOptionsMenu
-const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
+var SHOW_SETTINGS_KEYBINDINGS 
 
-const TITLE_SONG = preload("res://assets/sound/music/28 Towering Blues.ogg")
-const DEFAULT_LEVEL_SONG = preload("res://assets/sound/music/03 Before the Dawn.ogg")
+var TITLE_SONG 
+var DEFAULT_LEVEL_SONG 
 
-const DIALOG_PAUSE_SONG = preload("res://assets/sound/music/27 Coffee Break.ogg")
-const DIALOG_WON_SONG = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270402__littlerobotsoundfactory__jingle-win-00.wav")
-const DIALOG_LOST_SONG = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270403__littlerobotsoundfactory__jingle-lose-00.wav")
+var DIALOG_PAUSE_SONG 
+var DIALOG_WON_SONG 
+var DIALOG_LOST_SONG 
 
-const UI_SELECT = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270401__littlerobotsoundfactory__menu-select-00.wav")
-const UI_BACK = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270393__littlerobotsoundfactory__inventory-open-00.wav")
+var UI_SELECT 
+var UI_BACK 
 
 ####################################################################
 # GAME
-const DIRECT_RESPAWN_ON_LEVEL_LOST = false
-const DIRECT_NEXT_ON_LEVEL_WON = false
-const UNLOCK_ALL_LEVELS = IS_DEBUG
+var DIRECT_RESPAWN_ON_LEVEL_LOST 
+var DIRECT_NEXT_ON_LEVEL_WON 
+var UNLOCK_ALL_LEVELS 
 
-const USE_MOBILE_CONTROLS = IS_MOBILE
+var USE_MOBILE_CONTROLS 
 
-const LEVELS = {
-	0:		preload("res://game/levels/PlatformerParallax.tscn"),
-	1:		preload("res://game/levels/TopDownIsometric.tscn"),
-	2:		preload("res://game/levels/PlatformerAutotile.tscn"),
-	3:		preload("res://game/levels/PlatformerDarkCave.tscn"),
-	4:		preload("res://game/levels/TopDownDungeonMystery.tscn"),
-}
+var LEVELS = {}
 
 ####################################################################
 # OPTIONS
 
-const DEFAULT_OPTIONS_AUDIO = {
-	"Master" : 80,
-	"Music" : 100,
-	"Effects" : 100
-}
+var DEFAULT_OPTIONS_AUDIO = {}
 
-const DEFAULT_OPTIONS_VIDEO = {
-	"Fullscreen" : false,
-	"VSync" : true
-}
+var DEFAULT_OPTIONS_VIDEO = {}
 	
 ####################################################################
 # LOGGING
 
 # Global switch for debug logs
-const show_log = true
+var SHOW_LOG = true
 
 # All LogCategories are shown by default. Add true to this Dictionary to
 # prevent showing  Logs of this LogCategory
-var hide_debug_log_categories = {
-#	D.LogCategory.PLAYER : true,
-}
+var HIDE_LOG_CATEGORY = {}
 
 # All LogLevels are shown by default. Add true to this Dictionary to
 # prevent showing Logs of this LogLevel
-var hide_log_level = {
-#	D.LogCategory.PLAYER : true,
-}
+var HIDE_LOG_LEVEL = {}
 
 
 ####################################################################
 # SCREENS
 
-onready var SCREEN_SPLASH = load(BASE_PATH + "scenes/screens/ScreenSplash.tscn")
-onready var SCREEN_MAIN_MENU = load(BASE_PATH + "scenes/screens/ScreenMainMenu.tscn")
-onready var SCREEN_ABOUT = load(BASE_PATH + "scenes/screens/ScreenAbout.tscn")
+var SCREEN_SPLASH
+var SCREEN_MAIN_MENU
+var SCREEN_ABOUT
 
-onready var SCREEN_OPTIONS_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsMenu.tscn")
-onready var SCREEN_OPTIONS_VIDEO_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsVideoMenu.tscn")
-onready var SCREEN_OPTIONS_AUDIO_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsAudioMenu.tscn")
-onready var SCREEN_OPTIONS_CONTROLS_MENU = load(BASE_PATH + "scenes/screens/ScreenOptionsControlsMenu.tscn")
+var SCREEN_OPTIONS_MENU
+var SCREEN_OPTIONS_VIDEO_MENU
+var SCREEN_OPTIONS_AUDIO_MENU
+var SCREEN_OPTIONS_CONTROLS_MENU
 
-onready var SCREEN_GAME = load("res://ScreenGame.tscn")
-onready var SCREEN_LEVEL_MENU = load(BASE_PATH + "scenes/screens/ScreenLevelMenu.tscn")
-
+var SCREEN_GAME
+var SCREEN_LEVEL_MENU

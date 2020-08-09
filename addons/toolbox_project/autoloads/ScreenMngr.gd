@@ -47,6 +47,10 @@ func reload_screen():
 	
 func push_screen(screen_scene):
 	
+	if !screen_scene:
+		D.e(D.LogCategory.SCREEN_MANAGER, ["Invalid screen to push supplied."])
+		return
+		
 	var screen_inst = screen_scene.instance()
 	
 	# show transition if (new screen wants to on enter) or (prev screen wants to on leave)

@@ -6,7 +6,7 @@ extends Button
 # Determines wether to switch the screen on click
 export(bool) var pushes_screen = true
 # Screen to switch to if pushes_screen==true
-export(PackedScene) var screen_to_switch_to
+export(String) var screen_to_push_in_config = "SCREEN_GAME"
 
 # Determines wether to go to last screen on click
 export(bool) var pops_screen = false
@@ -36,7 +36,8 @@ func _on_MenuButton_pressed():
 		
 	if pushes_screen:
 		SoundMngr.play_ui_sound(C.UI_SELECT)
-		ScreenMngr.push_screen(screen_to_switch_to)
+		ScreenMngr.push_screen(C.get(screen_to_push_in_config))
+		
 		
 	if quits_game:
 		ScreenMngr.exit_game()

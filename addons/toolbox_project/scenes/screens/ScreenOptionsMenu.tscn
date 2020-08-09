@@ -1,21 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenOptionsVideoMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenOptionsMenu.gd" type="Script" id=7]
-[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenOptionsAudioMenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenAbout.tscn" type="PackedScene" id=9]
-[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenOptionsControlsMenu.tscn" type="PackedScene" id=10]
-
-
-
-
-
-
 
 [node name="ScreenOptionsMenu" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
@@ -28,9 +18,9 @@ script = ExtResource( 7 )
 
 [node name="PanelContainer" type="PanelContainer" parent="MenuLayer/UIBox" index="0"]
 margin_left = 220.0
-margin_top = 102.0
+margin_top = 93.0
 margin_right = 804.0
-margin_bottom = 516.0
+margin_bottom = 507.0
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox/PanelContainer" index="0"]
@@ -59,7 +49,7 @@ margin_bottom = 366.0
 margin_right = 536.0
 margin_bottom = 49.0
 text = "Video Settings"
-screen_to_switch_to = ExtResource( 3 )
+screen_to_push_in_config = "SCREEN_OPTIONS_VIDEO_MENU"
 grabs_focus = true
 
 [node name="BtnAudio" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 4 )]
@@ -67,21 +57,21 @@ margin_top = 65.0
 margin_right = 536.0
 margin_bottom = 114.0
 text = "Audio Settings"
-screen_to_switch_to = ExtResource( 8 )
+screen_to_push_in_config = "SCREEN_OPTIONS_AUDIO_MENU"
 
 [node name="BtnControls" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="2" instance=ExtResource( 4 )]
 margin_top = 130.0
 margin_right = 536.0
 margin_bottom = 179.0
 text = "Controls"
-screen_to_switch_to = ExtResource( 10 )
+screen_to_push_in_config = "SCREEN_OPTIONS_CONTROLS_MENU"
 
 [node name="BtnAbout" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="3" instance=ExtResource( 4 )]
 margin_top = 195.0
 margin_right = 536.0
 margin_bottom = 244.0
 text = "About"
-screen_to_switch_to = ExtResource( 9 )
+screen_to_push_in_config = "SCREEN_ABOUT"
 
 [node name="BtnBack" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="4" instance=ExtResource( 4 )]
 margin_top = 260.0
@@ -89,4 +79,5 @@ margin_right = 536.0
 margin_bottom = 309.0
 text = "Back"
 pushes_screen = false
+screen_to_push_in_config = ""
 pops_screen = true

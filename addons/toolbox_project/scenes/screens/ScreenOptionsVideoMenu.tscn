@@ -7,8 +7,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuToggleSettingButton.tscn" type="PackedScene" id=6]
 
-
-
 [node name="ScreenOptionsVideoMenu" instance=ExtResource( 1 )]
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 3 )]
@@ -48,6 +46,7 @@ margin_right = 536.0
 margin_bottom = 49.0
 text = "Enter Fullscreen"
 grabs_focus = true
+setting = "Fullscreen"
 
 [node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
 margin_top = 65.0
@@ -55,6 +54,7 @@ margin_right = 536.0
 margin_bottom = 114.0
 pressed = true
 text = "Use VSync"
+grabs_focus = false
 setting = "VSync"
 
 [node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="2" instance=ExtResource( 4 )]
@@ -63,4 +63,5 @@ margin_right = 536.0
 margin_bottom = 236.0
 text = "Back"
 pushes_screen = false
+screen_to_push_in_config = ""
 pops_screen = true

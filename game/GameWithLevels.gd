@@ -39,15 +39,17 @@ func start_level(next_level_id):
 		current_level = null
 	
 	# instantiate and add new level
-	var next_level = C.LEVELS[next_level_id].instance()
-	add_child(next_level)
+	if C.LEVELS.has(next_level_id):
+		var next_level = C.LEVELS[next_level_id].instance()
+		add_child(next_level)
+		# save state
+		cur_level_id = next_level_id
+		current_level = next_level
+		# trigger signal
+		SignalMngr.emit_signal("level_started", next_level)
+	else:
+		D.e("Game", ["Could not start level with level id ", next_level_id, "- does it exist in the config?"])
 	
-	# trigger signal
-	SignalMngr.emit_signal("level_started", next_level)
-	
-	# save state
-	cur_level_id = next_level_id
-	current_level = next_level
 
 func restart_level():
 	start_level(cur_level_id)

@@ -20,13 +20,13 @@ enum LogLevel {
 func l(log_categ, objs_to_print, log_level=LogLevel.INFO):
 	
 	# Don't log if globally off
-	if !C.show_log: return
+	if !C.SHOW_LOG: return
 	
 	# Don't log if this LogCategory selectively hidden
-	if C.hide_debug_log_categories.has(log_categ) and C.hide_debug_log_categories[log_categ] == false: return
+	if C.HIDE_LOG_CATEGORY.has(log_categ) and C.HIDE_LOG_CATEGORY[log_categ] == false: return
 	
 	# Don't log if this LogLevel selectively hidden
-	if C.hide_log_level.has(log_level) and C.hide_log_level[log_categ] == false: return
+	if C.HIDE_LOG_LEVEL.has(log_level) and C.HIDE_LOG_LEVEL[log_categ] == false: return
 	
 	# Convert category index or string
 	var categ_str = ""

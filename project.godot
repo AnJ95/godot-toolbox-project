@@ -115,6 +115,13 @@ game_pause={
  ]
 }
 
+[network]
+
+limits/debugger_stdout/max_chars_per_second=8192
+limits/debugger_stdout/max_messages_per_frame=500
+limits/debugger_stdout/max_errors_per_second=500
+limits/debugger_stdout/max_warnings_per_second=500
+
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0

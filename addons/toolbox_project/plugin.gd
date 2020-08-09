@@ -1,10 +1,11 @@
 tool
 extends EditorPlugin
 
-const AUTOLOADS_PATH = C.BASE_PATH + "autoloads/"
+const BASE_PATH = "res://addons/toolbox-project/"
+const AUTOLOADS_PATH = BASE_PATH + "autoloads/"
 
 const autoloads = {
-	"C":				C.BASE_PATH + "Config.gd",
+	"C":				BASE_PATH + "Config.gd",
 	"D":				AUTOLOADS_PATH + "Debug.gd",
 	"ScreenMngr":		AUTOLOADS_PATH + "ScreenMngr.gd",
 	"StateMngr":		AUTOLOADS_PATH + "StateMngr.gd",

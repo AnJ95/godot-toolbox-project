@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/toolbox_project/assets/logo/logo128.png" type="Texture" id=3]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenOptionsMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenMainMenu.gd" type="Script" id=7]
-[ext_resource path="res://ScreenGame.tscn" type="PackedScene" id=8]
 
 [node name="ScreenMainMenu" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
@@ -52,7 +50,6 @@ margin_bottom = 203.0
 margin_right = 536.0
 margin_bottom = 49.0
 text = "Start Game"
-screen_to_switch_to = ExtResource( 8 )
 grabs_focus = true
 
 [node name="BtnSettings" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu" index="1" instance=ExtResource( 5 )]
@@ -60,7 +57,7 @@ margin_top = 65.0
 margin_right = 536.0
 margin_bottom = 114.0
 text = "Settings"
-screen_to_switch_to = ExtResource( 6 )
+screen_to_push_in_config = "SCREEN_OPTIONS_MENU"
 
 [node name="BtnQuit" parent="MenuLayer/UIBox/VBoxContainer/PanelContainer/Menu" index="2" instance=ExtResource( 5 )]
 margin_top = 130.0
@@ -68,4 +65,5 @@ margin_right = 536.0
 margin_bottom = 179.0
 text = "Quit Game"
 pushes_screen = false
+screen_to_push_in_config = ""
 quits_game = true
