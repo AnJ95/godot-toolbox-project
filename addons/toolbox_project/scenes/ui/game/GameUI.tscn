@@ -7,10 +7,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/IconValue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/assets/theme.tres" type="Theme" id=6]
 
-
-
-
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
 region = Rect2( 229, 49, 46, 46 )
@@ -78,6 +74,9 @@ margin_left = 104.0
 margin_right = 264.0
 margin_bottom = 32.0
 size_flags_horizontal = 1
+has_halfes = true
+value_now = 2.5
+value_max = 5
 
 [node name="TopRight" type="Control" parent="MarginContainer"]
 margin_left = 10.0

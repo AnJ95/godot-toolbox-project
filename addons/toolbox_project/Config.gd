@@ -48,8 +48,8 @@ const UI_BACK = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__
 
 ####################################################################
 # GAME
-const DIRECT_RESPAWN_ON_LEVEL_LOST = true
-const DIRECT_NEXT_ON_LEVEL_WON = true
+const DIRECT_RESPAWN_ON_LEVEL_LOST = false
+const DIRECT_NEXT_ON_LEVEL_WON = false
 const UNLOCK_ALL_LEVELS = IS_DEBUG
 
 const USE_MOBILE_CONTROLS = IS_MOBILE

@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameMobileUI.gd" type="Script" id=1]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameMobileUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialogLost.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialogPause.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialogWon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenGame.gd" type="Script" id=8]
+
+[node name="ScreenGame" instance=ExtResource( 7 )]
+script = ExtResource( 8 )
+show_transition_on_enter = true
+show_transition_on_leave = true
+play_title_song = false
+
+[node name="GameUI" parent="." index="1" instance=ExtResource( 5 )]
+
+[node name="GameMobileUI" parent="." index="2" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="GameDialogWon" parent="." index="3" instance=ExtResource( 6 )]
+
+[node name="GameDialogLost" parent="." index="4" instance=ExtResource( 3 )]
+
+[node name="GameDialogPause" parent="." index="5" instance=ExtResource( 4 )]

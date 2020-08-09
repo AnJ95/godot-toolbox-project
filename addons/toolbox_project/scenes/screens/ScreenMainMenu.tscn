@@ -9,8 +9,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/screens/ScreenMainMenu.gd" type="Script" id=7]
 [ext_resource path="res://ScreenGame.tscn" type="PackedScene" id=8]
 
-
-
 [node name="ScreenMainMenu" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
 

@@ -61,8 +61,7 @@ func __show(show=true):
 	root.visible = is_open
 	
 	if soundtrack_or_null:
-		if level:
-			level.pause_soundtrack(is_open)
+		if level: level.pause_soundtrack(is_open)
 		if is_open:	audioStreamPlayer.play(0)
 		else:		audioStreamPlayer.stop()
 	elif level:
