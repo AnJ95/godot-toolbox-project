@@ -42,7 +42,11 @@ const SHOW_SETTINGS_KEYBINDINGS = !IS_MOBILE
 
 const TITLE_SONG = preload("res://assets/sound/music/28 Towering Blues.ogg")
 const DEFAULT_LEVEL_SONG = preload("res://assets/sound/music/03 Before the Dawn.ogg")
-const DIALOG_SONG = preload("res://assets/sound/music/27 Coffee Break.ogg")
+
+const DIALOG_PAUSE_SONG = preload("res://assets/sound/music/27 Coffee Break.ogg")
+const DIALOG_WON_SONG = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270402__littlerobotsoundfactory__jingle-win-00.wav")
+const DIALOG_LOST_SONG = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270403__littlerobotsoundfactory__jingle-lose-00.wav")
+
 const UI_SELECT = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270401__littlerobotsoundfactory__menu-select-00.wav")
 const UI_BACK = preload("res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270393__littlerobotsoundfactory__inventory-open-00.wav")
 

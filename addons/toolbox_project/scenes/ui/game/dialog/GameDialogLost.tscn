@@ -3,6 +3,7 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialog.tscn" type="PackedScene" id=1]
 
 [node name="GameDialogLost" instance=ExtResource( 1 )]
+config_dialog_song = "DIALOG_LOST_SONG"
 
 [node name="VBoxContainer" parent="CenterContainer/Popup" index="0"]
 margin_bottom = 325.0
@@ -23,6 +24,7 @@ margin_top = 122.0
 margin_bottom = 171.0
 
 [node name="BtnSettings" parent="CenterContainer/Popup/VBoxContainer" index="4"]
+visible = false
 margin_top = 122.0
 margin_bottom = 171.0
 

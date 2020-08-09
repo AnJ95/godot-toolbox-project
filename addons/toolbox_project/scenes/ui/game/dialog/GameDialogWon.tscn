@@ -3,6 +3,7 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialog.tscn" type="PackedScene" id=1]
 
 [node name="GameDialogWon" instance=ExtResource( 1 )]
+config_dialog_song = "DIALOG_WON_SONG"
 pauses_game_while_open = true
 signal_to_open_to = "level_won"
 

@@ -9,7 +9,8 @@ onready var audioStreamPlayer:AudioStreamPlayer = $AudioStreamPlayer
 
 #############################################################
 # CUSTOMIZATION
-export(Resource) var soundtrack_or_null = C.DIALOG_SONG
+export(String) var config_dialog_song = "DIALOG_PAUSE_SONG"
+onready var soundtrack_or_null = C.get(config_dialog_song)
 
 export var toggled_by_pause_action = false
 export var pauses_game_while_open = false
