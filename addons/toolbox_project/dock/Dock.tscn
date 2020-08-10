@@ -10,144 +10,351 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 80.0
+margin_right = 96.0
 margin_bottom = 600.0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
-margin_top = 260.0
-margin_right = 80.0
-margin_bottom = 340.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_top = 230.0
+margin_right = 96.0
+margin_bottom = 369.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+margin_right = 96.0
+margin_bottom = 80.0
 texture = ExtResource( 1 )
 stretch_mode = 6
 
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 96.0
+margin_bottom = 115.0
+text = "Toolbox Project"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenGithub" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 119.0
+margin_right = 96.0
+margin_bottom = 139.0
+text = "Open GitHub"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 84.0
-margin_right = 313.0
+margin_left = 100.0
+margin_right = 250.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 229.0
-margin_bottom = 500.0
-size_flags_vertical = 3
-text = "Game Root Scene
-
-To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen."
+margin_right = 150.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "Game Root Scene"
 autowrap = true
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
-margin_top = 504.0
-margin_right = 229.0
-margin_bottom = 528.0
-text = "res://ScreenGame.tscn"
+[node name="DoesScreenGameExist" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Icon" type="TextureRect" parent="VBoxContainer/DoesScreenGameExist"]
+margin_bottom = 14.0
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/DoesScreenGameExist"]
+margin_left = 4.0
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Label"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 528.0
+size_flags_vertical = 3
+text = "
+To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen or click the button below
+
+Make sure to put your game Nodes in this scene!"
+autowrap = true
+
 [node name="ScreenGameCreate" type="Button" parent="VBoxContainer"]
 margin_top = 532.0
-margin_right = 229.0
+margin_right = 150.0
 margin_bottom = 552.0
 text = "Create default"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="ScreenGameOpen" type="Button" parent="VBoxContainer"]
 margin_top = 556.0
-margin_right = 229.0
+margin_right = 150.0
 margin_bottom = 576.0
-text = "Open"
+text = "Open Scene"
 
 [node name="ScreenGameReset" type="Button" parent="VBoxContainer"]
 margin_top = 580.0
-margin_right = 229.0
+margin_right = 150.0
 margin_bottom = 600.0
 text = "Reset to default"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_left = 317.0
-margin_right = 557.0
+margin_left = 254.0
+margin_right = 404.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-margin_right = 240.0
-margin_bottom = 500.0
-size_flags_vertical = 3
-text = "Config File
-
-To customize the ToolboxProject for your needs and to register your ScreenGame, toolbox_project_settings.cfg must be located in the root folder of your project"
+margin_right = 150.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "Config File"
 autowrap = true
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer2"]
-margin_top = 504.0
-margin_right = 240.0
-margin_bottom = 528.0
-text = "res://toolbox_project_settings.cfg"
+[node name="DoesConfigExist" type="HBoxContainer" parent="VBoxContainer2"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Icon" type="TextureRect" parent="VBoxContainer2/DoesConfigExist"]
+margin_bottom = 14.0
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer2/DoesConfigExist"]
+margin_left = 4.0
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Label"
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 528.0
+size_flags_vertical = 3
+text = "
+To customize the ToolboxProject for your needs and to register your ScreenGame, the config file must be located in the root folder of your project."
+autowrap = true
+
 [node name="ConfigCreate" type="Button" parent="VBoxContainer2"]
 margin_top = 532.0
-margin_right = 240.0
+margin_right = 150.0
 margin_bottom = 552.0
 text = "Create default"
 
 [node name="ConfigOpen" type="Button" parent="VBoxContainer2"]
 margin_top = 556.0
-margin_right = 240.0
+margin_right = 150.0
 margin_bottom = 576.0
-text = "Open"
+text = "Open Config"
 
 [node name="ConfigReset" type="Button" parent="VBoxContainer2"]
 margin_top = 580.0
-margin_right = 240.0
+margin_right = 150.0
 margin_bottom = 600.0
 text = "Reset to default"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
-margin_left = 561.0
-margin_right = 790.0
-margin_bottom = 600.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="VBoxContainer3"]
-margin_right = 229.0
-margin_bottom = 576.0
-size_flags_vertical = 3
-text = "Theme
-
-The theme is used for all Control elements and can be edited at a central location."
-autowrap = true
-
-[node name="ShowTheme" type="Button" parent="VBoxContainer3"]
-margin_top = 580.0
-margin_right = 229.0
-margin_bottom = 600.0
-text = "Show Theme"
-
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
-margin_left = 794.0
-margin_right = 1024.0
+margin_left = 408.0
+margin_right = 558.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer4"]
-margin_right = 230.0
+margin_right = 150.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "Bus Layout"
+autowrap = true
+
+[node name="IsBusLayoutSet" type="HBoxContainer" parent="VBoxContainer4"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer4/IsBusLayoutSet"]
+margin_bottom = 14.0
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer4/IsBusLayoutSet"]
+margin_left = 4.0
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Label"
+
+[node name="Label2" type="Label" parent="VBoxContainer4"]
+margin_top = 36.0
+margin_right = 150.0
 margin_bottom = 552.0
 size_flags_vertical = 3
-text = "Bus Layout
+text = "
+To utilize the audio settings, there is a default bus layout with three buses.
+It must be set to the projects default bus layout.
 
-To utilize the audio settings, there is a default bus layout with three buses. It must be set to the projects default bus layout."
+Make sure to set the correct Bus (Music or Effects) for every AudioStreamPlayer in your game!"
 autowrap = true
 
 [node name="SetBusLayout" type="Button" parent="VBoxContainer4"]
 margin_top = 556.0
-margin_right = 230.0
+margin_right = 150.0
 margin_bottom = 576.0
 text = "Set default BusLayout"
 
 [node name="ShowBusLayout" type="Button" parent="VBoxContainer4"]
 margin_top = 580.0
-margin_right = 230.0
+margin_right = 150.0
 margin_bottom = 600.0
 text = "Show BusLayout"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_left = 562.0
+margin_right = 712.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+margin_right = 150.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "Theme"
+autowrap = true
+
+[node name="Spacer" type="HBoxContainer" parent="VBoxContainer3"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer3/Spacer"]
+margin_bottom = 14.0
+
+[node name="Label2" type="Label" parent="VBoxContainer3"]
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 576.0
+size_flags_vertical = 3
+text = "
+The projects theme is located in the addon directory. It is used for all Control elements, including the menu, dialogs and more.
+
+Open it to edit the theme!"
+autowrap = true
+
+[node name="ShowTheme" type="Button" parent="VBoxContainer3"]
+margin_top = 580.0
+margin_right = 150.0
+margin_bottom = 600.0
+text = "Show Theme"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+margin_left = 716.0
+margin_right = 868.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer5"]
+margin_right = 152.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "InputMap Settings"
+autowrap = true
+
+[node name="Spacer" type="HBoxContainer" parent="VBoxContainer5"]
+margin_top = 18.0
+margin_right = 152.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer5/Spacer"]
+margin_bottom = 14.0
+
+[node name="Label2" type="Label" parent="VBoxContainer5"]
+margin_top = 36.0
+margin_right = 152.0
+margin_bottom = 552.0
+size_flags_vertical = 3
+text = "
+The control settings can be changed in the games settings menu, the default will be taken from the project settings InputMap.
+
+Make sure you bind the InputMap like usual and then customize the controls menu using the export vars.
+"
+autowrap = true
+
+[node name="OpenProjectInputMap" type="Button" parent="VBoxContainer5"]
+visible = false
+margin_top = 532.0
+margin_right = 161.0
+margin_bottom = 552.0
+text = "Open project InputMap"
+
+[node name="OpenControlSettingsMenu" type="Button" parent="VBoxContainer5"]
+margin_top = 556.0
+margin_right = 152.0
+margin_bottom = 576.0
+text = "Open controls menu"
+
+[node name="DeleteControlSettings" type="Button" parent="VBoxContainer5"]
+margin_top = 580.0
+margin_right = 152.0
+margin_bottom = 600.0
+text = "Delete saved controls"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="."]
+margin_left = 872.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer6"]
+margin_right = 152.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "PersistenceManager"
+autowrap = true
+
+[node name="Spacer" type="HBoxContainer" parent="VBoxContainer6"]
+margin_top = 18.0
+margin_right = 152.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer6/Spacer"]
+margin_bottom = 14.0
+
+[node name="Label2" type="Label" parent="VBoxContainer6"]
+margin_top = 36.0
+margin_right = 152.0
+margin_bottom = 552.0
+size_flags_vertical = 3
+text = "
+All data that must be kept when the game is closed, can be saved to and restored from \"user://\" using the PersistenceManager.
+This includes all settings and the level progress, but it can be used for any purpose."
+autowrap = true
+
+[node name="ShowSaveDir" type="Button" parent="VBoxContainer6"]
+margin_top = 556.0
+margin_right = 152.0
+margin_bottom = 576.0
+text = "Open user://"
+
+[node name="DeleteSaves" type="Button" parent="VBoxContainer6"]
+margin_top = 580.0
+margin_right = 152.0
+margin_bottom = 600.0
+text = "Delete all saves"

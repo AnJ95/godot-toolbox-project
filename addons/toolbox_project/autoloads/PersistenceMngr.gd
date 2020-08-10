@@ -24,8 +24,15 @@ var _objs = {}
 
 func _ready():
 	if C.REMOVE_ALL_SAVES:
-		for obj in _objs.values():
+		remove_all_saves()
+
+func remove_all_saves():
+	for obj in _objs.values():
 			obj._remove_save()
+			
+func remove_save(uid):
+	if _objs.has(uid):
+		_objs[uid]._remove_save()
 
 #############################################################
 # ADDING NEW STATES

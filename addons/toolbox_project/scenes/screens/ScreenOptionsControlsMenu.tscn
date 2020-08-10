@@ -7,8 +7,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/controls/ControlMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 
-
-
 [node name="ScreenOptionsControlsMenu" instance=ExtResource( 1 )]
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 3 )]
@@ -43,8 +41,8 @@ follow_focus = true
 
 [node name="ControlMenu" parent="MenuLayer/UIBox/VBoxContainer/ScrollContainer" index="0" instance=ExtResource( 5 )]
 anchor_right = 0.0
-margin_right = 848.0
-margin_bottom = 434.0
+margin_right = 798.0
+margin_bottom = 1530.0
 pretty_action_names = {
 "game_down": "Down",
 "game_interact": "Interact",
@@ -56,6 +54,7 @@ pretty_action_names = {
 "game_switch_skin": "Switch Skin",
 "game_up": "Up"
 }
+preferred_order = [ "game_left", "game_right", "game_up", "game_down", "game_jump", "game_interact", "game_pause", "game_switch_demo", "game_switch_skin" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/UIBox/VBoxContainer" index="2"]
 margin_top = 511.0
