@@ -14,6 +14,7 @@ var dock_btn_create_config:Button
 var dock_btn_reset_screenGame:Button
 var dock_btn_reset_config:Button
 var dock_btn_open_screenGame:Button
+var dock_btn_show_all_screens:Button
 var dock_btn_open_config:Button
 
 var dock_btn_set_busLayout:Button
@@ -42,6 +43,8 @@ const PATH_SCREENGAME = "res://ScreenGame.tscn"
 const PATH_SCREENGAME_DEFAULT = "res://addons/toolbox_project/defaults/ScreenGame.tscn"
 const PATH_CONFIG = "res://toolbox_project.cfg"
 const PATH_CONFIG_DEFAULT = "res://addons/toolbox_project/defaults/toolbox_project.cfg"
+
+const PATH_SCREENS = "res://addons/toolbox_project/scenes/screens/Screen.tscn"
 
 const PATH_THEME = "res://addons/toolbox_project/assets/theme.tres"
 const PATH_THEME_TESTER = "res://addons/toolbox_project/scenes/ui/ThemeTester.tscn"
@@ -83,6 +86,7 @@ func create_dock():
 	dock_btn_create_screenGame = dock.get_node("VBoxContainer/ScreenGameCreate")
 	dock_btn_open_screenGame = dock.get_node("VBoxContainer/ScreenGameOpen")
 	dock_btn_reset_screenGame = dock.get_node("VBoxContainer/ScreenGameReset")
+	dock_btn_show_all_screens = dock.get_node("VBoxContainer/ShowAllScreens")
 	
 	dock_btn_create_config = dock.get_node("VBoxContainer2/ConfigCreate")
 	dock_btn_open_config = dock.get_node("VBoxContainer2/ConfigOpen")
@@ -118,6 +122,8 @@ func create_dock():
 	dock_btn_open_screenGame.icon = gui.get_icon("PackedScene", "EditorIcons")
 	dock_btn_open_config.icon = gui.get_icon("Load", "EditorIcons")
 	
+	dock_btn_show_all_screens.icon = gui.get_icon("Load", "EditorIcons")
+	
 	dock_btn_open_theme.icon = gui.get_icon("Theme", "EditﬂﬂorIcons")
 	
 	dock_btn_set_busLayout.icon = gui.get_icon("AudioBusLayout", "EditorIcons")
@@ -134,6 +140,7 @@ func create_dock():
 	dock_btn_create_screenGame.connect("pressed", self, "on_create_file_pressed", [
 		"ScreenGame.tscn", PATH_SCREENGAME_DEFAULT, PATH_SCREENGAME, dock_btn_create_screenGame])
 	dock_btn_open_screenGame.connect("pressed", self, "on_open_screenGame_pressed")
+	dock_btn_show_all_screens.connect("pressed", self, "on_show_all_screens_pressed")
 	dock_btn_reset_screenGame.connect("pressed", self, "on_create_file_pressed", [
 		"ScreenGame.tscn", PATH_SCREENGAME_DEFAULT, PATH_SCREENGAME, dock_btn_reset_screenGame, true])
 	
@@ -234,6 +241,10 @@ func on_open_screenGame_pressed():
 	ei.select_file(PATH_SCREENGAME)
 	ei.open_scene_from_path(PATH_SCREENGAME)
 	ei.set_main_screen_editor("2D")
+
+func on_show_all_screens_pressed():
+	var ei = get_editor_interface()
+	ei.select_file(PATH_SCREENS)
 	
 func on_open_config_pressed():
 	var ei = get_editor_interface()
@@ -242,9 +253,14 @@ func on_open_config_pressed():
 
 func on_show_theme_pressed():
 	var ei = get_editor_interface()
-	ei.select_file(PATH_THEME)
+	
+	var prev_open = PATH_THEME_TESTER in ei.get_open_scenes()
+	
 	ei.open_scene_from_path(PATH_THEME_TESTER)
+	if !prev_open: yield(self, "scene_changed")
 	ei.set_main_screen_editor("2D")
+	
+	ei.select_file(PATH_THEME)
 	ei.edit_resource(preload(PATH_THEME))
 	
 func on_show_busLayout_pressed():
