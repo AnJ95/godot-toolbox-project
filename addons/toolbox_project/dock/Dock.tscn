@@ -286,13 +286,19 @@ margin_bottom = 14.0
 [node name="Label2" type="Label" parent="VBoxContainer3"]
 margin_top = 46.0
 margin_right = 138.0
-margin_bottom = 576.0
+margin_bottom = 552.0
 size_flags_vertical = 3
 text = "
 The projects theme is located in the addon directory. It is used for all Control elements, including the menu, dialogs and more.
 
 Open it to edit the theme!"
 autowrap = true
+
+[node name="ShowThemeAtlas" type="Button" parent="VBoxContainer3"]
+margin_top = 556.0
+margin_right = 138.0
+margin_bottom = 576.0
+text = "Show Theme Atlas"
 
 [node name="ShowTheme" type="Button" parent="VBoxContainer3"]
 margin_top = 580.0

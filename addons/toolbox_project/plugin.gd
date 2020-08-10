@@ -30,6 +30,7 @@ var dock_icon_is_busLayout_set:TextureRect
 var dock_label_is_busLayout_set:Label
 
 var dock_btn_open_theme:Button
+var dock_btn_show_themeAtlas:Button
 
 var dock_btn_open_projectInputMap:Button
 var dock_btn_open_controlSettingsMenu:Button
@@ -47,6 +48,7 @@ const PATH_CONFIG_DEFAULT = "res://addons/toolbox_project/defaults/toolbox_proje
 const PATH_SCREENS = "res://addons/toolbox_project/scenes/screens/Screen.tscn"
 
 const PATH_THEME = "res://addons/toolbox_project/assets/theme.tres"
+const PATH_THEME_ATLAS = "res://addons/toolbox_project/assets/theme.png"
 const PATH_THEME_TESTER = "res://addons/toolbox_project/scenes/ui/ThemeTester.tscn"
 
 const PATH_BUSLAYOUT = "res://addons/toolbox_project/bus_layout.tres"
@@ -66,8 +68,13 @@ const autoloads = {
 	"ControlMngr":	AUTOLOADS_PATH + "ControlMngr.gd"
 }
 
+var ei
+var gui
 
 func _enter_tree():
+	ei = get_editor_interface()
+	gui = get_editor_interface().get_base_control()
+	
 	for key in autoloads.keys():
 		add_autoload_singleton(key, autoloads[key])
 
@@ -96,6 +103,7 @@ func create_dock():
 	dock_btn_show_busLayout = dock.get_node("VBoxContainer4/ShowBusLayout")
 	
 	dock_btn_open_theme = dock.get_node("VBoxContainer3/ShowTheme")
+	dock_btn_show_themeAtlas = dock.get_node("VBoxContainer3/ShowThemeAtlas")
 	
 	dock_icon_does_screenGame_exist = dock.get_node("VBoxContainer/DoesScreenGameExist/Icon")
 	dock_label_does_screenGame_exist = dock.get_node("VBoxContainer/DoesScreenGameExist/Label")
@@ -112,7 +120,6 @@ func create_dock():
 	dock_btn_delete_saves = dock.get_node("VBoxContainer6/DeleteSaves")
 	
 	# Set Icons
-	var gui = get_editor_interface().get_base_control()
 	dock_btn_create_config.icon = gui.get_icon("New", "EditorIcons")
 	dock_btn_create_screenGame.icon = gui.get_icon("CreateNewSceneFrom", "EditorIcons")
 	
@@ -124,7 +131,8 @@ func create_dock():
 	
 	dock_btn_show_all_screens.icon = gui.get_icon("Load", "EditorIcons")
 	
-	dock_btn_open_theme.icon = gui.get_icon("Theme", "EditﬂﬂorIcons")
+	dock_btn_open_theme.icon = gui.get_icon("CanvasItemShader", "EditﬂﬂorIcons") # Theme
+	dock_btn_show_themeAtlas.icon = gui.get_icon("ImageTexture", "EditﬂﬂorIcons")
 	
 	dock_btn_set_busLayout.icon = gui.get_icon("AudioBusLayout", "EditorIcons")
 	dock_btn_show_busLayout.icon = gui.get_icon("AudioBusLayout", "EditorIcons")
@@ -151,6 +159,7 @@ func create_dock():
 		PATH_CONFIG_DEFAULT, PATH_CONFIG, dock_btn_reset_config, true])
 	
 	dock_btn_open_theme.connect("pressed", self, "on_show_theme_pressed")
+	dock_btn_show_themeAtlas.connect("pressed", self, "on_show_themeAtlas_pressed")
 	
 	dock_btn_set_busLayout.connect("pressed", self, "on_set_busLayout_pressed")
 	dock_btn_show_busLayout.connect("pressed", self, "on_show_busLayout_pressed")
@@ -187,7 +196,6 @@ func update_dock():
 	dock_btn_set_busLayout.disabled = is_busLayout_set
 	
 	
-	var gui = get_editor_interface().get_base_control()
 	dock_icon_does_screenGame_exist.texture = gui.get_icon("StatusSuccess" if does_screenGame_exist else "StatusError", "EditorIcons")
 	dock_label_does_screenGame_exist.text = PATH_SCREENGAME# + (" exists" if does_screenGame_exist else " does not exist!")
 	
@@ -226,7 +234,6 @@ func on_create_file_pressed(path_from, path_to, btn, accept=false):
 		btn.text = prev_text
 	else:
 		if path_to.ends_with(".tscn"):
-			var ei = get_editor_interface()
 			ei.open_scene_from_path(path_to)
 			ei.reload_scene_from_path(path_to)
 			ei.select_file(path_to)
@@ -237,22 +244,19 @@ func on_create_file_pressed(path_from, path_to, btn, accept=false):
 		update_dock()
 
 func on_open_screenGame_pressed():
-	var ei = get_editor_interface()
 	ei.select_file(PATH_SCREENGAME)
 	ei.open_scene_from_path(PATH_SCREENGAME)
 	ei.set_main_screen_editor("2D")
 
 func on_show_all_screens_pressed():
-	var ei = get_editor_interface()
 	ei.select_file(PATH_SCREENS)
 	
 func on_open_config_pressed():
-	var ei = get_editor_interface()
 	ei.select_file(PATH_CONFIG)
 	OS.shell_open("file://" + ProjectSettings.globalize_path(PATH_CONFIG))
 
 func on_show_theme_pressed():
-	var ei = get_editor_interface()
+
 	
 	var prev_open = PATH_THEME_TESTER in ei.get_open_scenes()
 	
@@ -263,8 +267,11 @@ func on_show_theme_pressed():
 	ei.select_file(PATH_THEME)
 	ei.edit_resource(preload(PATH_THEME))
 	
+func on_show_themeAtlas_pressed():
+	ei.select_file(PATH_THEME_ATLAS)
+	ei.edit_resource(preload(PATH_THEME_ATLAS))
+	
 func on_show_busLayout_pressed():
-	var ei = get_editor_interface()
 	ei.select_file(PATH_BUSLAYOUT)
 	ei.edit_resource(preload(PATH_BUSLAYOUT))
 
@@ -276,7 +283,6 @@ func on_open_projectInputMap_pressed():
   print("NOT IMPLEMENTED")
   
 func on_open_controlSettingsMenu_pressed():
-	var ei = get_editor_interface()
 	ei.select_file(PATH_CONTROLSETTINGSMENU)
 	ei.open_scene_from_path(PATH_CONTROLSETTINGSMENU)
 	ei.set_main_screen_editor("2D")
