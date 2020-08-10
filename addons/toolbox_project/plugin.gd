@@ -119,30 +119,6 @@ func create_dock():
 	dock_btn_show_saveDir = dock.get_node("VBoxContainer6/ShowSaveDir")
 	dock_btn_delete_saves = dock.get_node("VBoxContainer6/DeleteSaves")
 	
-	# Set Icons
-	dock_btn_create_config.icon = gui.get_icon("New", "EditorIcons")
-	dock_btn_create_screenGame.icon = gui.get_icon("CreateNewSceneFrom", "EditorIcons")
-	
-	dock_btn_reset_config.icon = gui.get_icon("Loop", "EditorIcons")
-	dock_btn_reset_screenGame.icon = gui.get_icon("Loop", "EditorIcons")
-	
-	dock_btn_open_screenGame.icon = gui.get_icon("PackedScene", "EditorIcons")
-	dock_btn_open_config.icon = gui.get_icon("Load", "EditorIcons")
-	
-	dock_btn_show_all_screens.icon = gui.get_icon("Load", "EditorIcons")
-	
-	dock_btn_open_theme.icon = gui.get_icon("CanvasItemShader", "EditﬂﬂorIcons") # Theme
-	dock_btn_show_themeAtlas.icon = gui.get_icon("ImageTexture", "EditﬂﬂorIcons")
-	
-	dock_btn_set_busLayout.icon = gui.get_icon("AudioBusLayout", "EditorIcons")
-	dock_btn_show_busLayout.icon = gui.get_icon("AudioBusLayout", "EditorIcons")
-	
-	dock_btn_open_projectInputMap.icon = gui.get_icon("Joypad", "EditorIcons")
-	dock_btn_open_controlSettingsMenu.icon = gui.get_icon("PackedScene", "EditorIcons")
-	dock_btn_delete_controlSetting.icon = gui.get_icon("Remove", "EditorIcons")
-	
-	dock_btn_show_saveDir.icon = gui.get_icon("Load", "EditorIcons")
-	dock_btn_delete_saves.icon = gui.get_icon("Remove", "EditorIcons")
 	
 	# Connect button signals
 	dock_btn_create_screenGame.connect("pressed", self, "on_create_file_pressed", [
@@ -256,8 +232,6 @@ func on_open_config_pressed():
 	OS.shell_open("file://" + ProjectSettings.globalize_path(PATH_CONFIG))
 
 func on_show_theme_pressed():
-
-	
 	var prev_open = PATH_THEME_TESTER in ei.get_open_scenes()
 	
 	ei.open_scene_from_path(PATH_THEME_TESTER)
