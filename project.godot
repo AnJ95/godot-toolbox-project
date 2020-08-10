@@ -26,6 +26,10 @@ config/icon="res://addons/toolbox_project/assets/logo/logo64.png"
 config/macos_native_icon="res://addons/toolbox_project/assets/logo/logo1024.png"
 config/windows_native_icon="res://addons/toolbox_project/assets/logo/logo1024.png"
 
+[audio]
+
+default_bus_layout="res://addons/toolbox_project/bus_layout.tres"
+
 [autoload]
 
 C="*res://addons/toolbox_project/Config.gd"

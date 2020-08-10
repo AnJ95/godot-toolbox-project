@@ -1,0 +1,153 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/toolbox_project/assets/logo/logo64.png" type="Texture" id=1]
+
+[node name="ToolboxProject" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 80.0
+margin_bottom = 600.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+margin_top = 260.0
+margin_right = 80.0
+margin_bottom = 340.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 84.0
+margin_right = 313.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 229.0
+margin_bottom = 500.0
+size_flags_vertical = 3
+text = "Game Root Scene
+
+To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen."
+autowrap = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
+margin_top = 504.0
+margin_right = 229.0
+margin_bottom = 528.0
+text = "res://ScreenGame.tscn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenGameCreate" type="Button" parent="VBoxContainer"]
+margin_top = 532.0
+margin_right = 229.0
+margin_bottom = 552.0
+text = "Create default"
+
+[node name="ScreenGameOpen" type="Button" parent="VBoxContainer"]
+margin_top = 556.0
+margin_right = 229.0
+margin_bottom = 576.0
+text = "Open"
+
+[node name="ScreenGameReset" type="Button" parent="VBoxContainer"]
+margin_top = 580.0
+margin_right = 229.0
+margin_bottom = 600.0
+text = "Reset to default"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 317.0
+margin_right = 557.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+margin_right = 240.0
+margin_bottom = 500.0
+size_flags_vertical = 3
+text = "Config File
+
+To customize the ToolboxProject for your needs and to register your ScreenGame, toolbox_project_settings.cfg must be located in the root folder of your project"
+autowrap = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer2"]
+margin_top = 504.0
+margin_right = 240.0
+margin_bottom = 528.0
+text = "res://toolbox_project_settings.cfg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfigCreate" type="Button" parent="VBoxContainer2"]
+margin_top = 532.0
+margin_right = 240.0
+margin_bottom = 552.0
+text = "Create default"
+
+[node name="ConfigOpen" type="Button" parent="VBoxContainer2"]
+margin_top = 556.0
+margin_right = 240.0
+margin_bottom = 576.0
+text = "Open"
+
+[node name="ConfigReset" type="Button" parent="VBoxContainer2"]
+margin_top = 580.0
+margin_right = 240.0
+margin_bottom = 600.0
+text = "Reset to default"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_left = 561.0
+margin_right = 790.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+margin_right = 229.0
+margin_bottom = 576.0
+size_flags_vertical = 3
+text = "Theme
+
+The theme is used for all Control elements and can be edited at a central location."
+autowrap = true
+
+[node name="ShowTheme" type="Button" parent="VBoxContainer3"]
+margin_top = 580.0
+margin_right = 229.0
+margin_bottom = 600.0
+text = "Show Theme"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+margin_left = 794.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer4"]
+margin_right = 230.0
+margin_bottom = 552.0
+size_flags_vertical = 3
+text = "Bus Layout
+
+To utilize the audio settings, there is a default bus layout with three buses. It must be set to the projects default bus layout."
+autowrap = true
+
+[node name="SetBusLayout" type="Button" parent="VBoxContainer4"]
+margin_top = 556.0
+margin_right = 230.0
+margin_bottom = 576.0
+text = "Set default BusLayout"
+
+[node name="ShowBusLayout" type="Button" parent="VBoxContainer4"]
+margin_top = 580.0
+margin_right = 230.0
+margin_bottom = 600.0
+text = "Show BusLayout"

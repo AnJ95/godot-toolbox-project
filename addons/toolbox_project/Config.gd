@@ -11,7 +11,7 @@ func load_from_config(path):
 	var config = ConfigFile.new()
 	var err = config.load(path)
 	if err == OK:
-		D.e("Config", ["Loading config file at", path])
+		D.l("Config", ["Loading config file at", path])
 		
 		for section in config.get_sections():
 			var keys = config.get_section_keys(section)

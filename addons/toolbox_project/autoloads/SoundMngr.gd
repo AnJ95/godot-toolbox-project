@@ -28,3 +28,12 @@ func play_ui_sound(stream=C.UI_SELECT):
 	if stream:
 		ui_sound_player.stream = stream
 		ui_sound_player.play()
+
+func _on_settingsAudio_update(settingsAudio):
+	for bus in settingsAudio.keys():
+		var idx = AudioServer.get_bus_index(bus)
+		if idx != -1:
+			var vol = settingsAudio[bus]
+			# 0 => -80, 100 => 0
+			var db = -60 * (1 - (vol / 100.0))
+			AudioServer.set_bus_volume_db(idx, db)

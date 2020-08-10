@@ -19,13 +19,13 @@ func _ready():
 	
 	# Create (possibly load) settings
 	PersistenceMngr.add_state("settingsVideo", C.DEFAULT_OPTIONS_VIDEO).connect("changed", self, "_on_settingsVideo_update")
-	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", self, "_on_settingsAudio_update")
+	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", SoundMngr, "_on_settingsAudio_update")
 	PersistenceMngr.add_state("settingsControls", default_options_controls.duplicate(true)).connect("changed", ControlMngr, "set_input_map_from_settings")
 	
 	
 	# Inititally configure options
 	_on_settingsVideo_update(PersistenceMngr.get_state("settingsVideo"))
-	_on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
+	SoundMngr._on_settingsAudio_update(PersistenceMngr.get_state("settingsAudio"))
 
 #############################################################
 # HANDLERS FOR PERSISTENT STATE
@@ -33,15 +33,6 @@ func _on_settingsVideo_update(settingsVideo):
 	OS.window_fullscreen = settingsVideo["Fullscreen"]
 	OS.vsync_enabled = settingsVideo["VSync"]
 		
-			
-func _on_settingsAudio_update(settingsAudio):
-	for bus in settingsAudio.keys():
-		var idx = AudioServer.get_bus_index(bus)
-		if idx != -1:
-			var vol = settingsAudio[bus]
-			# 0 => -80, 100 => 0
-			var db = -80 * (1 - (vol / 100.0))
-			AudioServer.set_bus_volume_db(idx, db)
 
 #############################################################
 # NOTITFYING State Object
