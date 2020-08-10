@@ -4,7 +4,7 @@ extends Node
 
 func _ready():
 	load_from_config("res://addons/toolbox_project/default_settings.cfg")
-	load_from_config("res://toolbox_project_settings.cfg")
+	load_from_config("res://toolbox_project.cfg")
 	
 
 func load_from_config(path):

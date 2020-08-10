@@ -40,8 +40,8 @@ var dock_btn_delete_saves:Button
 
 const PATH_SCREENGAME = "res://ScreenGame.tscn"
 const PATH_SCREENGAME_DEFAULT = "res://addons/toolbox_project/defaults/ScreenGame.tscn"
-const PATH_CONFIG = "res://toolbox_project_settings.cfg"
-const PATH_CONFIG_DEFAULT = "res://addons/toolbox_project/defaults/toolbox_project_settings.cfg"
+const PATH_CONFIG = "res://toolbox_project.cfg"
+const PATH_CONFIG_DEFAULT = "res://addons/toolbox_project/defaults/toolbox_project.cfg"
 
 const PATH_THEME = "res://addons/toolbox_project/assets/theme.tres"
 const PATH_THEME_TESTER = "res://addons/toolbox_project/scenes/ui/ThemeTester.tscn"
@@ -138,10 +138,10 @@ func create_dock():
 		"ScreenGame.tscn", PATH_SCREENGAME_DEFAULT, PATH_SCREENGAME, dock_btn_reset_screenGame, true])
 	
 	dock_btn_create_config.connect("pressed", self, "on_create_file_pressed", [
-		"toolbox_project_settings.cfg", PATH_CONFIG_DEFAULT, PATH_CONFIG, dock_btn_create_config])
+		PATH_CONFIG_DEFAULT, PATH_CONFIG, dock_btn_create_config])
 	dock_btn_open_config.connect("pressed", self, "on_open_config_pressed")
 	dock_btn_reset_config.connect("pressed", self, "on_create_file_pressed", [
-		"toolbox_project_settings.cfg", PATH_CONFIG_DEFAULT, PATH_CONFIG, dock_btn_reset_config, true])
+		PATH_CONFIG_DEFAULT, PATH_CONFIG, dock_btn_reset_config, true])
 	
 	dock_btn_open_theme.connect("pressed", self, "on_show_theme_pressed")
 	
@@ -201,13 +201,13 @@ func show_confirm_dialog(title, text, then_emit, then_binds):
 		dialog.disconnect("confirmed", self, then_emit)
 	dialog.connect("confirmed", self, then_emit, then_binds, CONNECT_ONESHOT)
 	
-func on_create_file_pressed(filename, path_from, path_to, btn, accept=false):
+func on_create_file_pressed(path_from, path_to, btn, accept=false):
 	if accept:
 		show_confirm_dialog(
-			"Reset " + filename + "?",
-			"Are you sure to reset? This will delete the current " + filename + ".",
+			"Reset " + path_to + "?",
+			"Are you sure to reset? This will delete the current " + path_to + ".",
 			"on_create_file_pressed",
-			[filename, path_from, path_to, btn]
+			[path_from, path_to, btn]
 		)
 		return
 		
