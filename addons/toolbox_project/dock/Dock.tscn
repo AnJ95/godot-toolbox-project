@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/toolbox_project/assets/logo/logo64.png" type="Texture" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.15, 0.1725, 0.2325, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.125, 0.14375, 0.19375, 1 )
+expand_margin_bottom = 1.0
 
 [node name="ToolboxProject" type="HBoxContainer"]
 anchor_right = 1.0
@@ -41,23 +53,29 @@ margin_right = 96.0
 margin_bottom = 139.0
 text = "Open GitHub"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VSeparator" type="VSeparator" parent="."]
 margin_left = 100.0
-margin_right = 250.0
+margin_right = 104.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 108.0
+margin_right = 246.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 150.0
-margin_bottom = 14.0
+margin_right = 138.0
+margin_bottom = 24.0
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
 text = "Game Root Scene"
 autowrap = true
 
 [node name="DoesScreenGameExist" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 150.0
-margin_bottom = 32.0
+margin_top = 28.0
+margin_right = 138.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,19 +91,19 @@ margin_bottom = 14.0
 text = "Label"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 36.0
-margin_right = 150.0
+margin_top = 46.0
+margin_right = 138.0
 margin_bottom = 528.0
 size_flags_vertical = 3
 text = "
-To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen or click the button below
+To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen or click the button below.
 
 Make sure to put your game Nodes in this scene!"
 autowrap = true
 
 [node name="ScreenGameCreate" type="Button" parent="VBoxContainer"]
 margin_top = 532.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 552.0
 text = "Create default"
 __meta__ = {
@@ -94,33 +112,39 @@ __meta__ = {
 
 [node name="ScreenGameOpen" type="Button" parent="VBoxContainer"]
 margin_top = 556.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 576.0
 text = "Open Scene"
 
 [node name="ScreenGameReset" type="Button" parent="VBoxContainer"]
 margin_top = 580.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 600.0
 text = "Reset to default"
 
+[node name="VSeparator2" type="VSeparator" parent="."]
+margin_left = 250.0
+margin_right = 254.0
+margin_bottom = 600.0
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_left = 254.0
-margin_right = 404.0
+margin_left = 258.0
+margin_right = 396.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-margin_right = 150.0
-margin_bottom = 14.0
+margin_right = 138.0
+margin_bottom = 24.0
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
 text = "Config File"
 autowrap = true
 
 [node name="DoesConfigExist" type="HBoxContainer" parent="VBoxContainer2"]
-margin_top = 18.0
-margin_right = 150.0
-margin_bottom = 32.0
+margin_top = 28.0
+margin_right = 138.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -136,8 +160,8 @@ margin_bottom = 14.0
 text = "Label"
 
 [node name="Label2" type="Label" parent="VBoxContainer2"]
-margin_top = 36.0
-margin_right = 150.0
+margin_top = 46.0
+margin_right = 138.0
 margin_bottom = 528.0
 size_flags_vertical = 3
 text = "
@@ -146,21 +170,26 @@ autowrap = true
 
 [node name="ConfigCreate" type="Button" parent="VBoxContainer2"]
 margin_top = 532.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 552.0
 text = "Create default"
 
 [node name="ConfigOpen" type="Button" parent="VBoxContainer2"]
 margin_top = 556.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 576.0
 text = "Open Config"
 
 [node name="ConfigReset" type="Button" parent="VBoxContainer2"]
 margin_top = 580.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 600.0
 text = "Reset to default"
+
+[node name="VSeparator3" type="VSeparator" parent="."]
+margin_left = 400.0
+margin_right = 404.0
+margin_bottom = 600.0
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
 margin_left = 408.0
@@ -170,15 +199,16 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer4"]
 margin_right = 150.0
-margin_bottom = 14.0
+margin_bottom = 24.0
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
 text = "Bus Layout"
 autowrap = true
 
 [node name="IsBusLayoutSet" type="HBoxContainer" parent="VBoxContainer4"]
-margin_top = 18.0
+margin_top = 28.0
 margin_right = 150.0
-margin_bottom = 32.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -194,7 +224,7 @@ margin_bottom = 14.0
 text = "Label"
 
 [node name="Label2" type="Label" parent="VBoxContainer4"]
-margin_top = 36.0
+margin_top = 46.0
 margin_right = 150.0
 margin_bottom = 552.0
 size_flags_vertical = 3
@@ -217,23 +247,29 @@ margin_right = 150.0
 margin_bottom = 600.0
 text = "Show BusLayout"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+[node name="VSeparator4" type="VSeparator" parent="."]
 margin_left = 562.0
-margin_right = 712.0
+margin_right = 566.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_left = 570.0
+margin_right = 708.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer3"]
-margin_right = 150.0
-margin_bottom = 14.0
+margin_right = 138.0
+margin_bottom = 24.0
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
 text = "Theme"
 autowrap = true
 
 [node name="Spacer" type="HBoxContainer" parent="VBoxContainer3"]
-margin_top = 18.0
-margin_right = 150.0
-margin_bottom = 32.0
+margin_top = 28.0
+margin_right = 138.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -242,8 +278,8 @@ __meta__ = {
 margin_bottom = 14.0
 
 [node name="Label2" type="Label" parent="VBoxContainer3"]
-margin_top = 36.0
-margin_right = 150.0
+margin_top = 46.0
+margin_right = 138.0
 margin_bottom = 576.0
 size_flags_vertical = 3
 text = "
@@ -254,27 +290,33 @@ autowrap = true
 
 [node name="ShowTheme" type="Button" parent="VBoxContainer3"]
 margin_top = 580.0
-margin_right = 150.0
+margin_right = 138.0
 margin_bottom = 600.0
 text = "Show Theme"
 
+[node name="VSeparator5" type="VSeparator" parent="."]
+margin_left = 712.0
+margin_right = 716.0
+margin_bottom = 600.0
+
 [node name="VBoxContainer5" type="VBoxContainer" parent="."]
-margin_left = 716.0
-margin_right = 868.0
+margin_left = 720.0
+margin_right = 872.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer5"]
 margin_right = 152.0
-margin_bottom = 14.0
+margin_bottom = 24.0
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
 text = "InputMap Settings"
 autowrap = true
 
 [node name="Spacer" type="HBoxContainer" parent="VBoxContainer5"]
-margin_top = 18.0
+margin_top = 28.0
 margin_right = 152.0
-margin_bottom = 32.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -283,7 +325,7 @@ __meta__ = {
 margin_bottom = 14.0
 
 [node name="Label2" type="Label" parent="VBoxContainer5"]
-margin_top = 36.0
+margin_top = 46.0
 margin_right = 152.0
 margin_bottom = 552.0
 size_flags_vertical = 3
@@ -313,23 +355,29 @@ margin_right = 152.0
 margin_bottom = 600.0
 text = "Delete saved controls"
 
+[node name="VSeparator6" type="VSeparator" parent="."]
+margin_left = 876.0
+margin_right = 880.0
+margin_bottom = 600.0
+
 [node name="VBoxContainer6" type="VBoxContainer" parent="."]
-margin_left = 872.0
+margin_left = 884.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer6"]
-margin_right = 152.0
-margin_bottom = 14.0
+margin_right = 140.0
+margin_bottom = 24.0
 size_flags_vertical = 1
-text = "PersistenceManager"
+custom_styles/normal = SubResource( 1 )
+text = "PersistenceMngr"
 autowrap = true
 
 [node name="Spacer" type="HBoxContainer" parent="VBoxContainer6"]
-margin_top = 18.0
-margin_right = 152.0
-margin_bottom = 32.0
+margin_top = 28.0
+margin_right = 140.0
+margin_bottom = 42.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -338,23 +386,23 @@ __meta__ = {
 margin_bottom = 14.0
 
 [node name="Label2" type="Label" parent="VBoxContainer6"]
-margin_top = 36.0
-margin_right = 152.0
+margin_top = 46.0
+margin_right = 140.0
 margin_bottom = 552.0
 size_flags_vertical = 3
 text = "
-All data that must be kept when the game is closed, can be saved to and restored from \"user://\" using the PersistenceManager.
+All data that must be kept when the game is closed, can be saved to and restored from \"user://\" using the PersistenceMngr.
 This includes all settings and the level progress, but it can be used for any purpose."
 autowrap = true
 
 [node name="ShowSaveDir" type="Button" parent="VBoxContainer6"]
 margin_top = 556.0
-margin_right = 152.0
+margin_right = 140.0
 margin_bottom = 576.0
 text = "Open user://"
 
 [node name="DeleteSaves" type="Button" parent="VBoxContainer6"]
 margin_top = 580.0
-margin_right = 152.0
+margin_right = 140.0
 margin_bottom = 600.0
 text = "Delete all saves"
