@@ -3,8 +3,9 @@
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=5]
+
 
 [node name="ScreenMainMenu" instance=ExtResource( 1 )]
 
@@ -39,7 +40,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="0" instance=ExtResource( 5 )]
+[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="0" instance=ExtResource( 4 )]
 anchor_right = 0.0
 margin_right = 467.0
 margin_bottom = 41.0
@@ -54,7 +55,7 @@ size_flags_vertical = 3
 text = "Tommy Wiseau"
 valign = 1
 
-[node name="LabelBig2" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="2" instance=ExtResource( 5 )]
+[node name="LabelBig2" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="2" instance=ExtResource( 4 )]
 anchor_right = 0.0
 margin_top = 105.0
 margin_right = 467.0
@@ -70,7 +71,7 @@ size_flags_vertical = 3
 text = "Tommy Wiseau"
 valign = 1
 
-[node name="LabelBig3" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="4" instance=ExtResource( 5 )]
+[node name="LabelBig3" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="4" instance=ExtResource( 4 )]
 anchor_right = 0.0
 margin_top = 210.0
 margin_right = 467.0
@@ -86,7 +87,7 @@ size_flags_vertical = 3
 text = "Tommy Wiseau"
 valign = 1
 
-[node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer" index="1" instance=ExtResource( 4 )]
+[node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer" index="1" instance=ExtResource( 5 )]
 margin_top = 391.0
 margin_right = 584.0
 margin_bottom = 440.0

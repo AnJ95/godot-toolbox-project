@@ -3,9 +3,10 @@
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuToggleSettingButton.tscn" type="PackedScene" id=6]
+
 
 [node name="ScreenOptionsVideoMenu" instance=ExtResource( 1 )]
 
@@ -29,7 +30,7 @@ margin_right = 560.0
 margin_bottom = 260.0
 size_flags_vertical = 4
 
-[node name="LabelBig" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="0" instance=ExtResource( 5 )]
+[node name="LabelBig" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="0" instance=ExtResource( 4 )]
 anchor_right = 0.0
 margin_right = 536.0
 margin_bottom = 41.0
@@ -57,7 +58,7 @@ text = "Use VSync"
 grabs_focus = false
 setting = "VSync"
 
-[node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="2" instance=ExtResource( 4 )]
+[node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]
 margin_top = 187.0
 margin_right = 536.0
 margin_bottom = 236.0

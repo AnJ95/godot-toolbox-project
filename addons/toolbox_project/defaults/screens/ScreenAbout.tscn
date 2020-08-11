@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=5]
+
+
+[node name="ScreenMainMenu" instance=ExtResource( 1 )]
+
+[node name="BaseBackground" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="MenuLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="UIBox" parent="MenuLayer" index="0" instance=ExtResource( 2 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox" index="0"]
+margin_left = 220.0
+margin_top = 80.0
+margin_right = 804.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MenuLayer/UIBox/VBoxContainer" index="0"]
+margin_right = 584.0
+margin_bottom = 375.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/UIBox/VBoxContainer/Panel" index="0"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBig" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="0" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_right = 467.0
+margin_bottom = 41.0
+text = "Created by"
+
+[node name="Label2" type="Label" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="1"]
+margin_top = 57.0
+margin_right = 467.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Tommy Wiseau"
+valign = 1
+
+[node name="LabelBig2" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="2" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 105.0
+margin_right = 467.0
+margin_bottom = 146.0
+text = "Sprites by"
+
+[node name="Label3" type="Label" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="3"]
+margin_top = 162.0
+margin_right = 467.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Tommy Wiseau"
+valign = 1
+
+[node name="LabelBig3" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="4" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 210.0
+margin_right = 467.0
+margin_bottom = 251.0
+text = "Sounds by"
+
+[node name="Label5" type="Label" parent="MenuLayer/UIBox/VBoxContainer/Panel/VBoxContainer" index="5"]
+margin_top = 267.0
+margin_right = 467.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Tommy Wiseau"
+valign = 1
+
+[node name="BtnBack" parent="MenuLayer/UIBox/VBoxContainer" index="1" instance=ExtResource( 5 )]
+margin_top = 391.0
+margin_right = 584.0
+margin_bottom = 440.0
+text = "Back"
+pushes_screen = false
+screen_to_push_in_config = ""
+pops_screen = true
+grabs_focus = true
