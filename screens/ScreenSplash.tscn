@@ -7,7 +7,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/background/BackgroundBase.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=6]
 
-
 [node name="ScreenSplash" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 

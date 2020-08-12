@@ -39,6 +39,7 @@ func _enter_tree():
 
 func create_dock():
 	var dock = Dock.instance()
+	dock.plugin = self
 	dock.ei = get_editor_interface()
 	dock.gui = get_editor_interface().get_base_control()
 	return dock

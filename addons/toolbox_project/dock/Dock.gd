@@ -2,13 +2,10 @@ tool
 extends HBoxContainer
 
 # Screens
-onready var icon_does_screenGame_exist:TextureRect = $VBoxContainer/DoesScreenGameExist/Icon
-onready var label_does_screenGame_exist:Label = $VBoxContainer/DoesScreenGameExist/Label
+onready var btn_create_screens:Button = $VBoxContainer/CreateScreens
+onready var btn_reset_screens:Button = $VBoxContainer/ResetScreens
 
-onready var btn_create_screenGame:Button = $VBoxContainer/CreateScreens
-onready var btn_reset_screenGame:Button = $VBoxContainer/ResetScreens
-onready var btn_open_screenGame:Button = $VBoxContainer/OpenScreenGame
-onready var btn_show_all_screens:Button = $VBoxContainer/ShowAllScreens
+onready var root_screens:Control = $VBoxContainer/ScrollContainer/Screens
 
 # Config File
 onready var icon_does_config_exist:TextureRect = $VBoxContainer2/DoesConfigExist/Icon
@@ -29,21 +26,23 @@ onready var btn_show_busLayout:Button = $VBoxContainer4/ShowBusLayout
 onready var btn_open_theme:Button = $VBoxContainer3/ShowTheme
 onready var btn_show_themeAtlas:Button = $VBoxContainer3/ShowThemeAtlas
 
+# Controls
 onready var btn_open_projectInputMap:Button = $VBoxContainer5/OpenProjectInputMap
 onready var btn_open_controlSettingsMenu:Button = $VBoxContainer5/OpenControlSettingsMenu
 onready var btn_delete_controlSetting:Button = $VBoxContainer5/DeleteControlSettings
 
+# Persistence Manager
 onready var btn_show_saveDir:Button = $VBoxContainer6/ShowSaveDir
 onready var btn_delete_saves:Button = $VBoxContainer6/DeleteSaves
 
+# CONSTS
+const ScreenInfo = preload("res://addons/toolbox_project/dock/ScreenInfo.tscn")
 const Icon = preload("res://addons/toolbox_project/assets/logo/logo32.png")
 
-const PATH_SCREENGAME = "res://ScreenGame.tscn"
-const PATH_SCREENGAME_DEFAULT = "res://addons/toolbox_project/defaults/ScreenGame.tscn"
+const PATH_SCREENS = "res://screens/"
+const PATH_SCREENS_DEFAULT = "res://addons/toolbox_project/defaults/screens/"
 const PATH_CONFIG = "res://toolbox_project.cfg"
 const PATH_CONFIG_DEFAULT = "res://addons/toolbox_project/defaults/toolbox_project.cfg"
-
-const PATH_SCREENS = "res://addons/toolbox_project/scenes/screens/Screen.tscn"
 
 const PATH_THEME = "res://addons/toolbox_project/assets/theme.tres"
 const PATH_THEME_ATLAS = "res://addons/toolbox_project/assets/theme.png"
@@ -55,21 +54,49 @@ const PATH_CONTROLSETTINGSMENU = "res://addons/toolbox_project/scenes/ui/menu/co
 const PATH_SAVES = "user://"
 const PATH_CONTROLSETTINGS = "user://save_settingsControls.save"
 
-var ei
-var gui
+var plugin:EditorPlugin
+var ei:EditorInterface
+var gui:Control
 
-func _ready():	
+
+func _ready():
+	recreate_screen_infos()
 	update_ui()
+
+
+func get_default_screens():
+	var screenDir:Directory = Directory.new()
+	var screens = []
+	
+	if screenDir.open(PATH_SCREENS_DEFAULT) == OK:
+		screenDir.list_dir_begin()
+		var file_name = screenDir.get_next()
+		while file_name != "":
+			if file_name.ends_with(".tscn"):
+				screens.append(file_name)
+			file_name = screenDir.get_next()
+			
+	return screens
+
+func recreate_screen_infos():
+	for child in root_screens.get_children():
+		child.queue_free()
+	for screen in get_default_screens():
+		var inst = ScreenInfo.instance()
+		inst.init_gui(self, screen.replace(".tscn", ""), PATH_SCREENS_DEFAULT + screen, PATH_SCREENS + screen)
+		root_screens.add_child(inst)
 
 func update_ui():
 	var f = File.new()
-	var does_screenGame_exist = f.file_exists(PATH_SCREENGAME)
+	
 	var does_config_exist = f.file_exists(PATH_CONFIG)
+	var does_any_screen_exist = false
+	for screenFileName in get_default_screens():
+		does_any_screen_exist = does_any_screen_exist or File.new().file_exists(PATH_SCREENS + screenFileName)
 	var is_busLayout_set = ProjectSettings.get("audio/default_bus_layout") == PATH_BUSLAYOUT
 	
-	btn_create_screenGame.disabled = does_screenGame_exist
-	btn_open_screenGame.disabled = !does_screenGame_exist
-	btn_reset_screenGame.disabled = !does_screenGame_exist
+	btn_create_screens.disabled = does_any_screen_exist
+	btn_reset_screens.disabled = !does_any_screen_exist
 	
 	btn_create_config.disabled = does_config_exist
 	btn_open_config.disabled = !does_config_exist
@@ -78,15 +105,14 @@ func update_ui():
 	
 	btn_set_busLayout.disabled = is_busLayout_set
 	
-	
-	icon_does_screenGame_exist.texture = gui.get_icon("StatusSuccess" if does_screenGame_exist else "StatusError", "EditorIcons")
-	label_does_screenGame_exist.text = PATH_SCREENGAME# + (" exists" if does_screenGame_exist else " does not exist!")
-	
 	icon_does_config_exist.texture = gui.get_icon("StatusSuccess" if does_config_exist else "StatusError", "EditorIcons")
 	label_does_config_exist.text = PATH_CONFIG# + (" exists" if does_config_exist else " does not exist!")
 	
 	icon_is_busLayout_set.texture = gui.get_icon("StatusSuccess" if is_busLayout_set else "StatusError", "EditorIcons")
 	label_is_busLayout_set.text = "BusLayout" + (" is set" if is_busLayout_set else " is not set!")
+	
+	for child in root_screens.get_children():
+		child.update_ui()
 	
 func show_confirm_dialog(title, text, then_emit, then_binds):
 	var dialog = ConfirmationDialog.new()
@@ -101,13 +127,13 @@ func show_confirm_dialog(title, text, then_emit, then_binds):
 func _on_OpenGithub_pressed():
 	OS.shell_open("https://github.com/AnJ95/godot-toolbox-project")
 	
-func copy_default_file(path_from, path_to, btn, accept=false):
+func copy_default_file(path_from, path_to, btn, accept=false, open_after=true):
 	if accept:
 		show_confirm_dialog(
 			"Reset " + path_to + "?",
 			"Are you sure to reset? This will delete the current " + path_to + ".",
 			"copy_default_file",
-			[path_from, path_to, btn, false]
+			[path_from, path_to, btn, false, open_after]
 		)
 		return
 		
@@ -117,7 +143,9 @@ func copy_default_file(path_from, path_to, btn, accept=false):
 		btn.text = "Error"
 		yield(get_tree().create_timer(1), "timeout")
 		btn.text = prev_text
-	else:
+		return
+		
+	if open_after:
 		if path_to.ends_with(".tscn"):
 			ei.open_scene_from_path(path_to)
 			ei.reload_scene_from_path(path_to)
@@ -126,24 +154,31 @@ func copy_default_file(path_from, path_to, btn, accept=false):
 		else:
 			OS.shell_open("file://" + ProjectSettings.globalize_path(path_to))
 		
-		update_ui()	
+	update_ui()	
 
 func _on_CreateScreens_pressed():
-	copy_default_file(PATH_SCREENGAME_DEFAULT, PATH_SCREENGAME, btn_create_screenGame)
-
-func _on_OpenScreenGame_pressed():
-	ei.select_file(PATH_SCREENGAME)
-	ei.open_scene_from_path(PATH_SCREENGAME)
-	ei.set_main_screen_editor("2D")
-
-
-func _on_ShowAllScreens_pressed():
-	ei.select_file(PATH_SCREENS)
-
-
+	if !Directory.new().dir_exists(PATH_SCREENS):
+		Directory.new().make_dir(PATH_SCREENS)
+	
+	for screenFileName in get_default_screens():
+		copy_default_file(
+			PATH_SCREENS_DEFAULT + screenFileName,
+			PATH_SCREENS + screenFileName,
+			btn_create_screens,
+			false,
+			false
+		)
+	
+	ei.get_resource_filesystem().scan()
+	
+	
 func _on_ResetScreens_pressed():
-	copy_default_file(PATH_SCREENGAME_DEFAULT, PATH_SCREENGAME, btn_create_screenGame, true)
-
+	show_confirm_dialog(
+		"Reset all Screens?",
+		"This will reset all Screens in the list above to their default! Take care!",
+		"_on_CreateScreens_pressed",
+		[]
+	)
 
 func _on_CreateConfig_pressed():
 	copy_default_file(PATH_CONFIG_DEFAULT, PATH_CONFIG, btn_create_config)
@@ -172,13 +207,16 @@ func _on_ShowThemeAtlas_pressed():
 func _on_ShowTheme_pressed():
 	var prev_open = PATH_THEME_TESTER in ei.get_open_scenes()
 	
-	ei.open_scene_from_path(PATH_THEME_TESTER)
-	if !prev_open: yield(self, "scene_changed")
-	ei.set_main_screen_editor("2D")
 	
+	ei.open_scene_from_path(PATH_THEME_TESTER)
+	if !prev_open: yield(plugin, "scene_changed")
+	ei.set_main_screen_editor("2D")
+
+	
+	yield(get_tree().create_timer(0.1), "timeout")
 	ei.select_file(PATH_THEME)
 	ei.edit_resource(preload(PATH_THEME))
-
+	
 
 func _on_OpenProjectInputMap_pressed():
 	print("NOT IMPLEMENTED")
