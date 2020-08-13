@@ -1,39 +1,40 @@
 tool
-extends HBoxContainer
+extends Control
 
 # Screens
-onready var btn_create_screens:Button = $VBoxContainer/CreateScreens
-onready var btn_reset_screens:Button = $VBoxContainer/ResetScreens
+onready var btn_create_screens:Button = $HBoxContainer/VBoxContainer/CreateScreens
+onready var btn_make_screenSplashDefault:Button = $HBoxContainer/VBoxContainer/MakeScreenSplashDefault
+onready var btn_reset_screens:Button = $HBoxContainer/VBoxContainer/ResetScreens
 
-onready var root_screens:Control = $VBoxContainer/ScrollContainer/Screens
+onready var root_screens:Control = $HBoxContainer/VBoxContainer/ScrollContainer/Screens
 
 # Config File
-onready var icon_does_config_exist:TextureRect = $VBoxContainer2/DoesConfigExist/Icon
-onready var label_does_config_exist:Label = $VBoxContainer2/DoesConfigExist/Label
+onready var icon_does_config_exist:TextureRect = $HBoxContainer/VBoxContainer2/DoesConfigExist/Icon
+onready var label_does_config_exist:Label = $HBoxContainer/VBoxContainer2/DoesConfigExist/Label
 
-onready var btn_create_config:Button = $VBoxContainer2/CreateConfig
-onready var btn_open_config:Button = $VBoxContainer2/OpenConfig
-onready var btn_reset_config:Button = $VBoxContainer2/ResetConfig
+onready var btn_create_config:Button = $HBoxContainer/VBoxContainer2/CreateConfig
+onready var btn_open_config:Button = $HBoxContainer/VBoxContainer2/OpenConfig
+onready var btn_reset_config:Button = $HBoxContainer/VBoxContainer2/ResetConfig
 
 # Bus Layout
-onready var icon_is_busLayout_set:TextureRect = $VBoxContainer4/IsBusLayoutSet/Icon
-onready var label_is_busLayout_set:Label = $VBoxContainer4/IsBusLayoutSet/Label
+onready var icon_is_busLayout_set:TextureRect = $HBoxContainer/VBoxContainer4/IsBusLayoutSet/Icon
+onready var label_is_busLayout_set:Label = $HBoxContainer/VBoxContainer4/IsBusLayoutSet/Label
 
-onready var btn_set_busLayout:Button = $VBoxContainer4/SetBusLayout
-onready var btn_show_busLayout:Button = $VBoxContainer4/ShowBusLayout
+onready var btn_set_busLayout:Button = $HBoxContainer/VBoxContainer4/SetBusLayout
+onready var btn_show_busLayout:Button = $HBoxContainer/VBoxContainer4/ShowBusLayout
 
 # Theme
-onready var btn_open_theme:Button = $VBoxContainer3/ShowTheme
-onready var btn_show_themeAtlas:Button = $VBoxContainer3/ShowThemeAtlas
+onready var btn_open_theme:Button = $HBoxContainer/VBoxContainer3/ShowTheme
+onready var btn_show_themeAtlas:Button = $HBoxContainer/VBoxContainer3/ShowThemeAtlas
 
 # Controls
-onready var btn_open_projectInputMap:Button = $VBoxContainer5/OpenProjectInputMap
-onready var btn_open_controlSettingsMenu:Button = $VBoxContainer5/OpenControlSettingsMenu
-onready var btn_delete_controlSetting:Button = $VBoxContainer5/DeleteControlSettings
+onready var btn_open_projectInputMap:Button = $HBoxContainer/VBoxContainer5/OpenProjectInputMap
+onready var btn_open_controlSettingsMenu:Button = $HBoxContainer/VBoxContainer5/OpenControlSettingsMenu
+onready var btn_delete_controlSetting:Button = $HBoxContainer/VBoxContainer5/DeleteControlSettings
 
 # Persistence Manager
-onready var btn_show_saveDir:Button = $VBoxContainer6/ShowSaveDir
-onready var btn_delete_saves:Button = $VBoxContainer6/DeleteSaves
+onready var btn_show_saveDir:Button = $HBoxContainer/VBoxContainer6/ShowSaveDir
+onready var btn_delete_saves:Button = $HBoxContainer/VBoxContainer6/DeleteSaves
 
 # CONSTS
 const ScreenInfo = preload("res://addons/toolbox_project/dock/ScreenInfo.tscn")
@@ -91,11 +92,13 @@ func update_ui():
 	
 	var does_config_exist = f.file_exists(PATH_CONFIG)
 	var does_any_screen_exist = false
+	var is_main_scene_set = ProjectSettings.get_setting("application/run/main_scene") == PATH_SCREENS + "ScreenSplash.tscn"
 	for screenFileName in get_default_screens():
 		does_any_screen_exist = does_any_screen_exist or File.new().file_exists(PATH_SCREENS + screenFileName)
 	var is_busLayout_set = ProjectSettings.get("audio/default_bus_layout") == PATH_BUSLAYOUT
 	
 	btn_create_screens.disabled = does_any_screen_exist
+	btn_make_screenSplashDefault.disabled = is_main_scene_set
 	btn_reset_screens.disabled = !does_any_screen_exist
 	
 	btn_create_config.disabled = does_config_exist
@@ -170,6 +173,10 @@ func _on_CreateScreens_pressed():
 		)
 	
 	ei.get_resource_filesystem().scan()
+	
+func _on_MakeScreenSplashDefault_pressed():
+	ProjectSettings.set_setting("application/run/main_scene", PATH_SCREENS + "ScreenSplash.tscn")
+	update_ui()
 	
 	
 func _on_ResetScreens_pressed():
@@ -253,3 +260,4 @@ func _on_DeleteSaves_pressed(accept=true):
 		)
 		return
 	PersistenceMngr.remove_all_saves()
+
