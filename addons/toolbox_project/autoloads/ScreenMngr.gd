@@ -1,5 +1,7 @@
 extends Node
 
+const ScreenGD = preload("res://addons/toolbox_project/scenes/screens/Screen.gd")
+
 #############################################################
 # STATE
 var screen_history = []
@@ -56,7 +58,7 @@ func push_screen(screen_scene):
 	# show transition if (new screen wants to on enter) or (prev screen wants to on leave)
 	var show_transition = screen_inst.show_transition_on_enter or (screen_history.size() >= 1 and screen_history[0].show_transition_on_leave)
 	
-	if !screen_inst is Screen:
+	if !screen_inst is ScreenGD:
 		D.e(D.LogCategory.SCREEN_MANAGER, ["Tried pushing Screen, but it is not a PackedScene, inherited from Screen.tscn"])
 		return
 	

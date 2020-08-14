@@ -25,7 +25,8 @@ const autoloads = {
 
 
 func _enter_tree():
-	
+	# Print Getting Started
+	print(get_description())
 	
 	for key in autoloads.keys():
 		add_autoload_singleton(key, autoloads[key])
@@ -33,9 +34,7 @@ func _enter_tree():
 	# Add the loaded scene to the docks.
 	dock = create_dock()
 	add_control_to_bottom_panel(dock, "ToolboxProject")
-	
-	# Print Getting Started
-	print(get_description())
+
 
 func create_dock():
 	var dock = Dock.instance()
@@ -68,14 +67,9 @@ func get_description():
 	d += "## TOOLBOX PROJECT                      ##\n"
 	d += "##########################################\n"
 
-	d += "# Getting started\n"
-	d += "## ToolboxProject bottom control \n"
-	d += "The easiest way to get started is to use the panel found at the bottom of the editor, labeled \"ToolboxProject\".\n"
-	d += ""
-
-	d += "## Add a config file\n"
-
-	d += "Checklist\n"
+	d += "If this is the first time you added the addon, you may be getting a lot of errors.\n"
+	d += "Just reopen the project and use the ToolboxProject widget at the bottom of the editor to configure your project!\n"
+	
 
 	d += "##########################################\n"
 	return d;

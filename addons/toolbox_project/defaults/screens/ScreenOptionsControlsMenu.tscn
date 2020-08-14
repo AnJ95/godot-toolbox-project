@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/controls/ControlMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=6]
-
+[ext_resource path="res://addons/toolbox_project/defaults/screens/ScreenOptionsControlsMenu.gd" type="Script" id=7]
 
 [node name="ScreenOptionsControlsMenu" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 3 )]
 
@@ -55,7 +56,6 @@ pretty_action_names = {
 "game_switch_skin": "Switch Skin",
 "game_up": "Up"
 }
-preferred_order = [ "game_left", "game_right", "game_up", "game_down", "game_jump", "game_interact", "game_pause", "game_switch_demo", "game_switch_skin" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/UIBox/VBoxContainer" index="2"]
 margin_top = 511.0

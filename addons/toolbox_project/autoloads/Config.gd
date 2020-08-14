@@ -4,10 +4,9 @@ extends Node
 
 func _ready():
 	load_from_config("res://addons/toolbox_project/default_settings.cfg")
-	load_from_config("res://toolbox_project.cfg")
-	
+	load_from_config()
 
-func load_from_config(path):
+func load_from_config(path = "res://toolbox_project.cfg"):
 	var config = ConfigFile.new()
 	var err = config.load(path)
 	if err == OK:

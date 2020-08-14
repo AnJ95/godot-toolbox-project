@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameMobileUI.gd" type="Script" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameMobileUI.tscn" type="PackedScene" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/dialog/GameDialogWon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/toolbox_project/defaults/screens/ScreenGame.gd" type="Script" id=8]
-
-
+[ext_resource path="res://game/GameWithLevels.tscn" type="PackedScene" id=9]
 
 [node name="ScreenGame" instance=ExtResource( 7 )]
 script = ExtResource( 8 )
@@ -27,3 +26,5 @@ script = ExtResource( 1 )
 [node name="GameDialogLost" parent="." index="4" instance=ExtResource( 3 )]
 
 [node name="GameDialogPause" parent="." index="5" instance=ExtResource( 4 )]
+
+[node name="GameWithLevels" parent="." index="6" instance=ExtResource( 9 )]

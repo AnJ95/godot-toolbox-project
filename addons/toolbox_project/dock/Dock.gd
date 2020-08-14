@@ -2,6 +2,9 @@ tool
 extends Control
 
 # Screens
+onready var does_screen_exist:TextureRect = $HBoxContainer/VBoxContainer/DoesScreenExist
+onready var icon_does_screen_exist:TextureRect = $HBoxContainer/VBoxContainer/DoesScreenExist/Icon
+
 onready var btn_create_screens:Button = $HBoxContainer/VBoxContainer/CreateScreens
 onready var btn_make_screenSplashDefault:Button = $HBoxContainer/VBoxContainer/MakeScreenSplashDefault
 onready var btn_reset_screens:Button = $HBoxContainer/VBoxContainer/ResetScreens
@@ -97,6 +100,7 @@ func update_ui():
 		does_any_screen_exist = does_any_screen_exist or File.new().file_exists(PATH_SCREENS + screenFileName)
 	var is_busLayout_set = ProjectSettings.get("audio/default_bus_layout") == PATH_BUSLAYOUT
 	
+	does_screen_exist.visible = !does_any_screen_exist
 	$HBoxContainer/VBoxContainer/LabelDescription.visible = !does_any_screen_exist
 	$HBoxContainer/VBoxContainer/ScrollContainer.visible = does_any_screen_exist
 	
@@ -110,6 +114,8 @@ func update_ui():
 	btn_reset_config.disabled = !does_config_exist
 	
 	btn_set_busLayout.disabled = is_busLayout_set
+	
+	icon_does_screen_exist.texture = gui.get_icon("StatusError", "EditorIcons")
 	
 	icon_does_config_exist.texture = gui.get_icon("StatusSuccess" if does_config_exist else "StatusError", "EditorIcons")
 	label_does_config_exist.text = PATH_CONFIG# + (" exists" if does_config_exist else " does not exist!")

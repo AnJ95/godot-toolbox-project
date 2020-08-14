@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/UIBox.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/components/LabelBig.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/MenuSlider.tscn" type="PackedScene" id=6]
-
+[ext_resource path="res://addons/toolbox_project/defaults/screens/ScreenOptionsAudioMenu.gd" type="Script" id=7]
 
 [node name="ScreenOptionsAudioMenu" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
 
 [node name="BaseBackground" parent="." index="0" instance=ExtResource( 3 )]
 
@@ -44,6 +45,8 @@ margin_right = 536.0
 margin_bottom = 107.0
 caption = "Master Volume"
 persistence_uid_path = "settingsAudio.Master"
+value_min = 0
+value_max = 100
 grabs_focus = true
 
 [node name="MenuSlider2" parent="MenuLayer/UIBox/PanelContainer/Menu" index="2" instance=ExtResource( 6 )]
@@ -54,6 +57,9 @@ margin_right = 536.0
 margin_bottom = 173.0
 caption = "Music Volume"
 persistence_uid_path = "settingsAudio.Music"
+value_min = 0
+value_max = 100
+grabs_focus = false
 
 [node name="MenuSlider3" parent="MenuLayer/UIBox/PanelContainer/Menu" index="3" instance=ExtResource( 6 )]
 anchor_right = 0.0
@@ -63,6 +69,9 @@ margin_right = 536.0
 margin_bottom = 239.0
 caption = "Effects Volume"
 persistence_uid_path = "settingsAudio.Effects"
+value_min = 0
+value_max = 100
+grabs_focus = false
 
 [node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/Menu" index="4" instance=ExtResource( 5 )]
 margin_top = 255.0
