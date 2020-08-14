@@ -3,8 +3,7 @@ extends Node
 
 #############################################################
 # NON PERSISTENT STATE
-onready var score = StateInt.new(0)
-onready var default_options_controls = ControlMngr.get_default_from_project_keybindings()
+onready var score = ModelInt.new(0)
 var start_level_id = -1
 
 #############################################################
@@ -20,7 +19,7 @@ func _ready():
 	# Create (possibly load) settings
 	PersistenceMngr.add_state("settingsVideo", C.DEFAULT_OPTIONS_VIDEO).connect("changed", self, "_on_settingsVideo_update")
 	PersistenceMngr.add_state("settingsAudio", C.DEFAULT_OPTIONS_AUDIO).connect("changed", SoundMngr, "_on_settingsAudio_update")
-	PersistenceMngr.add_state("settingsControls", default_options_controls.duplicate(true)).connect("changed", ControlMngr, "set_input_map_from_settings")
+	PersistenceMngr.add_state("settingsControls", ControlMngr.get_default_from_project_keybindings().duplicate(true)).connect("changed", ControlMngr, "set_input_map_from_settings")
 	
 	
 	# Inititally configure options
@@ -36,7 +35,7 @@ func _on_settingsVideo_update(settingsVideo):
 
 #############################################################
 # NOTITFYING State Object
-class StateInt:
+class ModelInt:
 	signal state_changed(new_state)
 	var state setget _set_state
 	func _set_state(v):

@@ -12,7 +12,7 @@ var dock
 
 
 const autoloads = {
-	"C":				BASE_PATH + "Config.gd",
+	"C":				AUTOLOADS_PATH + "Config.gd",
 	"D":				AUTOLOADS_PATH + "Debug.gd",
 	"ScreenMngr":		AUTOLOADS_PATH + "ScreenMngr.gd",
 	"StateMngr":		AUTOLOADS_PATH + "StateMngr.gd",

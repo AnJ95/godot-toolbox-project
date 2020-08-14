@@ -276,3 +276,7 @@ func _on_DeleteSaves_pressed(accept=true):
 		return
 	PersistenceMngr.remove_all_saves()
 
+func _on_OpenGlobal_pressed(global_name):
+	var path = plugin.AUTOLOADS_PATH + global_name + ".gd"
+	ei.select_file(path)
+	ei.get_script_editor().open_script_create_dialog("", path)

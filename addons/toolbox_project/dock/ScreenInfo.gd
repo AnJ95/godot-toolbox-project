@@ -37,7 +37,10 @@ func update_ui():
 	btnOpen.disabled = !exists
 	btnReset.disabled = !exists
 	
-	iconExists.texture = gui.get_icon("StatusSuccess" if exists else "StatusError", "EditorIcons")
+	if gui:
+		iconExists.texture = gui.get_icon("StatusSuccess" if exists else "StatusError", "EditorIcons")
+	else:
+		iconExists.texture = null
 	
 	
 func _on_Create_pressed():

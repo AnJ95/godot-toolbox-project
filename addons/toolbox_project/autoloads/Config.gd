@@ -122,7 +122,6 @@ var HIDE_LOG_LEVEL = {}
 
 ####################################################################
 # SCREENS
-
 var SCREEN_SPLASH
 var SCREEN_MAIN_MENU
 var SCREEN_ABOUT

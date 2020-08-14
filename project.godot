@@ -32,7 +32,7 @@ default_bus_layout="res://addons/toolbox_project/bus_layout.tres"
 
 [autoload]
 
-C="*res://addons/toolbox_project/Config.gd"
+C="*res://addons/toolbox_project/autoloads/Config.gd"
 D="*res://addons/toolbox_project/autoloads/Debug.gd"
 ScreenMngr="*res://addons/toolbox_project/autoloads/ScreenMngr.gd"
 StateMngr="*res://addons/toolbox_project/autoloads/StateMngr.gd"
