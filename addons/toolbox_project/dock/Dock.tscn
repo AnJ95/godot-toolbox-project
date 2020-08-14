@@ -238,28 +238,48 @@ custom_styles/normal = SubResource( 1 )
 text = "Screens"
 autowrap = true
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
-visible = false
+[node name="Spacer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 144.0
-margin_bottom = 544.0
+margin_right = 230.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Spacer"]
+margin_bottom = 14.0
+
+[node name="LabelDescription" type="Label" parent="HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 46.0
+margin_right = 230.0
+margin_bottom = 267.0
 size_flags_vertical = 3
 text = "
-To give the menu structure an entry point to your game, create a ScreenGame inheriting Screen or click the button below.
-
-Make sure to put your game Nodes in this scene!"
+Create the default the Screens for the menu structure and make ScreenSplash the main scene using the buttons below. Then add your game into ScreenGame."
 autowrap = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 28.0
+margin_top = 46.0
 margin_right = 230.0
-margin_bottom = 510.0
+margin_bottom = 492.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="Screens" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
 margin_right = 187.0
 margin_bottom = 392.0
+
+[node name="Spacer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 496.0
+margin_right = 230.0
+margin_bottom = 510.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Spacer2"]
+margin_bottom = 14.0
 
 [node name="CreateScreens" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 514.0
@@ -333,7 +353,8 @@ margin_right = 131.0
 margin_bottom = 510.0
 size_flags_vertical = 3
 text = "
-To customize the ToolboxProject for your needs and to register your ScreenGame, the config file must be located in the root folder of your project."
+Create the default config file and edit it to adjust the toolbox to your needs.
+Contains debug options, settings for the menu structure, levels, screens and more."
 autowrap = true
 
 [node name="CreateConfig" type="Button" parent="HBoxContainer/VBoxContainer2"]

@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ToolboxProject"
-run/main_scene="res://addons/toolbox_project/defaults/screens/ScreenSplash.tscn"
+run/main_scene="res://screens/ScreenSplash.tscn"
 config/icon="res://addons/toolbox_project/assets/logo/logo64.png"
 config/macos_native_icon="res://addons/toolbox_project/assets/logo/logo1024.png"
 config/windows_native_icon="res://addons/toolbox_project/assets/logo/logo1024.png"

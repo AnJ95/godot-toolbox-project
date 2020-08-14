@@ -48,8 +48,8 @@ func _on_Create_pressed():
 func _on_Open_pressed():
 	if is_inited:
 		ei.select_file(path_to)
-		ei.open_scene_from_path(path_to)
-		ei.set_main_screen_editor("2D")
+		dock.open_or_reload_scene(path_to)
+		dock.set_main_screen_and_await("2D")
 
 func _on_Reset_pressed():
 	if is_inited:

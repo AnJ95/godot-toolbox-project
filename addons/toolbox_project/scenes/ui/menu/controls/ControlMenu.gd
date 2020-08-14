@@ -3,7 +3,7 @@ extends GridContainer
 
 const ControlMenuAction = preload("ControlMenuAction.tscn")
 
-export(String) var filter_actions:String = "^game_"
+export(String) var filter_actions:String = "^ui_"
 
 export var pretty_action_names = {
 	"game_left" : "Left",

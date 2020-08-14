@@ -97,6 +97,9 @@ func update_ui():
 		does_any_screen_exist = does_any_screen_exist or File.new().file_exists(PATH_SCREENS + screenFileName)
 	var is_busLayout_set = ProjectSettings.get("audio/default_bus_layout") == PATH_BUSLAYOUT
 	
+	$HBoxContainer/VBoxContainer/LabelDescription.visible = !does_any_screen_exist
+	$HBoxContainer/VBoxContainer/ScrollContainer.visible = does_any_screen_exist
+	
 	btn_create_screens.disabled = does_any_screen_exist
 	btn_make_screenSplashDefault.disabled = is_main_scene_set
 	btn_reset_screens.disabled = !does_any_screen_exist
@@ -126,9 +129,22 @@ func show_confirm_dialog(title, text, then_emit, then_binds):
 	if dialog.is_connected("confirmed", self, then_emit):
 		dialog.disconnect("confirmed", self, then_emit)
 	dialog.connect("confirmed", self, then_emit, then_binds, CONNECT_ONESHOT)
-	
-func _on_OpenGithub_pressed():
-	OS.shell_open("https://github.com/AnJ95/godot-toolbox-project")
+
+var cur_scene
+func _on_scene_changed(scene):
+	cur_scene = scene
+
+func open_or_reload_scene(scene):
+	if cur_scene == scene:
+		ei.open_scene_from_path(scene)
+	else:
+		ei.open_scene_from_path(scene)
+		yield(plugin, "scene_changed")
+		
+func set_main_screen_and_await(main_screen):
+	ei.set_main_screen_editor(main_screen)
+	yield(plugin, "main_screen_changed")
+
 	
 func copy_default_file(path_from, path_to, btn, accept=false, open_after=true):
 	if accept:
@@ -150,15 +166,18 @@ func copy_default_file(path_from, path_to, btn, accept=false, open_after=true):
 		
 	if open_after:
 		if path_to.ends_with(".tscn"):
-			ei.open_scene_from_path(path_to)
-			ei.reload_scene_from_path(path_to)
+			open_or_reload_scene(path_to)
 			ei.select_file(path_to)
-			ei.set_main_screen_editor("2D")
+			set_main_screen_and_await("2D")
 		else:
 			OS.shell_open("file://" + ProjectSettings.globalize_path(path_to))
 		
 	update_ui()	
 
+
+func _on_OpenGithub_pressed():
+	OS.shell_open("https://github.com/AnJ95/godot-toolbox-project")
+	
 func _on_CreateScreens_pressed():
 	if !Directory.new().dir_exists(PATH_SCREENS):
 		Directory.new().make_dir(PATH_SCREENS)
@@ -212,12 +231,8 @@ func _on_ShowThemeAtlas_pressed():
 
 
 func _on_ShowTheme_pressed():
-	var prev_open = PATH_THEME_TESTER in ei.get_open_scenes()
-	
-	
-	ei.open_scene_from_path(PATH_THEME_TESTER)
-	if !prev_open: yield(plugin, "scene_changed")
-	ei.set_main_screen_editor("2D")
+	open_or_reload_scene(PATH_THEME_TESTER)
+	set_main_screen_and_await("2D")
 
 	
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -242,8 +257,8 @@ func _on_DeleteControlSettings_pressed(accept=true):
 
 func _on_OpenControlSettingsMenu_pressed():
 	ei.select_file(PATH_CONTROLSETTINGSMENU)
-	ei.open_scene_from_path(PATH_CONTROLSETTINGSMENU)
-	ei.set_main_screen_editor("2D")
+	open_or_reload_scene(PATH_CONTROLSETTINGSMENU)
+	set_main_screen_and_await("2D")
 
 
 func _on_ShowSaveDir_pressed():
