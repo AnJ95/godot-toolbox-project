@@ -18,27 +18,27 @@ Joypad and mobile device support is taken care of.
 
 
 ## Contents
-* Setup
-  * Downloading the repo
-  * Installing the plugin
-* UI
-	* Theme
-	* Menu
-	* GameUI
-	* MobileUI
-* Settings
-	* Controls
-	* Video
-	* Audio
-* Demo Levels
-* Global Managers
-	* D for Debug
-	* C for Config
-	* PersistenceMngr
-	* ScreenMngr
-	* SignalMngr
-	* StateMngr
-* Assets
+* [Setup](#-setup)
+  * [Downloading the repo](#one-downloading-the-repo)
+  * [Installing the plugin](#two-installing-the-plugin)
+* [UI](#-ui)
+	* [Theme](#theme)
+	* [Menu](#menu)
+	* [GameUI](#gameui)
+	* [MobileUI](#mobileui)
+* [Settings](#-settings)
+	* [Controls](#controls)
+	* [Video](#video)
+	* [Audio](#audio)
+* [Demo Levels](#-demo-levels)
+* [Global Managers](#global-managers)
+	* [D for Debug](#d-for-debug)
+	* [C for Config](#c-for-config)
+	* [PersistenceMngr](#persistencemngr)
+	* [ScreenMngr](#screenmngr)
+	* [SignalMngr](#signalmngr)
+	* [StateMngr](#statemngr)
+* [Assets](#-assets)
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Setup
 
