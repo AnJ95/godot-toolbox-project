@@ -4,15 +4,23 @@
 
 Project template for the [Godot Game Engine](https://godotengine.org/) taking care of things so you can focus on the game.
 
-Features a main menu, extensive settings, in-game UI, a custom and easy-to-change theme and some demo levels.
+---
+
+:bell: **The Toolbox project is now a [godot editor plugin](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html) and available on the [Asset Library](https://godotengine.org/asset-library/asset).** You can **either** install the plugin and configure it in the editor and config **or** you can fork/download this repo for a pre-configured version along with a demo game.
+
+---
+
+The Godot Toolbox project features a main menu, extensive settings, in-game UI, a custom and easy-to-change theme and some demo levels.
 
 Additionally there are some re-usable components for UI, state management, persistent storage, and the game itself.
 
-Both controller (Control menu) and mobile (Touch button and joystick) support are taken care of.
+Joypad and mobile device support is taken care of.
 
 
 ## Contents
 * Setup
+  * Downloading the repo
+  * Installing the plugin
 * UI
 	* Theme
 	* Menu
@@ -34,45 +42,86 @@ Both controller (Control menu) and mobile (Touch button and joystick) support ar
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Setup
 
-Just download or fork the whole thing and edit or delete what you want.
 
-See *[scripts/globals/Config.gd]* for some basic options.
+:one: If you are starting a new project, you can [download or fork this repository](#downloading-the-repo). It contains a pre-configured version of the plugin along with a demo game with levels.
 
-The project is under MIT license, so you can download, modify and publish your version however you want.
-But make sure to credit the artist of the used assets (see last section), though it is not needed.
-Mention of me and this project would be appreciated, but not required as well.
+:two: If you have a pre-existing project you want to add this plugin to, you can [install the plugin](#installing-the-plugin). In that case you need to configure it yourself and then add your game into the menu structure.
+
+
+### :one: Downloading the repo
+
+Download or fork this entire project to get started.
+
+You will find the already installed plugin in *[addons/toolbox-project]* along with a demo game, found in *[game/]* and *[assets/]*.
+
+You should be able to directly start the project. Explore the menus and settings options, play the game for a run or two and make yourself familiar with the features of the UI.
+
+After that, check out the bottom control panel labelled "Toolbox Project". It guides you through configurations and shows you important scenes and resources.
+Check out the [next section](#installing-the-plugin) for more about the panel.
+
+Both the plugin and the demo game are under MIT license, so you can download, modify and publish your version however you want.
+But make sure to [credit the artist of the used assets](#assets), though it is not needed.
+Mention of me and this project would be appreciated, but not required either.
+
+### :two: Installing the plugin
+
+If you are not interested in the example game or if you are adding the plugin to an already existing project, you only need to copy the *[addons/toolbox-project]* directory.
+
+Download the file here or on the Godot Asset Library, move it to *[addons/toolbox-project]* in your projects root directory and enable it in *Project Settings > Plugins*.
+You will probably be getting a lot of errors, re-opening the project will solve that.
+
+Before you can hit play, you need to configure the Toolbox Project. To do so, click the bottom control panel labelled "Toolbox Project".
+
+![The configuration tool](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_unconfig.png "The configuration tool")
+
+It helps performing all necessary configuration steps. Make sure you do the following:
+* Under Screens, click *Create all screens* to copy all the menu Screens to *[screens/]*.
+* Under Screens, click *Make ScreenSplash main scene* to set the splash screen to the projects main scene.
+* Under Config, click *Create default*. This will create and open the config file.
+* Under Bus Layout, click *Set default BusLayout*. This is necessary in order to use the sound settings.
+
+After these steps, you should be able to run the project and navigate the menus.
+Check out the config file to customize everything to your liking.
+
+To add you game into the menu structure, simply drag your game root scene into *[screens/ScreenGame.tscn]*.
+
+![The configuration tool after configuration](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_config.png "The configuration tool after configuration")
+
+
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") UI
 
 ### Theme
 
 The Menu, the GameUI and all sub-components use a single theme resource.
-It is globally used and can be found in *[assets/theme.tres]*.
+It is globally used and can be found in *[addons/toolbox_project/assets/theme.tres]*.
 
 ![A Theme test scene](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_theme.png "A Theme test scene")
 
-Changing the looks is easy, just modify this [theming atlas](https://github.com/AnJ95/godot-toolbox-project/blob/master/assets/theme.png). It contains all graphics used in the theme.
+Changing the looks is easy, just modify this [theming atlas](https://github.com/AnJ95/godot-toolbox-project/blob/master/addons/toolbox_project/assets/theme.png). It contains all graphics used in the theme.
 
 ### Menu
 
 The game comes with a main menu that lets you navigate through options, an about screen, a level selection and the game.
-These are all implemented as Screens *[scenes/screens/]*.
-The menu can be navigated using a controller.
+These are all inheriting the Screen scene and will be copied to *[screens/]* during the configuration.
+The menu can be navigated using a joypad/controller.
 
 ### GameUI
 
-Additionally, there are in-game ui components *[scenes/game/]* like:
+Additionally, there are in-game ui components *[addons/toolbox_project/scenes/ui/game]* like:
 
 * PauseMenu
 * GameOver
 * A GameUI equipped with a healthbar and a score indicator
+* the mobile controls
 
 ![GameOver dialog](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game3.png "GameOver dialog")
 
 ### MobileUI
 
-A joystick and one button currently enable for platformer controls on mobile.
-However, you could go for an extra button or joypad if you needed them.
+A joystick and one button enable for platformer controls on mobile.
+The default version can be found at *[addons/toolbox_project/scenes/ui/game/GameMobileUI.tscn]*.
+However, you could add an extra button or joypad if you needed them.
 
 ![Mobile controls](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game4.png "Mobile controls")
 
@@ -91,7 +140,8 @@ Video, audio and controls settings can all be adjusted and are saved using the P
 ![Controls screen](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_controls.png "Controls screen")
 
 The controls default is taken from the project settings ```InputMap```.
-Changes by the user do affect said ```InputMap``` and can therefore be polled using ```Input.is_action_pressed()```.
+Any changes to the controls will be saved as a file using the ```PersistenceMngr```.
+Changes in the settings menu do affect the ```InputMap``` and can therefore be polled using ```Input.is_action_pressed()``` as usual.
 
 ### Audio
 
@@ -103,20 +153,20 @@ Currently only Fullscreen and VSync options, but can be extended easily.
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Demo Levels
 
-A game setup can be found in *[scenes/game]*, but you can delete everything in that folder, just make sure to add you game into *[scenes/screens/ScreenGame.tscn]*.
+If you downloaded the entire repo, the demo game can be found in *[game/]*, but it is not required.
 
-The world is broken up into levels, aka sub scenes located in *[scenes/game/levels/]*. In this demo each level showcases a different map and mechanic and they can be changed by the pressing 1 (or by collecting all coins ;) ).
+The world is broken up into levels, aka sub scenes located in *[game/levels/]*. In this demo each level showcases a different map and mechanic and they can be changed by pressing 1 (or by collecting all coins ;) ).
 
 ![TopDown with a 3x3 autotile tileset](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game2.png "TopDown with a 3x3 autotile tileset")
 
 A total of 5 levels with different settings can be found, some with specials. Some of the most notable:
 * Platformers
-	* darkness and light *[scenes/game/levels/PlatformerDarkCave]*
-	* a parallax background *[scenes/game/levels/PlatformerParallax]*
-	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[scenes/game/levels/PlatformerAutotile]*
+	* darkness and light *[game/levels/PlatformerDarkCave]*
+	* a parallax background *[game/levels/PlatformerParallax]*
+	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[game/levels/PlatformerAutotile]*
 * TopDown
-	* an isometric TileMap *[scenes/game/levels/TopDownIsometric]*
-	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[scenes/game/levels/TopDownMysteryDungeon]*
+	* an isometric TileMap *[game/levels/TopDownIsometric]*
+	* a [3x3 autotile](https://kidscancode.org/godot_recipes/2d/autotile_intro/) TileMap *[game/levels/TopDownMysteryDungeon]*
 
 ![Platformer with parallax and enemy](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_game1.png "Platformer with parallax and enemy")
 
