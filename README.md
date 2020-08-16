@@ -31,7 +31,7 @@ Joypad and mobile device support is taken care of.
 	* [Video](#video)
 	* [Audio](#audio)
 * [Demo Levels](#-demo-levels)
-* [Global Managers](#global-managers)
+* [Global Managers](#-global-managers)
 	* [D for Debug](#d-for-debug)
 	* [C for Config](#c-for-config)
 	* [PersistenceMngr](#persistencemngr)
@@ -43,9 +43,9 @@ Joypad and mobile device support is taken care of.
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Setup
 
 
-:one: If you are starting a new project, you can [download or fork this repository](#downloading-the-repo). It contains a pre-configured version of the plugin along with a demo game with levels.
+:one: If you are starting a new project, you can [download or fork this repository](#one-downloading-the-repo). It contains a pre-configured version of the plugin along with a demo game with levels.
 
-:two: If you have a pre-existing project you want to add this plugin to, you can [install the plugin](#installing-the-plugin). In that case you need to configure it yourself and then add your game into the menu structure.
+:two: If you have a pre-existing project you want to add this plugin to, you can [install the plugin](#two-installing-the-plugin). In that case you need to configure it yourself and then add your game into the menu structure.
 
 
 ### :one: Downloading the repo
@@ -57,10 +57,10 @@ You will find the already installed plugin in *[addons/toolbox-project]* along w
 You should be able to directly start the project. Explore the menus and settings options, play the game for a run or two and make yourself familiar with the features of the UI.
 
 After that, check out the bottom control panel labelled "Toolbox Project". It guides you through configurations and shows you important scenes and resources.
-Check out the [next section](#installing-the-plugin) for more about the panel.
+Check out the [next section](#two-installing-the-plugin) for more about the panel.
 
 Both the plugin and the demo game are under MIT license, so you can download, modify and publish your version however you want.
-But make sure to [credit the artist of the used assets](#assets), though it is not needed.
+But make sure to [credit the artist of the used assets](#-assets), though it is not needed.
 Mention of me and this project would be appreciated, but not required either.
 
 ### :two: Installing the plugin
@@ -173,7 +173,7 @@ A total of 5 levels with different settings can be found, some with specials. So
 The Player and the Enemy are both inheriting from the abstract Entity class, which refactors common behavior like basic physics, health, damage, collision and more.
 In this demo, the Player provides 2 control schemes, and 4 skins.
 
-## Global Managers
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Global Managers
 For global access, these Managers are put into the projects autoload.
 
 ### D for Debug
