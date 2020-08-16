@@ -1,6 +1,6 @@
 # Godot Toolbox Project
 
-![Godot Toolbox Project](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo256.png "Godot Toolbox Project")
+![Godot Toolbox Project](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo256.png "Godot Toolbox Project")
 
 Project template for the [Godot Game Engine](https://godotengine.org/) taking care of things so you can focus on the game.
 
@@ -40,7 +40,7 @@ Joypad and mobile device support is taken care of.
 	* StateMngr
 * Assets
 
-## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Setup
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Setup
 
 
 :one: If you are starting a new project, you can [download or fork this repository](#downloading-the-repo). It contains a pre-configured version of the plugin along with a demo game with levels.
@@ -89,7 +89,7 @@ To add you game into the menu structure, simply drag your game root scene into *
 
 
 
-## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") UI
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") UI
 
 ### Theme
 
@@ -129,7 +129,7 @@ They trigger the same InputEvents a key stroke would fire and their respective I
 
 ![Mobile joystick configuration](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_mobilecontrols.png "Mobile joystick configuration")
 
-## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Settings
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Settings
 
 ![Settings screen](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_settings.png "Settings screen")
 
@@ -151,7 +151,7 @@ Three Sliders give the option for main, music and soundeffects volume. Make sure
 
 Currently only Fullscreen and VSync options, but can be extended easily.
 
-## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Demo Levels
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Demo Levels
 
 If you downloaded the entire repo, the demo game can be found in *[game/]*, but it is not required.
 
@@ -283,7 +283,7 @@ Is already used for a lot of components, esp. to notify game elements.
 ### StateMngr
 Creates the state objects for the ```PersistenceMngr``` and holds some global variables.
 
-## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/assets/logo/logo32.png "") Assets
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Assets
 All assets used have been declared royalty free and useable for commercial use. Check out their original art to use and find more like these:
 
 Seamless parallax layer sprites  
