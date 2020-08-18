@@ -12,7 +12,7 @@ enum LogLevel {
 
 ####################################################################
 # INTERFACE
-# Main debug log function 
+# Main debug log function
 #	log_categ		must be of enum LogCategory or a String.
 #					Categorizes the logs
 #	objs_to_print		object to log or Array of object to log
@@ -44,7 +44,7 @@ func l(log_categ, objs_to_print, log_level=LogLevel.INFO):
 	if objs_to_print is Array:
 		for obj in objs_to_print:
 			objs_str += " " + str(obj)
-	else: 
+	else:
 		objs_str = " " + str(objs_to_print)
 	
 	var result_str = "## " + categ_str + " ##  " + objs_str

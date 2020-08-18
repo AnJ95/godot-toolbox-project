@@ -286,21 +286,21 @@ Creates the state objects for the ```PersistenceMngr``` and holds some global va
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Assets
 All assets used have been declared royalty free and useable for commercial use. Check out their original art to use and find more like these:
 
-Seamless parallax layer sprites  
+Seamless parallax layer sprites \
 [Ansimuz](https://ansimuz.itch.io/mountain-dusk-parallax-background)
 
-Players, Enemies, Icons  
+Players, Enemies, Icons \
 [0x72](https://0x72.itch.io/dungeontileset-ii)
 
-Isometric topdown tileset  
+Isometric topdown tileset \
 [ToxSickProductions](https://opengameart.org/users/toxsickproductionscom)
 
-Music  
+Music \
 [Monolith OST](https://arcofdream.itch.io/monolith-ost)
 
-Soundeffects  
-[Kastenfrosch](https://freesound.org/people/Kastenfrosch/packs/10069/)  
+Soundeffects \
+[Kastenfrosch](https://freesound.org/people/Kastenfrosch/packs/10069/) \
 [LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/packs/16687/)
 
-Theme, Logo, the dungeon tileset  
+Theme, Logo, the dungeon tileset \
 Me

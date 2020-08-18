@@ -82,7 +82,7 @@ func grab_focus():
 
 func get_all_menu_control_buttons():
 	return get_tree().get_nodes_in_group("MenuControlButton")
-	 
+
 #############################################################
 # CALLBACKS	
 func _on_Button_pressed():

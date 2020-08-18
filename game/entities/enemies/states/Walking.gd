@@ -33,7 +33,7 @@ func process(delta:float):
 		cliff_falloff_cooldown -= delta
 
 	# calculate velocity
-	var walk = root.walk_force * direction 
+	var walk = root.walk_force * direction
 	var v = root.velocity
 	v += walk * delta
 	v.x = clamp(v.x, -root.walk_max_speed, root.walk_max_speed)
