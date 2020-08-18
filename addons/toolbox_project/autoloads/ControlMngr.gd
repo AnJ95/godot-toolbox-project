@@ -63,7 +63,7 @@ func __event_instance_to_event_info(event:InputEvent):
 	
 func __event_infos_equal(a, b)->bool:
 	# both null
-	if a == null and b == null: return true 
+	if a == null and b == null: return true
 	# only one null
 	if a == null or b == null: return false
 	# check size

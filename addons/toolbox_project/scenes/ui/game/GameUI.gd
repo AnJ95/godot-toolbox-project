@@ -5,7 +5,7 @@ onready var score_ui = $MarginContainer/TopLeft/HBoxContainer/IconIntValue
 onready var health_ui = $MarginContainer/TopLeft/HBoxContainer/IconValue
 
 func _ready():
-	# Connect coin handler to State 
+	# Connect coin handler to State
 	StateMngr.score.connect("state_changed", score_ui, "_on_update_int")
 	#$MarginContainer.mouse_filter = $MarginContainer.MOUSE_FILTER_IGNORE
 	var players = get_tree().get_nodes_in_group("Player")

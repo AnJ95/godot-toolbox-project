@@ -28,7 +28,7 @@ func _on_game_started():
 	start_level(StateMngr.start_level_id if StateMngr.start_level_id != -1 else 0)
 
 #############################################################
-# LEVEL 
+# LEVEL
 func start_level(next_level_id):
 	StateMngr.score.state = 0
 	

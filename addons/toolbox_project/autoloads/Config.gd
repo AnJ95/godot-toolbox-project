@@ -47,53 +47,53 @@ func try_load(path):
 # DEBUG
 
 # Global switch for debug mode
-var IS_DEBUG 
+var IS_DEBUG
 
 # Deletes all save files on start
-var REMOVE_ALL_SAVES 
+var REMOVE_ALL_SAVES
 
 # Global switch for mobile features
-var IS_MOBILE 
+var IS_MOBILE
 
 
 ####################################################################
 # MENU
 
 # show ScreenMainMenu after ScreenSplash or directly start ScreenGame
-var SHOW_MAIN_MENU 
+var SHOW_MAIN_MENU
 
 # show ScreenLevelMenu on game start or directly start ScreenGame
-var SHOW_LEVEL_MENU 
+var SHOW_LEVEL_MENU
 
 # show the settings button in ScreenMainMenu
-var SHOW_SETTINGS 
+var SHOW_SETTINGS
 
 # show video settings in ScreenOptionsMenu
-var SHOW_SETTINGS_VIDEO 
+var SHOW_SETTINGS_VIDEO
 
 # show audio settings in ScreenOptionsMenu
-var SHOW_SETTINGS_AUDIO 
+var SHOW_SETTINGS_AUDIO
 
 # show control settings in ScreenOptionsMenu
-var SHOW_SETTINGS_KEYBINDINGS 
+var SHOW_SETTINGS_KEYBINDINGS
 
-var TITLE_SONG 
-var DEFAULT_LEVEL_SONG 
+var TITLE_SONG
+var DEFAULT_LEVEL_SONG
 
-var DIALOG_PAUSE_SONG 
-var DIALOG_WON_SONG 
-var DIALOG_LOST_SONG 
+var DIALOG_PAUSE_SONG
+var DIALOG_WON_SONG
+var DIALOG_LOST_SONG
 
-var UI_SELECT 
-var UI_BACK 
+var UI_SELECT
+var UI_BACK
 
 ####################################################################
 # GAME
-var DIRECT_RESPAWN_ON_LEVEL_LOST 
-var DIRECT_NEXT_ON_LEVEL_WON 
-var UNLOCK_ALL_LEVELS 
+var DIRECT_RESPAWN_ON_LEVEL_LOST
+var DIRECT_NEXT_ON_LEVEL_WON
+var UNLOCK_ALL_LEVELS
 
-var USE_MOBILE_CONTROLS 
+var USE_MOBILE_CONTROLS
 
 var LEVELS = {}
 

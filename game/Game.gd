@@ -1,7 +1,7 @@
 extends Node2D
 
 const Level = preload("res://game/levels/PlatformerDarkCave.tscn")
-var level 
+var level
 
 #############################################################
 # LIFECYCLE
