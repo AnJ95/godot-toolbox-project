@@ -13,10 +13,12 @@ var current_level
 # LIFECYCLE
 func _ready():
 	# Connect Signals
-	SignalMngr.connect("game_started", self, "_on_game_started")
-	
-	SignalMngr.connect("restart_level", self, "restart_level")
-	SignalMngr.connect("next_level", self, "next_level")
+	if SignalMngr.connect("game_started", self, "_on_game_started") != OK:
+		D.e("Game", ["Signal game_started is already connected"])
+	if SignalMngr.connect("restart_level", self, "restart_level") != OK:
+		D.e("Game", ["Signal restart_level is already connected"])
+	if SignalMngr.connect("next_level", self, "next_level")!= OK:
+		D.e("Game", ["Signal next_level is already connected"])
 
 func _process(delta):
 	_process_level(delta)

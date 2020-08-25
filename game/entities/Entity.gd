@@ -57,8 +57,10 @@ export(Team) var team = Team.Player
 # LIFECYCLE
 func _ready():
 	# Await Level start
-	SignalMngr.connect("game_started", self, "_on_game_started")
-	SignalMngr.connect("level_started", self, "_on_level_started")
+	if SignalMngr.connect("game_started", self, "_on_game_started") != OK:
+		D.e("Entity", ["Signal game_started is already connected"])
+	if SignalMngr.connect("level_started", self, "_on_level_started") != OK:
+		D.e("Entity", ["Signal level_started is already connected"])
 	
 	$ContactArea.monitoring = do_contact_damage
 		
@@ -68,8 +70,8 @@ func _on_game_started():
 	__health_now = __health_max
 	sm_lifecycle.goto_state("Alive")
 		
-func _on_level_started(level):
-	self.level = level
+func _on_level_started(lv):
+	self.level = lv
 	
 	# Reset
 	if revive_on_level_start:
@@ -98,10 +100,10 @@ func _physics_process(delta):
 		for contact in contacts:
 			contact.deal_damage(contact_damage)
 	
-func before_move_and_slide(delta):
+func before_move_and_slide(_delta:float):
 	pass
 	
-func after_move_and_slide(delta):
+func after_move_and_slide(_delta:float):
 	pass
 	
 #############################################################

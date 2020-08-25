@@ -1,10 +1,11 @@
 extends "State.gd"
 
 func on_enter():
-	root.connect("health_changed", self, "_on_health_changed")
+	if root.connect("health_changed", self, "_on_health_changed") != OK:
+		D.e("StateAlive", ["Signal health_changed is already connected"])
 
 var last_health
-func _on_health_changed(health_now, health_max):
+func _on_health_changed(health_now, _health_max):
 	if health_now <= 0:
 		sm.goto_state("Dead")
 		last_health = health_now
@@ -21,5 +22,5 @@ func do_physics_process()->bool:
 func on_leave():
 	root.disconnect("health_changed", self, "_on_health_changed")
 
-func process(delta:float):
+func process(_delta:float):
 	pass

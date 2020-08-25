@@ -149,7 +149,7 @@ func process_walk_topdown(delta:float):
 
 # Handles floored state and triggers jump
 # Must be called after move_and_slide
-func process_jump(delta:float):
+func process_jump(_delta:float):
 	if is_on_floor():
 		if jumping:
 			jumping = false
@@ -162,7 +162,7 @@ func process_jump(delta:float):
 
 # Determines animation to play
 # Must be called last
-func process_sprite(delta:float):
+func process_sprite(_delta:float):
 	if velocity.x > 0: flip = false
 	if velocity.x < 0: flip = true
 	sprite.flip_h = flip

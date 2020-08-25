@@ -36,7 +36,7 @@ func _on_Area2D_body_entered(entity:Node):
 	
 	queue_free()
 
-func _on_picked_up(entity:Entity):
+func _on_picked_up(_entity:Entity):
 	pass
 	
 	

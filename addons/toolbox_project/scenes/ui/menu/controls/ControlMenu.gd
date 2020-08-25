@@ -76,7 +76,7 @@ func add_actions():
 		all_control_btns[0].grab_focus()
 
 func reset_to_default():
-	PersistenceMngr.set_state("settingsControls", StateMngr.default_options_controls)
+	PersistenceMngr.set_state("settingsControls", ControlMngr.get_default_from_project_keybindings().duplicate(true))
 	
 	add_actions()
 	

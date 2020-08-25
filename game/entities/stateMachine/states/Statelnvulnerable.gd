@@ -12,7 +12,7 @@ func on_leave():
 	$Timer.stop()
 	root.modulate = modulate_gradient.interpolate(1)
 	
-func process(delta):
+func process(_delta):
 	# [0, 1]
 	var t = 1 - $Timer.time_left / invulnerability_time
 	# [0, anim_runs]
