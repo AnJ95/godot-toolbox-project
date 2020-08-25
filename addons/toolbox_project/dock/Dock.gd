@@ -2,7 +2,7 @@ tool
 extends Control
 
 # Screens
-onready var does_screen_exist:TextureRect = $HBoxContainer/VBoxContainer/DoesScreenExist
+onready var does_screen_exist:Control = $HBoxContainer/VBoxContainer/DoesScreenExist
 onready var icon_does_screen_exist:TextureRect = $HBoxContainer/VBoxContainer/DoesScreenExist/Icon
 
 onready var btn_create_screens:Button = $HBoxContainer/VBoxContainer/CreateScreens
