@@ -19,8 +19,9 @@ Joypad and mobile device support is taken care of.
 
 ## Contents
 * [Setup](#-setup)
-  * [Downloading the repo](#one-downloading-the-repo)
-  * [Installing the plugin](#two-installing-the-plugin)
+	* [Downloading the repo](#one-downloading-the-repo)
+	* [Installing the plugin](#two-installing-the-plugin)
+* [Exporting](#-exporting)
 * [UI](#-ui)
 	* [Theme](#theme)
 	* [Menu](#menu)
@@ -87,7 +88,9 @@ To add you game into the menu structure, simply drag your game root scene into *
 
 ![The configuration tool after configuration](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/readme/screenshot_config.png "The configuration tool after configuration")
 
+## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") Exporting
 
+After exporting the project, you might encounter some issues with the config files not being loaded since they are cfg files (not being Godot resource files). This can easily be fixed by adding "*.cfg" to *Export > Resources > Filters to export non-resource files/folders*.
 
 ## ![](https://raw.githubusercontent.com/AnJ95/godot-toolbox-project/master/addons/toolbox_project/assets/logo/logo32.png "") UI
 
