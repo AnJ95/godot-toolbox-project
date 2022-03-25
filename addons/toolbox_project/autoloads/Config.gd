@@ -36,7 +36,7 @@ func load_from_config(path = "res://toolbox_project.cfg"):
 		D.e("Config", ["Could not load config file at", path, err])
 		
 func try_load(path):
-	if File.new().file_exists(path):
+	if File.new().file_exists(path) or File.new().file_exists(str(path, '.import')):
 		return load(path)
 	else:
 		D.e("Config", ["Could not load ", path])
