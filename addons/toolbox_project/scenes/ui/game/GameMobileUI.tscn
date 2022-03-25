@@ -3,11 +3,14 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/mobile_controls/MobileButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/mobile_controls/MobileJoystick.tscn" type="PackedScene" id=2]
 
-
 [node name="GameMobileUI" type="CanvasLayer"]
 layer = 10
 
 [node name="MobileJoystick" parent="." instance=ExtResource( 2 )]
+left_action = "game_left"
+up_action = "game_up"
+right_action = "game_right"
+down_action = "game_down"
 
 [node name="MobileButton" parent="." instance=ExtResource( 1 )]
 anchor_left = 1.0

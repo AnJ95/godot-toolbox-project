@@ -28,7 +28,7 @@ func _set_anchor_corner(v):
 #############################################################
 # STATE
 onready var _cache_half_size = size_outer / 2
-var is_dragging = false
+var is_dragging = -1
 
 #############################################################
 # LIFECYLE

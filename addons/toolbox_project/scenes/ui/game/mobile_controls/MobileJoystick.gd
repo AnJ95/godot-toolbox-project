@@ -9,22 +9,22 @@ extends "MobileControl.gd"
 export var left_allow = true
 export var left_action = "left"
 export var left_analog = true
-export var left_digital_threshold = 0.5
+export var left_digital_threshold = 0.2
 
 export var up_allow = true
 export var up_action = "up"
 export var up_analog = true
-export var up_digital_threshold = 0.5
+export var up_digital_threshold = 0.2
 
 export var right_allow = true
 export var right_action = "right"
 export var right_analog = true
-export var right_digital_threshold = 0.5
+export var right_digital_threshold = 0.2
 
 export var down_allow = true
 export var down_action = "down"
 export var down_analog = true
-export var down_digital_threshold = 0.5
+export var down_digital_threshold = 0.2
 
 
 #############################################################
@@ -74,7 +74,7 @@ func _physics_process(delta):
 var currently_pressed = []
 func process_control(action, allow, analog, current, digital_threshold):
 	if allow and ((analog and current > 0) or (!analog and current > digital_threshold)):
-		Input.action_press(action, current if action else 1.0)
+		Input.action_press(action, current if analog else 1.0)
 		if not action in currently_pressed:
 			currently_pressed.append(action)
 	elif action in currently_pressed:
