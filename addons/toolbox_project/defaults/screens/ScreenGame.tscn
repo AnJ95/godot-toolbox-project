@@ -9,8 +9,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/screens/Screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/toolbox_project/defaults/screens/ScreenGame.gd" type="Script" id=8]
 
-
-
 [node name="ScreenGame" instance=ExtResource( 7 )]
 script = ExtResource( 8 )
 show_transition_on_enter = true

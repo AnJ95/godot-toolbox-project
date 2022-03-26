@@ -42,7 +42,7 @@ func _ready():
 		slider.grab_focus()
 
 #############################################################
-# CALLBACKS	
+# CALLBACKS
 func _on_HSlider_value_changed(value):
 	PersistenceMngr.set_state(persistence_uid_path, value)
 	emit_signal("slider_changed", slider.value)

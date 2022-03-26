@@ -9,12 +9,7 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sound/sfx/16687__littlerobotsoundfactory__fantasy-sound-effects-library/270405__littlerobotsoundfactory__pickup-gold-03.wav" type="AudioStream" id=8]
 
-
-
-
-[node name="PickupCoin" groups=[
-"PickupCoin",
-] instance=ExtResource( 6 )]
+[node name="PickupCoin" groups=["PickupCoin"] instance=ExtResource( 6 )]
 script = ExtResource( 1 )
 on_pickup_sounds = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 8 ) ]
 on_pickup_particles = ExtResource( 5 )

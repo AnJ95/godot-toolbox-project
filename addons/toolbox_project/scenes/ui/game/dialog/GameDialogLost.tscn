@@ -6,7 +6,7 @@
 config_dialog_song = "DIALOG_LOST_SONG"
 
 [node name="VBoxContainer" parent="CenterContainer/Popup" index="0"]
-margin_bottom = 325.0
+margin_bottom = 260.0
 
 [node name="LabelBig" parent="CenterContainer/Popup/VBoxContainer" index="0"]
 text = "You lost!"
@@ -29,9 +29,9 @@ margin_top = 122.0
 margin_bottom = 171.0
 
 [node name="BtnMenu" parent="CenterContainer/Popup/VBoxContainer" index="5"]
-margin_top = 187.0
-margin_bottom = 236.0
+margin_top = 122.0
+margin_bottom = 171.0
 
 [node name="BtnQuit" parent="CenterContainer/Popup/VBoxContainer" index="6"]
-margin_top = 252.0
-margin_bottom = 301.0
+margin_top = 187.0
+margin_bottom = 236.0

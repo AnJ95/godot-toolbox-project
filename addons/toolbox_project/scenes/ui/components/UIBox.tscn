@@ -2,8 +2,6 @@
 
 [ext_resource path="res://addons/toolbox_project/assets/theme.tres" type="Theme" id=1]
 
-
-
 [node name="UIBox" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,6 +12,3 @@ custom_constants/margin_right = 220
 custom_constants/margin_top = 80
 custom_constants/margin_left = 220
 custom_constants/margin_bottom = 80
-__meta__ = {
-"_edit_use_anchors_": false
-}

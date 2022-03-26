@@ -93,6 +93,7 @@ text = "Quit game"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"
+
 [connection signal="pressed" from="InvisibleWall" to="." method="_on_InvisibleWall_pressed"]
 [connection signal="pressed" from="CenterContainer/Popup/VBoxContainer/BtnResume" to="." method="_on_BtnResume_pressed"]
 [connection signal="pressed" from="CenterContainer/Popup/VBoxContainer/BtnRetry" to="." method="_on_BtnRetry_pressed"]

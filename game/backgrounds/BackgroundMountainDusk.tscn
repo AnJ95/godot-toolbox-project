@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/sprites/parallax/mountain_dusk/parallax-mountain-montain-far.png" type="Texture" id=5]
 [ext_resource path="res://game/backgrounds/GameBackground.gd" type="Script" id=12]
 
-
 [node name="Background" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
 script = ExtResource( 12 )

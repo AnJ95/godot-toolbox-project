@@ -76,4 +76,5 @@ margin_bottom = 49.0
 text = "Back"
 pushes_screen = false
 pops_screen = true
+
 [connection signal="pressed" from="MenuLayer/UIBox/VBoxContainer/HBoxContainer/ResetButton" to="MenuLayer/UIBox/VBoxContainer/ScrollContainer/ControlMenu" method="reset_to_default"]

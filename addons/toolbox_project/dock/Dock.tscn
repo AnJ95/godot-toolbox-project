@@ -914,6 +914,7 @@ margin_right = 176.0
 margin_bottom = 644.0
 text = "Plays title song and allows playing ui sounds"
 autowrap = true
+
 [connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/OpenGithub" to="." method="_on_OpenGithub_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/CreateScreens" to="." method="_on_CreateScreens_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MakeScreenSplashDefault" to="." method="_on_MakeScreenSplashDefault_pressed"]

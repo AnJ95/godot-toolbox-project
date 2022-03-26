@@ -3,8 +3,6 @@
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/mobile_controls/MobileButton.gd" type="Script" id=1]
 [ext_resource path="res://addons/toolbox_project/assets/ui/mobileButton.png" type="Texture" id=2]
 
-
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="MobileButton" type="Button"]
@@ -24,9 +22,6 @@ custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 enabled_focus_mode = 0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Outer" type="TextureRect" parent="."]
 anchor_right = 1.0

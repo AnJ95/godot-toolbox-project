@@ -2,8 +2,6 @@
 
 [ext_resource path="res://addons/toolbox_project/assets/theme.png" type="Texture" id=1]
 
-
-
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/162486__kastenfrosch__mysterious.mp3-9a7cb72b7b082bdc09d2c3673323d426.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/sfx/10069__kastenfrosch__game-sound-effects/162486__kastenfrosch__mysterious.mp3"
+dest_files=[ "res://.import/162486__kastenfrosch__mysterious.mp3-9a7cb72b7b082bdc09d2c3673323d426.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

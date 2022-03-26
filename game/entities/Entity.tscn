@@ -6,8 +6,6 @@
 [ext_resource path="res://game/entities/Entity.gd" type="Script" id=4]
 [ext_resource path="res://game/entities/stateMachine/states/StateAlive.gd" type="Script" id=5]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
 height = 5.0
@@ -55,6 +53,7 @@ script = ExtResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 10 )
+
 [connection signal="body_entered" from="ContactArea" to="." method="_on_ContactArea_body_entered"]
 [connection signal="body_exited" from="ContactArea" to="." method="_on_ContactArea_body_exited"]
 [connection signal="timeout" from="StateMachineLifecycle/Invulnerable/Timer" to="StateMachineLifecycle/Invulnerable" method="_on_Timer_timeout"]

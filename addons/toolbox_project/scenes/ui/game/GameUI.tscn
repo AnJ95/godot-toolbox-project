@@ -62,6 +62,7 @@ rect_min_size = Vector2( 20, 0 )
 [node name="AnimatedIcon" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 position = Vector2( 8, 0 )
 scale = Vector2( 3, 3 )
+frame = 3
 
 [node name="Label" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue" index="1"]
 margin_left = 26.0
@@ -74,9 +75,6 @@ margin_left = 104.0
 margin_right = 264.0
 margin_bottom = 32.0
 size_flags_horizontal = 1
-has_halfes = true
-value_now = 2.5
-value_max = 5
 
 [node name="TopRight" type="Control" parent="MarginContainer"]
 margin_left = 10.0
@@ -111,6 +109,7 @@ margin_bottom = 46.0
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = SubResource( 2 )
+
 [connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
 [connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonPause" to="." method="_on_ButtonPause_pressed"]
 

@@ -6,8 +6,6 @@
 [ext_resource path="res://game/entities/enemies/states/Idle.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/entities/enemy_demon.png" type="Texture" id=5]
 
-
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 32 )
@@ -89,5 +87,6 @@ one_shot = true
 
 [node name="RayCast2D" parent="." index="5"]
 cast_to = Vector2( 0, 50 )
+
 [connection signal="timeout" from="StateMachine/Idle/Timer" to="StateMachine/Idle" method="_on_Timer_timeout"]
 [connection signal="timeout" from="StateMachine/Walking/Timer" to="StateMachine/Walking" method="_on_Timer_timeout"]

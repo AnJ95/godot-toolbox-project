@@ -48,7 +48,6 @@ margin_right = 536.0
 margin_bottom = 49.0
 text = "Enter Fullscreen"
 grabs_focus = true
-setting = "Fullscreen"
 
 [node name="MenuToggleSettingButton3" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer/Menu" index="1" instance=ExtResource( 6 )]
 margin_top = 65.0
@@ -56,7 +55,6 @@ margin_right = 536.0
 margin_bottom = 114.0
 pressed = true
 text = "Use VSync"
-grabs_focus = false
 setting = "VSync"
 
 [node name="MenuButton" parent="MenuLayer/UIBox/PanelContainer/VBoxContainer" index="2" instance=ExtResource( 5 )]

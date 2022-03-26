@@ -3,17 +3,12 @@
 [ext_resource path="res://addons/toolbox_project/assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/menu/controls/ControlMenuAction.gd" type="Script" id=2]
 
-
-
 [node name="ControlMenuAction" type="PanelContainer"]
 anchor_right = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 24.0
@@ -51,4 +46,5 @@ text = "+"
 margin_top = 65.0
 margin_right = 976.0
 margin_bottom = 65.0
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]

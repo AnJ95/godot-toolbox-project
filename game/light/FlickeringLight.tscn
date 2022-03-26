@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/sprites/masks/light100.png" type="Texture" id=1]
 [ext_resource path="res://game/light/FlickeringLight.gd" type="Script" id=2]
 
-
 [sub_resource type="OpenSimplexNoise" id=1]
 
 [sub_resource type="NoiseTexture" id=2]

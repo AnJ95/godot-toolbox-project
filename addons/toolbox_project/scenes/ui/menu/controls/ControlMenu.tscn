@@ -11,6 +11,14 @@ theme = ExtResource( 1 )
 custom_constants/vseparation = 50
 columns = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
+pretty_action_names = {
+"game_down": "Down",
+"game_interact": "Interact",
+"game_jump": "Jump",
+"game_left": "Left",
+"game_pause": "Pause",
+"game_right": "Right",
+"game_switch_demo": "Switch Demo",
+"game_switch_skin": "Switch Skin",
+"game_up": "Up"
 }
