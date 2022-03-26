@@ -1,19 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/IconIntValue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/AnimatedIcon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/GameUI.gd" type="Script" id=3]
-[ext_resource path="res://addons/toolbox_project/assets/ui/UI_Buttons.png" type="Texture" id=4]
 [ext_resource path="res://addons/toolbox_project/scenes/ui/game/IconValue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/toolbox_project/assets/theme.tres" type="Theme" id=6]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 229, 49, 46, 46 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 275, 95, 46, 46 )
 
 [node name="GameUI" type="CanvasLayer"]
 layer = 10
@@ -62,7 +53,6 @@ rect_min_size = Vector2( 20, 0 )
 [node name="AnimatedIcon" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue/IconHolder" index="0" instance=ExtResource( 2 )]
 position = Vector2( 8, 0 )
 scale = Vector2( 3, 3 )
-frame = 3
 
 [node name="Label" parent="MarginContainer/TopLeft/HBoxContainer/IconIntValue" index="1"]
 margin_left = 26.0
@@ -91,24 +81,17 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 size_flags_horizontal = 9
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="ButtonRestart" type="TextureButton" parent="MarginContainer/TopRight/HBoxContainer"]
-margin_right = 46.0
-margin_bottom = 46.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 1 )
+[node name="ButtonRestart" type="Button" parent="MarginContainer/TopRight/HBoxContainer"]
+margin_right = 87.0
+margin_bottom = 49.0
+text = "Restart"
 
-[node name="ButtonPause" type="TextureButton" parent="MarginContainer/TopRight/HBoxContainer"]
-margin_left = 62.0
-margin_right = 108.0
-margin_bottom = 46.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 2 )
+[node name="ButtonPause" type="Button" parent="MarginContainer/TopRight/HBoxContainer"]
+margin_left = 103.0
+margin_right = 180.0
+margin_bottom = 49.0
+text = "Pause"
 
 [connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
 [connection signal="pressed" from="MarginContainer/TopRight/HBoxContainer/ButtonPause" to="." method="_on_ButtonPause_pressed"]
