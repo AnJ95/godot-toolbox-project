@@ -42,8 +42,11 @@ func add_actions():
 	# get settings
 	var settingsControls:Dictionary = PersistenceMngr.get_state("settingsControls")
 	
-	# Try to use preferred_order for the list of action names ...
-	var action_names = preferred_order.duplicate()
+	# Try to use preferred_order for the list of action names without duplicate ...
+	var action_names = []
+	for action_name in preferred_order:
+		if not action_name in action_names:
+			action_names.append(action_name)
 	
 	# ... but remove what doesn't actually exist ...
 	for action_name in action_names:

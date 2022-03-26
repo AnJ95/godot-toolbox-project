@@ -31,9 +31,12 @@ func init(action_name, event_i):
 	self.event_i = event_i
 	
 func _ready():
-	persistence_uid_path = "settingsControls." + action_name + "." + str(event_i)
-	event_info = PersistenceMngr.get_state(persistence_uid_path)
-	button.text = get_display_caption()
+	if action_name and event_i != null:
+		persistence_uid_path = "settingsControls." + action_name + "." + str(event_i)
+		event_info = PersistenceMngr.get_state(persistence_uid_path)
+		button.text = get_display_caption()
+	else:
+		button.text = "Uninit ControlMenuButton"
 	#if grabs_focus:
 	#	button.grab_focus()
 

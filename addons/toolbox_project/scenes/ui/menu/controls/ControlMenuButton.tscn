@@ -16,7 +16,7 @@ margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 toggle_mode = true
-text = "Unassigned"
+text = "Uninit ControlMenuButton"
 
 [node name="ButtonRemove" type="Button" parent="."]
 margin_left = 977.0

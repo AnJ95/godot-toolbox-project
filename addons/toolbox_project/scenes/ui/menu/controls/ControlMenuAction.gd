@@ -12,15 +12,17 @@ func init(action_name):
 	self.action_name = action_name
 	
 func _ready():
-	if get_parent().pretty_action_names.has(action_name):
+	if get_parent().get("pretty_action_names") and get_parent().pretty_action_names.has(action_name):
 		label.text = get_parent().pretty_action_names[action_name]
-	else:
+	elif action_name:
 		label.text = action_name
+	else:
+		label.text = "Uninit ControlMenuAction"
 	
-	var settings = PersistenceMngr.get_state("settingsControls")[action_name]
-	
-	for i in range(settings.size()):
-		add_button()
+	if action_name:
+		var settings = PersistenceMngr.get_state("settingsControls")[action_name]
+		for i in range(settings.size()):
+			add_button()
 
 func add_button():
 	var btn_inst = ControlMenuButton.instance()
